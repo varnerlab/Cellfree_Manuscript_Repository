@@ -1,51 +1,54 @@
-This is BibTeX, Version 0.99d (TeX Live 2015)
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: Paper_v1.aux
 The style file: plos2009.bst
 Database file #1: References_v1.bib
+Warning--entry type for "GLPK" isn't style-file defined
+--line 11 of file References_v1.bib
 Warning--entry type for "SALIB" isn't style-file defined
---line 31 of file References_v1.bib
+--line 52 of file References_v1.bib
 Warning--I didn't find a database entry for "pr3010138"
+Warning--I didn't find a database entry for "?"
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-You've used 30 entries,
+You've used 32 entries,
             2441 wiz_defined-function locations,
-            775 strings with 11330 characters,
-and the built_in function-call counts, 23525 in all, are:
-= -- 2169
-> -- 388
+            789 strings with 11712 characters,
+and the built_in function-call counts, 24470 in all, are:
+= -- 2252
+> -- 397
 < -- 0
-+ -- 194
-- -- 97
-* -- 2004
-:= -- 2840
-add.period$ -- 60
-call.type$ -- 30
-change.case$ -- 30
++ -- 199
+- -- 99
+* -- 2077
+:= -- 2945
+add.period$ -- 65
+call.type$ -- 32
+change.case$ -- 32
 chr.to.int$ -- 0
-cite$ -- 60
-duplicate$ -- 2341
-empty$ -- 2440
-format.name$ -- 124
-if$ -- 5200
+cite$ -- 64
+duplicate$ -- 2439
+empty$ -- 2548
+format.name$ -- 127
+if$ -- 5412
 int.to.chr$ -- 0
-int.to.str$ -- 30
-missing$ -- 305
-newline$ -- 165
-num.names$ -- 30
-pop$ -- 344
+int.to.str$ -- 32
+missing$ -- 319
+newline$ -- 176
+num.names$ -- 31
+pop$ -- 369
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 172
+skip$ -- 184
 stack$ -- 0
-substring$ -- 3336
-swap$ -- 607
+substring$ -- 3450
+swap$ -- 634
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 185
-width$ -- 32
-write$ -- 341
-(There were 2 warnings)
+while$ -- 190
+width$ -- 34
+write$ -- 362
+(There were 4 warnings)

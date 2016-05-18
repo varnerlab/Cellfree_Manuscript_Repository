@@ -196,4 +196,16 @@ Herman JD.
 \newblock http://jdherman.github.io/salib/.
 \bibAnnoteFile{SALIB}
 
+\bibitem{2002_allen_palsson}
+ALLEN TE, PALSSON BO (2003) Sequence-based analysis of metabolic demands for
+  protein synthesis in prokaryotes.
+\newblock Journal of Theoretical Biology 220: 1 - 18.
+\bibAnnoteFile{2002_allen_palsson}
+
+\bibitem{GLPK}
+ (2016).
+\newblock {GNU Linear Programming Kit, Version 4.52}.
+\newblock \urlprefix\url{http://www.gnu.org/software/glpk/glpk.html}.
+\bibAnnoteFile{GLPK}
+
 \end{thebibliography}
