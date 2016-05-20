@@ -226,7 +226,8 @@ We used multiple saturation kinetics to model metabolic fluxes and mass action k
 We modeled the control term using a rule-based approach in which each control factor had a regulatory transfer function, modeled as a Hill function \cite{?}, and the control term was calculated as the mean of all transfer functions.
 %The model was trained against the Swartz dataset, which included measurements of glucose, CAT, organic acids (pyruvate, lactate, acetate, succinate, malate), energy species (ATP, ADP, AMP, GTP, GDP, GMP, CTP, CDP, CMP, UTP, UDP, UMP), and 18 of the 20 proteinogenic amino acids.
 The model was trained against the Swartz dataset, which included measurements of glucose, CAT, organic acids (pyruvate, lactate, acetate, succinate, malate), energy species (AXP, GXP, CXP, UXP), and 18 of the 20 proteinogenic amino acids.
-We generated an ensemble of 18,000 parameter sets by minimizing the error between the Swartz dataset and the metabolite concentrations predicted by the model. Out of these 18,000 sets, we defined the set with the lowest error value as our best-fit set.
+We generated an ensemble of 18,000 parameter sets by minimizing the error between the Swartz dataset and the metabolite concentrations predicted by the model.
+Out of these 18,000 sets, we defined the set with the lowest error value as our best-fit set.
 The ensemble captures the central carbon metabolism, including glucose uptake, CAT production, and the dynamics of the organic acid intermediates (Fig.~\ref{fig:BothCarbon}, top).
 Allosteric control is important to the dynamics of the organic acid intermediates, as without it several of the measurements are not captured by the ensemble or the best-fit set (Fig.~\ref{fig:BothCarbon}, bottom).
 The ensemble also captures the energy species dynamics, particularly the overall energy total (Fig.~\ref{fig:BothCarbon}, top) and the totals by base (Fig.~\ref{fig:Energy}).
@@ -241,6 +242,7 @@ We did the same for the control parameters, both the order (Hill coefficient) an
 This allowed us to estimate the relative importance of the kinetic and control parameters to CAT production across the ensemble.
 Of the rate constants, those with the highest positive sensitivities were CAT synthesis, GTP synthesis, GMP synthesis, glutamine synthesis, and aspartate synthesis (Fig.~\ref{fig:LocalSensitivity}, top).
 This is explained by GTP and the amino acids being reactants for CAT synthesis.
+Also, GMP synthesis increases the total amount of guanosine, allowing for more GTP production.
 The rate constants with the largest negative sensitivities were GTP degradation, arginine synthesis, and UMP synthesis.
 While GTP degradation is obvious, the others can be explained in that they consume ATP as well as several amino acids, all of which are reactants for CAT synthesis.
 Of the saturation constants, the reverse is seen: the largest positive sensitivities are those associated with arginine synthesis, while the largest negative sensitivities are those associated with CAT synthesis, GTP synthesis, and GMP synthesis (Fig.~\ref{fig:LocalSensitivity}, middle).
@@ -248,7 +250,7 @@ This is because an increase in saturation constant causes a decrease in the corr
 The control parameters were seen to be the least significant and the most uncertain (Fig.~\ref{fig:LocalSensitivity}, bottom).
 Only two had a small standard error across the ensemble, relative to the ensemble mean sensitivity: the gain and order for pyruvate acting as an inhibitor on the pdh reaction.
 This could be because pdh consumes pyruvate and diverts carbon away from the pathways that ultimately contribute to CAT production.
-Taken together with the lack of change in glucose uptake and CAT production when control is removed (Fig.~\ref{fig:BothCarbon}), this suggests that allosteric control is relatively unimportant to CAT production and metabolism as a whole compared to kinetic effects.
+Taken together with the lack of change in glucose uptake and CAT production when control is removed (Fig.~\ref{fig:BothCarbon}), this suggests that allosteric control is not the limiting factor to CAT production.
 
 We conducted a global sensitivity analysis on the parameters that could be controlled experimentally: the initial conditions of glucose, oxygen, amino acids, and enzymes.
 We used the variance-based method of Sobol, and the same objective function of area under the CAT curve.
@@ -265,20 +267,48 @@ We calculated the carbon yield of CAT production for our experimental data and o
 Arginine and glutamate were excluded due to not being present in the Swartz dataset.
 The experimental data displayed a CAT yield of 0.0865, while the best-fit parameter set displayed a CAT yield of 0.0871.
 We then used sequence-specific FBA to calculate a theoretical maximum CAT yield of 0.1942.
-Thus, we showed that our experimental dataset and best-fit parameter set were producing CAT at 44.5\% and 44.9\% of the theoretical maximum, respectively.
+Thus, we showed that our experimental dataset and best-fit parameter set were each producing CAT at 45\% of the theoretical maximum.
 This allowed us to quantify the amount of carbon being diverted to byproducts, and suggests that there is potential for a doubling of CAT production by reducing this diversion of carbon.
 
 \clearpage
 
 \section*{Discussion}
 
-The discussion has three (sometimes four) paragraphs:
-\begin{enumerate}
-	\item{\textbf{First~paragraph}: Present a modified version of the last paragraph of the introduction. In this study, [...]. Taken together, [killer statement]}
-	\item{\textbf{Second~paragraph}: Contrast the key findings of the study with other computational/experimental studies}
-	\item{\textbf{Third~paragraph}: Present future directions. If you had more time, what would like to do? Highlight the key shortcomings of the approach and how will we address them in the future.
-	In this case, we will have a scaling issue if we extend to genome scale. We should extend to dynamic cases, and we need to experimentally validate the findings.}
-\end{enumerate}
+%The discussion has three (sometimes four) paragraphs:
+%\begin{enumerate}
+%	\item{\textbf{First~paragraph}: Present a modified version of the last paragraph of the introduction. In this study, [...]. Taken together, [killer statement]}
+%	\item{\textbf{Second~paragraph}: Contrast the key findings of the study with other computational/experimental studies}
+%	\item{\textbf{Third~paragraph}: Present future directions. If you had more time, what would like to do? Highlight the key shortcomings of the approach and how will we address them in the future.
+%	In this case, we will have a scaling issue if we extend to genome scale. We should extend to dynamic cases, and we need to experimentally validate the findings.}
+%\end{enumerate}
+
+We constructed a model of cell-free \textit{E. coli} metabolism with CAT production based on saturation kinetics and allosteric control.
+We trained the model against measurements of glucose, CAT, organic acid intermediates, energy species, and amino acids.
+We generated an ensemble of 18,000 parameter sets that predict the experimental dataset, with the exception of some amino acids.
+We calculated the carbon yield of CAT production at 45\% of the theoretical maximum obtained by flux balance analysis; this was in line with the CAT yield shown by the dataset.
+We conducted sensitivity analyses and determined that CAT production was most sensitive to the rate constants, saturation constants, and enzyme initial conditions associated with CAT synthesis, GTP synthesis, GMP synthesis, and amino acid synthesis, and to a lesser extent some amino acid initial conditions.
+CAT production was much less sensitive to control parameters, suggesting that while allosteric control affects some organic acid intermediates, it does not limit CAT production.
+The initial conditions of glucose and oxygen were even less important to CAT production, suggesting that it can be driven by other means.
+However, the low sensitivities to glucose and oxygen only apply in the specific case of the parameter sets that were studied.
+When other species' initial conditions and associated parameters are different, glucose and oxygen can become more important to CAT production.
+
+2nd paragraph: Compare to other studies
+This is the first study to model a cell-free \textit{E. coli} system at this scope, toward genome-scale.
+
+One important direction for the future is to expand the biological description, especially with regard to amino acids.
+Specifically, adding more reactions that consume amino acids would improve the model's ability to predict those that show a decrase in the experimental data.
+Also, including specific transcription and translation steps for CAT would allow us to more accurately model the complexity and the resource cost of protein synthesis.
+Another area for future work is to more thoroughly sample parameter space.
+For the metabolites in the dataset, initial conditions were fixed at the initial data values.
+All other parameters were varied in a manner so as to best fit the dataset.
+However, the resulting ensemble may not represent every biological or practical possibility.
+In a different region of parameter space, the system could behave differently, including the flux distribution through the network, the accuracy and spread of ensemble fits, the relative sensitivities, and the yield as a percentage of the theoretical maximum.
+Testing the model under a variety of conditions could strengthen or challenge the findings of this study.
+Further experimentatiion could also be used to gain a deeper understanding of model performance under a variety of conditions.
+Specifically, CAT production performed in the absence of amino acids could inform the system's ability to manufacture them, while experimentation in the absence of glucose or oxygen could shed light on how important they are to protein synthesis, and under which conditions.
+Finally, the approach should be extended to other protein products.
+CAT is only a test protein used for model identification; the modeling framework, and to some extent the parameter values, should be protein agnostic.
+An important extension of this study would be to apply its insights to other protein applications, where possible.
 
 \clearpage
 
@@ -398,7 +428,7 @@ This study was supported by an award from [FILL ME IN].
 \begin{figure}[ht]
 \centering
 \includegraphics[width=0.75\textwidth]{./Figures/Network.pdf}
-\caption{Flux profile for glycolysis, pentose phosphate pathway, Entner-Doudoroff pathway, TCA cycle, and NADPH/NADH transfer. Mean ± standard error for the reaction flux at 1.5 hrs (top) and 3 hrs (bottom), normalized to CAT synthesis flux.}
+\caption{Flux profile for glycolysis, pentose phosphate pathway, Entner-Doudoroff pathway, TCA cycle, and NADPH/NADH transfer. FBA flux value (top), and mean ± standard error across ensemble at 1.5 hrs (middle) and 3 hrs (bottom), normalized to CAT synthesis flux.}
 \label{fig:Network}
 \end{figure}
 
