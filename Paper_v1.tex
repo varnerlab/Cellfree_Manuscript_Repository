@@ -404,7 +404,9 @@ The sequence specific FBA \cite{2002_allen_palsson} problem was formulated as:
 where $\mathbf{S}$ denotes the stoichiometric matrix, $\mathbf{v}$ denotes the unknown flux vector, $\boldsymbol{c}$ denotes the objective selection vector, and $\alpha_i$ and $\beta_i$ denote the lower and upper bounds on flux $v_{i}$, respectively.
 The stoichiometric matrix was expanded to include the transcription and translation reactions for producing CAT. 
 The objective $v_{obj}$ was to maximize the specific rate of CAT formation.
-The specific glucose, amino acids and oxygen uptake rates were constrained to allow a maximum flux of 10 mM/hr.
+The specific glucose uptake rate was constrained to allow a maximum flux of 10 mM/hr \cite{2002_Mahadevan_BiophysJ}; the amino acids and oxygen uptake rates were also bound to allow a maximum flux of 10 mM/hr, but did not reach this maximum flux.
+Glucose, oxygen, and amino acids were modeled as being imported into the system, whereas CAT synthesis was modeled through protein export.
+The rest of the network followed a psuedo steady-state asusmption where all other metabolites were not allowed to accumulate; thus, the network could be solved by linear programming. 
 The flux balance analysis problem was solved using the GNU Linear Programming Kit (v4.52) \cite{GLPK}.
 The solution flux vector was used to calculate the theoretical carbon yield of CAT, reformulated in terms of flux:
 \begin{equation}\label{eqn:yield}
