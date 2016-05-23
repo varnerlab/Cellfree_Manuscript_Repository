@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2015/dev/Debian)
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: Paper_v1.aux
 The style file: plos2009.bst
@@ -17,24 +17,24 @@ Warning--I didn't find a database entry for "pr3010138"
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 You've used 33 entries,
             2441 wiz_defined-function locations,
-            798 strings with 12040 characters,
-and the built_in function-call counts, 25295 in all, are:
-= -- 2330
+            798 strings with 12056 characters,
+and the built_in function-call counts, 25475 in all, are:
+= -- 2350
 > -- 409
 < -- 0
 + -- 205
 - -- 102
-* -- 2149
-:= -- 3044
+* -- 2169
+:= -- 3064
 add.period$ -- 67
 call.type$ -- 33
 change.case$ -- 33
 chr.to.int$ -- 0
 cite$ -- 66
-duplicate$ -- 2517
-empty$ -- 2634
+duplicate$ -- 2537
+empty$ -- 2654
 format.name$ -- 131
-if$ -- 5595
+if$ -- 5635
 int.to.chr$ -- 0
 int.to.str$ -- 33
 missing$ -- 329
@@ -46,7 +46,7 @@ purify$ -- 0
 quote$ -- 0
 skip$ -- 189
 stack$ -- 0
-substring$ -- 3577
+substring$ -- 3617
 swap$ -- 654
 text.length$ -- 0
 text.prefix$ -- 0

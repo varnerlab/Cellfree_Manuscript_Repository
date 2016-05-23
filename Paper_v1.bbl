@@ -86,14 +86,14 @@ Song HS, Ramkrishna D (2011) Cybernetic models based on lumped elementary modes
 \bibAnnoteFile{Song:2011aa}
 
 \bibitem{2012_lewis_palsson_NatRevMicrobio}
-Lewis NE, Nagarajan H, Palsson BO (2012) Constraining the metabolic
+Lewis NE, Nagarajan H, Palsson B{\O} (2012) Constraining the metabolic
   genotype-phenotype relationship using a phylogeny of in silico methods.
 \newblock Nat Rev Microbiol 10: 291-305.
 \bibAnnoteFile{2012_lewis_palsson_NatRevMicrobio}
 
 \bibitem{2000_edwards_palsson_PNAS}
-Edwards JS, Palsson BO (2000) The escherichia coli mg1655 in silico metabolic
-  genotype: its definition, characteristics, and capabilities.
+Edwards JS, Palsson B{\O} (2000) The escherichia coli mg1655 in silico
+  metabolic genotype: its definition, characteristics, and capabilities.
 \newblock Proc Natl Acad Sci U S A 97: 5528-33.
 \bibAnnoteFile{2000_edwards_palsson_PNAS}
 
@@ -105,7 +105,7 @@ Feist AM, Henry CS, Reed JL, Krummenacker M, Joyce AR, et~al. (2007) A
 \bibAnnoteFile{Feist:2007aa}
 
 \bibitem{Oh:2007aa}
-Oh YK, Palsson BO, Park SM, Schilling CH, Mahadevan R (2007) Genome-scale
+Oh YK, Palsson B{\O}, Park SM, Schilling CH, Mahadevan R (2007) Genome-scale
   reconstruction of metabolic network in bacillus subtilis based on
   high-throughput phenotyping and gene essentiality data.
 \newblock J Biol Chem 282: 28791-9.
@@ -118,7 +118,7 @@ Feist AM, Herrg{\aa}rd MJ, Thiele I, Reed JL, Palsson B{\O} (2009)
 \bibAnnoteFile{2009_feist_palsson_NatRevMicrobio}
 
 \bibitem{2002_ibarra_edwards_palsson_Nat}
-Ibarra RU, Edwards JS, Palsson BO (2002) Escherichia coli k-12 undergoes
+Ibarra RU, Edwards JS, Palsson B{\O} (2002) Escherichia coli k-12 undergoes
   adaptive evolution to achieve in silico predicted optimal growth.
 \newblock Nature 420: 186-9.
 \bibAnnoteFile{2002_ibarra_edwards_palsson_Nat}
@@ -154,13 +154,13 @@ Jewett MC, Calhoun KA, Voloshin A, Wuu JJ, Swartz JR (2008) An integrated
 \bibAnnoteFile{Jewett:2008aa}
 
 \bibitem{MATTHAEI:1961aa}
-MATTHAEI JH, NIRENBERG MW (1961) Characteristics and stabilization of
+Matthaei JH, Nirenberg MW (1961) Characteristics and stabilization of
   dnaase-sensitive protein synthesis in e. coli extracts.
 \newblock Proc Natl Acad Sci U S A 47: 1580-8.
 \bibAnnoteFile{MATTHAEI:1961aa}
 
 \bibitem{NIRENBERG:1961aa}
-NIRENBERG MW, MATTHAEI JH (1961) The dependence of cell-free protein synthesis
+Nirenberg MW, Matthaei JH (1961) The dependence of cell-free protein synthesis
   in e. coli upon naturally occurring or synthetic polyribonucleotides.
 \newblock Proc Natl Acad Sci U S A 47: 1588-602.
 \bibAnnoteFile{NIRENBERG:1961aa}
@@ -197,13 +197,13 @@ Herman JD.
 \bibAnnoteFile{SALIB}
 
 \bibitem{2002_allen_palsson}
-ALLEN TE, PALSSON BO (2003) Sequence-based analysis of metabolic demands for
+Allen TE, Palsson B{\O} (2003) Sequence-based analysis of metabolic demands for
   protein synthesis in prokaryotes.
 \newblock Journal of Theoretical Biology 220: 1 - 18.
 \bibAnnoteFile{2002_allen_palsson}
 
 \bibitem{2002_Mahadevan_BiophysJ}
-Mahadevan R, Edwards JS, III FJD (2002) Dynamic flux balance analysis of
+Mahadevan R, Edwards JS, Doyle FJ 3rd (2002) Dynamic flux balance analysis of
   diauxic growth in escherichia coli.
 \newblock Biophysical Journal 83: 1331 - 1340.
 \bibAnnoteFile{2002_Mahadevan_BiophysJ}
