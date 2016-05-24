@@ -179,25 +179,26 @@ such as \textit{E. coli} or \textit{B.~subtilis}, if a simple, tractable framewo
 
 In this study, we present an effective biochemical network modeling framework for building dynamic cell-free metabolic models.
 The key innovation of our approach is the seamless integration of simple effective rules encoding complex regulation with traditional kinetic pathway modeling.
-This integration allows the description of complex regulatory interactions, such as time-dependent allosteric regulation of enzyme activity, in the absence of specific mechanistic information.
+%This integration allows the description of complex regulatory interactions, such as time-dependent allosteric regulation of enzyme activity, in the absence of specific mechanistic information.
+This integration allows the description of complex regulatory interactions in the absence of specific mechanistic information.
 The regulatory rules are easy to understand, easy to formulate and do not rely on overarching theoretical abstractions or restrictive assumptions.
-We tested our approach by modeling the time evolution of several hypothetical cell-free metabolic networks.
-In particular, we tested whether our effective modeling approach could describe classically expected enzyme kinetic behavior, and second whether we could simultaneously estimate kinetic parameters and regulatory connectivity, in the absence of specific mechanistic knowledge, from synthetic experimental data.
-Toward these questions, we explored five hypothetical cell-free networks.
-Each network shared the same enzymatic connectivity, but had different allosteric regulatory connectivity.
-We found that simple effective rules, when integrated with traditional enzyme kinetic expressions, captured complex allosteric patterns such as ultrasensitivity or non-competitive inhibition in the absence of mechanistic information. Second, when integrated into network models, these rules captured classical regulatory patterns such as product-induced feedback inhibition.
-Lastly, we showed, at least for the network architectures considered here, that we could simultaneously estimate kinetic parameters and allosteric connectivity from synthetic data
-starting from an unbiased collection of possible allosteric structures using particle swarm optimization. However, when starting with an initial population that was heavily enriched with incorrect structures, our particle swarm approach could converge to an incorrect structure.
+%We tested our approach by modeling the time evolution of several hypothetical cell-free metabolic networks.
+%In particular, we tested whether our effective modeling approach could describe classically expected enzyme kinetic behavior, and second whether we could simultaneously estimate kinetic parameters and regulatory connectivity, in the absence of specific mechanistic knowledge, from synthetic experimental data.
+%Toward these questions, we explored five hypothetical cell-free networks.
+%Each network shared the same enzymatic connectivity, but had different allosteric regulatory connectivity.
+%We found that simple effective rules, when integrated with traditional enzyme kinetic expressions, captured complex allosteric patterns such as ultrasensitivity or non-competitive inhibition in the absence of mechanistic information. Second, when integrated into network models, these rules captured classical regulatory patterns such as product-induced feedback inhibition.
+%Lastly, we showed, at least for the network architectures considered here, that we could simultaneously estimate kinetic parameters and allosteric connectivity from synthetic data
+%starting from an unbiased collection of possible allosteric structures using particle swarm optimization. However, when starting with an initial population that was heavily enriched with incorrect structures, our particle swarm approach could converge to an incorrect structure.
 While only an initial proof-of-concept, the framework presented here could be an important first step toward genome-scale cell-free kinetic modeling of the biosynthetic capacity of industrially important organisms.
 
 
-The introduction has four paragraphs (introduction no longer than 3 pages). Follow the cell free paper from last year:
-\begin{enumerate}
-	\item{\textbf{First~paragraph}: Introduce mathematical modeling, and its role in biochemical engineering. }
-	\item{\textbf{Second~paragraph}: Contrast current static metabolic modeling approaches e.g., FBA with dynamic models.}
-	\item{\textbf{Third~paragraph}: Introduce cell free protein synthesis.}
-	\item{\textbf{Fourth~paragraph}: In this study, [Repeat the abstract with some additional detail]. Taken together, [killer statement].}
-\end{enumerate}
+%The introduction has four paragraphs (introduction no longer than 3 pages). Follow the cell free paper from last year:
+%\begin{enumerate}
+%	\item{\textbf{First~paragraph}: Introduce mathematical modeling, and its role in biochemical engineering. }
+%	\item{\textbf{Second~paragraph}: Contrast current static metabolic modeling approaches e.g., FBA with dynamic models.}
+%	\item{\textbf{Third~paragraph}: Introduce cell free protein synthesis.}
+%	\item{\textbf{Fourth~paragraph}: In this study, [Repeat the abstract with some additional detail]. Taken together, [killer statement].}
+%\end{enumerate}
 
 % Extra text from the introduction -
 %With the capacity to construct very large models using various mathematical formalisms \cite{chen2009input,tasseff2011modeling,luan2007computationally,mo2007genome,orth2011comprehensive,karr2012whole,buchel2013path2models,smallbone2010towards}, more often than not,
@@ -292,8 +293,10 @@ The initial conditions of glucose and oxygen were even less important to CAT pro
 However, the low sensitivities to glucose and oxygen only apply in the specific case of the parameter sets that were studied.
 When other species' initial conditions and associated parameters are different, glucose and oxygen can become more important to CAT production.
 
-2nd paragraph: Compare to other studies
-This is the first study to model a cell-free \textit{E. coli} system at this scope, toward genome-scale.
+In this study, we present the first dynamic, cell-free model of \textit{E. coli} metabolism and biosynthesis at this scope.
+While the early models of Shuler and coworkers achieved large-scale, dynamic descriptions of single cells \citep{1984_domach_shuler_BiotechBioeng_01}, and the stoichiometric models associated with the FBA approach are computationally efficient amd widespread \citep{2009_feist_palsson_NatRevMicrobio}, none have yet been able to construct genome-scale kinetic models of cell-free \textit{E. coli} metabolism.
+We have harnessed the advantages of cell-free systems (no cell wall, no cell growth) and integrated traditional kinetics with allosteric control to build an ensemble of kinetic models that fit a comprehensive cell-free dataset, toward genome-scale.
+This study should provide a foundation for genome-scale, dynamic modeling of cell-free \textit{E. coli} metabolism, toward industrial-scale biosynthetic production.
 
 One important direction for the future is to expand the biological description, especially with regard to amino acids.
 Specifically, adding more reactions that consume amino acids would improve the model's ability to predict those that show a decrase in the experimental data.
