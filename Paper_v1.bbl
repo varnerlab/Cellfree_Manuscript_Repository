@@ -178,6 +178,12 @@ Hodgman CE, Jewett MC (2012) Cell-free synthetic biology: thinking outside the
 \newblock Metab Eng 14: 261-9.
 \bibAnnoteFile{Hodgman:2012aa}
 
+\bibitem{2010_kotte_MolSystBiol}
+Kotte O, Zaugg JB, Heinemann M (2010) {{B}acterial adaptation through
+  distributed sensing of metabolic fluxes}.
+\newblock Mol Syst Biol 6: 355.
+\bibAnnoteFile{2010_kotte_MolSystBiol}
+
 \bibitem{2011_cabrera_JBiolChem}
 Cabrera R, Baez M, Pereira HM, Caniuguir A, Garratt RC, et~al. (2011) {{T}he
   crystal complex of phosphofructokinase-2 of {E}scherichia coli with
