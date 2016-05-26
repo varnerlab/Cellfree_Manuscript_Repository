@@ -3,6 +3,11 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: Paper_v1.aux
 The style file: plos2009.bst
 Database file #1: References_v1.bib
+You're missing a field name---line 76 of file References_v1.bib
+ : 
+ : %   Author="Ravanal, M. C.  and Goldie, H.  and Cardemil, E. ",
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
 Warning--entry type for "GLPK" isn't style-file defined
 --line 187 of file References_v1.bib
 I was expecting a `,' or a `}'---line 208 of file References_v1.bib
@@ -15,45 +20,45 @@ Warning--entry type for "SALIB" isn't style-file defined
 Warning--I didn't find a database entry for "?"
 Warning--I didn't find a database entry for "pr3010138"
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-You've used 49 entries,
+You've used 48 entries,
             2441 wiz_defined-function locations,
-            909 strings with 16099 characters,
-and the built_in function-call counts, 39092 in all, are:
-= -- 3616
-> -- 657
+            902 strings with 15840 characters,
+and the built_in function-call counts, 38318 in all, are:
+= -- 3543
+> -- 645
 < -- 0
-+ -- 329
-- -- 164
-* -- 3303
-:= -- 4700
-add.period$ -- 99
-call.type$ -- 49
-change.case$ -- 49
++ -- 323
+- -- 161
+* -- 3239
+:= -- 4607
+add.period$ -- 97
+call.type$ -- 48
+change.case$ -- 48
 chr.to.int$ -- 0
-cite$ -- 98
-duplicate$ -- 3836
-empty$ -- 4048
-format.name$ -- 209
-if$ -- 8669
+cite$ -- 96
+duplicate$ -- 3761
+empty$ -- 3968
+format.name$ -- 205
+if$ -- 8496
 int.to.chr$ -- 0
-int.to.str$ -- 49
-missing$ -- 503
-newline$ -- 261
-num.names$ -- 48
-pop$ -- 605
+int.to.str$ -- 48
+missing$ -- 493
+newline$ -- 256
+num.names$ -- 47
+pop$ -- 592
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 295
+skip$ -- 290
 stack$ -- 0
-substring$ -- 5596
-swap$ -- 1002
+substring$ -- 5484
+swap$ -- 982
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 306
-width$ -- 51
-write$ -- 549
-(There was 1 error message)
+while$ -- 300
+width$ -- 50
+write$ -- 538
+(There were 2 error messages)
