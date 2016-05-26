@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2016.5.19)  23 MAY 2016 23:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2016.5.19)  26 MAY 2016 00:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -842,92 +842,104 @@ Package natbib Warning: Citation `pr3010138' on page 11 undefined on input line
  346.
 
 
-Package natbib Warning: Citation `?' on page 11 undefined on input line 356.
+Package natbib Warning: Citation `?' on page 11 undefined on input line 375.
 
-[11] [12] [13] [14] [15
 
-] (./Paper_v1.bbl [16
+Package natbib Warning: Citation `?' on page 11 undefined on input line 376.
 
-] [17] [18]) [19]
-<./Figures/Network.pdf, id=86, 798.985pt x 1277.77374pt>
+
+Package natbib Warning: Citation `?' on page 11 undefined on input line 377.
+
+
+Package natbib Warning: Citation `?' on page 11 undefined on input line 380.
+
+
+Package natbib Warning: Citation `?' on page 11 undefined on input line 383.
+
+[11] [12] [13] [14] [15] [16
+
+] (./Paper_v1.bbl [17
+
+] [18] [19] [20]) [21]
+<./Figures/Network.pdf, id=92, 798.985pt x 1277.77374pt>
 File: ./Figures/Network.pdf Graphic file (type pdf)
 
 <use ./Figures/Network.pdf>
-Package pdftex.def Info: ./Figures/Network.pdf used on input line 435.
+Package pdftex.def Info: ./Figures/Network.pdf used on input line 462.
 (pdftex.def)             Requested size: 352.31625pt x 563.45052pt.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 436.
-LaTeX Font Info:    Try loading font information for TS1+phv on input line 436.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 463.
+LaTeX Font Info:    Try loading font information for TS1+phv on input line 463.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1phv.fd
 File: ts1phv.fd 2001/06/04 scalable font definitions for TS1/phv.
 )
-<./Figures/Carbon.pdf, id=87, 768.8725pt x 334.24875pt>
+<./Figures/Carbon.pdf, id=93, 768.8725pt x 334.24875pt>
 File: ./Figures/Carbon.pdf Graphic file (type pdf)
 
 <use ./Figures/Carbon.pdf>
-Package pdftex.def Info: ./Figures/Carbon.pdf used on input line 443.
+Package pdftex.def Info: ./Figures/Carbon.pdf used on input line 470.
 (pdftex.def)             Requested size: 469.75502pt x 204.21785pt.
 
-<./Figures/null.pdf, id=88, 597.51233pt x 845.0471pt>
+<./Figures/null.pdf, id=94, 597.51233pt x 845.0471pt>
 File: ./Figures/null.pdf Graphic file (type pdf)
  <use ./Figures/null.pdf>
-Package pdftex.def Info: ./Figures/null.pdf used on input line 444.
+Package pdftex.def Info: ./Figures/null.pdf used on input line 471.
 (pdftex.def)             Requested size: 23.48918pt x 33.21588pt.
 
-<./Figures/CarbonNoControl.pdf, id=89, 768.8725pt x 334.24875pt>
+<./Figures/CarbonNoControl.pdf, id=95, 768.8725pt x 334.24875pt>
 File: ./Figures/CarbonNoControl.pdf Graphic file (type pdf)
 
 <use ./Figures/CarbonNoControl.pdf>
-Package pdftex.def Info: ./Figures/CarbonNoControl.pdf used on input line 445.
+Package pdftex.def Info: ./Figures/CarbonNoControl.pdf used on input line 472.
 (pdftex.def)             Requested size: 469.75502pt x 204.21785pt.
 
-<./Figures/Energy.pdf, id=90, 768.8725pt x 695.59875pt>
+<./Figures/Energy.pdf, id=96, 768.8725pt x 695.59875pt>
 File: ./Figures/Energy.pdf Graphic file (type pdf)
 
 <use ./Figures/Energy.pdf>
-Package pdftex.def Info: ./Figures/Energy.pdf used on input line 452.
+Package pdftex.def Info: ./Figures/Energy.pdf used on input line 479.
 (pdftex.def)             Requested size: 469.75502pt x 424.99391pt.
 
-<./Figures/Amino.pdf, id=91, 782.925pt x 876.27374pt>
+<./Figures/Amino.pdf, id=97, 782.925pt x 876.27374pt>
 File: ./Figures/Amino.pdf Graphic file (type pdf)
 
 <use ./Figures/Amino.pdf>
-Package pdftex.def Info: ./Figures/Amino.pdf used on input line 459.
+Package pdftex.def Info: ./Figures/Amino.pdf used on input line 486.
 (pdftex.def)             Requested size: 469.75502pt x 525.7683pt.
 
-<./Figures/SensAll.png, id=92, 933.7284pt x 1297.9692pt>
+<./Figures/SensAll.png, id=98, 933.7284pt x 1297.9692pt>
 File: ./Figures/SensAll.png Graphic file (type png)
 
 <use ./Figures/SensAll.png>
-Package pdftex.def Info: ./Figures/SensAll.png used on input line 466.
+Package pdftex.def Info: ./Figures/SensAll.png used on input line 493.
 (pdftex.def)             Requested size: 441.57086pt x 613.82845pt.
 
 
-LaTeX Warning: Float too large for page by 27.39844pt on input line 469.
+LaTeX Warning: Float too large for page by 27.39844pt on input line 496.
 
-<./Figures/Sensitivity.pdf, id=94, 1011.78pt x 574.145pt>
+<./Figures/Sensitivity.pdf, id=100, 1011.78pt x 574.145pt>
 File: ./Figures/Sensitivity.pdf Graphic file (type pdf)
 
 <use ./Figures/Sensitivity.pdf>
-Package pdftex.def Info: ./Figures/Sensitivity.pdf used on input line 474.
+Package pdftex.def Info: ./Figures/Sensitivity.pdf used on input line 501.
 (pdftex.def)             Requested size: 469.75502pt x 266.57167pt.
 
-<./Figures/Metab_sensitivity.pdf, id=95, 1024.82875pt x 604.2575pt>
+<./Figures/Metab_sensitivity.pdf, id=101, 1024.82875pt x 604.2575pt>
 File: ./Figures/Metab_sensitivity.pdf Graphic file (type pdf)
 
 <use ./Figures/Metab_sensitivity.pdf>
-Package pdftex.def Info: ./Figures/Metab_sensitivity.pdf used on input line 475
+Package pdftex.def Info: ./Figures/Metab_sensitivity.pdf used on input line 502
 .
 (pdftex.def)             Requested size: 469.75502pt x 276.97527pt.
- [20 <./Figures/Network.pdf>] [21 <./Figures/Carbon.pdf> <./Figures/null.pdf> <
+ [22 <./Figures/Network.pdf>] [23 <./Figures/Carbon.pdf> <./Figures/null.pdf> <
 ./Figures/CarbonNoControl.pdf
 
 pdfTeX warning: pdflatex (file ./Figures/CarbonNoControl.pdf): PDF inclusion: m
 ultiple pdfs with page group included in a single page
->] [22 <./Figures/Energy.pdf>] [23 <./Figures/Amino.pdf>] [24 <./Figures/SensAl
-l.png>] [25 <./Figures/Sensitivity.pdf> <./Figures/Metab_sensitivity.pdf>]
+>] [24 <./Figures/Energy.pdf>] [25 <./Figures/Amino.pdf>] [26 <./Figures/SensAl
+l.png>] [27 <./Figures/Sensitivity.pdf> <./Figures/Metab_sensitivity.pdf>]
 
 Package natbib Warning: There were undefined citations.
 
@@ -937,13 +949,13 @@ Package natbib Warning: There were undefined citations.
 ### semi simple group (level 1) entered at line 51 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 5766 strings out of 495020
- 84767 string characters out of 6181324
- 141065 words of memory out of 5000000
- 8784 multiletter control sequences out of 15000+600000
+ 5826 strings out of 495020
+ 86495 string characters out of 6181324
+ 141305 words of memory out of 5000000
+ 8829 multiletter control sequences out of 15000+600000
  29423 words of font info for 71 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 42i,21n,38p,1305b,1022s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,21n,38p,1305b,1081s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texl
@@ -961,10 +973,10 @@ b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr
 ve/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/urw/helvetic/uhvro8a.pfb>
-Output written on Paper_v1.pdf (27 pages, 769852 bytes).
+Output written on Paper_v1.pdf (29 pages, 773839 bytes).
 PDF statistics:
- 514 PDF objects out of 1000 (max. 8388607)
- 177 compressed objects within 2 object streams
+ 520 PDF objects out of 1000 (max. 8388607)
+ 181 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  46 words of extra memory for PDF output out of 10000 (max. 10000000)
 

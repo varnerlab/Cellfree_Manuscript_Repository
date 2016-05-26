@@ -352,6 +352,33 @@ where $k_{j}^{max}$ denotes the maximum rate for reaction $j$, $\epsilon_{i}$ de
 $K_{js}$ denotes the saturation constant for species $s$ in reaction $j$.
 The product in Equation~\eqref{eqn:rate-bar} was carried out over the set of \textit{reactants} for reaction $j$ (denoted as $m_{j}^{-}$).
 
+
+%PEP was modeled as an inhibitor for phosphofructokinase \cite{2011_cabrera_JBiolChem}.
+%PEP was modeled as an activator for fructose-biphosphatase \cite{2000_donahue_JBacteriol,2006_hines_JBiolChem,2007_hines_JBiolChem}.
+%FDP was modeled as an activator for pyruvate kinase \cite{2010_zhu_Biochimie}.
+%PEP was modeled as an inhibitor for PEP carboxykinase \cite{2003_ravanal_JProteinChem}.
+%FDP was modeled as an activator for PEP carboxylase \cite{1972_wohl_JBiolChem}.
+%Pyruvate was modeled as an inhibitor for pyruvate dehydrogenase \cite{2007_kale_JBiolChem,2002_arjunan_Biochemistry}.
+%PEP was modeled as an inhibitor for PEP synthetase \cite{1973_chulavatnatol_JBiolChem}.
+%AKG was modeled as an inhibitor for citrate synthase \cite{1994_pereira_JBiolChem,1983_robinson_FEBSLett}.
+%PEP was modeled as an inhibitor for isocitrate dehydrogenase \cite{2007_ogawa_JBacteriol}.
+%AKG was modeled as an inhibitor for isocitrate lyase \cite{1988_mackintosh_BiochemJ}.
+%PEP was modeled as an inhibitor for isocitrate lyase \cite{2007_ogawa_JBacteriol,1988_mackintosh_BiochemJ}.
+%3PG was modeled as an inhibitor for isocitrate lyase \cite{1988_mackintosh_BiochemJ}.
+%AKG was modeled as an inhibitor for malate synthase \cite{?}.
+%PEP was modeled as an inhibitor for malate synthase \cite{?}.
+%3PG was modeled as an inhibitor for malate synthase \cite{?}.
+%Acetyl CoA was modeled as an inhibitor for malate dehydrogenase \cite{?}.
+%Pyruvate was modeled as an activator for lactate dehydrogenase \cite{2008_okino_ApplMicrobiolBiotechnol}.
+
+We added regulation to the network as informed by literature, for a total of 17 interactions.
+PEP was modeled as an inhibitor for phosphofructokinase \cite{2011_cabrera_JBiolChem}, PEP carboxykinase \cite{2003_ravanal_JProteinChem}, PEP synthetase \cite{1973_chulavatnatol_JBiolChem}, isocitrate dehydrogenase \cite{2007_ogawa_JBacteriol}, isocitrate lyase \cite{2007_ogawa_JBacteriol,1988_mackintosh_BiochemJ}, and malate synthase \cite{?}, and as an activator for fructose-biphosphatase \cite{2000_donahue_JBacteriol,2006_hines_JBiolChem,2007_hines_JBiolChem}.
+AKG was modeled as an inhibitor for citrate synthase \cite{1994_pereira_JBiolChem,1983_robinson_FEBSLett}, isocitrate lyase \cite{1988_mackintosh_BiochemJ}, and malate synthase \cite{?}.
+3PG was modeled as an inhibitor for isocitrate lyase \cite{1988_mackintosh_BiochemJ} and malate synthase \cite{?}.
+FDP was modeled as an activator for pyruvate kinase \cite{2010_zhu_Biochimie} and PEP carboxylase \cite{1972_wohl_JBiolChem}.
+Pyruvate was modeled as an inhibitor for pyruvate dehydrogenase \cite{2007_kale_JBiolChem,2002_arjunan_Biochemistry} and as an activator for lactate dehydrogenase \cite{2008_okino_ApplMicrobiolBiotechnol}.
+Acetyl CoA was modeled as an inhibitor for malate dehydrogenase \cite{?}.
+
 \subsection*{Generation of model ensemble}
 We generated an ensemble of 18,000 parameter sets via a downhill-only random walk Monte Carlo method \cite{?}.
 Beginning with a single parameter set as a starting point, we calculated its cost function, equal to the sum-absolute-error between experimental data and model predictions:

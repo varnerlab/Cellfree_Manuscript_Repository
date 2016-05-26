@@ -4,56 +4,56 @@ The top-level auxiliary file: Paper_v1.aux
 The style file: plos2009.bst
 Database file #1: References_v1.bib
 Warning--entry type for "GLPK" isn't style-file defined
---line 11 of file References_v1.bib
-I was expecting a `,' or a `}'---line 32 of file References_v1.bib
+--line 178 of file References_v1.bib
+I was expecting a `,' or a `}'---line 199 of file References_v1.bib
  : 
  : @article{2002_allen_palsson,
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
 Warning--entry type for "SALIB" isn't style-file defined
---line 66 of file References_v1.bib
+--line 233 of file References_v1.bib
 Warning--I didn't find a database entry for "?"
 Warning--I didn't find a database entry for "pr3010138"
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-You've used 33 entries,
+You've used 48 entries,
             2441 wiz_defined-function locations,
-            798 strings with 12056 characters,
-and the built_in function-call counts, 25475 in all, are:
-= -- 2350
-> -- 409
+            903 strings with 15920 characters,
+and the built_in function-call counts, 38387 in all, are:
+= -- 3552
+> -- 645
 < -- 0
-+ -- 205
-- -- 102
-* -- 2169
-:= -- 3064
-add.period$ -- 67
-call.type$ -- 33
-change.case$ -- 33
++ -- 323
+- -- 161
+* -- 3247
+:= -- 4614
+add.period$ -- 97
+call.type$ -- 48
+change.case$ -- 48
 chr.to.int$ -- 0
-cite$ -- 66
-duplicate$ -- 2537
-empty$ -- 2654
-format.name$ -- 131
-if$ -- 5635
+cite$ -- 96
+duplicate$ -- 3763
+empty$ -- 3975
+format.name$ -- 205
+if$ -- 8514
 int.to.chr$ -- 0
-int.to.str$ -- 33
-missing$ -- 329
-newline$ -- 181
-num.names$ -- 32
-pop$ -- 380
+int.to.str$ -- 48
+missing$ -- 493
+newline$ -- 256
+num.names$ -- 47
+pop$ -- 591
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 189
+skip$ -- 290
 stack$ -- 0
-substring$ -- 3617
-swap$ -- 654
+substring$ -- 5503
+swap$ -- 982
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 196
-width$ -- 35
-write$ -- 373
+while$ -- 300
+width$ -- 50
+write$ -- 538
 (There was 1 error message)
