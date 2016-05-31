@@ -178,6 +178,12 @@ Hodgman CE, Jewett MC (2012) Cell-free synthetic biology: thinking outside the
 \newblock Metab Eng 14: 261-9.
 \bibAnnoteFile{Hodgman:2012aa}
 
+\bibitem{2005_calhoun_BiotechnologyProgress}
+Calhoun KA, Swartz JR (2005) An economical method for cell-free protein
+  synthesis using glucose and nucleoside monophosphates.
+\newblock Biotechnology Progress 21: 1146--1153.
+\bibAnnoteFile{2005_calhoun_BiotechnologyProgress}
+
 \bibitem{2010_kotte_MolSystBiol}
 Kotte O, Zaugg JB, Heinemann M (2010) {{B}acterial adaptation through
   distributed sensing of metabolic fluxes}.
