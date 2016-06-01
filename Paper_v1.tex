@@ -220,14 +220,14 @@ While only an initial proof-of-concept, the framework presented here could be an
 %\end{enumerate}
 
 \subsection*{Estimation of an ensmeble of models}
-We constructed an initial model of cell-free \textit{E. coli} metabolism by removing the growth-associated processes from the genome-scale model of Palsson and coworkers \cite{?} and adding reactions for the synthesis of chloramphenicol acetyltransferase (CAT), a model protein for which we have a comprehensive training dataset from Swartz and coworkers \cite{?}. 
+We constructed an initial model of cell-free \textit{E. coli} metabolism by removing the growth-associated processes from the genome-scale model of Palsson and coworkers \cite{2000_edwards_palsson_PNAS} and adding reactions for the synthesis of chloramphenicol acetyltransferase (CAT), a model protein for which we have a comprehensive training dataset \cite{2005_calhoun_BiotechnologyProgress}. 
 This initial model captured the core metabolism (glycolysis, pentose phosphate, Enter-Doudoroff, TCA cycle), as well as the synthesis of energy species, amino acids, and CAT.
 We generated mass balance equations around metabolites and enzymes in the network, modeled as ordinary differential equations with reaction rates equal to the product of a kinetic term and a control term.
 We used multiple saturation kinetics to model metabolic fluxes and mass action kinetics to model enzyme degradation.
-We modeled the control term using a rule-based approach in which each control factor had a regulatory transfer function, modeled as a Hill function \cite{?}, and the control term was calculated as the mean of all transfer functions.
-%The model was trained against the Swartz dataset, which included measurements of glucose, CAT, organic acids (pyruvate, lactate, acetate, succinate, malate), energy species (ATP, ADP, AMP, GTP, GDP, GMP, CTP, CDP, CMP, UTP, UDP, UMP), and 18 of the 20 proteinogenic amino acids.
-The model was trained against the Swartz dataset, which included measurements of glucose, CAT, organic acids (pyruvate, lactate, acetate, succinate, malate), energy species (AXP, GXP, CXP, UXP), and 18 of the 20 proteinogenic amino acids.
-We generated an ensemble of 18,000 parameter sets by minimizing the error between the Swartz dataset and the metabolite concentrations predicted by the model.
+We modeled the control term using a rule-based approach in which each control factor had a regulatory transfer function, modeled as a Hill function, and the control term was calculated as the mean of all transfer functions.
+%The model was trained against the training dataset, which included measurements of glucose, CAT, organic acids (pyruvate, lactate, acetate, succinate, malate), energy species (ATP, ADP, AMP, GTP, GDP, GMP, CTP, CDP, CMP, UTP, UDP, UMP), and 18 of the 20 proteinogenic amino acids.
+The model was trained against the training dataset, which included measurements of glucose, CAT, organic acids (pyruvate, lactate, acetate, succinate, malate), energy species (AXP, GXP, CXP, UXP), and 18 of the 20 proteinogenic amino acids.
+We generated an ensemble of 18,000 parameter sets by minimizing the error between the training dataset and the metabolite concentrations predicted by the model.
 Out of these 18,000 sets, we defined the set with the lowest error value as our best-fit set.
 The ensemble captures the central carbon metabolism, including glucose uptake, CAT production, and the dynamics of the organic acid intermediates (Fig.~\ref{fig:BothCarbon}, top).
 Allosteric control is important to the dynamics of the organic acid intermediates, as without it several of the measurements are not captured by the ensemble or the best-fit set (Fig.~\ref{fig:BothCarbon}, bottom).
@@ -247,7 +247,7 @@ Also, GMP synthesis increases the total amount of guanosine, allowing for more G
 The rate constants with the largest negative sensitivities were GTP degradation, arginine synthesis, and UMP synthesis.
 While GTP degradation is obvious, the others can be explained in that they consume ATP as well as several amino acids, all of which are reactants for CAT synthesis.
 Of the saturation constants, the reverse is seen: the largest positive sensitivities are those associated with arginine synthesis, while the largest negative sensitivities are those associated with CAT synthesis, GTP synthesis, and GMP synthesis (Fig.~\ref{fig:LocalSensitivity}, middle).
-This is because an increase in saturation constant causes a decrease in the corresponding reaction rate \cite{?}.
+This is because an increase in saturation constant causes a decrease in the corresponding reaction rate.
 The control parameters were seen to be the least significant and the most uncertain (Fig.~\ref{fig:LocalSensitivity}, bottom).
 Only two had a small standard error across the ensemble, relative to the ensemble mean sensitivity: the gain and order for pyruvate acting as an inhibitor on the pdh reaction.
 This could be because pdh consumes pyruvate and diverts carbon away from the pathways that ultimately contribute to CAT production.
@@ -265,7 +265,7 @@ The initial conditions of glucose and oxygen were among the least important acco
 
 \subsection*{Calculation of CAT yield}
 We calculated the carbon yield of CAT production for our experimental data and our best-fit parameter set as a function of the initial and final concentrations and the carbon numbers of CAT, glucose, and amino acids.
-Arginine and glutamate were excluded due to not being present in the Swartz dataset.
+Arginine and glutamate were excluded due to not being present in the training dataset.
 The experimental data displayed a CAT yield of 0.0865, while the best-fit parameter set displayed a CAT yield of 0.0871.
 We then used sequence-specific FBA to calculate a theoretical maximum CAT yield of 0.1942.
 Thus, we showed that our experimental dataset and best-fit parameter set were each producing CAT at 45\% of the theoretical maximum.
@@ -352,35 +352,16 @@ where $k_{j}^{max}$ denotes the maximum rate for reaction $j$, $\epsilon_{i}$ de
 $K_{js}$ denotes the saturation constant for species $s$ in reaction $j$.
 The product in Equation~\eqref{eqn:rate-bar} was carried out over the set of \textit{reactants} for reaction $j$ (denoted as $m_{j}^{-}$).
 
-
-%PEP was modeled as an inhibitor for phosphofructokinase \cite{2011_cabrera_JBiolChem}.
-%PEP was modeled as an activator for fructose-biphosphatase \cite{2000_donahue_JBacteriol,2006_hines_JBiolChem,2007_hines_JBiolChem}.
-%FDP was modeled as an activator for pyruvate kinase \cite{2010_zhu_Biochimie}.
-%PEP was modeled as an inhibitor for PEP carboxykinase \cite{2003_ravanal_JProteinChem}.
-%FDP was modeled as an activator for PEP carboxylase \cite{1972_wohl_JBiolChem}.
-%Pyruvate was modeled as an inhibitor for pyruvate dehydrogenase \cite{2007_kale_JBiolChem,2002_arjunan_Biochemistry}.
-%PEP was modeled as an inhibitor for PEP synthetase \cite{1973_chulavatnatol_JBiolChem}.
-%AKG was modeled as an inhibitor for citrate synthase \cite{1994_pereira_JBiolChem,1983_robinson_FEBSLett}.
-%PEP was modeled as an inhibitor for isocitrate dehydrogenase \cite{2007_ogawa_JBacteriol}.
-%AKG was modeled as an inhibitor for isocitrate lyase \cite{1988_mackintosh_BiochemJ}.
-%PEP was modeled as an inhibitor for isocitrate lyase \cite{2007_ogawa_JBacteriol,1988_mackintosh_BiochemJ}.
-%3PG was modeled as an inhibitor for isocitrate lyase \cite{1988_mackintosh_BiochemJ}.
-%AKG was modeled as an inhibitor for malate synthase \cite{?}.
-%PEP was modeled as an inhibitor for malate synthase \cite{?}.
-%3PG was modeled as an inhibitor for malate synthase \cite{?}.
-%Acetyl CoA was modeled as an inhibitor for malate dehydrogenase \cite{?}.
-%Pyruvate was modeled as an activator for lactate dehydrogenase \cite{2008_okino_ApplMicrobiolBiotechnol}.
-
 We added regulation to the network as informed by literature, for a total of 17 interactions.
-PEP was modeled as an inhibitor for phosphofructokinase \cite{2011_cabrera_JBiolChem}, PEP carboxykinase \cite{2003_ravanal_JProteinChem}, PEP synthetase \cite{1973_chulavatnatol_JBiolChem}, isocitrate dehydrogenase \cite{2007_ogawa_JBacteriol}, isocitrate lyase \cite{2007_ogawa_JBacteriol,1988_mackintosh_BiochemJ}, and malate synthase \cite{?}, and as an activator for fructose-biphosphatase \cite{2000_donahue_JBacteriol,2006_hines_JBiolChem,2007_hines_JBiolChem}.
-AKG was modeled as an inhibitor for citrate synthase \cite{1994_pereira_JBiolChem,1983_robinson_FEBSLett}, isocitrate lyase \cite{1988_mackintosh_BiochemJ}, and malate synthase \cite{?}.
-3PG was modeled as an inhibitor for isocitrate lyase \cite{1988_mackintosh_BiochemJ} and malate synthase \cite{?}.
-FDP was modeled as an activator for pyruvate kinase \cite{2010_zhu_Biochimie} and PEP carboxylase \cite{1972_wohl_JBiolChem}.
-Pyruvate was modeled as an inhibitor for pyruvate dehydrogenase \cite{2007_kale_JBiolChem,2002_arjunan_Biochemistry} and as an activator for lactate dehydrogenase \cite{2008_okino_ApplMicrobiolBiotechnol}.
-Acetyl CoA was modeled as an inhibitor for malate dehydrogenase \cite{?}.
+PEP was modeled as an inhibitor for phosphofructokinase \cite{2010_kotte_MolSystBiol,2011_cabrera_JBiolChem}, PEP carboxykinase \cite{2010_kotte_MolSystBiol}, PEP synthetase \cite{2010_kotte_MolSystBiol,1973_chulavatnatol_JBiolChem}, isocitrate dehydrogenase \cite{2010_kotte_MolSystBiol,2007_ogawa_JBacteriol}, and isocitrate lyase/malate synthase \cite{2010_kotte_MolSystBiol,2007_ogawa_JBacteriol,1988_mackintosh_BiochemJ}, and as an activator for fructose-biphosphatase \cite{2010_kotte_MolSystBiol,2000_donahue_JBacteriol,2006_hines_JBiolChem,2007_hines_JBiolChem}.
+AKG was modeled as an inhibitor for citrate synthase \cite{2010_kotte_MolSystBiol,1994_pereira_JBiolChem,1983_robinson_FEBSLett} and isocitrate lyase/malate synthase \cite{2010_kotte_MolSystBiol,1988_mackintosh_BiochemJ}.
+3PG was modeled as an inhibitor for isocitrate lyase/malate synthase \cite{2010_kotte_MolSystBiol,1988_mackintosh_BiochemJ}.
+FDP was modeled as an activator for pyruvate kinase \cite{2010_kotte_MolSystBiol,2010_zhu_Biochimie} and PEP carboxylase \cite{2010_kotte_MolSystBiol,1972_wohl_JBiolChem}.
+Pyruvate was modeled as an inhibitor for pyruvate dehydrogenase \cite{2010_kotte_MolSystBiol,2007_kale_JBiolChem,2002_arjunan_Biochemistry} and as an activator for lactate dehydrogenase \cite{2008_okino_ApplMicrobiolBiotechnol}.
+Acetyl CoA was modeled as an inhibitor for malate dehydrogenase \cite{2010_kotte_MolSystBiol}.
 
 \subsection*{Generation of model ensemble}
-We generated an ensemble of 18,000 parameter sets via a downhill-only random walk Monte Carlo method \cite{?}.
+We generated an ensemble of 18,000 parameter sets via a downhill-only random walk Monte Carlo method.
 Beginning with a single parameter set as a starting point, we calculated its cost function, equal to the sum-absolute-error between experimental data and model predictions:
 \begin{equation}\label{eqn:cost-function}
     cost=\sum_{i=1}^{\mathcal{D}}\left(w_i\sum_{j=1}^{\mathcal{T}}abs\left(x_{ij}^{data}-x_{i}^{sim}|_{t(j)}\right)\right)

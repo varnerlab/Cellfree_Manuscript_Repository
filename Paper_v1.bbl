@@ -178,6 +178,18 @@ Hodgman CE, Jewett MC (2012) Cell-free synthetic biology: thinking outside the
 \newblock Metab Eng 14: 261-9.
 \bibAnnoteFile{Hodgman:2012aa}
 
+\bibitem{2005_calhoun_BiotechnologyProgress}
+Calhoun KA, Swartz JR (2005) An economical method for cell-free protein
+  synthesis using glucose and nucleoside monophosphates.
+\newblock Biotechnology Progress 21: 1146--1153.
+\bibAnnoteFile{2005_calhoun_BiotechnologyProgress}
+
+\bibitem{2010_kotte_MolSystBiol}
+Kotte O, Zaugg JB, Heinemann M (2010) {{B}acterial adaptation through
+  distributed sensing of metabolic fluxes}.
+\newblock Mol Syst Biol 6: 355.
+\bibAnnoteFile{2010_kotte_MolSystBiol}
+
 \bibitem{2011_cabrera_JBiolChem}
 Cabrera R, Baez M, Pereira HM, Caniuguir A, Garratt RC, et~al. (2011) {{T}he
   crystal complex of phosphofructokinase-2 of {E}scherichia coli with
@@ -185,13 +197,6 @@ Cabrera R, Baez M, Pereira HM, Caniuguir A, Garratt RC, et~al. (2011) {{T}he
   {A}{T}{P} inhibition}.
 \newblock J Biol Chem 286: 5774--5783.
 \bibAnnoteFile{2011_cabrera_JBiolChem}
-
-\bibitem{2003_ravanal_JProteinChem}
-Ravanal MC, Goldie H, Cardemil E (2003) {{T}hermal stability of
-  phosphoenolpyruvate carboxykinases from {E}scherichia coli, {T}rypanosoma
-  brucei, and {S}accharomyces cerevisiae}.
-\newblock J Protein Chem 22: 311--315.
-\bibAnnoteFile{2003_ravanal_JProteinChem}
 
 \bibitem{1973_chulavatnatol_JBiolChem}
 Chulavatnatol M, Atkinson DE (1973) {{P}hosphoenolpyruvate synthetase from
