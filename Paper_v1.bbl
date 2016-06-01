@@ -13,6 +13,37 @@
   \textsc{Annotation:}\ #2\end{quotation}}
 \providecommand{\eprint}[2][]{\url{#2}}
 
+\bibitem{Jewett:2008aa}
+Jewett MC, Calhoun KA, Voloshin A, Wuu JJ, Swartz JR (2008) An integrated
+  cell-free metabolic platform for protein production and synthetic biology.
+\newblock Mol Syst Biol 4: 220.
+\bibAnnoteFile{Jewett:2008aa}
+
+\bibitem{MATTHAEI:1961aa}
+Matthaei JH, Nirenberg MW (1961) Characteristics and stabilization of
+  dnaase-sensitive protein synthesis in e. coli extracts.
+\newblock Proc Natl Acad Sci U S A 47: 1580-8.
+\bibAnnoteFile{MATTHAEI:1961aa}
+
+\bibitem{NIRENBERG:1961aa}
+Nirenberg MW, Matthaei JH (1961) The dependence of cell-free protein synthesis
+  in e. coli upon naturally occurring or synthetic polyribonucleotides.
+\newblock Proc Natl Acad Sci U S A 47: 1588-602.
+\bibAnnoteFile{NIRENBERG:1961aa}
+
+\bibitem{Lu:2014aa}
+Lu Y, Welsh JP, Swartz JR (2014) Production and stabilization of the trimeric
+  influenza hemagglutinin stem domain for potentially broadly protective
+  influenza vaccines.
+\newblock Proc Natl Acad Sci U S A 111: 125-30.
+\bibAnnoteFile{Lu:2014aa}
+
+\bibitem{Hodgman:2012aa}
+Hodgman CE, Jewett MC (2012) Cell-free synthetic biology: thinking outside the
+  cell.
+\newblock Metab Eng 14: 261-9.
+\bibAnnoteFile{Hodgman:2012aa}
+
 \bibitem{1976_fredrickson_BiotechBioeng}
 Fredrickson AG (1976) Formulation of structured growth models.
 \newblock Biotechnol Bioeng 18: 1481-6.
@@ -146,37 +177,6 @@ Zomorrodi AR, Suthers PF, Ranganathan S, Maranas CD (2012) Mathematical
   optimization applications in metabolic networks.
 \newblock Metab Eng 14: 672-86.
 \bibAnnoteFile{2012_zomorrodi_maranas_MetaEng}
-
-\bibitem{Jewett:2008aa}
-Jewett MC, Calhoun KA, Voloshin A, Wuu JJ, Swartz JR (2008) An integrated
-  cell-free metabolic platform for protein production and synthetic biology.
-\newblock Mol Syst Biol 4: 220.
-\bibAnnoteFile{Jewett:2008aa}
-
-\bibitem{MATTHAEI:1961aa}
-Matthaei JH, Nirenberg MW (1961) Characteristics and stabilization of
-  dnaase-sensitive protein synthesis in e. coli extracts.
-\newblock Proc Natl Acad Sci U S A 47: 1580-8.
-\bibAnnoteFile{MATTHAEI:1961aa}
-
-\bibitem{NIRENBERG:1961aa}
-Nirenberg MW, Matthaei JH (1961) The dependence of cell-free protein synthesis
-  in e. coli upon naturally occurring or synthetic polyribonucleotides.
-\newblock Proc Natl Acad Sci U S A 47: 1588-602.
-\bibAnnoteFile{NIRENBERG:1961aa}
-
-\bibitem{Lu:2014aa}
-Lu Y, Welsh JP, Swartz JR (2014) Production and stabilization of the trimeric
-  influenza hemagglutinin stem domain for potentially broadly protective
-  influenza vaccines.
-\newblock Proc Natl Acad Sci U S A 111: 125-30.
-\bibAnnoteFile{Lu:2014aa}
-
-\bibitem{Hodgman:2012aa}
-Hodgman CE, Jewett MC (2012) Cell-free synthetic biology: thinking outside the
-  cell.
-\newblock Metab Eng 14: 261-9.
-\bibAnnoteFile{Hodgman:2012aa}
 
 \bibitem{2005_calhoun_BiotechnologyProgress}
 Calhoun KA, Swartz JR (2005) An economical method for cell-free protein

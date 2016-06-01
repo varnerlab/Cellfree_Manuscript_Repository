@@ -104,8 +104,8 @@
 {\par \centering {Cornell University, Ithaca NY 14853}}
 \vspace{0.1in}
 {\par \centering {$^{1}$School of Chemical Engineering}}
-{\par \centering {Stanford University, Stanford, California 94305}}
-{\par \centering \textbf{Running Title:}~Dynamic model of cell free protein synthesis}
+{\par \centering {Stanford University, Stanford, CA 94305}}
+{\par \centering \textbf{Running Title:}~Dynamic modeling of cell free protein synthesis}
 \vspace{0.1in}
 {\par \centering \textbf{To be submitted:}~\emph{Scientific~Reports}}
 \vspace{0.5in}
@@ -123,15 +123,16 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Abstract}
-
-In this study, we present a framework for dynamic, cell-free metabolic modeling, integrating a simple logical description of regulation with traditional enzyme kinetics.
-Using this framework, we have constructed an ensemble of models for production of chloramphenicol acetyltransferase in a cell-free \textit{E. coli} system.
-Our ensemble fits measurements of glucose, chloramphenicol acetyltransferase, organic acids, and energy species, but fails to capture much of the amino acid dynamics in the dataset.
-Our model predicts a carbon yield of 0.0871 for chloramphenicol acetyltransferase synthesis, equal to 45\% of the theoretical maximum calculated with constraint-based modeling.
-It also predicts most carbon flux going through glycolysis and the TCA cycle, while the constraint-based approach predicts most carbon flux going through the Entner-Doudoroff pathway and only part of glycolysis.
-Our sensitivity analysis indicates that chloramphenicol acetyltransferase synthesis is most sensitive to the parameters associated with the synthesis of GTP, GMP, and amino acids, and relatively insensitive to glucose and oxygen levels and allosteric control.
-However, allosteric control is important for the model to accurately predict the dynamics of some organic acids.
-This modeling framework represents a significant achievement toward genome-scale, dynamic modeling of \textit{E. coli} cell-free protein synthesis.
+Cell-free systems offer many advantages for the study, manipulation and modeling of bacterial metabolism.
+In this study, we developed an ensemble of dynamic \textit{E. coli} cell free protein synthesis models.
+We trained the model using dynamic measurements of glucose, organic acids, energy species, amino acids and the protein product, chloramphenicol acetyltransferase (CAT).
+We generated an ensemble of N = 18,000 parameter sets that described the experimental data, with the exception of some of the amino acid dynamics.
+Analysis of the model ensemble predicted a carbon yield of 0.0871 for chloramphenicol acetyltransferase synthesis,
+equal to 45\% of the maximum theoretical yield calculated by sequence specific constraint based modeling.
+The ensemble of models captured the dynamic distribution of metabolic flux.
+The ensemble of dynamic models predicted that most of the carbon flux going through glycolysis and the TCA cycle,
+while the constraint based approach predicted most of the carbon flux went through the Entner-Doudoroff pathway and only part of glycolysis.
+Local and global sensitivity analysis indicated that chloramphenicol acetyltransferase production was most sensitive to parameters associated with the synthesis of GTP, GMP, and amino acids, and relatively insensitive to allosteric control mechanisms, and glucose and oxygen levels.
 
 \vspace{0.1in}
 {\noindent \textbf{Keywords:}~Biochemical engineering, systems biology, cell free protein synthesis}
@@ -140,11 +141,27 @@ This modeling framework represents a significant achievement toward genome-scale
 
 \setcounter{page}{1}
 
+%In this study, we present a framework for dynamic, cell-free metabolic modeling, integrating a simple logical description of regulation with traditional enzyme kinetics.
+%Using this framework, we have constructed an ensemble of models for production of chloramphenicol acetyltransferase in a cell-free \textit{E. coli} system.
+%Our ensemble fits measurements of glucose, chloramphenicol acetyltransferase, organic acids, and energy species, but fails to capture much of the amino acid dynamics in the dataset.
+
 % Uncomment in production -
-%\linenumbers
+\linenumbers
 
 
 \section*{Introduction}
+
+Cell-free systems offer many advantages for the study, manipulation and modeling of metabolism compared to \textit{in vivo} processes.
+Central amongst these advantages is direct access to metabolites and the microbial biosynthetic machinery without the interference of a cell wall.
+This allows us to control as well as interrogate the chemical environment while the biosynthetic machinery is operating, potentially at a fine time resolution.
+Second, cell-free systems also allow us to study biological processes without the complications associated with cell growth.
+Cell-free protein synthesis (CFPS) systems are arguably the most prominent examples of cell-free systems used today \citep{Jewett:2008aa}.
+However, CFPS is not new; CFPS in crude \textit{E. coli} extracts has been used since the 1960s to explore fundamentally important biological mechanisms \citep{MATTHAEI:1961aa,NIRENBERG:1961aa}.
+Today, cell-free systems are used in a variety of applications ranging from therapeutic protein production \citep{Lu:2014aa} to synthetic biology \citep{Hodgman:2012aa}.
+Interestingly, many of the challenges confronting genome-scale kinetic modeling can potentially be overcome in a cell-free system.
+For example, there is no complex transcriptional regulation to consider, transient metabolic measurements are easier to obtain, and we no longer have to consider cell growth.
+Thus, cell-free operation holds several significant advantages for model development, identification and validation. Theoretically, genome-scale cell-free kinetic models may be possible for industrially important organisms,
+such as \textit{E. coli} or \textit{B.~subtilis}, if a simple, tractable framework for integrating allosteric regulation with enzyme kinetics can be formulated.
 
 Mathematical modeling has long contributed to our understanding of metabolism. Decades before the genomics revolution, mechanistically, structured metabolic models arose from the desire to predict microbial phenotypes resulting from changes in intracellular or extracellular states \citep{1976_fredrickson_BiotechBioeng}.
 The single cell \textit{E. coli} models of Shuler and coworkers pioneered the construction of large-scale, dynamic metabolic models that incorporated multiple, regulated catabolic and anabolic pathways constrained by experimentally determined kinetic parameters \citep{1984_domach_shuler_BiotechBioeng_01}.
@@ -162,18 +179,6 @@ Interestingly, similar to early cybernetic models, the most common metabolic obj
 Recent advances in constraint-based modeling have overcome the early shortcomings of the platform, including capturing metabolic regulation and control \citep{2013_hyduke_lewis_palsson_MolBioSys}.
 Thus, modern constraint-based approaches have proven extremely useful in the discovery of metabolic engineering strategies and represent the state of the art in metabolic modeling \citep{2013_mccloskey_palsson_feist_MolSysBio, 2012_zomorrodi_maranas_MetaEng}.
 However, genome-scale kinetic models of industrial important organisms such as \textit{E. coli} have yet to be constructed.
-
-Cell-free systems offer many advantages for the study, manipulation and modeling of metabolism compared to \textit{in vivo} processes.
-Central amongst these advantages is direct access to metabolites and the microbial biosynthetic machinery without the interference of a cell wall.
-This allows us to control as well as interrogate the chemical environment while the biosynthetic machinery is operating, potentially at a fine time resolution.
-Second, cell-free systems also allow us to study biological processes without the complications associated with cell growth.
-Cell-free protein synthesis (CFPS) systems are arguably the most prominent examples of cell-free systems used today \citep{Jewett:2008aa}.
-However, CFPS is not new; CFPS in crude \textit{E. coli} extracts has been used since the 1960s to explore fundamentally important biological mechanisms \citep{MATTHAEI:1961aa,NIRENBERG:1961aa}.
-Today, cell-free systems are used in a variety of applications ranging from therapeutic protein production \citep{Lu:2014aa} to synthetic biology \citep{Hodgman:2012aa}.
-Interestingly, many of the challenges confronting genome-scale kinetic modeling can potentially be overcome in a cell-free system.
-For example, there is no complex transcriptional regulation to consider, transient metabolic measurements are easier to obtain, and we no longer have to consider cell growth.
-Thus, cell-free operation holds several significant advantages for model development, identification and validation. Theoretically, genome-scale cell-free kinetic models may be possible for industrially important organisms,
-such as \textit{E. coli} or \textit{B.~subtilis}, if a simple, tractable framework for integrating allosteric regulation with enzyme kinetics can be formulated.
 
 In this study, we present an effective biochemical network modeling framework for building dynamic cell-free metabolic models.
 The key innovation of our approach is the seamless integration of simple effective rules encoding complex regulation with traditional kinetic pathway modeling.
@@ -196,27 +201,36 @@ While only an initial proof-of-concept, the framework presented here could be an
 %	\item{\textbf{Third~section}:Analysis of the flux distribution (over the ensemble?), sensitivity results (first parameters, then AA)}
 %\end{enumerate}
 
-\subsection*{Estimation of an ensmeble of models}
-We constructed an initial model of cell-free \textit{E. coli} metabolism by removing the growth-associated processes from the genome-scale model of Palsson and coworkers \cite{2000_edwards_palsson_PNAS} and adding reactions for the synthesis of chloramphenicol acetyltransferase (CAT), a model protein for which we have a comprehensive training dataset \cite{2005_calhoun_BiotechnologyProgress}. 
-This initial model captured the core metabolism (glycolysis, pentose phosphate, Enter-Doudoroff, TCA cycle), as well as the synthesis of energy species, amino acids, and CAT  (Fig.~\ref{fig:Network}).
-We generated mass balance equations around metabolites and enzymes in the network, modeled as ordinary differential equations with reaction rates equal to the product of a kinetic term and a control term.
-We used multiple saturation kinetics to model metabolic fluxes and mass action kinetics to model enzyme degradation.
-We modeled the control term using a rule-based approach in which each control factor had a regulatory transfer function, modeled as a Hill function, and the control term was calculated as the mean of all transfer functions.
+%We generated mass balance equations around metabolites and enzymes in the network, modeled as ordinary differential equations with reaction rates equal to the product of a kinetic term and a control term. We used multiple saturation kinetics to model metabolic fluxes and mass action kinetics to model enzyme degradation.
+%We modeled the control term using a rule-based approach in which each control factor had a regulatory transfer function, modeled as a Hill function, and the control term was calculated as the mean of all transfer functions.
 %The model was trained against the training dataset, which included measurements of glucose, CAT, organic acids (pyruvate, lactate, acetate, succinate, malate), energy species (ATP, ADP, AMP, GTP, GDP, GMP, CTP, CDP, CMP, UTP, UDP, UMP), and 18 of the 20 proteinogenic amino acids.
-The model was trained against the training dataset, which included measurements of glucose, CAT, organic acids (pyruvate, lactate, acetate, succinate, malate), energy species (AXP, GXP, CXP, UXP), and 18 of the 20 proteinogenic amino acids.
-We generated an ensemble of 18,000 parameter sets by minimizing the error between the training dataset and the metabolite concentrations predicted by the model.
-Out of these 18,000 sets, we defined the set with the lowest error value as our best-fit set.
-The ensemble predicts most carbon flux going through glycolysis and the TCA cycle, and to a lesser extent the Entner-Doudoroff pathway  (Fig.~\ref{fig:Network}, bottom two rows of gray boxes).
-Pentose phosphate is much less utilized.
-We compared this flux profile with the steady-state fluxes calculated by sequence-specific FBA (Fig.~\ref{fig:Network}, top row of gray boxes).
-In the steady-state case, carbon flux avoids the upper reactions of glycolysis in favor of the Entner-Doudoroff pathway.
-It also not does participate in the TCA cycle, nor the reactions of pentose phosphate that are not required for Entner-Doudoroff.
+%The ensemble predicts most carbon flux going through glycolysis and the TCA cycle, and to a lesser extent the Entner-Doudoroff pathway  (Fig.~\ref{fig:Network}, bottom two rows of gray boxes). Pentose phosphate is much less utilized.
+%We compared this flux profile with the steady-state fluxes calculated by sequence-specific FBA (Fig.~\ref{fig:Network}, top row of gray boxes).
+%In the steady-state case, carbon flux avoids the upper reactions of glycolysis in favor of the Entner-Doudoroff pathway.
+%It also not does participate in the TCA cycle, nor the reactions of pentose phosphate that are not required for Entner-Doudoroff.
 
-The ensemble captures the central carbon metabolism, including glucose uptake, CAT production, and the dynamics of the organic acid intermediates (Fig.~\ref{fig:BothCarbon}, top).
-Allosteric control is important to the dynamics of the organic acid intermediates, as without it several of the measurements are not captured by the ensemble or the best-fit set (Fig.~\ref{fig:BothCarbon}, bottom).
-The ensemble also captures the energy species dynamics, particularly the overall energy total (Fig.~\ref{fig:BothCarbon}, top) and the totals by base (Fig.~\ref{fig:Energy}).
+\subsection*{Estimation of an ensemble of cell free protein synthesis models.}
+We used the hybrid cell free modeling framework of Wayman et al. to simulate the production of a model protein [REFHERE].
+The cell-free \textit{E. coli} metabolic model was constructed by removing the growth-associated processes from the model of Palsson and coworkers \cite{2000_edwards_palsson_PNAS}, and by adding reactions for the synthesis of chloramphenicol acetyltransferase (CAT), a model protein for which we have a comprehensive training dataset \cite{2005_calhoun_BiotechnologyProgress}.
+Thus, the model described core central carbon metabolism (glycolysis, pentose phosphate, Enter-Doudoroff, TCA cycle),
+as well as the synthesis of energy species, amino acids biosynthesis and degradation, and biosynthesis of the CAT protein.
+An ensemble of model parameters was estimated from dynamic measurements of glucose, CAT, organic acids (pyruvate, lactate, acetate, succinate, malate), energy species (A(x)P, G(x)P, C(x)P, U(x)P), and 18 of the 20 proteinogenic amino acids. We generated an ensemble of N = 18,000 parameter sets by minimizing the error between the training dataset and the metabolite concentrations predicted by the model. We defined the set with the lowest error value as the best-fit parameter set. [STATISTICS ON PARAMETERS].
+
+The ensemble of models captured the time evolution of cell free CAT biosynthesis (Fig.~\ref{fig:BothCarbon} - \ref{fig:Amino}).
+Glucose was exhausted with 3 hr [FILL ME IN].
+The ensemble also captured the energy species dynamics, particularly the overall energy total (Fig.~\ref{fig:BothCarbon}, top) and the totals by base .
 The ensemble and the best-fit set also predict some of the amino acid measurements, while failing to predict others (Fig.~\ref{fig:Amino}).
+the central carbon metabolism, including glucose uptake, CAT production, and the dynamics of the organic acid intermediates .
+Allosteric control is important to the dynamics of the organic acid intermediates, as without it several of the measurements are not captured by the ensemble or the best-fit set (Fig.~\ref{fig:BothCarbon}, bottom).
 This is likely due to a structural deficiency in the model; in some cases, the consumption of an amino acid through CAT synthesis is not enough to explain the decrease shown in the data, and there are no other reactions that consume it. Thus, a more comprehensive biological description is needed to fully explain amino acid dynamics.
+
+\subsection*{Maximum theoretical CAT yield showed CFPS can be optimized.}
+We calculated the carbon yield of CAT production for our experimental data and our best-fit parameter set as a function of the initial and final concentrations and the carbon numbers of CAT, glucose, and amino acids.
+Arginine and glutamate were excluded due to not being present in the training dataset.
+The experimental data displayed a CAT yield of 0.0865, while the best-fit parameter set displayed a CAT yield of 0.0871.
+We then used sequence-specific FBA to calculate a theoretical maximum CAT yield of 0.1942.
+Thus, we showed that our experimental dataset and best-fit parameter set were each producing CAT at 45\% of the theoretical maximum.
+This allowed us to quantify the amount of carbon being diverted to byproducts, and suggests that there is potential for a doubling of CAT production by reducing this diversion of carbon.
 
 \subsection*{Sensitivity analysis}
 We conducted a local sensitivity analysis to determine which of the kinetic and control parameters affected model performance.
@@ -246,14 +260,6 @@ This is all explained by GTP and amino acids being reactants for CAT synthesis.
 While some of the amino acids and amino acid synthases were among the highest in sensitivity, theirs were also very uncertain relative to the CAT macromolecular synthesis machinery and GTP synthase.
 The initial conditions of glucose and oxygen were among the least important according to the global sensitivity analysis, suggesting that the model predicts that CAT production can be sustained by consuming initial stores or can be powered by other means.
 
-\subsection*{Calculation of CAT yield}
-We calculated the carbon yield of CAT production for our experimental data and our best-fit parameter set as a function of the initial and final concentrations and the carbon numbers of CAT, glucose, and amino acids.
-Arginine and glutamate were excluded due to not being present in the training dataset.
-The experimental data displayed a CAT yield of 0.0865, while the best-fit parameter set displayed a CAT yield of 0.0871.
-We then used sequence-specific FBA to calculate a theoretical maximum CAT yield of 0.1942.
-Thus, we showed that our experimental dataset and best-fit parameter set were each producing CAT at 45\% of the theoretical maximum.
-This allowed us to quantify the amount of carbon being diverted to byproducts, and suggests that there is potential for a doubling of CAT production by reducing this diversion of carbon.
-
 \clearpage
 
 \section*{Discussion}
@@ -266,20 +272,32 @@ This allowed us to quantify the amount of carbon being diverted to byproducts, a
 %	In this case, we will have a scaling issue if we extend to genome scale. We should extend to dynamic cases, and we need to experimentally validate the findings.}
 %\end{enumerate}
 
-We constructed a model of cell-free \textit{E. coli} metabolism with CAT production based on saturation kinetics and allosteric control.
-We trained the model against measurements of glucose, CAT, organic acid intermediates, energy species, and amino acids.
-We generated an ensemble of 18,000 parameter sets that predict the experimental dataset, with the exception of some amino acids.
-We calculated the carbon yield of CAT production at 45\% of the theoretical maximum obtained by flux balance analysis; this was in line with the CAT yield shown by the dataset.
-We conducted sensitivity analyses and determined that CAT production was most sensitive to the rate constants, saturation constants, and enzyme initial conditions associated with CAT synthesis, GTP synthesis, GMP synthesis, and amino acid synthesis, and to a lesser extent some amino acid initial conditions.
-CAT production was much less sensitive to control parameters, suggesting that while allosteric control affects some organic acid intermediates, it does not limit CAT production.
-The initial conditions of glucose and oxygen were even less important to CAT production, suggesting that it can be driven by other means.
-However, the low sensitivities to glucose and oxygen only apply in the specific case of the parameter sets that were studied.
-When other species' initial conditions and associated parameters are different, glucose and oxygen can become more important to CAT production.
+In this study, we developed an ensemble of dynamic \textit{E. coli} cell free protein synthesis models.
+We trained the model using dynamic measurements of glucose, organic acids, energy species, amino acids and the protein product, chloramphenicol acetyltransferase (CAT).
+We generated an ensemble of N = 18,000 parameter sets which described the experimental measurements, with the exception of some of the amino acid dynamics.
+To gauge the performance of the cell free reaction mixture, we compared the observed carbon yield, with the maximum theoretical carbon yield calculated using sequence specific flux
+balance analysis. The observed CAT carbon yield was 45\% of the maximum theoretical yield.
+The predicted metabolic flux distributions between the dynamic model and constraints based calculation were significantly different.
+The ensemble of dynamic models predicted carbon flux going through glycolysis and the TCA cycle, while the constraint based approach predicted most of the carbon flux went through the Entner-Doudoroff pathway.
+We then conducted sensitivity analysis to determine which model parameters and experimentally controllable factors influenced reaction performance.
+CAT production was most sensitive to model parameters and initial conditions directly associated with CAT synthesis.
+CAT production was also sensitive to GTP/GMP synthesis, and amino acid synthesis, and to a lesser extent some amino acid initial conditions.
+On the other hand, CAT production was much less sensitive to allosteric control parameters,
+suggesting that while allosteric control affected some organic acid intermediates, it was not critical to CAT production.
+The initial conditions of glucose and oxygen were also less important to CAT production.
+Taken together, we presented the first dynamic model of \textit{E. coli} cell free protein synthesis.
+We integrated traditional kinetics with logical rule-based allosteric control to construct an ensemble of kinetic models that described
+a comprehensive cell-free dataset. This study should provide a foundation for genome-scale, dynamic modeling of cell-free \textit{E. coli} metabolism, toward industrial-scale biosynthetic production.
 
-In this study, we present the first dynamic, cell-free model of \textit{E. coli} metabolism and biosynthesis at this scope.
-While the early models of Shuler and coworkers achieved large-scale, dynamic descriptions of single cells \citep{1984_domach_shuler_BiotechBioeng_01}, and the stoichiometric models associated with the FBA approach are computationally efficient amd widespread \citep{2009_feist_palsson_NatRevMicrobio}, none have yet been able to construct genome-scale kinetic models of cell-free \textit{E. coli} metabolism.
-We have harnessed the advantages of cell-free systems (no cell wall, no cell growth) and integrated traditional kinetics with allosteric control to build an ensemble of kinetic models that fit a comprehensive cell-free dataset, toward genome-scale.
-This study should provide a foundation for genome-scale, dynamic modeling of cell-free \textit{E. coli} metabolism, toward industrial-scale biosynthetic production.
+%The ensemble of models captured the dynamic distribution of metabolic flux.
+%The ensemble of dynamic models predicted that most of the carbon flux going through glycolysis and the TCA cycle,
+%while the constraint based approach predicted most of the carbon flux went through the Entner-Doudoroff pathway and only part of glycolysis.
+
+% We present the first dynamic, cell-free model of \textit{E. coli} metabolism and biosynthesis at this scope.
+% While the early models of Shuler and coworkers achieved large-scale, dynamic descriptions of single cells \citep{1984_domach_shuler_BiotechBioeng_01}, and the stoichiometric models associated with the FBA approach are computationally efficient amd widespread \citep{2009_feist_palsson_NatRevMicrobio}, none have yet been able to construct genome-scale kinetic models of cell-free \textit{E. coli} metabolism.
+% This study should provide a foundation for genome-scale, dynamic modeling of cell-free \textit{E. coli} metabolism, toward industrial-scale biosynthetic production.
+%However, the low sensitivities to glucose and oxygen only apply in the specific case of the parameter sets that were studied.
+%When other species' initial conditions and associated parameters are different, glucose and oxygen could become more important to CAT production.
 
 One important direction for the future is to expand the biological description, especially with regard to amino acids.
 Specifically, adding more reactions that consume amino acids would improve the model's ability to predict those that show a decrase in the experimental data.
@@ -290,7 +308,7 @@ All other parameters were varied in a manner so as to best fit the dataset.
 However, the resulting ensemble may not represent every biological or practical possibility.
 In a different region of parameter space, the system could behave differently, including the flux distribution through the network, the accuracy and spread of ensemble fits, the relative sensitivities, and the yield as a percentage of the theoretical maximum.
 Testing the model under a variety of conditions could strengthen or challenge the findings of this study.
-Further experimentatiion could also be used to gain a deeper understanding of model performance under a variety of conditions.
+Further experimentation could also be used to gain a deeper understanding of model performance under a variety of conditions.
 Specifically, CAT production performed in the absence of amino acids could inform the system's ability to manufacture them, while experimentation in the absence of glucose or oxygen could shed light on how important they are to protein synthesis, and under which conditions.
 Finally, the approach should be extended to other protein products.
 CAT is only a test protein used for model identification; the modeling framework, and to some extent the parameter values, should be protein agnostic.
@@ -396,11 +414,11 @@ The sequence specific FBA \cite{2002_allen_palsson} problem was formulated as:
 \end{split}
 \end{equation}
 where $\mathbf{S}$ denotes the stoichiometric matrix, $\mathbf{v}$ denotes the unknown flux vector, $\boldsymbol{c}$ denotes the objective selection vector, and $\alpha_i$ and $\beta_i$ denote the lower and upper bounds on flux $v_{i}$, respectively.
-The stoichiometric matrix was expanded to include the transcription and translation reactions for producing CAT. 
+The stoichiometric matrix was expanded to include the transcription and translation reactions for producing CAT.
 The objective $v_{obj}$ was to maximize the specific rate of CAT formation.
 The specific glucose uptake rate was constrained to allow a maximum flux of 10 mM/hr \cite{2002_Mahadevan_BiophysJ}; the amino acids and oxygen uptake rates were also bound to allow a maximum flux of 10 mM/hr, but did not reach this maximum flux.
 Glucose, oxygen, and amino acids were modeled as being imported into the system, whereas CAT synthesis was modeled through protein export.
-The rest of the network followed a psuedo steady-state asusmption where all other metabolites were not allowed to accumulate; thus, the network could be solved by linear programming. 
+The rest of the network followed a psuedo steady-state asusmption where all other metabolites were not allowed to accumulate; thus, the network could be solved by linear programming.
 The flux balance analysis problem was solved using the GNU Linear Programming Kit (v4.52) \cite{GLPK}.
 The solution flux vector was used to calculate the theoretical carbon yield of CAT, reformulated in terms of flux:
 \begin{equation}\label{eqn:yield}
@@ -412,8 +430,10 @@ where $v_{CAT}$ denotes the CAT export flux and $v_{i}$ denotes the import flux 
 
 %Need to talk more about biochemical benefits and importance for of biochemical problems
 
-\section*{Acknowledgements}
-This study was supported by an award from [FILL ME IN].
+\section*{Funding}
+This study was supported by a National Science Foundation Graduate Research Fellowship (DGE-1333468) to N.H and by an award from
+the US Army and Systems Biology of Trauma Induced Coagulopathy (W911NF-10-1-0376) to J.V for the support of M.V.
+
 \clearpage
 
 \bibliography{References_v1}
