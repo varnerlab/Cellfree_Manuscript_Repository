@@ -123,20 +123,18 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Abstract}
-Fill me in.
 
-
-%We further tested the predictive power of the coagulation model parameters against data not used in training, and found good agreement between simulations and experimental measurements. Lastly, we tested the performance of DOPS on commonly used test functions for global optimization and on published biochemical parameter estimation benchmark problems. For the wide range of problems that we considered, DOPS outperformed other meta-heuristic approaches despite a limited number of function evaluations.
+In this study, we present a framework for dynamic, cell-free metabolic modeling, integrating a simple logical description of regulation with traditional enzyme kinetics.
+Using this framework, we have constructed an ensemble of models for production of chloramphenicol acetyltransferase in a cell-free \textit{E. coli} system.
+Our ensemble fits measurements of glucose, chloramphenicol acetyltransferase, organic acids, and energy species, but fails to capture much of the amino acid dynamics in the dataset.
+Our model predicts a carbon yield of 0.0871 for chloramphenicol acetyltransferase synthesis, equal to 45\% of the theoretical maximum calculated with constraint-based modeling.
+It also predicts most carbon flux going through glycolysis and the TCA cycle, while the constraint-based approach predicts most carbon flux going through the Entner-Doudoroff pathway and only part of glycolysis.
+Our sensitivity analysis indicates that chloramphenicol acetyltransferase synthesis is most sensitive to the parameters associated with the synthesis of GTP, GMP, and amino acids, and relatively insensitive to glucose and oxygen levels and allosteric control.
+However, allosteric control is important for the model to accurately predict the dynamics of some organic acids.
+This modeling framework represents a significant achievement toward genome-scale, dynamic modeling of \textit{E. coli} cell-free protein synthesis.
 
 \vspace{0.1in}
 {\noindent \textbf{Keywords:}~Biochemical engineering, systems biology, cell free protein synthesis}
-
-% Extra abstract
-% Mathematical modeling of biological systems with multiple feed back loops is one such area where parameter estimation is a difficult non-linear optimization problem. This difficulty is further compounded when dealing with parameter vectors of high dimensions.
-
-%In this study, we present the dynamically dimensioned particle
-%a novel meta-heuristic approach that combines a variant of particle swarm optimization (PSO) along with dynamically dimensioned search (DDS) to obtain near optimal solutions of high dimensional biochemical networks within a relatively few function evaluations.
-%We use a particle swarm optimization technique that uses multi-swarms to generate candidate vectors which are then greedily updated using DDS by dynamically varying the perturbed parameter dimensions. We tested this algorithm (25 trials with 4000 function evaluations in each trial) on a biochemical network of coagulation (148 parameters and 92 species) and compared it's performance against other meta-heuristics like Differential Evolution (DE), Particle Swarm Optimization (PSO), Simulated Annealing (SA) and also against DDS alone. The new algorithm outperforms all the other meta-heuristics on the coagulation model. The parameter vectors obtained using this approach fit the experimental data well and also make accurate enough predictions on unseen experimental data. We also performed this comparison on commonly used test functions (Ackley and Rosenbrock) for global optimization and found the same behavior. Further we used two recently published benchmark problems, a genome wide kinetic model with 1759 parameters and a metabolic model of Chinese Hamster Ovary cells with 117 parameters to evaluate the performance of our approach. We  surprisingly performed well on these benchmarks and obtained the nominal parameter vector with just 4000 function evaluations in both cases.
 
 \pagebreak
 
@@ -179,32 +177,11 @@ such as \textit{E. coli} or \textit{B.~subtilis}, if a simple, tractable framewo
 
 In this study, we present an effective biochemical network modeling framework for building dynamic cell-free metabolic models.
 The key innovation of our approach is the seamless integration of simple effective rules encoding complex regulation with traditional kinetic pathway modeling.
-%This integration allows the description of complex regulatory interactions, such as time-dependent allosteric regulation of enzyme activity, in the absence of specific mechanistic information.
 This integration allows the description of complex regulatory interactions in the absence of specific mechanistic information.
 The regulatory rules are easy to understand, easy to formulate and do not rely on overarching theoretical abstractions or restrictive assumptions.
-%We tested our approach by modeling the time evolution of several hypothetical cell-free metabolic networks.
-%In particular, we tested whether our effective modeling approach could describe classically expected enzyme kinetic behavior, and second whether we could simultaneously estimate kinetic parameters and regulatory connectivity, in the absence of specific mechanistic knowledge, from synthetic experimental data.
-%Toward these questions, we explored five hypothetical cell-free networks.
-%Each network shared the same enzymatic connectivity, but had different allosteric regulatory connectivity.
-%We found that simple effective rules, when integrated with traditional enzyme kinetic expressions, captured complex allosteric patterns such as ultrasensitivity or non-competitive inhibition in the absence of mechanistic information. Second, when integrated into network models, these rules captured classical regulatory patterns such as product-induced feedback inhibition.
-%Lastly, we showed, at least for the network architectures considered here, that we could simultaneously estimate kinetic parameters and allosteric connectivity from synthetic data
-%starting from an unbiased collection of possible allosteric structures using particle swarm optimization. However, when starting with an initial population that was heavily enriched with incorrect structures, our particle swarm approach could converge to an incorrect structure.
+Using this approach, we have built an ensemble of models that predict an experimental dataset for CAT production in a cell-free \textit{E. coli} system.
+We calculated the CAT yield for the ensemble at 45\% of the theoretical maximum according to constraint-based modeling, and determined through sensitivity analysis that CAT production was most sensitive to the parameters associated with CAT synthesis and the synthesis of GTP, GMP, and amino acids.
 While only an initial proof-of-concept, the framework presented here could be an important first step toward genome-scale cell-free kinetic modeling of the biosynthetic capacity of industrially important organisms.
-
-
-%The introduction has four paragraphs (introduction no longer than 3 pages). Follow the cell free paper from last year:
-%\begin{enumerate}
-%	\item{\textbf{First~paragraph}: Introduce mathematical modeling, and its role in biochemical engineering. }
-%	\item{\textbf{Second~paragraph}: Contrast current static metabolic modeling approaches e.g., FBA with dynamic models.}
-%	\item{\textbf{Third~paragraph}: Introduce cell free protein synthesis.}
-%	\item{\textbf{Fourth~paragraph}: In this study, [Repeat the abstract with some additional detail]. Taken together, [killer statement].}
-%\end{enumerate}
-
-% Extra text from the introduction -
-%With the capacity to construct very large models using various mathematical formalisms \cite{chen2009input,tasseff2011modeling,luan2007computationally,mo2007genome,orth2011comprehensive,karr2012whole,buchel2013path2models,smallbone2010towards}, more often than not,
-
-%this algorithm (25 trials with 4000 function evaluations in each trial) on a biochemical network of coagulation (148 parameters and 92 species) and compared it's performance against other meta-heuristics  The new algorithm outperforms all the other meta-heuristics on the coagulation model. The parameter vectors obtained using this approach fit the experimental data well and also make accurate enough predictions on unseen experimental data. We also performed this comparison on  and found the same behavior. Further we used two recently published benchmark problems, a genome wide kinetic model with 1759 parameters and a metabolic model of Chinese Hamster Ovary cells with 117 parameters to evaluate the performance of our approach. We  surprisingly performed well on these benchmarks and obtained the nominal parameter vector with just 4000 function evaluations in both cases.
-%took into cognizance the fact that it may not be necessary to obtain the exact solution for high dimensional biological systems and that good enough solutions can be quickly obtained without expending a lot of objective function evaluations. Hence our current approach uses the power of population based heuristics along with DDS to obtain near optimal or good solutions. Though in theory we can combine any meta-heuristic with DDS, for the current purpose we used Particle Swarm Optimization (PSO). PSO unlike Genetic Algorithm (GA) or Differential Evolution (DE) does not have complex operations like cross over, mutation or recombination. It is simple to use and does not have a lot of parameters associated with other heuristics. However PSO is known to rapidly converge to a local optimum and thus several variants \cite{peer2003using,zhan2009adaptive,li2007fast} have been developed of which Multi swarm particle swarm optimization approaches (MLSPSO) \cite{zhao2008dynamic,liang2005dynamic} are one of the effective ones. We used MLSPSO to preclude bad regions of search and thereafter search within these regions using DDS.
 
 \clearpage
 
@@ -221,7 +198,7 @@ While only an initial proof-of-concept, the framework presented here could be an
 
 \subsection*{Estimation of an ensmeble of models}
 We constructed an initial model of cell-free \textit{E. coli} metabolism by removing the growth-associated processes from the genome-scale model of Palsson and coworkers \cite{2000_edwards_palsson_PNAS} and adding reactions for the synthesis of chloramphenicol acetyltransferase (CAT), a model protein for which we have a comprehensive training dataset \cite{2005_calhoun_BiotechnologyProgress}. 
-This initial model captured the core metabolism (glycolysis, pentose phosphate, Enter-Doudoroff, TCA cycle), as well as the synthesis of energy species, amino acids, and CAT.
+This initial model captured the core metabolism (glycolysis, pentose phosphate, Enter-Doudoroff, TCA cycle), as well as the synthesis of energy species, amino acids, and CAT  (Fig.~\ref{fig:Network}).
 We generated mass balance equations around metabolites and enzymes in the network, modeled as ordinary differential equations with reaction rates equal to the product of a kinetic term and a control term.
 We used multiple saturation kinetics to model metabolic fluxes and mass action kinetics to model enzyme degradation.
 We modeled the control term using a rule-based approach in which each control factor had a regulatory transfer function, modeled as a Hill function, and the control term was calculated as the mean of all transfer functions.
@@ -229,6 +206,12 @@ We modeled the control term using a rule-based approach in which each control fa
 The model was trained against the training dataset, which included measurements of glucose, CAT, organic acids (pyruvate, lactate, acetate, succinate, malate), energy species (AXP, GXP, CXP, UXP), and 18 of the 20 proteinogenic amino acids.
 We generated an ensemble of 18,000 parameter sets by minimizing the error between the training dataset and the metabolite concentrations predicted by the model.
 Out of these 18,000 sets, we defined the set with the lowest error value as our best-fit set.
+The ensemble predicts most carbon flux going through glycolysis and the TCA cycle, and to a lesser extent the Entner-Doudoroff pathway  (Fig.~\ref{fig:Network}, bottom two rows of gray boxes).
+Pentose phosphate is much less utilized.
+We compared this flux profile with the steady-state fluxes calculated by sequence-specific FBA (Fig.~\ref{fig:Network}, top row of gray boxes).
+In the steady-state case, carbon flux avoids the upper reactions of glycolysis in favor of the Entner-Doudoroff pathway.
+It also not does participate in the TCA cycle, nor the reactions of pentose phosphate that are not required for Entner-Doudoroff.
+
 The ensemble captures the central carbon metabolism, including glucose uptake, CAT production, and the dynamics of the organic acid intermediates (Fig.~\ref{fig:BothCarbon}, top).
 Allosteric control is important to the dynamics of the organic acid intermediates, as without it several of the measurements are not captured by the ensemble or the best-fit set (Fig.~\ref{fig:BothCarbon}, bottom).
 The ensemble also captures the energy species dynamics, particularly the overall energy total (Fig.~\ref{fig:BothCarbon}, top) and the totals by base (Fig.~\ref{fig:Energy}).
