@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  1 JUN 2016 16:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  2 JUN 2016 06:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -813,12 +813,18 @@ LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <12> not available
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <14.4> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 125.
  [1]
-Overfull \hbox (21.42021pt too wide) in paragraph at lines 166--173
+Overfull \hbox (21.42021pt too wide) in paragraph at lines 170--178
 []\OT1/phv/m/n/12 Mathematical mod-el-ing has long con-tributed to our un-der-s
 tand-ing of metabolism. Decades
  []
 
-[1] [2] [3] [4
+[1] [2]
+Overfull \hbox (3.3693pt too wide) in paragraph at lines 188--202
+\OT1/phv/m/n/12 pa-ram-e-ters were es-ti-mated from mea-sure-ments of glu-cose,
+ or-ganic acids, en-ergy species,
+ []
+
+[3] [4
 
 ] [5] [6] [7] [8
 
@@ -827,7 +833,7 @@ tand-ing of metabolism. Decades
 ]
 
 Package natbib Warning: Citation `pr3010138' on page 11 undefined on input line
- 347.
+ 364.
 
 [11] [12] [13] [14] [15] [16
 
@@ -838,11 +844,11 @@ Package natbib Warning: Citation `pr3010138' on page 11 undefined on input line
 File: ./Figures/Network.pdf Graphic file (type pdf)
 
 <use ./Figures/Network.pdf>
-Package pdftex.def Info: ./Figures/Network.pdf used on input line 446.
+Package pdftex.def Info: ./Figures/Network.pdf used on input line 463.
 (pdftex.def)             Requested size: 352.31625pt x 563.45052pt.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 447.
-LaTeX Font Info:    Try loading font information for TS1+phv on input line 447.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 464.
+LaTeX Font Info:    Try loading font information for TS1+phv on input line 464.
 
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ts1phv.fd
@@ -852,58 +858,58 @@ File: ts1phv.fd 2001/06/04 scalable font definitions for TS1/phv.
 File: ./Figures/Carbon.pdf Graphic file (type pdf)
 
 <use ./Figures/Carbon.pdf>
-Package pdftex.def Info: ./Figures/Carbon.pdf used on input line 454.
+Package pdftex.def Info: ./Figures/Carbon.pdf used on input line 471.
 (pdftex.def)             Requested size: 469.75502pt x 204.21785pt.
 
 <./Figures/null.pdf, id=94, 597.51233pt x 845.0471pt>
 File: ./Figures/null.pdf Graphic file (type pdf)
  <use ./Figures/null.pdf>
-Package pdftex.def Info: ./Figures/null.pdf used on input line 455.
+Package pdftex.def Info: ./Figures/null.pdf used on input line 472.
 (pdftex.def)             Requested size: 23.48918pt x 33.21588pt.
 
 <./Figures/CarbonNoControl.pdf, id=95, 768.8725pt x 334.24875pt>
 File: ./Figures/CarbonNoControl.pdf Graphic file (type pdf)
 
 <use ./Figures/CarbonNoControl.pdf>
-Package pdftex.def Info: ./Figures/CarbonNoControl.pdf used on input line 456.
+Package pdftex.def Info: ./Figures/CarbonNoControl.pdf used on input line 473.
 (pdftex.def)             Requested size: 469.75502pt x 204.21785pt.
 
 <./Figures/Energy.pdf, id=96, 768.8725pt x 695.59875pt>
 File: ./Figures/Energy.pdf Graphic file (type pdf)
 
 <use ./Figures/Energy.pdf>
-Package pdftex.def Info: ./Figures/Energy.pdf used on input line 463.
+Package pdftex.def Info: ./Figures/Energy.pdf used on input line 480.
 (pdftex.def)             Requested size: 469.75502pt x 424.99391pt.
 
 <./Figures/Amino.pdf, id=97, 782.925pt x 876.27374pt>
 File: ./Figures/Amino.pdf Graphic file (type pdf)
 
 <use ./Figures/Amino.pdf>
-Package pdftex.def Info: ./Figures/Amino.pdf used on input line 470.
+Package pdftex.def Info: ./Figures/Amino.pdf used on input line 487.
 (pdftex.def)             Requested size: 469.75502pt x 525.7683pt.
 
 <./Figures/SensAll.png, id=98, 933.7284pt x 1297.9692pt>
 File: ./Figures/SensAll.png Graphic file (type png)
 
 <use ./Figures/SensAll.png>
-Package pdftex.def Info: ./Figures/SensAll.png used on input line 477.
+Package pdftex.def Info: ./Figures/SensAll.png used on input line 494.
 (pdftex.def)             Requested size: 441.57086pt x 613.82845pt.
 
 
-LaTeX Warning: Float too large for page by 27.39844pt on input line 480.
+LaTeX Warning: Float too large for page by 27.39844pt on input line 497.
 
 <./Figures/Sensitivity.pdf, id=100, 1011.78pt x 574.145pt>
 File: ./Figures/Sensitivity.pdf Graphic file (type pdf)
 
 <use ./Figures/Sensitivity.pdf>
-Package pdftex.def Info: ./Figures/Sensitivity.pdf used on input line 485.
+Package pdftex.def Info: ./Figures/Sensitivity.pdf used on input line 502.
 (pdftex.def)             Requested size: 469.75502pt x 266.57167pt.
 
 <./Figures/Metab_sensitivity.pdf, id=101, 1024.82875pt x 604.2575pt>
 File: ./Figures/Metab_sensitivity.pdf Graphic file (type pdf)
 
 <use ./Figures/Metab_sensitivity.pdf>
-Package pdftex.def Info: ./Figures/Metab_sensitivity.pdf used on input line 486
+Package pdftex.def Info: ./Figures/Metab_sensitivity.pdf used on input line 503
 .
 (pdftex.def)             Requested size: 469.75502pt x 276.97527pt.
  [22 <./Figures/Network.pdf>] [23 <./Figures/Carbon.pdf> <./Figures/null.pdf> <
@@ -924,7 +930,7 @@ Package natbib Warning: There were undefined citations.
 Here is how much of TeX's memory you used:
  5835 strings out of 493089
  87478 string characters out of 6134842
- 149543 words of memory out of 5000000
+ 148543 words of memory out of 5000000
  9106 multiletter control sequences out of 15000+600000
  31183 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -947,7 +953,7 @@ xlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2
 015/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/local/texlive/2015/te
 xmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2015/texmf-dis
 t/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on Paper_v1.pdf (29 pages, 777825 bytes).
+Output written on Paper_v1.pdf (29 pages, 778106 bytes).
 PDF statistics:
  520 PDF objects out of 1000 (max. 8388607)
  181 compressed objects within 2 object streams

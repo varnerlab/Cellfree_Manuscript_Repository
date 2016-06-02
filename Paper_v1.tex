@@ -123,16 +123,20 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Abstract}
-Cell-free systems offer many advantages for the study, manipulation and modeling of bacterial metabolism.
-In this study, we developed an ensemble of dynamic \textit{E. coli} cell free protein synthesis models.
-We trained the model using dynamic measurements of glucose, organic acids, energy species, amino acids and the protein product, chloramphenicol acetyltransferase (CAT).
-We generated an ensemble of N = 18,000 parameter sets that described the experimental data, with the exception of some of the amino acid dynamics.
-Analysis of the model ensemble predicted a carbon yield of 0.0871 for chloramphenicol acetyltransferase synthesis,
-equal to 45\% of the maximum theoretical yield calculated by sequence specific constraint based modeling.
-The ensemble of models captured the dynamic distribution of metabolic flux.
-The ensemble of dynamic models predicted that most of the carbon flux going through glycolysis and the TCA cycle,
-while the constraint based approach predicted most of the carbon flux went through the Entner-Doudoroff pathway and only part of glycolysis.
-Local and global sensitivity analysis indicated that chloramphenicol acetyltransferase production was most sensitive to parameters associated with the synthesis of GTP, GMP, and amino acids, and relatively insensitive to allosteric control mechanisms, and glucose and oxygen levels.
+Cell free protein expression systems have become widely used in systems and synthetic biology.
+In this study, we developed an ensemble of dynamic \textit{E. coli} cell free protein synthesis (CFPS) models.
+Model parameters were estimated from measurements of glucose, organic acids, energy species, amino acids and the protein product, chloramphenicol acetyltransferase (CAT).
+The ensemble described the training data, with the exception of some of the amino acid dynamics.
+To gauge the performance of the cell free reaction, we compared the observed CAT carbon yield, with the maximum theoretical CAT carbon yield calculated using sequence specific flux
+balance analysis. The observed CAT yield was 45\% of the maximum theoretical yield, suggesting CAT production could be further optimized.
+The metabolic flux distribution predicted by the dynamic model and flux balance analysis were significantly different.
+The ensemble of dynamic models predicted the majority of carbon flux was routed through glycolysis and the TCA cycle,
+while flux balance analysis predicted significant flux through the Entner-Doudoroff pathway.
+Local and global sensitivity analysis suggested CAT production was most sensitive to parameters and initial conditions directly associated with CAT synthesis, as well as
+GTP/GMP synthesis, amino acid synthesis, and to a lesser extent amino acid initial conditions.
+On the other hand, CAT production was robust to allosteric control parameters and the initial conditions of glucose and oxygen.
+Taken together, we presented the first dynamic model of \textit{E. coli} cell free protein synthesis.
+This study provides a foundation for genome-scale, dynamic modeling of cell-free \textit{E. coli} protein synthesis.
 
 \vspace{0.1in}
 {\noindent \textbf{Keywords:}~Biochemical engineering, systems biology, cell free protein synthesis}
@@ -163,7 +167,8 @@ For example, there is no complex transcriptional regulation to consider, transie
 Thus, cell-free operation holds several significant advantages for model development, identification and validation. Theoretically, genome-scale cell-free kinetic models may be possible for industrially important organisms,
 such as \textit{E. coli} or \textit{B.~subtilis}, if a simple, tractable framework for integrating allosteric regulation with enzyme kinetics can be formulated.
 
-Mathematical modeling has long contributed to our understanding of metabolism. Decades before the genomics revolution, mechanistically, structured metabolic models arose from the desire to predict microbial phenotypes resulting from changes in intracellular or extracellular states \citep{1976_fredrickson_BiotechBioeng}.
+Mathematical modeling has long contributed to our understanding of metabolism.
+Decades before the genomics revolution, mechanistically, structured metabolic models arose from the desire to predict microbial phenotypes resulting from changes in intracellular or extracellular states \citep{1976_fredrickson_BiotechBioeng}.
 The single cell \textit{E. coli} models of Shuler and coworkers pioneered the construction of large-scale, dynamic metabolic models that incorporated multiple, regulated catabolic and anabolic pathways constrained by experimentally determined kinetic parameters \citep{1984_domach_shuler_BiotechBioeng_01}.
 Shuler and coworkers generated many single cell kinetic models, including single cell models of eukaryotes \citep{1989_steinmeyer_shuler_ChemEngSci,1992_wu_shuler_AnnNYAcadSci}, minimal cell architectures \citep{2004_castellanos_shuler_PNAS}, as well as DNA sequence based whole-cell models of \textit{E. coli} \citep{2008_atlas_shuler_IETSysBio}.
 Conversely, highly abstracted kinetic frameworks, such as the cybernetic framework, represented a paradigm shift, viewing cells as growth-optimizing strategists \citep{1985_dhurjati_ramkrishna_tsao_BiotechBioeng}.
@@ -180,13 +185,28 @@ Recent advances in constraint-based modeling have overcome the early shortcoming
 Thus, modern constraint-based approaches have proven extremely useful in the discovery of metabolic engineering strategies and represent the state of the art in metabolic modeling \citep{2013_mccloskey_palsson_feist_MolSysBio, 2012_zomorrodi_maranas_MetaEng}.
 However, genome-scale kinetic models of industrial important organisms such as \textit{E. coli} have yet to be constructed.
 
-In this study, we present an effective biochemical network modeling framework for building dynamic cell-free metabolic models.
-The key innovation of our approach is the seamless integration of simple effective rules encoding complex regulation with traditional kinetic pathway modeling.
-This integration allows the description of complex regulatory interactions in the absence of specific mechanistic information.
-The regulatory rules are easy to understand, easy to formulate and do not rely on overarching theoretical abstractions or restrictive assumptions.
-Using this approach, we have built an ensemble of models that predict an experimental dataset for CAT production in a cell-free \textit{E. coli} system.
-We calculated the CAT yield for the ensemble at 45\% of the theoretical maximum according to constraint-based modeling, and determined through sensitivity analysis that CAT production was most sensitive to the parameters associated with CAT synthesis and the synthesis of GTP, GMP, and amino acids.
-While only an initial proof-of-concept, the framework presented here could be an important first step toward genome-scale cell-free kinetic modeling of the biosynthetic capacity of industrially important organisms.
+In this study, we developed an ensemble of \textit{E. coli} cell free protein synthesis (CFPS) models using the hybrid cell free modeling approach of Wayman et al [REFHERE].
+Model parameters were estimated from measurements of glucose, organic acids, energy species, amino acids and the protein product, chloramphenicol acetyltransferase (CAT).
+The ensemble described the training data, with the exception of some of the amino acid dynamics.
+To gauge the performance of the cell free reaction, we compared the observed CAT carbon yield, with the maximum theoretical CAT carbon yield calculated using sequence specific flux
+balance analysis. The observed CAT yield was 45\% of the maximum theoretical yield, suggesting CAT production could be further optimized.
+The metabolic flux distribution predicted by the dynamic model and flux balance analysis were significantly different.
+The ensemble of dynamic models predicted the majority of carbon flux was routed through glycolysis and the TCA cycle,
+while flux balance analysis predicted significant flux through the Entner-Doudoroff pathway.
+Local and global sensitivity analysis suggested CAT production was most sensitive to parameters and initial conditions directly associated with CAT synthesis, as well as
+GTP/GMP synthesis, amino acid synthesis, and to a lesser extent amino acid initial conditions.
+On the other hand, CAT production was robust to allosteric control parameters and the initial conditions of glucose and oxygen.
+Taken together, we presented the first dynamic model of \textit{E. coli} cell free protein synthesis.
+We integrated traditional kinetics with a logical rule-based description of allosteric control to simulate a comprehensive CFPS dataset.
+This study provides a foundation for genome-scale, dynamic modeling of cell-free \textit{E. coli} protein synthesis.
+
+% In this study, we present an effective biochemical network modeling framework for building dynamic cell-free metabolic models.
+% The key innovation of our approach is the seamless integration of simple effective rules encoding complex regulation with traditional kinetic pathway modeling.
+% This integration allows the description of complex regulatory interactions in the absence of specific mechanistic information.
+% The regulatory rules are easy to understand, easy to formulate and do not rely on overarching theoretical abstractions or restrictive assumptions.
+% Using this approach, we have built an ensemble of models that predict an experimental dataset for CAT production in a cell-free \textit{E. coli} system.
+% We calculated the CAT yield for the ensemble at 45\% of the theoretical maximum according to constraint-based modeling, and determined through sensitivity analysis that CAT production was most sensitive to the parameters associated with CAT synthesis and the synthesis of GTP, GMP, and amino acids.
+% While only an initial proof-of-concept, the framework presented here could be an important first step toward genome-scale cell-free kinetic modeling of the biosynthetic capacity of industrially important organisms.
 
 \clearpage
 
@@ -272,34 +292,31 @@ The initial conditions of glucose and oxygen were among the least important acco
 %	In this case, we will have a scaling issue if we extend to genome scale. We should extend to dynamic cases, and we need to experimentally validate the findings.}
 %\end{enumerate}
 
-In this study, we developed an ensemble of dynamic \textit{E. coli} cell free protein synthesis models.
-We trained the model using dynamic measurements of glucose, organic acids, energy species, amino acids and the protein product, chloramphenicol acetyltransferase (CAT).
-We generated an ensemble of N = 18,000 parameter sets which described the experimental measurements, with the exception of some of the amino acid dynamics.
-To gauge the performance of the cell free reaction mixture, we compared the observed carbon yield, with the maximum theoretical carbon yield calculated using sequence specific flux
-balance analysis. The observed CAT carbon yield was 45\% of the maximum theoretical yield.
-The predicted metabolic flux distributions between the dynamic model and constraints based calculation were significantly different.
-The ensemble of dynamic models predicted carbon flux going through glycolysis and the TCA cycle, while the constraint based approach predicted most of the carbon flux went through the Entner-Doudoroff pathway.
-We then conducted sensitivity analysis to determine which model parameters and experimentally controllable factors influenced reaction performance.
-CAT production was most sensitive to model parameters and initial conditions directly associated with CAT synthesis.
-CAT production was also sensitive to GTP/GMP synthesis, and amino acid synthesis, and to a lesser extent some amino acid initial conditions.
-On the other hand, CAT production was much less sensitive to allosteric control parameters,
-suggesting that while allosteric control affected some organic acid intermediates, it was not critical to CAT production.
-The initial conditions of glucose and oxygen were also less important to CAT production.
-Taken together, we presented the first dynamic model of \textit{E. coli} cell free protein synthesis.
-We integrated traditional kinetics with logical rule-based allosteric control to construct an ensemble of kinetic models that described
-a comprehensive cell-free dataset. This study should provide a foundation for genome-scale, dynamic modeling of cell-free \textit{E. coli} metabolism, toward industrial-scale biosynthetic production.
+In this study, we developed an ensemble of \textit{E. coli} cell free protein synthesis (CFPS) models using the hybrid cell free modeling approach of Wayman et al [REFHERE].
+Model parameters were estimated from measurements of glucose, organic acids, energy species, amino acids and the protein product, chloramphenicol acetyltransferase (CAT).
+The ensemble described the training data, with the exception of some of the amino acid dynamics.
+To gauge the performance of the cell free reaction, we compared the observed CAT carbon yield, with the maximum theoretical CAT carbon yield calculated using sequence specific flux
+balance analysis. The observed CAT yield was 45\% of the maximum theoretical yield, suggesting CAT production could be further optimized.
+The metabolic flux distribution predicted by the dynamic model and flux balance analysis were significantly different.
+The ensemble of dynamic models predicted the majority of carbon flux was routed through glycolysis and the TCA cycle,
+while flux balance analysis predicted significant flux through the Entner-Doudoroff pathway.
+Local and global sensitivity analysis suggested CAT production was most sensitive to parameters and initial conditions directly associated with CAT synthesis, as well as
+GTP/GMP synthesis, amino acid synthesis, and to a lesser extent amino acid initial conditions.
+On the other hand, CAT production was robust to allosteric control parameters and the initial conditions of glucose and oxygen.
+% Taken together, we presented the first dynamic model of \textit{E. coli} cell free protein synthesis.
+% We integrated traditional kinetics with a logical rule-based description of allosteric control to simulate a comprehensive CFPS dataset.
+% This study provides a foundation for genome-scale, dynamic modeling of cell-free \textit{E. coli} protein synthesis.
 
 %The ensemble of models captured the dynamic distribution of metabolic flux.
 %The ensemble of dynamic models predicted that most of the carbon flux going through glycolysis and the TCA cycle,
 %while the constraint based approach predicted most of the carbon flux went through the Entner-Doudoroff pathway and only part of glycolysis.
-
 % We present the first dynamic, cell-free model of \textit{E. coli} metabolism and biosynthesis at this scope.
 % While the early models of Shuler and coworkers achieved large-scale, dynamic descriptions of single cells \citep{1984_domach_shuler_BiotechBioeng_01}, and the stoichiometric models associated with the FBA approach are computationally efficient amd widespread \citep{2009_feist_palsson_NatRevMicrobio}, none have yet been able to construct genome-scale kinetic models of cell-free \textit{E. coli} metabolism.
 % This study should provide a foundation for genome-scale, dynamic modeling of cell-free \textit{E. coli} metabolism, toward industrial-scale biosynthetic production.
 %However, the low sensitivities to glucose and oxygen only apply in the specific case of the parameter sets that were studied.
 %When other species' initial conditions and associated parameters are different, glucose and oxygen could become more important to CAT production.
 
-One important direction for the future is to expand the biological description, especially with regard to amino acids.
+The cell free model ensemble described the training data with the exception of some of the amino acids.
 Specifically, adding more reactions that consume amino acids would improve the model's ability to predict those that show a decrase in the experimental data.
 Also, including specific transcription and translation steps for CAT would allow us to more accurately model the complexity and the resource cost of protein synthesis.
 Another area for future work is to more thoroughly sample parameter space.
