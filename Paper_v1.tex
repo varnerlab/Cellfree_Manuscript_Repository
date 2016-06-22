@@ -280,6 +280,9 @@ This is all explained by GTP and amino acids being reactants for CAT synthesis.
 While some of the amino acids and amino acid synthases were among the highest in sensitivity, theirs were also very uncertain relative to the CAT macromolecular synthesis machinery and GTP synthase.
 The initial conditions of glucose and oxygen were among the least important according to the global sensitivity analysis, suggesting that the model predicts that CAT production can be sustained by consuming initial stores or can be powered by other means.
 
+\subsection*{Sensitivity analysis on FBA system}
+We conducted global sensitivity on certain fluxes' upper bounds within a constraint-based FBA system, with protein export rate as the objective function.
+
 \clearpage
 
 \section*{Discussion}
@@ -309,7 +312,7 @@ On the other hand, CAT production was robust to allosteric control parameters an
 
 %The ensemble of models captured the dynamic distribution of metabolic flux.
 %The ensemble of dynamic models predicted that most of the carbon flux going through glycolysis and the TCA cycle,
-%while the constraint based approach predicted most of the carbon flux went through the Entner-Doudoroff pathway and only part of glycolysis.
+%while the constraint-based approach predicted most of the carbon flux went through the Entner-Doudoroff pathway and only part of glycolysis.
 % We present the first dynamic, cell-free model of \textit{E. coli} metabolism and biosynthesis at this scope.
 % While the early models of Shuler and coworkers achieved large-scale, dynamic descriptions of single cells \citep{1984_domach_shuler_BiotechBioeng_01}, and the stoichiometric models associated with the FBA approach are computationally efficient amd widespread \citep{2009_feist_palsson_NatRevMicrobio}, none have yet been able to construct genome-scale kinetic models of cell-free \textit{E. coli} metabolism.
 % This study should provide a foundation for genome-scale, dynamic modeling of cell-free \textit{E. coli} metabolism, toward industrial-scale biosynthetic production.
@@ -508,14 +511,14 @@ the US Army and Systems Biology of Trauma Induced Coagulopathy (W911NF-10-1-0376
 \begin{figure}[ht]
 \centering
 \includegraphics[width=1.00\textwidth]{./Figures/AAs_bounded.pdf}
-\caption{Total-order global sensitivities of protein export flux to amino acid import fluxes, with flux upper bounds set to 0.5 mM/hr.}
+\caption{Total-order global sensitivities of protein export flux to amino acid import flux upper bounds. Each upper bound was varied from 0 to 0.5 mM/hr.}
 \label{fig:AAs_bounded}
 \end{figure}
 
 \begin{figure}[ht]
 \centering
 \includegraphics[width=1.00\textwidth]{./Figures/AAs_unbounded.pdf}
-\caption{Total-order global sensitivities of protein export flux to amino acid import fluxes, with each amino acid flux unbounded respectively.}
+\caption{Total-order global sensitivities of protein export flux to amino acid import flux upper bounds. Each upper bound was varied from 0 to 0.5 mM/hr, except the upper bound with respect to which sensitivity was calculated; this was varied from 0 to 10 mM/hr.}
 \label{fig:AAs_unbounded}
 \end{figure}
 
@@ -524,7 +527,7 @@ the US Army and Systems Biology of Trauma Induced Coagulopathy (W911NF-10-1-0376
 \begin{figure}[ht]
 \centering
 \includegraphics[width=1.00\textwidth]{./Figures/C_Secretion.pdf}
-\caption{Total-order global sensitivities of protein export flux to glutamic acid, oxygen and glucose import fluxes, and translation initiation rate, in the case of four organic acid export flux upper bounds set to 0.1 mM/hr, whereas organic acid export fluxes are unbounded in the control.}
+\caption{Total-order global sensitivities of protein export flux to glutamic acid, oxygen and glucose import flux upper bounds, and translation initiation rate upper bound. Lactate, ethanol, acetate, and formate export fluxes were held constant at 0.1 mM/hr in the control case. One of these export fluxes was held constant at 10 mM/hr, while the others were held constant at 0.1 mM/hr, in each of the other four cases.}
 \label{fig:C_Secretion.pdf.pdf}
 \end{figure}
 
