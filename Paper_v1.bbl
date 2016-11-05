@@ -310,12 +310,6 @@ Allen TE, Palsson B{\O} (2003) Sequence-based analysis of metabolic demands for
 \newblock Journal of Theoretical Biology 220: 1 - 18.
 \bibAnnoteFile{2002_allen_palsson}
 
-\bibitem{2002_Mahadevan_BiophysJ}
-Mahadevan R, Edwards JS, Doyle FJ 3rd (2002) Dynamic flux balance analysis of
-  diauxic growth in escherichia coli.
-\newblock Biophysical Journal 83: 1331 - 1340.
-\bibAnnoteFile{2002_Mahadevan_BiophysJ}
-
 \bibitem{GLPK}
  (2016).
 \newblock {GNU Linear Programming Kit, Version 4.52}.

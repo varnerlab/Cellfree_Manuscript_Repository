@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+This is BibTeX, Version 0.99d (TeX Live 2015/dev/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: Paper_v1.aux
 The style file: plos2009.bst
@@ -19,45 +19,45 @@ Warning--entry type for "SALIB" isn't style-file defined
 --line 256 of file References_v1.bib
 Warning--I didn't find a database entry for "pr3010138"
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-You've used 49 entries,
+You've used 48 entries,
             2441 wiz_defined-function locations,
-            912 strings with 16155 characters,
-and the built_in function-call counts, 39050 in all, are:
-= -- 3614
-> -- 653
+            903 strings with 15826 characters,
+and the built_in function-call counts, 38180 in all, are:
+= -- 3531
+> -- 641
 < -- 0
-+ -- 327
-- -- 163
-* -- 3302
-:= -- 4695
-add.period$ -- 99
-call.type$ -- 49
-change.case$ -- 49
++ -- 321
+- -- 160
+* -- 3225
+:= -- 4591
+add.period$ -- 97
+call.type$ -- 48
+change.case$ -- 48
 chr.to.int$ -- 0
-cite$ -- 98
-duplicate$ -- 3831
-empty$ -- 4045
-format.name$ -- 208
-if$ -- 8660
+cite$ -- 96
+duplicate$ -- 3748
+empty$ -- 3954
+format.name$ -- 204
+if$ -- 8467
 int.to.chr$ -- 0
-int.to.str$ -- 49
-missing$ -- 502
-newline$ -- 261
-num.names$ -- 48
-pop$ -- 601
+int.to.str$ -- 48
+missing$ -- 492
+newline$ -- 256
+num.names$ -- 47
+pop$ -- 590
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 294
+skip$ -- 289
 stack$ -- 0
-substring$ -- 5596
-swap$ -- 1000
+substring$ -- 5459
+swap$ -- 980
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 305
-width$ -- 51
-write$ -- 549
+while$ -- 299
+width$ -- 50
+write$ -- 538
 (There were 2 error messages)
