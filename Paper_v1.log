@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.11.3)  5 NOV 2016 01:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.11.3)  6 NOV 2016 00:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1036,11 +1036,11 @@ File: ts1phv.fd 2001/06/04 scalable font definitions for TS1/phv.
 
 LaTeX Warning: Float too large for page by 17.59785pt on input line 515.
 
-<./Figures/Carbon.pdf, id=97, 1662.21pt x 505.89pt>
+<./Figures/Carbon.pdf, id=97, 794.97pt x 361.35pt>
 File: ./Figures/Carbon.pdf Graphic file (type pdf)
  <use ./Figures/Carbon.pdf>
 Package pdftex.def Info: ./Figures/Carbon.pdf used on input line 520.
-(pdftex.def)             Requested size: 469.75502pt x 142.96822pt.
+(pdftex.def)             Requested size: 469.75502pt x 213.53099pt.
 
 <./Figures/null.pdf, id=98, 597.51233pt x 845.0471pt>
 File: ./Figures/null.pdf Graphic file (type pdf)
@@ -1048,89 +1048,120 @@ File: ./Figures/null.pdf Graphic file (type pdf)
 Package pdftex.def Info: ./Figures/null.pdf used on input line 521.
 (pdftex.def)             Requested size: 23.48918pt x 33.21588pt.
 
-<./Figures/CarbonNoControl.pdf, id=99, 1662.21pt x 505.89pt>
+<./Figures/CarbonNoControl.pdf, id=99, 794.97pt x 361.35pt>
 File: ./Figures/CarbonNoControl.pdf Graphic file (type pdf)
 
 <use ./Figures/CarbonNoControl.pdf>
 Package pdftex.def Info: ./Figures/CarbonNoControl.pdf used on input line 522.
-(pdftex.def)             Requested size: 469.75502pt x 142.96822pt.
+(pdftex.def)             Requested size: 469.75502pt x 213.53099pt.
 
-<./Figures/Energy.pdf, id=100, 1445.4pt x 903.375pt>
+<./Figures/Carbon.png, id=100, 794.97pt x 361.35pt>
+File: ./Figures/Carbon.png Graphic file (type png)
+ <use ./Figures/Carbon.png>
+Package pdftex.def Info: ./Figures/Carbon.png used on input line 530.
+(pdftex.def)             Requested size: 469.75502pt x 213.53099pt.
+File: ./Figures/null.pdf Graphic file (type pdf)
+
+<use ./Figures/null.pdf>
+Package pdftex.def Info: ./Figures/null.pdf used on input line 531.
+(pdftex.def)             Requested size: 23.48918pt x 33.21588pt.
+
+<./Figures/CarbonNoControl.png, id=102, 794.97pt x 361.35pt>
+File: ./Figures/CarbonNoControl.png Graphic file (type png)
+
+<use ./Figures/CarbonNoControl.png>
+Package pdftex.def Info: ./Figures/CarbonNoControl.png used on input line 532.
+(pdftex.def)             Requested size: 469.75502pt x 213.53099pt.
+
+<./Figures/Energy.pdf, id=103, 794.97pt x 722.7pt>
 File: ./Figures/Energy.pdf Graphic file (type pdf)
+ <use ./Figures/Energy.pdf>
+Package pdftex.def Info: ./Figures/Energy.pdf used on input line 539.
+(pdftex.def)             Requested size: 469.75502pt x 427.06198pt.
 
-<use ./Figures/Energy.pdf>
-Package pdftex.def Info: ./Figures/Energy.pdf used on input line 529.
-(pdftex.def)             Requested size: 469.75502pt x 293.5934pt.
+<./Figures/Energy.png, id=104, 794.97pt x 722.7pt>
+File: ./Figures/Energy.png Graphic file (type png)
+ <use ./Figures/Energy.png>
+Package pdftex.def Info: ./Figures/Energy.png used on input line 546.
+(pdftex.def)             Requested size: 469.75502pt x 427.06198pt.
 
-<./Figures/Amino.pdf, id=101, 1084.05pt x 903.375pt>
+<./Figures/Amino.pdf, id=105, 794.97pt x 903.375pt>
 File: ./Figures/Amino.pdf Graphic file (type pdf)
  <use ./Figures/Amino.pdf>
-Package pdftex.def Info: ./Figures/Amino.pdf used on input line 536.
-(pdftex.def)             Requested size: 469.75502pt x 391.46246pt.
+Package pdftex.def Info: ./Figures/Amino.pdf used on input line 553.
+(pdftex.def)             Requested size: 469.75502pt x 533.82748pt.
 
-<./Figures/ClusterCAT.pdf, id=102, 667.56905pt x 596.15625pt>
-File: ./Figures/ClusterCAT.pdf Graphic file (type pdf)
+<./Figures/ClusterCAT161.pdf, id=106, 679.33798pt x 595.11537pt>
+File: ./Figures/ClusterCAT161.pdf Graphic file (type pdf)
 
-<use ./Figures/ClusterCAT.pdf>
-Package pdftex.def Info: ./Figures/ClusterCAT.pdf used on input line 550.
-(pdftex.def)             Requested size: 441.57086pt x 394.3285pt.
+<use ./Figures/ClusterCAT161.pdf>
+Package pdftex.def Info: ./Figures/ClusterCAT161.pdf used on input line 567.
+(pdftex.def)             Requested size: 441.57086pt x 386.83856pt.
 
-<./Figures/ClusterSystem.pdf, id=103, 667.56905pt x 596.15625pt>
+<./Figures/ClusterCAT161.png, id=107, 1839.87375pt x 1611.77156pt>
+File: ./Figures/ClusterCAT161.png Graphic file (type png)
+
+<use ./Figures/ClusterCAT161.png>
+Package pdftex.def Info: ./Figures/ClusterCAT161.png used on input line 574.
+(pdftex.def)             Requested size: 441.57086pt x 386.80849pt.
+
+<./Figures/ClusterSystem.pdf, id=108, 667.56905pt x 596.15625pt>
 File: ./Figures/ClusterSystem.pdf Graphic file (type pdf)
 
 <use ./Figures/ClusterSystem.pdf>
-Package pdftex.def Info: ./Figures/ClusterSystem.pdf used on input line 557.
+Package pdftex.def Info: ./Figures/ClusterSystem.pdf used on input line 581.
 (pdftex.def)             Requested size: 469.75502pt x 419.49881pt.
 
-<./Figures/AA_bounded_bar.pdf, id=104, 1014.79124pt x 648.4225pt>
+<./Figures/AA_bounded_bar.pdf, id=109, 1014.79124pt x 648.4225pt>
 File: ./Figures/AA_bounded_bar.pdf Graphic file (type pdf)
 
 <use ./Figures/AA_bounded_bar.pdf>
-Package pdftex.def Info: ./Figures/AA_bounded_bar.pdf used on input line 564.
+Package pdftex.def Info: ./Figures/AA_bounded_bar.pdf used on input line 588.
 (pdftex.def)             Requested size: 469.75502pt x 300.15785pt.
 
-<./Figures/AA_bounded_scatter.pdf, id=105, 1016.79875pt x 551.05875pt>
+<./Figures/AA_bounded_scatter.pdf, id=110, 1016.79875pt x 551.05875pt>
 File: ./Figures/AA_bounded_scatter.pdf Graphic file (type pdf)
 
 <use ./Figures/AA_bounded_scatter.pdf>
-Package pdftex.def Info: ./Figures/AA_bounded_scatter.pdf used on input line 56
-5.
+Package pdftex.def Info: ./Figures/AA_bounded_scatter.pdf used on input line 58
+9.
 (pdftex.def)             Requested size: 469.75502pt x 254.58319pt.
 
-<./Figures/AA_unbounded_bar.pdf, id=106, 1007.765pt x 632.3625pt>
+<./Figures/AA_unbounded_bar.pdf, id=111, 1007.765pt x 632.3625pt>
 File: ./Figures/AA_unbounded_bar.pdf Graphic file (type pdf)
 
 <use ./Figures/AA_unbounded_bar.pdf>
-Package pdftex.def Info: ./Figures/AA_unbounded_bar.pdf used on input line 572.
+Package pdftex.def Info: ./Figures/AA_unbounded_bar.pdf used on input line 596.
 
 (pdftex.def)             Requested size: 469.75502pt x 294.76921pt.
 
-<./Figures/AA_unbounded_scatter.pdf, id=107, 1010.77625pt x 542.025pt>
+<./Figures/AA_unbounded_scatter.pdf, id=112, 1010.77625pt x 542.025pt>
 File: ./Figures/AA_unbounded_scatter.pdf Graphic file (type pdf)
 
 <use ./Figures/AA_unbounded_scatter.pdf>
 Package pdftex.def Info: ./Figures/AA_unbounded_scatter.pdf used on input line 
-573.
+597.
 (pdftex.def)             Requested size: 469.75502pt x 251.90668pt.
  [23
 
  <./Figures/CAT_prod_yield.pdf>]
-<./Figures/C_Secretion.pdf, id=133, 986.68625pt x 519.9425pt>
+<./Figures/C_Secretion.pdf, id=138, 986.68625pt x 519.9425pt>
 File: ./Figures/C_Secretion.pdf Graphic file (type pdf)
 
 <use ./Figures/C_Secretion.pdf>
-Package pdftex.def Info: ./Figures/C_Secretion.pdf used on input line 582.
+Package pdftex.def Info: ./Figures/C_Secretion.pdf used on input line 606.
 (pdftex.def)             Requested size: 469.75502pt x 247.54648pt.
  [24 <./Figures/CAT_flux_final.pdf>] [25 <./Figures/Carbon.pdf> <./Figures/null
 .pdf> <./Figures/CarbonNoControl.pdf
 
 pdfTeX warning: pdflatex (file ./Figures/CarbonNoControl.pdf): PDF inclusion: m
 ultiple pdfs with page group included in a single page
->] [26 <./Figures/Energy.pdf>] [27 <./Figures/Amino.pdf>] [28 <./Figures/Cluste
-rCAT.pdf>] [29 <./Figures/ClusterSystem.pdf>] [30 <./Figures/AA_bounded_bar.pdf
-> <./Figures/AA_bounded_scatter.pdf>] [31 <./Figures/AA_unbounded_bar.pdf> <./F
-igures/AA_unbounded_scatter.pdf>] [32 <./Figures/C_Secretion.pdf>]
-
+>] [26 <./Figures/Carbon.png> <./Figures/CarbonNoControl.png>] [27 <./Figures/E
+nergy.pdf>] [28 <./Figures/Energy.png>] [29 <./Figures/Amino.pdf>] [30 <./Figur
+es/ClusterCAT161.pdf>] [31 <./Figures/ClusterCAT161.png>] [32 <./Figures/Cluste
+rSystem.pdf>] [33 <./Figures/AA_bounded_bar.pdf> <./Figures/AA_bounded_scatter.
+pdf>] [34 <./Figures/AA_unbounded_bar.pdf> <./Figures/AA_unbounded_scatter.pdf>
+] [35 <./Figures/C_Secretion.pdf>] 
 AED: lastpage setting LastPage
 
 Package natbib Warning: There were undefined citations.
@@ -1145,10 +1176,10 @@ LaTeX Warning: There were undefined references.
 ### semi simple group (level 1) entered at line 54 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 6757 strings out of 493029
- 100947 string characters out of 6136234
- 165969 words of memory out of 5000000
- 10055 multiletter control sequences out of 15000+600000
+ 6777 strings out of 493029
+ 101498 string characters out of 6136234
+ 167999 words of memory out of 5000000
+ 10074 multiletter control sequences out of 15000+600000
  31183 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  42i,16n,43p,620b,1141s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1169,10 +1200,10 @@ b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr
 ve/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/urw/helvetic/uhvro8a.pfb>
-Output written on Paper_v1.pdf (34 pages, 1101974 bytes).
+Output written on Paper_v1.pdf (37 pages, 2012769 bytes).
 PDF statistics:
- 579 PDF objects out of 1000 (max. 8388607)
- 216 compressed objects within 3 object streams
+ 598 PDF objects out of 1000 (max. 8388607)
+ 226 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 71 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 91 words of extra memory for PDF output out of 10000 (max. 10000000)
 
