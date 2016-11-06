@@ -396,19 +396,25 @@ Pyruvate was modeled as an inhibitor for pyruvate dehydrogenase \cite{2010_kotte
 Acetyl CoA was modeled as an inhibitor for malate dehydrogenase \cite{2010_kotte_MolSystBiol}.
 
 \subsection*{Generation of model ensemble}
-We generated an ensemble of 18,000 parameter sets via a downhill-only random walk Monte Carlo method.
-Beginning with a single parameter set as a starting point, we calculated its cost function, equal to the sum-absolute-error between experimental data and model predictions:
+We generated an ensemble of 100 diverse parameter sets via a Markov chain Monte Carlo random walk.
+Beginning with a single parameter set as a starting point, we calculated its cost function, equal to the sum-squared-error between experimental data and model predictions:
 \begin{equation}\label{eqn:cost-function}
-    cost=\sum_{i=1}^{\mathcal{D}}\left(w_i\sum_{j=1}^{\mathcal{T}}abs\left(x_{ij}^{data}-x_{i}^{sim}|_{t(j)}\right)\right)
+    cost=\sum_{i=1}^{\mathcal{D}}\left(w_i\sum_{j=1}^{\mathcal{T}_i}abs\left(x_{ij}^{data}-x_{i}^{sim}|_{t(j)}\right)\right)
 \end{equation}
-where $\mathcal{D}$ denotes the number of datasets, $w_i$ denotes a weight, equal to 5 for the glucose, CAT, pyruvate, lactate, acetate, succinate, and malate datasets, and 1 elsewhere, $\mathcal{T}$ denotes the number of timepoints in the $i$th dataset, $t(j)$ denotes the $j$th timepoint, $x_{ij}^{data}$ denotes the value of the $i$th dataset at the $j$th timepoint, and $x_{i}^{sim}|_{t(j)}$ dneotes the simulated value of the metabolite corresponding to the $i$th dataset, interpolated to the $j$th timepoint.
+where $\mathcal{D}$ denotes the number of datasets, $w_i$ denotes the weight of the $i$th dataset, 
+%equal to 5 for the glucose, CAT, pyruvate, lactate, acetate, succinate, and malate datasets, and 1 elsewhere,
+$\mathcal{T}_i$ denotes the number of timepoints in the $i$th dataset, $t(j)$ denotes the $j$th timepoint, $x_{ij}^{data}$ denotes the value of the $i$th dataset at the $j$th timepoint, and $x_{i}^{sim}|_{t(j)}$ dneotes the simulated value of the metabolite corresponding to the $i$th dataset, interpolated to the $j$th timepoint.
 We then perturbed model parameters:
 \begin{equation}\label{eqn:parameter-perturbation}
     k_i^{new}=k_i*exp(a\,r_i)\qquad{i=1,2,\hdots,\mathcal{P}}
 \end{equation}
-where $\mathcal{P}$ denotes the number of parameters, equal to 652, which includes 163 rate constants, 455 saturation constants, and 34 control parameters, $k_i^{new}$ denotes the new value of the $i$th parameter, $k_i$ denotes the current value of the $i$th parameter, $a$ denotes a distribution variance, set to 0.03, and $r$ denotes a random sample from the normal distribution.
-We stored the parameter set and calculated its cost; if it was less than the previous cost, we used the new parameter set to generate the following set.
-After generating 180,000 sets we defined the 18,000 sets with the lowest cost values as our ensemble, and the set with the lowest cost value as our best-fit set.
+where $\mathcal{P}$ denotes the number of parameters, equal to 815, which includes 163 rate constants, 163 enzyme degradation rate constants, 455 saturation constants, and 34 control parameters, $k_i^{new}$ denotes the new value of the $i$th parameter, $k_i$ denotes the current value of the $i$th parameter, $a$ denotes a distribution variance, 
+%set to 0.03, 
+and $r_i$ denotes a random sample from the normal distribution.
+For each newly generated parameter set, we re-solved the balance equations and calculated the cost function.
+All sets with a lower cost than the previous set, and some with higher cost, were added to the ensemble.
+After generating 12,437 sets, we selected 100 sets with minimal correlation to each other so as to avoid over-sampling any region of parameter space.
+The original 12,437-set ensemble had a [mean,median,maximum] Pearson correlation coefficient [REFERENCE NEEDED?] of [?] between pairs of sets; the 100-set ensemble had a [mean,median,maximum] Pearson correlation coefficient of [?] between pairs of sets.
 
 \subsection*{Global and local sensitivity analysis}
 We conducted a global sensitivity analysis, using the variance-based method of Sobol, to estimate which of the experimentally controllable parameters affected the performance of the reduced order model \citep{SOBOL_METHOD}.
