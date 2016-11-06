@@ -15,49 +15,47 @@ I was expecting a `,' or a `}'---line 222 of file References_v1.bib
  : @article{2002_allen_palsson,
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-Warning--entry type for "SALIB" isn't style-file defined
---line 256 of file References_v1.bib
 Warning--I didn't find a database entry for "pr3010138"
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-You've used 48 entries,
+You've used 45 entries,
             2441 wiz_defined-function locations,
-            903 strings with 15826 characters,
-and the built_in function-call counts, 38180 in all, are:
-= -- 3531
-> -- 641
+            884 strings with 15330 characters,
+and the built_in function-call counts, 35907 in all, are:
+= -- 3324
+> -- 609
 < -- 0
-+ -- 321
-- -- 160
-* -- 3225
-:= -- 4591
-add.period$ -- 97
-call.type$ -- 48
-change.case$ -- 48
++ -- 305
+- -- 152
+* -- 3033
+:= -- 4323
+add.period$ -- 91
+call.type$ -- 45
+change.case$ -- 45
 chr.to.int$ -- 0
-cite$ -- 96
-duplicate$ -- 3748
-empty$ -- 3954
-format.name$ -- 204
-if$ -- 8467
+cite$ -- 90
+duplicate$ -- 3521
+empty$ -- 3707
+format.name$ -- 195
+if$ -- 7963
 int.to.chr$ -- 0
-int.to.str$ -- 48
-missing$ -- 492
-newline$ -- 256
-num.names$ -- 47
-pop$ -- 590
+int.to.str$ -- 45
+missing$ -- 465
+newline$ -- 241
+num.names$ -- 44
+pop$ -- 556
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 289
+skip$ -- 263
 stack$ -- 0
-substring$ -- 5459
-swap$ -- 980
+substring$ -- 5121
+swap$ -- 929
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 299
-width$ -- 50
-write$ -- 538
+while$ -- 284
+width$ -- 47
+write$ -- 508
 (There were 2 error messages)

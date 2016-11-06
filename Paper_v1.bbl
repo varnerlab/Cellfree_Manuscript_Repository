@@ -286,24 +286,6 @@ Okino S, Suda M, Fujikura K, Inui M, Yukawa H (2008) {{P}roduction of
 \newblock Appl Microbiol Biotechnol 78: 449--454.
 \bibAnnoteFile{2008_okino_ApplMicrobiolBiotechnol}
 
-\bibitem{SOBOL_METHOD}
-Sobol I (2001) Global sensitivity indices for nonlinear mathematical models and
-  their monte carlo estimates.
-\newblock Mathematics and Computers in Simulation 55: 271 - 280.
-\bibAnnoteFile{SOBOL_METHOD}
-
-\bibitem{Saltelli:2010}
-Saltelli A, Annoni P, Azzini I, Campolongo F, Ratto M, et~al. (2010) Variance
-  based sensitivity analysis of model output. design and estimator for the
-  total sensitivity index.
-\newblock Computer Physics Communications 181: 259 - 270.
-\bibAnnoteFile{Saltelli:2010}
-
-\bibitem{SALIB}
-Herman JD.
-\newblock http://jdherman.github.io/salib/.
-\bibAnnoteFile{SALIB}
-
 \bibitem{2002_allen_palsson}
 Allen TE, Palsson B{\O} (2003) Sequence-based analysis of metabolic demands for
   protein synthesis in prokaryotes.
