@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.4.25)  11 NOV 2016 16:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.4.25)  11 NOV 2016 17:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -971,13 +971,13 @@ LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <12> not available
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <14.4> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 129.
  [1]
-Overfull \hbox (21.42021pt too wide) in paragraph at lines 174--182
+Overfull \hbox (21.42021pt too wide) in paragraph at lines 172--180
 []\OT1/phv/m/n/12 Mathematical mod-el-ing has long con-tributed to our un-der-s
 tand-ing of metabolism. Decades
  []
 
 [1] [2]
-Overfull \hbox (3.3693pt too wide) in paragraph at lines 192--206
+Overfull \hbox (3.3693pt too wide) in paragraph at lines 190--204
 \OT1/phv/m/n/12 pa-ram-e-ters were es-ti-mated from mea-sure-ments of glu-cose,
  or-ganic acids, en-ergy species,
  []
@@ -991,10 +991,10 @@ Overfull \hbox (3.3693pt too wide) in paragraph at lines 192--206
 ]
 
 Package natbib Warning: Citation `pr3010138' on page 11 undefined on input line
- 397.
+ 392.
 
 [11] [12]
-Overfull \hbox (23.26498pt too wide) in paragraph at lines 438--442
+Overfull \hbox (23.26498pt too wide) in paragraph at lines 433--437
 \OT1/phv/m/n/12 where $\OML/cmm/m/it/12 S[]$ \OT1/phv/m/n/12 de-notes the sen-s
 i-tiv-ity of CAT pro-duc-tion to the $\OML/cmm/m/it/12 i$\OT1/phv/m/n/12 th and
  $\OML/cmm/m/it/12 j$\OT1/phv/m/n/12 th pa-ram-e-ters, $\OML/cmm/m/it/12 CAT\OT
@@ -1002,7 +1002,7 @@ i-tiv-ity of CAT pro-duc-tion to the $\OML/cmm/m/it/12 i$\OT1/phv/m/n/12 th and
  []
 
 [13] [14] [15]
-LaTeX Font Info:    Try loading font information for TS1+phv on input line 508.
+LaTeX Font Info:    Try loading font information for TS1+phv on input line 504.
 
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1phv.fd
 File: ts1phv.fd 2001/06/04 scalable font definitions for TS1/phv.
@@ -1016,56 +1016,56 @@ File: ts1phv.fd 2001/06/04 scalable font definitions for TS1/phv.
 File: ./Figures/CarbonBoth.pdf Graphic file (type pdf)
 
 <use ./Figures/CarbonBoth.pdf>
-Package pdftex.def Info: ./Figures/CarbonBoth.pdf used on input line 526.
+Package pdftex.def Info: ./Figures/CarbonBoth.pdf used on input line 523.
 (pdftex.def)             Requested size: 469.75502pt x 533.82748pt.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 527.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 524.
 
 <./Figures/Energy.pdf, id=96, 794.97pt x 722.7pt>
 File: ./Figures/Energy.pdf Graphic file (type pdf)
  <use ./Figures/Energy.pdf>
-Package pdftex.def Info: ./Figures/Energy.pdf used on input line 533.
+Package pdftex.def Info: ./Figures/Energy.pdf used on input line 530.
 (pdftex.def)             Requested size: 469.75502pt x 427.06198pt.
 
 <./Figures/Amino.pdf, id=97, 794.97pt x 903.375pt>
 File: ./Figures/Amino.pdf Graphic file (type pdf)
  <use ./Figures/Amino.pdf>
-Package pdftex.def Info: ./Figures/Amino.pdf used on input line 540.
+Package pdftex.def Info: ./Figures/Amino.pdf used on input line 537.
 (pdftex.def)             Requested size: 469.75502pt x 533.82748pt.
 
 <./Figures/BoxPlot-KCFM.pdf, id=98, 518.93875pt x 389.455pt>
 File: ./Figures/BoxPlot-KCFM.pdf Graphic file (type pdf)
 
 <use ./Figures/BoxPlot-KCFM.pdf>
-Package pdftex.def Info: ./Figures/BoxPlot-KCFM.pdf used on input line 547.
+Package pdftex.def Info: ./Figures/BoxPlot-KCFM.pdf used on input line 544.
 (pdftex.def)             Requested size: 469.75502pt x 352.5624pt.
 
 <./Figures/Sensitivity.pdf, id=99, 1027.84pt x 770.88pt>
 File: ./Figures/Sensitivity.pdf Graphic file (type pdf)
 
 <use ./Figures/Sensitivity.pdf>
-Package pdftex.def Info: ./Figures/Sensitivity.pdf used on input line 554.
+Package pdftex.def Info: ./Figures/Sensitivity.pdf used on input line 551.
 (pdftex.def)             Requested size: 375.80544pt x 643.1849pt.
 
 
-LaTeX Warning: Float too large for page by 56.7549pt on input line 557.
+LaTeX Warning: Float too large for page by 56.7549pt on input line 554.
 
 <./Figures/CAT_prod_yield.pdf, id=101, 1020.81375pt x 385.44pt>
 File: ./Figures/CAT_prod_yield.pdf Graphic file (type pdf)
 
 <use ./Figures/CAT_prod_yield.pdf>
-Package pdftex.def Info: ./Figures/CAT_prod_yield.pdf used on input line 561.
+Package pdftex.def Info: ./Figures/CAT_prod_yield.pdf used on input line 558.
 (pdftex.def)             Requested size: 446.26582pt x 168.50607pt.
 
 <./Figures/CAT_flux_final.pdf, id=102, 1479.5275pt x 2236.355pt>
 File: ./Figures/CAT_flux_final.pdf Graphic file (type pdf)
 
 <use ./Figures/CAT_flux_final.pdf>
-Package pdftex.def Info: ./Figures/CAT_flux_final.pdf used on input line 568.
+Package pdftex.def Info: ./Figures/CAT_flux_final.pdf used on input line 565.
 (pdftex.def)             Requested size: 375.80544pt x 568.02786pt.
 
 
-LaTeX Warning: Float too large for page by 29.59785pt on input line 571.
+LaTeX Warning: Float too large for page by 29.59785pt on input line 568.
 
 [23 <./Figures/CarbonBoth.pdf>] [24 <./Figures/Energy.pdf>] [25 <./Figures/Amin
 o.pdf>] [26 <./Figures/BoxPlot-KCFM.pdf>] [27 <./Figures/Sensitivity.pdf>]
@@ -1109,7 +1109,7 @@ b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr
 ve/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/urw/helvetic/uhvro8a.pfb>
-Output written on Paper_v1.pdf (31 pages, 983458 bytes).
+Output written on Paper_v1.pdf (31 pages, 983426 bytes).
 PDF statistics:
  497 PDF objects out of 1000 (max. 8388607)
  200 compressed objects within 2 object streams

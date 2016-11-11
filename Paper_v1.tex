@@ -130,14 +130,12 @@
 Cell-free protein expression systems have become widely used in systems and synthetic biology.
 In this study, we developed an ensemble of dynamic \textit{E. coli} cell-free protein synthesis (CFPS) models.
 Model parameters were estimated from measurements of glucose, organic acids, energy species, amino acids and the protein product, chloramphenicol acetyltransferase (CAT).
-The ensemble described the training data, with the exception of some of the amino acid dynamics.
-To gauge the performance of the cell-free reaction, we compared the observed CAT carbon yield, with the maximum theoretical CAT carbon yield calculated using sequence specific flux
-balance analysis. The observed CAT yield was 45\% of the maximum theoretical yield, suggesting CAT production could be further optimized.
-The metabolic flux distribution predicted by the dynamic model and flux balance analysis were significantly different.
-The ensemble of dynamic models predicted the majority of carbon flux was routed through glycolysis and the TCA cycle,
-while flux balance analysis predicted significant flux through the Entner-Doudoroff pathway.
-Local and global sensitivity analysis suggested CAT production was most sensitive to parameters and initial conditions directly associated with CAT synthesis, as well as
-GTP/GMP synthesis, amino acid synthesis, and to a lesser extent amino acid initial conditions.
+The ensemble described all of the training data, especially the central carbon metabolism.
+To gauge the performance of the cell-free reaction, we compared the observed CAT carbon yield, with the maximum theoretical CAT carbon yield calculated using sequence specific flux balance analysis.
+The observed CAT yield was 45\% of the maximum theoretical yield, suggesting CAT production could be further optimized.
+%The metabolic flux distribution predicted by the dynamic model and flux balance analysis were significantly different.
+The ensemble of dynamic models predicted the majority of carbon flux was routed through glycolysis and the TCA cycle, while flux balance analysis predicted significant flux through the Entner-Doudoroff pathway.
+Local and global sensitivity analysis suggested CAT production was most sensitive to parameters and initial conditions directly associated with CAT synthesis, as well as GTP/GMP synthesis, amino acid synthesis, and to a lesser extent amino acid initial conditions.
 On the other hand, CAT production was robust to allosteric control parameters and the initial conditions of glucose and oxygen.
 Taken together, we presented the first dynamic model of \textit{E. coli} cell-free protein synthesis.
 This study provides a foundation for genome-scale, dynamic modeling of cell-free \textit{E. coli} protein synthesis.
@@ -317,18 +315,15 @@ A second simulation with a knockout of \textit{gnd} and phosphate acetyltransfer
 In this study, we developed an ensemble of \textit{E. coli} cell-free protein synthesis (CFPS) models using the hybrid cell-free modeling approach of Wayman et al [REFHERE].
 Model parameters were estimated from measurements of glucose, organic acids, energy species, amino acids and the protein product, chloramphenicol acetyltransferase (CAT).
 The ensemble described the training data, with the exception of some of the amino acid dynamics.
-To gauge the performance of the cell-free reaction, we compared the observed CAT carbon yield, with the maximum theoretical CAT carbon yield calculated using sequence specific flux
-balance analysis. The observed CAT yield was 25\% of the maximum theoretical yield, suggesting CAT production could be further optimized.
+To gauge the performance of the cell-free reaction, we compared the observed CAT carbon yield with the maximum theoretical CAT carbon yield calculated using sequence specific flux balance analysis.
+The observed CAT yield was 25\% of the maximum theoretical yield, suggesting CAT production could be further optimized.
 The metabolic flux distribution predicted by the dynamic model and flux balance analysis were significantly different.
-The ensemble of dynamic models predicted the majority of carbon flux was routed through glycolysis and the TCA cycle,
-while flux balance analysis predicted significant flux through the Entner-Doudoroff pathway.
-Local and global sensitivity analysis suggested CAT production was most sensitive to parameters and initial conditions directly associated with CAT synthesis, as well as
-GTP/GMP synthesis, amino acid synthesis, and to a lesser extent amino acid initial conditions.
+The ensemble of dynamic models predicted the majority of carbon flux was routed through glycolysis and the TCA cycle, while flux balance analysis predicted significant flux through the Entner-Doudoroff pathway.
+Local and global sensitivity analysis suggested CAT production was most sensitive to parameters and initial conditions directly associated with CAT synthesis, as well as GTP/GMP synthesis, amino acid synthesis, and to a lesser extent amino acid initial conditions.
 On the other hand, CAT production was robust to allosteric control parameters and the initial conditions of glucose and oxygen.
 % Taken together, we presented the first dynamic model of \textit{E. coli} cell-free protein synthesis.
 % We integrated traditional kinetics with a logical rule-based description of allosteric control to simulate a comprehensive CFPS dataset.
 % This study provides a foundation for genome-scale, dynamic modeling of cell-free \textit{E. coli} protein synthesis.
-
 
 In comparing the theoretical maximum carbon yield of CAT from ssFBA predictions to the kinetic model and experimental measurements, suggests that there is potential for increasing CAT yield in CFPS as well as CFPS performance. 
 The theoretical maximum yield of CAT was 0.35 for an unconstrained case and 0.225 for a transcription/translation constrained case. 
@@ -417,7 +412,7 @@ Beginning with a single parameter set as a starting point, we calculated its cos
 \begin{equation}\label{eqn:cost-function}
     cost=\sum_{i=1}^{\mathcal{D}}\left(w_i\sum_{j=1}^{\mathcal{T}_i}abs\left(x_{ij}^{data}-x_{i}^{sim}|_{t(j)}\right)\right)
 \end{equation}
-where $\mathcal{D}$ denotes the number of datasets, $w_i$ denotes the weight of the $i$th dataset, $\mathcal{T}_i$ denotes the number of timepoints in the $i$th dataset, $t(j)$ denotes the $j$th timepoint, $x_{ij}^{data}$ denotes the value of the $i$th dataset at the $j$th timepoint, and $x_{i}^{sim}|_{t(j)}$ dneotes the simulated value of the metabolite corresponding to the $i$th dataset, interpolated to the $j$th timepoint.
+where $\mathcal{D}$ denotes the number of datasets, equal to 37, $w_i$ denotes the weight of the $i$th dataset, $\mathcal{T}_i$ denotes the number of timepoints in the $i$th dataset, $t(j)$ denotes the $j$th timepoint, $x_{ij}^{data}$ denotes the value of the $i$th dataset at the $j$th timepoint, and $x_{i}^{sim}|_{t(j)}$ denotes the simulated value of the metabolite corresponding to the $i$th dataset, interpolated to the $j$th timepoint.
 We then perturbed model parameters:
 \begin{equation}\label{eqn:parameter-perturbation}
     k_i^{new}=k_i*exp(a\,r_i)\qquad{i=1,2,\hdots,\mathcal{P}}
@@ -426,7 +421,7 @@ where $\mathcal{P}$ denotes the number of parameters, equal to 815, which includ
 For each newly generated parameter set, we re-solved the balance equations and calculated the cost function.
 All sets with a lower cost than the previous set, and some with higher cost, were added to the ensemble.
 After generating 12,437 sets, we selected 100 sets with minimal correlation to each other so as to avoid over-sampling any region of parameter space.
-The original 12,437-set ensemble had a mean Pearson correlation coefficient [REFERENCE NEEDED?] of 0.93 between pairs of sets; the 100-set ensemble had a mean Pearson correlation coefficient of 0.84 between pairs of sets.
+The original 12,437-set ensemble had a mean Pearson correlation coefficient [REFERENCE NEEDED?] of 0.94 between pairs of sets, while the 100-set ensemble had a mean Pearson correlation coefficient of 0.83 between pairs of sets.
 
 \subsection*{Local sensitivity analysis}
 We determined the reactions most important to protein production by computing the local sensitivity of CAT concentration to each rate constant in the network.
@@ -449,6 +444,7 @@ Each sensitivity index was formulated as:
 \end{equation}
 where $S_{ij}$ denotes the sensitivity of the system state to the $i$th and $j$th parameters, and $X(p_i,p_j,t)$ denotes the system state, an array consisting of the concentration of every species for which data exist as a function of time and the $i$th and $j$th parameters.
 % $\alpha$ denotes the perturbation factor, equal to 1.01, and $\mathcal{P}$ denotes the number of rate constants, equal to 163.
+This array of sensitivity indices was also organized into a clustergram (Fig.~\ref{fig:Sensitivity}, bottom).
 
 \subsection*{Sequence specific FBA and calculation of CAT yield}
 The yield on CAT production was calculated for each case as a ratio of carbon produced as CAT to carbon consumed as reactants (glucose and amino acids):
@@ -483,8 +479,8 @@ The transcription rate was constrained as:
 	w_{tx} = RNAP\frac{v_{RNAP}}{l_{mRNA}}\left(\frac{Gene}{km+Gene}\right)P
 \end{equation}
 where $RNAP$ is the concentration of RNA polymerase, $v_{RNAP}$ is the elongation rate (nucleotides/hr) by the RNA polymerase, $l_{mRNA}$ is the number of nucleotides in the mRNA, $Gene$ is the gene concentration, $km$ is the plasmid saturation coefficient, and $P$ is the promoter activity.
-The mRNA and protein sequence of CAT was determined from literature. 
- 
+The mRNA and protein sequence of CAT was determined from literature.
+
 The promoter activity was formulated following Moon et al. for synthetic circuits as:
 \begin{equation}\nonumber
 	P = \frac{K_{1}}{1 + K_{1}}
@@ -521,6 +517,7 @@ This study was supported by a National Science Foundation Graduate Research Fell
 
 \clearpage
 
+% Figures and captions go here ...
 \begin{figure}[ht]
 \centering
 \includegraphics[width=1.00\textwidth]{./Figures/CarbonBoth.pdf}
