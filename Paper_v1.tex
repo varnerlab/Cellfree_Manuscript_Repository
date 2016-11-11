@@ -34,7 +34,7 @@
 \usepackage{textcomp}
 \usepackage{multirow}
 \usepackage{amsmath}
-\usepackage{textgreek}
+%\usepackage{textgreek}
 %\usepackage[linesnumbered,lined,boxed,commentsnumbered]{algorithm2e}
 \DeclareMathOperator*{\argmin}{\arg\!\min}
 
@@ -420,20 +420,16 @@ Beginning with a single parameter set as a starting point, we calculated its cos
 \begin{equation}\label{eqn:cost-function}
     cost=\sum_{i=1}^{\mathcal{D}}\left(w_i\sum_{j=1}^{\mathcal{T}_i}abs\left(x_{ij}^{data}-x_{i}^{sim}|_{t(j)}\right)\right)
 \end{equation}
-where $\mathcal{D}$ denotes the number of datasets, $w_i$ denotes the weight of the $i$th dataset, 
-%equal to 5 for the glucose, CAT, pyruvate, lactate, acetate, succinate, and malate datasets, and 1 elsewhere,
-$\mathcal{T}_i$ denotes the number of timepoints in the $i$th dataset, $t(j)$ denotes the $j$th timepoint, $x_{ij}^{data}$ denotes the value of the $i$th dataset at the $j$th timepoint, and $x_{i}^{sim}|_{t(j)}$ dneotes the simulated value of the metabolite corresponding to the $i$th dataset, interpolated to the $j$th timepoint.
+where $\mathcal{D}$ denotes the number of datasets, $w_i$ denotes the weight of the $i$th dataset, $\mathcal{T}_i$ denotes the number of timepoints in the $i$th dataset, $t(j)$ denotes the $j$th timepoint, $x_{ij}^{data}$ denotes the value of the $i$th dataset at the $j$th timepoint, and $x_{i}^{sim}|_{t(j)}$ dneotes the simulated value of the metabolite corresponding to the $i$th dataset, interpolated to the $j$th timepoint.
 We then perturbed model parameters:
 \begin{equation}\label{eqn:parameter-perturbation}
     k_i^{new}=k_i*exp(a\,r_i)\qquad{i=1,2,\hdots,\mathcal{P}}
 \end{equation}
-where $\mathcal{P}$ denotes the number of parameters, equal to 815, which includes 163 rate constants, 163 enzyme degradation rate constants, 455 saturation constants, and 34 control parameters, $k_i^{new}$ denotes the new value of the $i$th parameter, $k_i$ denotes the current value of the $i$th parameter, $a$ denotes a distribution variance, 
-%set to 0.03, 
-and $r_i$ denotes a random sample from the normal distribution.
+where $\mathcal{P}$ denotes the number of parameters, equal to 815, which includes 163 rate constants, 163 enzyme degradation rate constants, 455 saturation constants, and 34 control parameters, $k_i^{new}$ denotes the new value of the $i$th parameter, $k_i$ denotes the current value of the $i$th parameter, $a$ denotes a distribution variance, and $r_i$ denotes a random sample from the normal distribution.
 For each newly generated parameter set, we re-solved the balance equations and calculated the cost function.
 All sets with a lower cost than the previous set, and some with higher cost, were added to the ensemble.
 After generating 12,437 sets, we selected 100 sets with minimal correlation to each other so as to avoid over-sampling any region of parameter space.
-The original 12,437-set ensemble had a [mean,median,maximum] Pearson correlation coefficient [REFERENCE NEEDED?] of [?] between pairs of sets; the 100-set ensemble had a [mean,median,maximum] Pearson correlation coefficient of [?] between pairs of sets.
+The original 12,437-set ensemble had a mean Pearson correlation coefficient [REFERENCE NEEDED?] of 0.93 between pairs of sets; the 100-set ensemble had a mean Pearson correlation coefficient of 0.84 between pairs of sets.
 
 \subsection*{Sensitivity analysis}
 We determined the reactions most important to protein production by computing the local sensitivity of CAT concentration to each rate constant in the network.
@@ -547,21 +543,14 @@ This study was supported by a National Science Foundation Graduate Research Fell
 
 \begin{figure}[ht]
 \centering
-\includegraphics[width=1.00\textwidth,trim=0 0 263 0,clip]{./Figures/ClusterCAT.pdf}
+\includegraphics[width=0.8\textwidth,trim=0 28 615 40,clip]{./Figures/Sensitivity.pdf}
 \caption{Normalized first-order and pairwise sensitivities of CAT production to rate constants.}
-\label{fig:ClusterCAT}
+\label{fig:Sensitivity}
 \end{figure}
 
 \begin{figure}[ht]
 \centering
-\includegraphics[width=1.15\textwidth,trim=0 0 263 0,clip]{./Figures/ClusterSystem.pdf}
-\caption{Normalized first-order and pairwise sensitivities of system state to rate constants. A (most sensitive parameters): hexokinase run by GTP, and lactate dehydrogenase forward reaction. B: }
-\label{fig:ClusterSystem}
-\end{figure}
-
-\begin{figure}[ht]
-\centering
-\includegraphics[width=0.75\textwidth]{./Figures/CAT_prod_yield.pdf}
+\includegraphics[width=0.95\textwidth]{./Figures/CAT_prod_yield.pdf}
 \caption{Sequence specific flux balance analysis of CAT production and yield. A. 95\% confidence interval of the ensemble (light blue region) for CAT concentration versus time. B. Theoretical maximum carbon yield of CAT calcualted by ssFBA for three different cases: unconstrained except for glucose uptake (black), constrained by transcription and translation rates (grey), and constrained by transcription, translation rates and experimental measurements where available (light grey). Error bars represent standard deviation of the ensemble.}
 \label{fig:CATProdYield}
 \end{figure}
