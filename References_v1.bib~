@@ -5,21 +5,6 @@
 
 
 %% Saved with string encoding Unicode (UTF-8) 
-@article {2008_jewett_molsysbiol,
-	author = {Jewett, Michael C and Calhoun, Kara A and Voloshin, Alexei and Wuu, Jessica J and Swartz, James R},
-	title = {An integrated cell-free metabolic platform for protein production and synthetic biology},
-	volume = {4},
-	number = {1},
-	year = {2008},
-	doi = {10.1038/msb.2008.57},
-	publisher = {EMBO Press},
-	abstract = {Cell-free systems offer a unique platform for expanding the capabilities of natural biological systems for useful purposes, i.e. synthetic biology. They reduce complexity, remove structural barriers, and do not require the maintenance of cell viability. Cell-free systems, however, have been limited by their inability to co-activate multiple biochemical networks in a single integrated platform. Here, we report the assessment of biochemical reactions in an Escherichia coli cell-free platform designed to activate natural metabolism, the Cytomim system. We reveal that central catabolism, oxidative phosphorylation, and protein synthesis can be co-activated in a single reaction system. Never before have these complex systems been shown to be simultaneously activated without living cells. The Cytomim system therefore promises to provide the metabolic foundation for diverse ab initio cell-free synthetic biology projects. In addition, we describe an improved Cytomim system with enhanced protein synthesis yields (up to 1200 mg/l in 2 h) and lower costs to facilitate production of protein therapeutics and biochemicals that are difficult to make in vivo because of their toxicity, complexity, or unusual cofactor requirements.Mol Syst Biol. 4: 220},
-	issn = {1744-4292},
-	URL = {http://msb.embopress.org/content/4/1/220},
-	eprint = {http://msb.embopress.org/content/4/1/220.full.pdf},
-	journal = {Molecular Systems Biology}
-}
-
 @article{2016_garamella_acssynbio,
 author = {Garamella, Jonathan and Marshall, Ryan and Rustad, Mark and Noireaux, Vincent}
 title = {The All E. coli TX-TL Toolbox 2.0: A Platform for Cell-Free Synthetic Biology},
