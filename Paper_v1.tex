@@ -403,7 +403,7 @@ The original 12,437-set ensemble had a mean Pearson correlation coefficient [REF
 \subsection*{Local sensitivity analysis}
 We determined the reactions most important to protein production by computing the local sensitivity of CAT concentration to each rate constant in the network.
 Each sensitivity index was formulated as:
-\begin{equation}\label{eqn:local-sensitivity}
+\begin{equation}\label{eqn:CAT-sensitivity}
 \begin{split}
     S_{ij}=norm(CAT(p_i,p_j,t)-CAT(\alpha*p_i,\alpha*p_j,t))\qquad{i,j=1,2,\hdots\mathcal{P}}\\
 \end{split}
@@ -414,7 +414,7 @@ The array of sensitivity indices was organized into a clustergram (Fig.~\ref{fig
 
 Likewise, we determined the reactions most important to the system as a whole by computing the local sensitivity of the species for which data exist to each rate constant in the network.
 Each sensitivity index was formulated as:
-\begin{equation}\label{eqn:local-sensitivity}
+\begin{equation}\label{eqn:system-sensitivity}
 \begin{split}
     S_{ij}=norm(X(p_i,p_j,t)-X(\alpha*p_i,\alpha*p_j,t))\qquad{i,j=1,2,\hdots\mathcal{P}}\\
 \end{split}
@@ -500,6 +500,13 @@ This study was supported by a National Science Foundation Graduate Research Fell
 \includegraphics[width=1.00\textwidth]{./Figures/CarbonBoth.pdf}
 \caption{Central carbon metabolism in the presence (top) and absence (bottom) of allosteric control, including glucose (substrate), CAT (product), and intermediates, as well as total concentration of energy species. Best-fit parameter set (orange line) versus experimental data (points). 95\% confidence interval (blue shaded region) and 95\% confidence interval of the mean (gray shaded region) over the ensemble of 100 sets.}
 \label{fig:CarbonBoth}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=1.00\textwidth]{./Figures/CarbonBoth_png.pdf}
+\caption{Central carbon metabolism in the presence (top) and absence (bottom) of allosteric control, including glucose (substrate), CAT (product), and intermediates, as well as total concentration of energy species. Best-fit parameter set (orange line) versus experimental data (points). 95\% confidence interval (blue shaded region) and 95\% confidence interval of the mean (gray shaded region) over the ensemble of 100 sets.}
+\label{fig:CarbonBoth_png}
 \end{figure}
 
 \begin{figure}[ht]

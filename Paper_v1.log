@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.4.25)  12 NOV 2016 16:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.4.25)  14 NOV 2016 12:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -868,11 +868,7 @@ Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty
 \bigstrutjot=\dimen163
-) (./Paper_v1.aux
-
-LaTeX Warning: Label `eqn:local-sensitivity' multiply defined.
-
-)
+) (./Paper_v1.aux)
 \openout1 = `Paper_v1.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 101.
@@ -1021,74 +1017,77 @@ Package pdftex.def Info: ./Figures/CarbonBoth.pdf used on input line 500.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 501.
 
-<./Figures/Energy.pdf, id=103, 794.97pt x 722.7pt>
+<./Figures/CarbonBoth_png.pdf, id=103, 2400.46812pt x 2144.54202pt>
+File: ./Figures/CarbonBoth_png.pdf Graphic file (type pdf)
+
+<use ./Figures/CarbonBoth_png.pdf>
+Package pdftex.def Info: ./Figures/CarbonBoth_png.pdf used on input line 507.
+(pdftex.def)             Requested size: 469.75502pt x 419.67291pt.
+
+<./Figures/Energy.pdf, id=104, 794.97pt x 722.7pt>
 File: ./Figures/Energy.pdf Graphic file (type pdf)
  <use ./Figures/Energy.pdf>
-Package pdftex.def Info: ./Figures/Energy.pdf used on input line 507.
+Package pdftex.def Info: ./Figures/Energy.pdf used on input line 514.
 (pdftex.def)             Requested size: 469.75502pt x 427.06198pt.
 
-<./Figures/Amino.pdf, id=104, 794.97pt x 903.375pt>
+<./Figures/Amino.pdf, id=105, 794.97pt x 903.375pt>
 File: ./Figures/Amino.pdf Graphic file (type pdf)
  <use ./Figures/Amino.pdf>
-Package pdftex.def Info: ./Figures/Amino.pdf used on input line 514.
+Package pdftex.def Info: ./Figures/Amino.pdf used on input line 521.
 (pdftex.def)             Requested size: 469.75502pt x 533.82748pt.
 
-<./Figures/BoxPlot-KCFM.pdf, id=105, 518.93875pt x 389.455pt>
+<./Figures/BoxPlot-KCFM.pdf, id=106, 518.93875pt x 389.455pt>
 File: ./Figures/BoxPlot-KCFM.pdf Graphic file (type pdf)
 
 <use ./Figures/BoxPlot-KCFM.pdf>
-Package pdftex.def Info: ./Figures/BoxPlot-KCFM.pdf used on input line 521.
+Package pdftex.def Info: ./Figures/BoxPlot-KCFM.pdf used on input line 528.
 (pdftex.def)             Requested size: 469.75502pt x 352.5624pt.
 
-<./Figures/Sensitivity.pdf, id=106, 1027.84pt x 770.88pt>
+<./Figures/Sensitivity.pdf, id=107, 1027.84pt x 770.88pt>
 File: ./Figures/Sensitivity.pdf Graphic file (type pdf)
 
 <use ./Figures/Sensitivity.pdf>
-Package pdftex.def Info: ./Figures/Sensitivity.pdf used on input line 528.
+Package pdftex.def Info: ./Figures/Sensitivity.pdf used on input line 535.
 (pdftex.def)             Requested size: 375.80544pt x 643.1849pt.
 
 
-LaTeX Warning: Float too large for page by 56.7549pt on input line 531.
+LaTeX Warning: Float too large for page by 56.7549pt on input line 538.
 
-<./Figures/CAT_prod_yield.pdf, id=108, 1020.81375pt x 385.44pt>
+<./Figures/CAT_prod_yield.pdf, id=109, 1020.81375pt x 385.44pt>
 File: ./Figures/CAT_prod_yield.pdf Graphic file (type pdf)
 
 <use ./Figures/CAT_prod_yield.pdf>
-Package pdftex.def Info: ./Figures/CAT_prod_yield.pdf used on input line 535.
+Package pdftex.def Info: ./Figures/CAT_prod_yield.pdf used on input line 542.
 (pdftex.def)             Requested size: 446.26582pt x 168.50607pt.
 
-<./Figures/CAT_flux_final.pdf, id=109, 1479.5275pt x 2236.355pt>
+<./Figures/CAT_flux_final.pdf, id=110, 1479.5275pt x 2236.355pt>
 File: ./Figures/CAT_flux_final.pdf Graphic file (type pdf)
 
 <use ./Figures/CAT_flux_final.pdf>
-Package pdftex.def Info: ./Figures/CAT_flux_final.pdf used on input line 542.
+Package pdftex.def Info: ./Figures/CAT_flux_final.pdf used on input line 549.
 (pdftex.def)             Requested size: 375.80544pt x 568.02786pt.
 
 
-LaTeX Warning: Float too large for page by 29.59785pt on input line 545.
+LaTeX Warning: Float too large for page by 29.59785pt on input line 552.
 
-[25 <./Figures/CarbonBoth.pdf>] [26 <./Figures/Energy.pdf>] [27 <./Figures/Amin
-o.pdf>] [28 <./Figures/BoxPlot-KCFM.pdf>] [29 <./Figures/Sensitivity.pdf>]
-[30 <./Figures/CAT_prod_yield.pdf>] [31 <./Figures/CAT_flux_final.pdf>]
-
+[25 <./Figures/CarbonBoth.pdf>] [26 <./Figures/CarbonBoth_png.pdf>] [27 <./Figu
+res/Energy.pdf>] [28 <./Figures/Amino.pdf>] [29 <./Figures/BoxPlot-KCFM.pdf>]
+[30 <./Figures/Sensitivity.pdf>] [31 <./Figures/CAT_prod_yield.pdf>] [32 <./Fig
+ures/CAT_flux_final.pdf>] 
 AED: lastpage setting LastPage
 
 Package natbib Warning: There were undefined citations.
 
-(./Paper_v1.aux)
-
-LaTeX Warning: There were multiply-defined labels.
-
- )
+(./Paper_v1.aux) )
 (\end occurred inside a group at level 1)
 
 ### semi simple group (level 1) entered at line 55 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 6724 strings out of 494953
- 100081 string characters out of 6180977
- 165157 words of memory out of 5000000
- 9776 multiletter control sequences out of 15000+600000
+ 6731 strings out of 494953
+ 100272 string characters out of 6180977
+ 165136 words of memory out of 5000000
+ 9782 multiletter control sequences out of 15000+600000
  31496 words of font info for 74 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  42i,16n,43p,674b,1140s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1109,10 +1108,10 @@ b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr
 ve/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/urw/helvetic/uhvro8a.pfb>
-Output written on Paper_v1.pdf (33 pages, 986879 bytes).
+Output written on Paper_v1.pdf (34 pages, 1545848 bytes).
 PDF statistics:
- 504 PDF objects out of 1000 (max. 8388607)
- 204 compressed objects within 3 object streams
+ 514 PDF objects out of 1000 (max. 8388607)
+ 210 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 42 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 47 words of extra memory for PDF output out of 10000 (max. 10000000)
 
