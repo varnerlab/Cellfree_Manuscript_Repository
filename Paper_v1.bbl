@@ -44,6 +44,12 @@ Hodgman CE, Jewett MC (2012) Cell-free synthetic biology: thinking outside the
 \newblock Metab Eng 14: 261-9.
 \bibAnnoteFile{Hodgman:2012aa}
 
+\bibitem{Pardee:2016aa}
+Pardee K, Slomovic S, Nguyen PQ, Lee JW, Donghia N, et~al. (2016) Portable,
+  on-demand biomolecular manufacturing.
+\newblock Cell 167: 248-259.e12.
+\bibAnnoteFile{Pardee:2016aa}
+
 \bibitem{1976_fredrickson_BiotechBioeng}
 Fredrickson AG (1976) Formulation of structured growth models.
 \newblock Biotechnol Bioeng 18: 1481-6.
@@ -272,10 +278,22 @@ Okino S, Suda M, Fujikura K, Inui M, Yukawa H (2008) {{P}roduction of
 \newblock Appl Microbiol Biotechnol 78: 449--454.
 \bibAnnoteFile{2008_okino_ApplMicrobiolBiotechnol}
 
+\bibitem{Allen:2003aa}
+Allen TE, Palsson B{\O} (2003) Sequence-based analysis of metabolic demands for
+  protein synthesis in prokaryotes.
+\newblock J Theor Biol 220: 1-18.
+\bibAnnoteFile{Allen:2003aa}
+
 \bibitem{GLPK}
  (2016).
 \newblock {GNU Linear Programming Kit, Version 4.52}.
 \newblock \urlprefix\url{http://www.gnu.org/software/glpk/glpk.html}.
 \bibAnnoteFile{GLPK}
+
+\bibitem{Garamella:2016aa}
+Garamella J, Marshall R, Rustad M, Noireaux V (2016) The all e. coli tx-tl
+  toolbox 2.0: A platform for cell-free synthetic biology.
+\newblock ACS Synth Biol 5: 344-55.
+\bibAnnoteFile{Garamella:2016aa}
 
 \end{thebibliography}

@@ -190,14 +190,11 @@ However, genome-scale kinetic models of industrial important organisms such as \
 In this study, we developed an ensemble of kinetic cell-free protein synthesis (CFPS) models using dynamic metabolite measurements in an \textit{E. coli} cell free extract.
 Model parameters were estimated from measurements of glucose, organic acids, energy species, amino acids, and the protein product, chloramphenicol acetyltransferase (CAT).
 Characteristic values for model parameters and initial conditions, estimated from literature, were used to constrain the parameter estimation problem.
-The ensemble of parameter sets described the training data with a median cost that was greater than two orders of magnitude smaller than random sets constructed using the literature parameter constraints.
-We then used the ensemble of kinetic models to analyze the CFPS reaction.
+The ensemble of parameter sets described the training data with a median cost that was greater than two orders of magnitude smaller than random sets constructed using the literature parameter constraints. We then used the ensemble of kinetic models to analyze the CFPS reaction.
 First, sensitivity analysis of the dynamic model suggested that CAT production was most sensitive to CAT synthesis parameters, as well as reactions in amino acid synthesis/degradation, glycolysis, and the TCA cycle, and to a lesser extent the pentose phosphate pathway and oxidative phosphorylation.
 Sensitivity analysis also showed that the system as a whole was most sensitive to these same parts of the network.
-CAT production was also robust to allosteric control, but other metabolites, specifically organic acid intermediates such as pyruvate, were not.
-Next, to gauge the performance of the cell-free reaction, we compared the observed CAT carbon yield with the maximum theoretical CAT carbon yield calculated using sequence-specific flux balance analysis.
-The CAT yield estimated from the kinetic model was 25\% of the maximum theoretical yield, but 38\% of the theoretical yield when physiologically realistic constraints were used.
-The metabolic flux distribution predicted by the dynamic model and flux balance analysis were significantly different.
+CAT production and other metabolites, specifically organic acid intermediates such as pyruvate, were sensitive to the presence of allosteric control mechanisms.
+Next, to gauge the performance of the cell-free reaction, we compared the observed CAT carbon yield with the maximum theoretical CAT carbon yield calculated using sequence-specific flux balance analysis. The CAT yield estimated from the kinetic model was 25\% of the maximum theoretical yield, but 38\% of the theoretical yield when physiologically realistic constraints were used. The metabolic flux distribution predicted by the dynamic model and flux balance analysis were significantly different.
 The ensemble of dynamic models predicted the majority of carbon flux was routed through glycolysis and the TCA cycle, while flux balance analysis predicted significant flux through the Entner-Doudoroff pathway.
 Taken together, we have integrated traditional kinetics with a logical rule-based description of allosteric control to simulate a comprehensive CFPS dataset.
 This study provides a foundation for genome-scale, dynamic modeling of cell-free \textit{E. coli} protein synthesis.
@@ -218,55 +215,64 @@ The ensemble of kinetic CFPS models captured the time evolution of CAT biosynthe
 The cell-free \textit{E.~coli} metabolic network was constructed by removing growth associated reactions from the iAF1260 reconstruction \cite{Feist:2007aa},
 and by adding reactions describing chloramphenicol acetyltransferase (CAT) biosynthesis, a model protein for which we have a comprehensive training dataset \cite{2005_calhoun_BiotechnologyProgress}.
 The CFPS model equations were formulated using the hybrid cell-free modeling framework of Wayman et al. \cite{pr3010138}.
-An ensemble of probable model parameters (N $>$ 10,000) was estimated from the time-series metabolite measurements using a constrained Markov Chain Monte Carlo (MCMC) approach;
-the MCMC algorithm minimized the error between the training data and model simulations starting from an initial parameter estimate assembled from literature and inspection.
-We selected parameter sets for the ensemble based upon their error value and the Pearson correlation coefficient between sets in the ensemble.
+An ensemble of model parameters (N $>$ 10,000) was estimated from measurements of glucose, CAT, organic acids (pyruvate, lactate, acetate, succinate, malate), energy species (A(x)P, G(x)P, C(x)P, U(x)P), and 18 of the 20 proteinogenic amino acids using a constrained Markov Chain Monte Carlo (MCMC) approach.
+The MCMC algorithm minimized the error between the training data and model simulations starting from an initial parameter set assembled from literature and inspection.
+Parameter sets were selected for the ensemble based upon their error, and the Pearson correlation coefficient between the candidate and existing sets the ensemble.
 The parameter set with the lowest error value was defined as the best-fit set.
-The central carbon metabolism (Fig.~\ref{fig:CarbonBoth}, top), energy species (Fig.~\ref{fig:Energy}), and amino acids (Fig.~\ref{fig:Amino}) were all captured by the ensemble and the best-fit set. Allosteric control was important to the dynamics of the organic acid intermediates, as without it several of the measurements were not captured by the ensemble or the best-fit set (Fig.~\ref{fig:CarbonBoth}, bottom). However,
+Central carbon metabolism (Fig.~\ref{fig:CarbonBoth}, top), energy species (Fig.~\ref{fig:Energy}), and amino acids (Fig.~\ref{fig:Amino}) were captured by the ensemble and the best-fit set.
+The constrained MCMC approach estimated parameter sets with a median error greater than two-order of magnitude less than random parameter sets generated within
+the same parameter bounds (Fig. \ref{fig:BoxPlot}); thus, we have confidence in the predictive capability of the estimated parameters.
+Allosteric control was important to the dynamics of the organic acid intermediates and CAT biosynthesis (Fig.~\ref{fig:CarbonBoth}, bottom).
+The acetate, lactate, pyruvate, succinate, malate and CAT trajectories were qualitatively different in the absence of allosteric control following glucose exhaustion.
+In particular, the rate of CAT biosynthesis and lactate accumulation and subsequent consumption decreased following glucose exhaustion in the absence of control.
 
-We used the hybrid cell-free modeling framework of Wayman and coworkers to simulate the production of CAT \citep{pr3010138}.
-The cell-free \textit{E. coli} metabolic network was constructed by removing the growth-associated processes from the model of Palsson and coworkers \cite{2000_edwards_palsson_PNAS}, and by adding reactions for the synthesis of
-Thus, the model described core central carbon metabolism (glycolysis, pentose phosphate, Enter-Doudoroff, TCA cycle), as well as the synthesis of energy species, amino acids biosynthesis and degradation, and biosynthesis of the CAT protein.
-An ensemble of model parameters was estimated from dynamic measurements of glucose, CAT, organic acids (pyruvate, lactate, acetate, succinate, malate), energy species (A(x)P, G(x)P, C(x)P, U(x)P), and 18 of the 20 proteinogenic amino acids by minimizing the difference between the experimental dataset and metabolite simulations subject to literature constraints on parameter values and initial conditions.
 
 
-\subsection*{Sensitivity analysis}
-We performed a local sensitivity analysis to determine the network reactions with the greatest effect on protein production and overall system state.
-%CAT production was most sensitive to the CAT synthesis reaction, oxidative phosphorylation activity, and alanine synthesis, as well as various reactions in glycolysis, pentose phosphate, the TCA cycle, and amino acid synthesis and degradation (Fig.~\ref{fig:Sensitivity}, top).
+% We used the hybrid cell-free modeling framework of Wayman and coworkers to simulate the production of CAT \citep{pr3010138}.
+% The cell-free \textit{E. coli} metabolic network was constructed by removing the growth-associated processes from the model of Palsson and coworkers \cite{2000_edwards_palsson_PNAS}, and by adding reactions for the synthesis of
+% Thus, the model described core central carbon metabolism (glycolysis, pentose phosphate, Enter-Doudoroff, TCA cycle), as well as the synthesis of energy species, amino acids biosynthesis and degradation, and biosynthesis of the CAT protein.
+% An ensemble of model parameters was estimated from dynamic measurements of glucose, CAT, organic acids (pyruvate, lactate, acetate, succinate, malate), energy species (A(x)P, G(x)P, C(x)P, U(x)P), and 18 of the 20 proteinogenic amino acids by minimizing the difference between the experimental dataset and metabolite simulations subject to literature constraints on parameter values and initial conditions.
+% We performed a local sensitivity analysis to determine the network reactions with the greatest effect on protein production and overall system state.
+
+To better understand which parameters, and parameter combinations influenced model performance we performed sensitivity analysis (Fig.~\ref{fig:Sensitivity}).
 CAT production was most sensitive to the CAT synthesis reaction, oxidative phosphorylation activity, and alanine synthesis (Fig.~\ref{fig:Sensitivity}, top, section A).
-The 16 next most important reactions to CAT production (section B) came from various pathways across the network: 4 each from glycolysis, the TCA cycle, and amino acid synthesis/degradation; 2 from pentose phosphate; and 1 each from the Entner-Doudoroff pathway and the energy species reactions.
-The pairwise sensitivities (off-diagonal elements) are often quite different from the corresponding first-order sensitivities (diagonal elements), and lead to some interesting outcomes.
-For example, glutamine synthesis and arginine degradation are both among the most important reactions to CAT production (they rank 5th and 10th, respectively).
-This is likely because they both affect the sensitive glutamine-glutamate balance; glutamine synthesis consumes glutamate, while arginine degradation produces it.
-However, when both are perturbed, their combined effect on the model is very low, as the respective consumption and production of glutamate cancel out.
+The 16 next most important reactions to CAT production (section B) came from various pathways across the network: four each from glycolysis, the TCA cycle, and amino acid synthesis/degradation; two from the pentose phosphate pathway; and one each from the Entner-Doudoroff pathway and the energy species reactions.
+The pairwise sensitivities (off-diagonal elements) were different from the corresponding first-order sensitivities (diagonal elements), and led to interesting outcomes.
+For example, glutamine synthesis and arginine degradation were both among the most important reactions to CAT production (they rank 5th and 10th, respectively).
+This was likely because they both affect the sensitive glutamine-glutamate balance; glutamine synthesis consumes glutamate, while arginine degradation produces it.
+However, when both were perturbed, their combined effect on the model was low, as the respective contributions to consumption and production of glutamate cancelled.
+The system state as a whole was most sensitive to glucose uptake via GTP and the forward reaction of lactate dehydrogenase (Fig.~\ref{fig:Sensitivity}, bottom, section F).
+The 30 next most important reactions to the system state (section G) came from various pathways across the network: eight from amino acid synthesis/degradation; six from glycolysis; four from the TCA cycle; and two each from the pentose phosphate pathway, Entner-Doudoroff, energy/reducing pathways, and small molecule transport; one from oxidative phosphorylation; and one from pyrophosphatase consumption. The system state had more pairwise sensitivities that differ from the corresponding first-order sensitivities and stand out as significant.
+For example, the first-order effect of alanine synthesis was large; it consumes both pyruvate and glutamate, two key species in the network.
+In addition, a handful of alanine synthesis pairwise sensitivities were also large.
+However, there were enough reactions that, when paired with alanine synthesis, had little effect on the model; malic enzyme is one of these, as it produces the pyruvate that alanine synthesis consumes. Thus, the total-order alanine synthesis sensitivity was low, placing it at the very bottom of section I.
+Another interesting result was the intersection of sections F and G with section J.
+The 53 reactions in section J were turned off in the best-fit set (rate constants were set to 0);
+therefore, the perturbation of these reactions had no effect on the model.
+Thus, all pairwise sensitivities with reactions in section J were pseudo first-order sensitivities for the other reactions.
+Interestingly, many reactions in section F and several in section G showed their highest sensitivities when paired with the "non-effects" of section J.
+Of these, three involved pyruvate, strengthening its role as a key metabolite; the others were glucose consumption via GTP/CTP-specific hexokinases,
+fumarate reductase, and SO$_4$ utilization.
+This suggested that these reactions' effects on the model were canceled out or lessened by most other reactions, but were of course not affected by the reactions in section J.
+This was also likely the reason that reactions in section J rank above those in section K, despite having no effect themselves on the model.
+Taken together, sensitivity analysis identified blocks of parameters that either individually, or in combination influenced model performance.
+However, the sensitivity analysis did not establish what the maximum performance of the system was.
+To answer that question we performed sequence-specific flux balance analysis of CAT production.
 
-The system state as a whole was most sensitive to glucose uptake via GTP and the forward reaction of lactate dehydrogenase (pyruvate being consumed to produce lactate) (Fig.~\ref{fig:Sensitivity}, bottom, section F).
-The 30 next most important reactions to the system state (section G) came from various pathways across the network: 8 from amino acid synthesis/degradation; 6 from glycolysis; 4 from TCA; 2 each from pentose phosphate, Entner-Doudoroff, energy species reactions, NAD species reactions, and small molecule transport; 1 from oxidative phosphorylation; and 1 pyrophosphatase.
-The system state has even more pairwise sensitivities that differ from the corresponding first-order sensitivities and stand out as significant.
-For example, the first-order effect of alanine synthesis is very high; it consumes both pruvate and glutamate, two key species in the network.
-In addition, a handful of alanine synthesis pairwise sensitivities are high.
-However, there are enough reactions that, when paired with alanine synthesis, have little effect on the model; malic enzyme is one of these, as it produces the pyruvate that alanine synthesis consumes.
-Thus, the total-order alanine synthesis sensitivity is low, placing it at the very bottom of section I.
-Another interesting result of this analysis is seen in the intersection of sections F and G with section J.
-The 53 reactions in section J were turned off in the best-fit set (rate constants were set to 0); therefore, the perturbation of these reactions (multiplying the rate constant by 1.01) had no actual effect on the model.
-Thus, all pairwise sensitivities with reactions in section J can essentially be considered first-order sensitivities for the other reactions.
-Interestingly, the reactions in section F and several in section G showed most of thier highest sensitivities when paired with the "non-effects" of section J.
-Of these, three involved pyruvate, strengthening its role as a key metabolite; the others were glucose uptake via GTP and CTP, fumarate reductase, and SO$_4$ transport.
-This suggests that these reactions' effects on the model were canceled out or lessened by most other reactions, but were of course not affected by the reactions in section J.
-This is also likely the reason that reactions in section J rank above those in section K, despite having no effect themselves on the model.
-
-\subsection*{Maximum theoretical CAT yield showed CFPS can be optimized.}
-We calculated the carbon yield of CAT production for our experimental data and our best-fit parameter set as a function of the initial and final concentrations and the carbon numbers of CAT, glucose, and amino acids.
-%Arginine and glutamate were excluded due to not being present in the training dataset.
-The experimental data displayed a CAT yield of 0.0865, while the best-fit parameter set displayed a CAT yield of 0.0871.
-While the model ensemble described the experimental data, it was unclear whether the performance of the CFPS system was optimal.
-To address this question, we used ssFBA in combination with the cell-free metabolic network and a detailed promoter model under a T7 polymerase to compute the maximum theoretical carbon yield.
-We first validated the ssFBA approach by comparing an ensemble of simulated versus measured concentrations of CAT over a one hour period (Fig.~\ref{fig:CATProdYield}A).
-The ensemble of 100 sets captured the CAT concentration profile which was generated by sampling RNA polymerase levels, ribosome levels and elongation rates in a physiological range.
-We then used sequence-specific FBA to calculate a theoretical maximum CAT yield under three different cases: unconstrained, constrained by transcription/translation rates, and constrained by transcription/translation rates and measurements (Fig.~\ref{fig:CATProdYield}B).
-The theoretical maximum carbon yield of CAT was 0.35 $\pm$ 0.006 for an unconstrained case and 0.225 $\pm$ 0.03 for the transcription and translation constrained case.
+We used sequence-specific flux balance analysis (ssFBA) to calculate the theoretical maximum CAT carbon yield for different constraint values (Fig.~\ref{fig:CATProdYield}).
+The experimental CAT carbon yield was 0.0865, while the best-fit parameter set had a carbon yield of 0.0871.
+Thus, although the kinetic model described the experimental data including the yield, it was unclear whether the performance of the CFPS system was optimal.
+To address this question, we used ssFBA in combination with the cell-free metabolic network and a T7 promoter model to estimate the maximum theoretical CAT carbon yield.
+Toward this, we first validated the ssFBA approach by comparing the simulated versus measured concentrations of CAT over the first hour of the CFPS reaction (Fig.~\ref{fig:CATProdYield}A).
+We sampled different RNA polymerase/ribosome levels and elongation rates in the physiological range to establish the uncertainty in the ssFBA simulation.
+The ssFBA estimate of the CAT abundance was consistent with the measured values. Next, we calculate the CAT carbon yield for three classes of constraints:
+(i) theoretical max glucose, amino acid and oxygen upper bounds, and no transcriptional/translational constraints; (ii) theoretical maximum glucose, amino acid and oxygen upper bounds,
+and realistic transcriptional/translational constraints and (iii) metabolite values constrained by the data, and realistic transcriptional/translational constraints.
+The unconstrained theoretical maximum CAT carbon yield was 0.35 $\pm$ 0.01 (Fig.~\ref{fig:CATProdYield}B, left);
+this case had no upper bound on the transcription and translation reactions, and was only constrained by glucose, oxygen and amino acid consumption rates.
+On the other hand, for realistic constraints on transcription and translation, the CAT carbon yield was 0.225 $\pm$ 0.03 (Fig.~\ref{fig:CATProdYield}B, middle).
+Lastly, when using realistic metabolite and transcription and translation constraints the predicted carbon yield was 0.062 $\pm$ 0.02, similar to the experimental yield Fig.~\ref{fig:CATProdYield}B, end).
 Thus, the experimental dataset and best-fit parameter set each produced CAT at 25\% of the theoretical maximum and 38\% of a theoretical physiological case.
-However, the case constrained by experimental data showed a carbon yield of 0.062 $\pm$ 0.02, similar to the experimental yield.
 
 In comparing the flux distributions between the unconstrained and constrained cases (Fig.~\ref{fig:Network}), the constrained cases heavily utilized the first step in the pentose phosphate pathway to generate NADPH.
 In these cases the majority of the flux continued through the Entner–Doudoroff pathway, whereas in the unconstrained case the majority of flux traveled through glycolysis.
@@ -340,7 +346,7 @@ An important extension of this study would be to apply its insights to other pro
 
 \section*{Materials and Methods}
 
-\subsection*{Formulation and solution of the model equations}
+\subsection*{Formulation and solution of the model equations.}
 We used ordinary differential equations (ODEs) to model the time evolution of metabolite ($x_{i}$) and scaled enzyme abundance ($\epsilon_{i}$) in hypothetical cell-free metabolic networks:
 \begin{eqnarray}
 	\frac{dx_{i}}{dt} & = & \sum_{j=1}^{\mathcal{R}}\sigma_{ij}r_{j}\left(\mathbf{x},\mathbf{\epsilon},\mathbf{k}\right)\qquad{i=1,2,\hdots,\mathcal{M}}\\
@@ -351,7 +357,7 @@ Typically, reaction $j$ is a non-linear function of metabolite and enzyme abunda
 The quantity $\sigma_{ij}$ denotes the stoichiometric coefficient for species $i$ in reaction $j$.
 If $\sigma_{ij}>0$, metabolite $i$ is produced by reaction $j$.
 Conversely, if $\sigma_{ij}<0$, metabolite $i$ is consumed by reaction $j$, while $\sigma_{ij}=0$ indicates metabolite $i$ is not connected with reaction $j$.
-Lastly, $\lambda_{i}$ denotes the scaled enzyme degradation constant.
+Lastly, $\lambda_{i}$ denotes the scaled enzyme activity decay constant.
 The system material balances were subject to the initial conditions $\mathbf{x}\left(t_{o}\right)=\mathbf{x}_{o}$ and $\mathbf{\epsilon}\left(t_{o}\right)=\mathbf{1}$ (initially we have 100\% cell-free enzyme abundance).
 
 The reaction rate was written as the product of a kinetic term ($\bar{r}_{j}$) and a control term ($v_{j}$), $r_{j}\left(\mathbf{x},\mathbf{k}\right)=\bar{r}_{j}v_{j}$.
@@ -390,7 +396,7 @@ variable. We used hill-like transfer functions and $\mathcal{I}_{j}\in\left\{min
 % $K_{js}$ denotes the saturation constant for species $s$ in reaction $j$.
 % The product in Equation~\eqref{eqn:rate-bar} was carried out over the set of \textit{reactants} for reaction $j$ (denoted as $m_{j}^{-}$).
 
-We included 17 allosteric regulation terms, taken from literature, to the CFPS model.
+We included 17 allosteric regulation terms, taken from literature, in the CFPS model.
 PEP was modeled as an inhibitor for phosphofructokinase \cite{2010_kotte_MolSystBiol,2011_cabrera_JBiolChem}, PEP carboxykinase \cite{2010_kotte_MolSystBiol}, PEP synthetase \cite{2010_kotte_MolSystBiol,1973_chulavatnatol_JBiolChem}, isocitrate dehydrogenase \cite{2010_kotte_MolSystBiol,2007_ogawa_JBacteriol}, and isocitrate lyase/malate synthase \cite{2010_kotte_MolSystBiol,2007_ogawa_JBacteriol,1988_mackintosh_BiochemJ}, and as an activator for fructose-biphosphatase \cite{2010_kotte_MolSystBiol,2000_donahue_JBacteriol,2006_hines_JBiolChem,2007_hines_JBiolChem}.
 AKG was modeled as an inhibitor for citrate synthase \cite{2010_kotte_MolSystBiol,1994_pereira_JBiolChem,1983_robinson_FEBSLett} and isocitrate lyase/malate synthase \cite{2010_kotte_MolSystBiol,1988_mackintosh_BiochemJ}.
 3PG was modeled as an inhibitor for isocitrate lyase/malate synthase \cite{2010_kotte_MolSystBiol,1988_mackintosh_BiochemJ}.
@@ -501,7 +507,7 @@ An ensemble of 100 sets of flux distributions was calculated for three different
 For the unconstrained case, all rates were left unbounded, except the specific glucose uptake rate.
 An ensemble of flux distributions was then calculated by randomly sampling the maximum specific glucose uptake rate from within a range of 30 to 40 mM/hr, determined from experimental data.
 For the case constrained by TX/TL rates, an ensemble was generated by randomly sampling RNAP polymerase levels, ribosome levels, and elongation rates in a physiological range determined from literature.
-RNA polymerase levels were sampled between 60 and 80 nM, ribosome levels between 7 and 16 \textmu M, the RNA polymerase elongation rate between 20 and 30 nt/sec, and the ribosome elongation rate between 1.5 and 3 aa/sec \cite{2005_underwood_biotech, 2016_garamella_acssynbio}.
+RNA polymerase levels were sampled between 60 and 80 nM, ribosome levels between 7 and 16 \textmu M, the RNA polymerase elongation rate between 20 and 30 nt/sec, and the ribosome elongation rate between 1.5 and 3 aa/sec \cite{2005_underwood_biotech, Garamella:2016aa}.
 For the case constrained by TX/TL rates and experimental data, the lower and upper bounds on the fluxes for the data-informed metabolites were sampled within the range given by the experimental noise.
 This included the data for glucose, organic acids, energy species, and amino acids; CAT was not constrained by experimental data, but by the TX/TL rates as stated above.
 
@@ -531,18 +537,18 @@ This study was supported by a National Science Foundation Graduate Research Fell
 \clearpage
 
 % Figures and captions go here ...
-\begin{figure}[ht]
-\centering
-\includegraphics[width=1.00\textwidth]{./Figures/CarbonBoth.pdf}
-\caption{Central carbon metabolism in the presence (top) and absence (bottom) of allosteric control, including glucose (substrate), CAT (product), and intermediates, as well as total concentration of energy species. Best-fit parameter set (orange line) versus experimental data (points). 95\% confidence interval (blue shaded region) and 95\% confidence interval of the mean (gray shaded region) over the ensemble of 100 sets.}
-\label{fig:CarbonBoth}
-\end{figure}
+% \begin{figure}[ht]
+% \centering
+% \includegraphics[width=1.00\textwidth]{./Figures/CarbonBoth.pdf}
+% \caption{Central carbon metabolism in the presence (top) and absence (bottom) of allosteric control, including glucose (substrate), CAT (product), and intermediates, as well as total concentration of energy species. Best-fit parameter set (orange line) versus experimental data (points). 95\% confidence interval (blue shaded region) and 95\% confidence interval of the mean (gray shaded region) over the ensemble of 100 sets.}
+% \label{fig:CarbonBoth}
+% \end{figure}
 
 \begin{figure}[ht]
 \centering
 \includegraphics[width=1.00\textwidth]{./Figures/CarbonBoth_png.pdf}
 \caption{Central carbon metabolism in the presence (top) and absence (bottom) of allosteric control, including glucose (substrate), CAT (product), and intermediates, as well as total concentration of energy species. Best-fit parameter set (orange line) versus experimental data (points). 95\% confidence interval (blue shaded region) and 95\% confidence interval of the mean (gray shaded region) over the ensemble of 100 sets.}
-\label{fig:CarbonBoth_png}
+\label{fig:CarbonBoth}
 \end{figure}
 
 \begin{figure}[ht]
