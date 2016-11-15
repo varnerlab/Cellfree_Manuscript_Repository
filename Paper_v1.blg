@@ -1,71 +1,53 @@
-This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+This is BibTeX, Version 0.99d (TeX Live 2015)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: Paper_v1.aux
 The style file: plos2009.bst
 Database file #1: References_v1.bib
-I was expecting a `,' or a `}'---line 25 of file References_v1.bib
- : 
- : title = {The All E. coli TX-TL Toolbox 2.0: A Platform for Cell-Free Synthetic Biology},
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
-You're missing a field name---line 147 of file References_v1.bib
- : 
- : %   Author="Ravanal, M. C.  and Goldie, H.  and Cardemil, E. ",
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
 Warning--entry type for "GLPK" isn't style-file defined
---line 258 of file References_v1.bib
-I was expecting a `,' or a `}'---line 279 of file References_v1.bib
- : 
- : @article{2002_allen_palsson,
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "pr3010138"
+--line 235 of file References_v1.bib
+Warning--I didn't find a database entry for "Pardee:2016aa"
+Warning--I didn't find a database entry for "Allen:2003aa"
+Warning--I didn't find a database entry for "2016_garamella_acssynbio"
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-Warning--empty year in 2016_garamella_acssynbio
-Warning--empty title in 2016_garamella_acssynbio
-`journal' is a missing field, not a string, for entry 2016_garamella_acssynbio
-while executing---line 2643 of file plos2009.bst
-Warning--empty journal in 2016_garamella_acssynbio
-You've used 49 entries,
+You've used 42 entries,
             2441 wiz_defined-function locations,
-            910 strings with 16157 characters,
-and the built_in function-call counts, 39101 in all, are:
-= -- 3610
-> -- 673
+            868 strings with 14541 characters,
+and the built_in function-call counts, 33593 in all, are:
+= -- 3104
+> -- 581
 < -- 0
-+ -- 337
-- -- 168
-* -- 3314
-:= -- 4705
-add.period$ -- 98
-call.type$ -- 49
-change.case$ -- 48
++ -- 291
+- -- 145
+* -- 2832
+:= -- 4046
+add.period$ -- 85
+call.type$ -- 42
+change.case$ -- 42
 chr.to.int$ -- 0
-cite$ -- 101
-duplicate$ -- 3845
-empty$ -- 4032
-format.name$ -- 215
-if$ -- 8662
+cite$ -- 84
+duplicate$ -- 3295
+empty$ -- 3463
+format.name$ -- 185
+if$ -- 7448
 int.to.chr$ -- 0
-int.to.str$ -- 49
-missing$ -- 506
-newline$ -- 260
-num.names$ -- 48
-pop$ -- 614
+int.to.str$ -- 42
+missing$ -- 436
+newline$ -- 226
+num.names$ -- 41
+pop$ -- 527
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 290
+skip$ -- 250
 stack$ -- 0
-substring$ -- 5561
-swap$ -- 1004
+substring$ -- 4772
+swap$ -- 869
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 3
-while$ -- 310
-width$ -- 51
-write$ -- 547
-(There were 4 error messages)
+warning$ -- 0
+while$ -- 267
+width$ -- 44
+write$ -- 475
+(There were 4 warnings)

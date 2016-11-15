@@ -137,7 +137,8 @@ This suggests that CAT production could be further optimized.
 While the dynamic models predicted that the majority of carbon flux went through glycolysis and the TCA cycle, the flux balance analysis showed significant flux through the Entner-Doudoroff pathway.
 The dynamic modeling approach predicted that glycolysis, the TCA cycle, and amino acid synthesis and degradation were most important to both CAT production and the system as a whole, while CAT production alone depended heavily on the CAT synthesis reaction.
 Conversely, CAT production was robust to allosteric control, as was most of the network, with the exception of the organic acids in central carbon metabolism.
-This study is the first to model dynamic protein production in \textit{E. coli}, and should provide a foundation for genome-scale, dynamic modeling of cell-free \textit{E. coli} protein synthesis.
+This study is the first to model dynamic protein production in \textit{E. coli}, and should provide a foundation for genome-scale,
+dynamic modeling of cell-free \textit{E. coli} protein synthesis.
 
 \vspace{0.1in}
 {\noindent \textbf{Keywords:}~Biochemical engineering, systems biology, cell-free protein synthesis}
@@ -154,52 +155,51 @@ This study is the first to model dynamic protein production in \textit{E. coli},
 \linenumbers
 
 
+% Interestingly, many of the challenges confronting genome-scale kinetic modeling can potentially be overcome in a cell-free system.
+% For example, there is no complex transcriptional regulation to consider, transient metabolic measurements are easier to obtain, and we no longer have to consider cell growth.
+% Thus, cell-free operation holds several significant advantages for model development, identification and validation. Theoretically, genome-scale cell-free kinetic models may be possible for industrially important organisms,
+% such as \textit{E. coli} or \textit{B.~subtilis}, if a simple, tractable framework for integrating allosteric regulation with enzyme kinetics can be formulated.
+% Conversely, highly abstracted kinetic frameworks, such as the cybernetic framework, represented a paradigm shift, viewing cells as growth-optimizing strategists \citep{1985_dhurjati_ramkrishna_tsao_BiotechBioeng}.
+% Cybernetic models have been highly successful at predicting metabolic choice behavior, e.g., diauxie behavior \citep{1986_kompala_ramkrishna_tsao_BiotechBioeng}, steady-state multiplicity \citep{2012_kim_ramkrishna_BiotechProg}, as well as the cellular response to metabolic engineering modifications \citep{1999_varner_ramkrishna_MetaEng}.
+% Unfortunately, traditional, fully structured cybernetic models also suffer from an identifiability challenge, as both the kinetic parameters and an abstracted model of cellular objectives must be estimated simultaneously.
+% However, recent cybernetic formulations from Ramkrishna and colleagues have successfully treated this identifiability challenge through elementary mode reduction~\cite{2009_song_ramkrishna_BiotechBioeng,Song:2011aa}.
+
 \section*{Introduction}
 
 Cell-free systems offer many advantages for the study, manipulation and modeling of metabolism compared to \textit{in vivo} processes.
-Central amongst these advantages is direct access to metabolites and the microbial biosynthetic machinery without the interference of a cell wall.
-This allows us to control as well as interrogate the chemical environment while the biosynthetic machinery is operating, potentially at a fine time resolution.
-Second, cell-free systems allow us to study biological processes without the complications associated with cell growth.
+Central amongst these, is direct access to metabolites and the biosynthetic machinery without the interference of a cell wall, or complications associated with cell growth.
+This allows us to interrogate the chemical environment while the biosynthetic machinery is operating, potentially at a fine time resolution.
 Cell-free protein synthesis (CFPS) systems are arguably the most prominent examples of cell-free systems used today \citep{Jewett:2008aa}.
-However, CFPS is not new; CFPS in crude \textit{E. coli} extracts has been used since the 1960s to explore fundamentally important biological mechanisms \citep{MATTHAEI:1961aa,NIRENBERG:1961aa}.
-Today, cell-free systems are used in a variety of applications ranging from therapeutic protein production \citep{Lu:2014aa} to synthetic biology \citep{Hodgman:2012aa}.
-Interestingly, many of the challenges confronting genome-scale kinetic modeling can potentially be overcome in a cell-free system.
-For example, there is no complex transcriptional regulation to consider, transient metabolic measurements are easier to obtain, and we no longer have to consider cell growth.
-Thus, cell-free operation holds several significant advantages for model development, identification and validation. Theoretically, genome-scale cell-free kinetic models may be possible for industrially important organisms,
-such as \textit{E. coli} or \textit{B.~subtilis}, if a simple, tractable framework for integrating allosteric regulation with enzyme kinetics can be formulated.
+However, CFPS is not new; CFPS in crude \textit{E.~coli} extracts has been used since the 1960s to explore fundamentally important biological mechanisms \citep{MATTHAEI:1961aa,NIRENBERG:1961aa}.
+Today, cell-free systems are used in a variety of applications ranging from therapeutic protein production \citep{Lu:2014aa} to synthetic biology \citep{Hodgman:2012aa,Pardee:2016aa}.
+However, if CFPS is to become a mainstream technology for applications such as point of care manufacturing, we must first understand the performance limits of these systems.
+One tool to address this question is mathematical modeling.
 
 Mathematical modeling has long contributed to our understanding of metabolism.
 Decades before the genomics revolution, mechanistically structured metabolic models arose from the desire to predict microbial phenotypes resulting from changes in intracellular or extracellular states \citep{1976_fredrickson_BiotechBioeng}.
 The single cell \textit{E. coli} models of Shuler and coworkers pioneered the construction of large-scale, dynamic metabolic models that incorporated multiple, regulated catabolic and anabolic pathways constrained by experimentally determined kinetic parameters \citep{1984_domach_shuler_BiotechBioeng_01}.
 Shuler and coworkers generated many single cell kinetic models, including single cell models of eukaryotes \citep{1989_steinmeyer_shuler_ChemEngSci,1992_wu_shuler_AnnNYAcadSci}, minimal cell architectures \citep{2004_castellanos_shuler_PNAS}, as well as DNA sequence based whole-cell models of \textit{E. coli} \citep{2008_atlas_shuler_IETSysBio}.
-Conversely, highly abstracted kinetic frameworks, such as the cybernetic framework, represented a paradigm shift, viewing cells as growth-optimizing strategists \citep{1985_dhurjati_ramkrishna_tsao_BiotechBioeng}.
-Cybernetic models have been highly successful at predicting metabolic choice behavior, e.g., diauxie behavior \citep{1986_kompala_ramkrishna_tsao_BiotechBioeng}, steady-state multiplicity \citep{2012_kim_ramkrishna_BiotechProg}, as well as the cellular response to metabolic engineering modifications \citep{1999_varner_ramkrishna_MetaEng}.
-Unfortunately, traditional, fully structured cybernetic models also suffer from an identifiability challenge, as both the kinetic parameters and an abstracted model of cellular objectives must be estimated simultaneously.
-However, recent cybernetic formulations from Ramkrishna and colleagues have successfully treated this identifiability challenge through elementary mode reduction~\cite{2009_song_ramkrishna_BiotechBioeng,Song:2011aa}.
-
-In the post genomics world, large-scale stoichiometric reconstructions of microbial metabolism popularized by static, constraint-based modeling techniques such as flux balance analysis (FBA) have become standard tools \citep{2012_lewis_palsson_NatRevMicrobio}.
-Since the first genome-scale stoichiometric model of \textit{E. coli}, developed by Edwards and Palsson \citep{2000_edwards_palsson_PNAS}, well over 100 organisms, including industrially important prokaryotes such as \textit{E. coli} \citep{Feist:2007aa} or \textit{B. subtilis} \citep{Oh:2007aa}, are now available \citep{2009_feist_palsson_NatRevMicrobio}.
+In the post genomics world, large-scale stoichiometric reconstructions of microbial metabolism popularized by techniques such as flux balance analysis (FBA) have become a standard approach \citep{2012_lewis_palsson_NatRevMicrobio}.
+Since the first genome-scale stoichiometric model of \textit{E. coli}, developed by Edwards and Palsson \citep{2000_edwards_palsson_PNAS}, well over 100 organisms, including industrially important prokaryotes are now available \citep{2009_feist_palsson_NatRevMicrobio,Feist:2007aa,Oh:2007aa}.
 Stoichiometric models rely on a pseudo-steady-state assumption to reduce unidentifiable genome-scale kinetic models to an underdetermined linear algebraic system, which can be solved efficiently even for large systems.
-Traditionally, stoichiometric models have also neglected explicit descriptions of metabolic regulation and control mechanisms, instead opting to describe the choice of pathways by prescribing an objective function on metabolism.
-Interestingly, similar to early cybernetic models, the most common metabolic objective function has been the optimization of biomass formation \citep{2002_ibarra_edwards_palsson_Nat}, although other metabolic objectives have also been estimated \citep{2007_schuetz_sauer_MolSysBio}.
+Traditionally, stoichiometric models have also neglected explicit descriptions of metabolic regulation and control mechanisms, instead opting to describe the choice of pathways by prescribing an objective function on metabolism. Interestingly, similar to early cybernetic models, the most common metabolic objective function has been the optimization of biomass formation \citep{2002_ibarra_edwards_palsson_Nat}, although other metabolic objectives have also been estimated \citep{2007_schuetz_sauer_MolSysBio}.
 Recent advances in constraint-based modeling have overcome the early shortcomings of the platform, including capturing metabolic regulation and control \citep{2013_hyduke_lewis_palsson_MolBioSys}.
 Thus, modern constraint-based approaches have proven extremely useful in the discovery of metabolic engineering strategies and represent the state of the art in metabolic modeling \citep{2013_mccloskey_palsson_feist_MolSysBio, 2012_zomorrodi_maranas_MetaEng}.
 However, genome-scale kinetic models of industrial important organisms such as \textit{E. coli} have yet to be constructed.
 
-In this study, we developed an ensemble of \textit{E. coli} cell-free protein synthesis (CFPS) models using the hybrid cell-free modeling approach of Wayman and coworkers [REFHERE].
+In this study, we developed an ensemble of kinetic cell-free protein synthesis (CFPS) models using dynamic metabolite measurements in an \textit{E. coli} cell free extract.
 Model parameters were estimated from measurements of glucose, organic acids, energy species, amino acids, and the protein product, chloramphenicol acetyltransferase (CAT).
-The ensemble and the best-fit parameter set correctly described the training data.
-To gauge the performance of the cell-free reaction, we compared the observed CAT carbon yield with the maximum theoretical CAT carbon yield calculated using unconstrained sequence-specific flux balance analysis.
-The CAT yield of the model was 25\% of the maximum theoretical yield, suggesting that CAT production could be further optimized.
-We also calculated CAT carbon yield for a case with transcription and translation constrained by literature; the CAT yield of the model was 38\% of this theoretical physiological case.
+Characteristic values for model parameters and initial conditions, estimated from literature, were used to constrain the parameter estimation problem.
+The ensemble of parameter sets described the training data with a median cost that was greater than two orders of magnitude smaller than random sets constructed using the literature parameter constraints.
+We then used the ensemble of kinetic models to analyze the CFPS reaction.
+First, sensitivity analysis of the dynamic model suggested that CAT production was most sensitive to CAT synthesis parameters, as well as reactions in amino acid synthesis/degradation, glycolysis, and the TCA cycle, and to a lesser extent the pentose phosphate pathway and oxidative phosphorylation.
+Sensitivity analysis also showed that the system as a whole was most sensitive to these same parts of the network.
+CAT production was also robust to allosteric control, but other metabolites, specifically organic acid intermediates such as pyruvate, were not.
+Next, to gauge the performance of the cell-free reaction, we compared the observed CAT carbon yield with the maximum theoretical CAT carbon yield calculated using sequence-specific flux balance analysis.
+The CAT yield estimated from the kinetic model was 25\% of the maximum theoretical yield, but 38\% of the theoretical yield when physiologically realistic constraints were used.
 The metabolic flux distribution predicted by the dynamic model and flux balance analysis were significantly different.
 The ensemble of dynamic models predicted the majority of carbon flux was routed through glycolysis and the TCA cycle, while flux balance analysis predicted significant flux through the Entner-Doudoroff pathway.
-Sensitivity analysis of the dynamic model suggested that CAT production was most sensitive to CAT synthesis itself, as well as certain reactions in amino acid synthesis/degradation, glycolysis, and the TCA cycle, and to a lesser extent the pentose phosphate pathway and oxidative phosphorylation.
-Sensitivity analysis also showed that the system as a whole was most sensitive to these same parts of the network.
-%: mostly amino acid synthesis/degradation, glycolysis, and the TCA cycle, and to a lesser extent the pentose phosphate and Entner-Doudoroff pathways and the reactions involving the energy species and cofactors.
-CAT production was also robust to allosteric control, but other metabolites, specifically organic acid intermediates, were not.
-Taken together, we present the first dynamic model of \textit{E. coli} cell-free protein synthesis.
-We have integrated traditional kinetics with a logical rule-based description of allosteric control to simulate a comprehensive CFPS dataset.
+Taken together, we have integrated traditional kinetics with a logical rule-based description of allosteric control to simulate a comprehensive CFPS dataset.
 This study provides a foundation for genome-scale, dynamic modeling of cell-free \textit{E. coli} protein synthesis.
 
 % In this study, we present an effective biochemical network modeling framework for building dynamic cell-free metabolic models.
@@ -214,17 +214,21 @@ This study provides a foundation for genome-scale, dynamic modeling of cell-free
 
 \section*{Results}
 
-\subsection*{Estimation of an ensemble of cell-free protein synthesis models.}
-We used the hybrid cell-free modeling framework of Wayman and coworkers to simulate the production of a model protein [REFHERE].
-The cell-free \textit{E. coli} metabolic model was constructed by removing the growth-associated processes from the model of Palsson and coworkers \cite{2000_edwards_palsson_PNAS}, and by adding reactions for the synthesis of chloramphenicol acetyltransferase (CAT), a model protein for which we have a comprehensive training dataset \cite{2005_calhoun_BiotechnologyProgress}.
-Thus, the model described core central carbon metabolism (glycolysis, pentose phosphate, Enter-Doudoroff, TCA cycle), as well as the synthesis of energy species, amino acids biosynthesis and degradation, and biosynthesis of the CAT protein.
-An ensemble of model parameters was estimated from dynamic measurements of glucose, CAT, organic acids (pyruvate, lactate, acetate, succinate, malate), energy species (A(x)P, G(x)P, C(x)P, U(x)P), and 18 of the 20 proteinogenic amino acids.
-We generated an ensemble of N = 100 diverse parameter sets by minimizing the error between the training dataset and the metabolite concentrations predicted by the model, and choosing sets so as to minimize the Pearson correlation coefficient between sets in the ensemble.
-We also defined the set with the lowest cost function as our best-fit set.
+The ensemble of kinetic CFPS models captured the time evolution of CAT biosynthesis (Fig.~\ref{fig:CarbonBoth} - \ref{fig:Amino}).
+The cell-free \textit{E.~coli} metabolic network was constructed by removing growth associated reactions from the iAF1260 reconstruction \cite{Feist:2007aa},
+and by adding reactions describing chloramphenicol acetyltransferase (CAT) biosynthesis, a model protein for which we have a comprehensive training dataset \cite{2005_calhoun_BiotechnologyProgress}.
+The CFPS model equations were formulated using the hybrid cell-free modeling framework of Wayman et al. \cite{pr3010138}.
+An ensemble of probable model parameters (N $>$ 10,000) was estimated from the time-series metabolite measurements using a constrained Markov Chain Monte Carlo (MCMC) approach;
+the MCMC algorithm minimized the error between the training data and model simulations starting from an initial parameter estimate assembled from literature and inspection.
+We selected parameter sets for the ensemble based upon their error value and the Pearson correlation coefficient between sets in the ensemble.
+The parameter set with the lowest error value was defined as the best-fit set.
+The central carbon metabolism (Fig.~\ref{fig:CarbonBoth}, top), energy species (Fig.~\ref{fig:Energy}), and amino acids (Fig.~\ref{fig:Amino}) were all captured by the ensemble and the best-fit set. Allosteric control was important to the dynamics of the organic acid intermediates, as without it several of the measurements were not captured by the ensemble or the best-fit set (Fig.~\ref{fig:CarbonBoth}, bottom). However,
 
-The ensemble of models captured the time evolution of cell-free CAT biosynthesis (Fig.~\ref{fig:CarbonBoth} - \ref{fig:Amino}).
-The central carbon metabolism (Fig.~\ref{fig:CarbonBoth}, top), energy species (Fig.~\ref{fig:Energy}), and amino acids (Fig.~\ref{fig:Amino}) were all well captured by the ensemble and the best-fit set.
-Allosteric control was seen to be particularly important to the dynamics of the organic acid intermediates, as without it several of the measurements were not captured by the ensemble or the best-fit set (Fig.~\ref{fig:CarbonBoth}, bottom).
+We used the hybrid cell-free modeling framework of Wayman and coworkers to simulate the production of CAT \citep{pr3010138}.
+The cell-free \textit{E. coli} metabolic network was constructed by removing the growth-associated processes from the model of Palsson and coworkers \cite{2000_edwards_palsson_PNAS}, and by adding reactions for the synthesis of
+Thus, the model described core central carbon metabolism (glycolysis, pentose phosphate, Enter-Doudoroff, TCA cycle), as well as the synthesis of energy species, amino acids biosynthesis and degradation, and biosynthesis of the CAT protein.
+An ensemble of model parameters was estimated from dynamic measurements of glucose, CAT, organic acids (pyruvate, lactate, acetate, succinate, malate), energy species (A(x)P, G(x)P, C(x)P, U(x)P), and 18 of the 20 proteinogenic amino acids by minimizing the difference between the experimental dataset and metabolite simulations subject to literature constraints on parameter values and initial conditions.
+
 
 \subsection*{Sensitivity analysis}
 We performed a local sensitivity analysis to determine the network reactions with the greatest effect on protein production and overall system state.
@@ -290,8 +294,8 @@ A second simulation with a knockout of \textit{gnd} and phosphate acetyltransfer
 %\end{enumerate}
 
 In this study we present an ensemble of \textit{E. coli} cell-free protein synthesis (CFPS) models that accurately predict a comprehensive CFPS dataset of glucose, CAT, central carbon metabolites, energy species, and amino acid measurements.
-We used the hybrid cell-free modeling approach of Wayman and coworkers [REFHERE], which integrates traditional kinetics and a logic-based allosteric description.
-We also show that the model produces CAT at 25\% of the theoretical maximum in terms of carbon yield, and at 38\% of a physiological case in which transcription and translation are constrained.
+We used the hybrid cell-free modeling approach of Wayman and coworkers, which integrates traditional kinetic modeling with a logic-based description of allosteric regulation.
+We showed that the model produces CAT at 25\% of the theoretical maximum in terms of carbon yield, and at 38\% of a physiological case in which transcription and translation are constrained.
 The theoretical maximum and TX/TL constrained case were obtained using FBA, which predicted a different flux distribution than the ensemble of dynamic models.
 The ensemble of dynamic models predicted most of the carbon flux going through glycolysis and the TCA cycle, while FBA predicted significant flux through the Entner-Doudoroff pathway.
 Sensitivity analysis of the dynamic model suggested that both CAT production and the entire metabolic network were most sensitive to amino acid synthesis and degradation reactions, and reactions in glycolysis and the TCA cycle.
@@ -351,27 +355,42 @@ Lastly, $\lambda_{i}$ denotes the scaled enzyme degradation constant.
 The system material balances were subject to the initial conditions $\mathbf{x}\left(t_{o}\right)=\mathbf{x}_{o}$ and $\mathbf{\epsilon}\left(t_{o}\right)=\mathbf{1}$ (initially we have 100\% cell-free enzyme abundance).
 
 The reaction rate was written as the product of a kinetic term ($\bar{r}_{j}$) and a control term ($v_{j}$), $r_{j}\left(\mathbf{x},\mathbf{k}\right)=\bar{r}_{j}v_{j}$.
-In this study, we used either saturation or mass action kinetics.
-The control term $0\leq v_{j}\leq 1$ depended upon the combination of factors which influenced rate process $j$.
+We used multiple saturation kinetics to model the reaction term $\bar{r}_{j}$:
+\begin{equation}\label{eqn:rate-bar}
+	\bar{r}_{j}=V_{j}^{max}\epsilon_{i}\prod_{s\in{m_{j}^{-}}}\frac{x_{s}}{K_{js} + x_{s}}
+\end{equation}
+where $V_{j}^{max}$ denotes the maximum rate for reaction $j$, $\epsilon_{i}$ denotes the scaled enzyme activity which catalyzes reaction $j$,
+$K_{js}$ denotes the saturation constant for species $s$ in reaction $j$ and $m_{j}^{-}$ denotes the set of \textit{reactants} for reaction $j$.
+On the other hand, the control term $0\leq v_{j}\leq 1$ depended upon the combination of factors which influenced rate process $j$.
 For each rate, we used a rule-based approach to select from competing control factors.
 If rate j was influenced by $1,\dots,m$ factors, we modeled this relationship as
 $v_{j}=\mathcal{I}_{j}\left(f_{1j}\left(\cdot\right),\hdots,f_{mj}\left(\cdot\right)\right)$
-where $0\leq f_{ij}\left(\cdot\right)\leq 1$ denotes a regulatory transfer function quantifying the influence of factor $i$ on rate $j$.
+where $0\leq f_{ij}\left(\cdot\right)\leq 1$ denotes a transfer function quantifying the influence of factor $i$ on rate $j$.
 The function $\mathcal{I}_{j}\left(\cdot\right)$ is an integration rule which maps the output of regulatory transfer functions into a control
-variable. Each regulatory transfer function took the form:
-\begin{equation}\label{eqn:control-factor}
-	f_{ij}\left(\mathcal{Z}_{i},k_{ij},\eta_{ij}\right)=k_{ij}^{\eta_{ij}}\mathcal{Z}_{i}^{\eta_{ij}}/\left({1 + k_{ij}^{\eta_{ij}}\mathcal{Z}_{i}^{\eta_{ij}}}\right)
-\end{equation}where $\mathcal{Z}_{i}$ denotes the abundance factor $i$, $k_{ij}$ denotes a gain parameter, and $\eta_{ij}$ denotes a cooperativity parameter.
-In this study, we used $\mathcal{I}_{j}\in\left\{mean\right\}$ \cite{pr3010138}. If a process has no modifying factors, $v_{j}=1$.
-We used multiple saturation kinetics to model the reaction term $\bar{r}_{j}$:
-\begin{equation}\label{eqn:rate-bar}
-	\bar{r}_{j}=k_{j}^{max}\epsilon_{i}\left(\prod_{s\in{m_{j}^{-}}}\frac{x_{s}}{K_{js} + x_{s}}\right)
-\end{equation}
-where $k_{j}^{max}$ denotes the maximum rate for reaction $j$, $\epsilon_{i}$ denotes the scaled enzyme activity which catalyzes reaction $j$, and
-$K_{js}$ denotes the saturation constant for species $s$ in reaction $j$.
-The product in Equation~\eqref{eqn:rate-bar} was carried out over the set of \textit{reactants} for reaction $j$ (denoted as $m_{j}^{-}$).
+variable. We used hill-like transfer functions and $\mathcal{I}_{j}\in\left\{min,max\right\}$ in this study \cite{pr3010138}.
 
-We added regulation to the network as informed by literature, for a total of 17 interactions.
+% The reaction rate was written as the product of a kinetic term ($\bar{r}_{j}$) and a control term ($v_{j}$), $r_{j}\left(\mathbf{x},\mathbf{k}\right)=\bar{r}_{j}v_{j}$.
+% In this study, we used either saturation or mass action kinetics.
+% The control term $0\leq v_{j}\leq 1$ depended upon the combination of factors which influenced rate process $j$.
+% For each rate, we used a rule-based approach to select from competing control factors.
+% If rate j was influenced by $1,\dots,m$ factors, we modeled this relationship as
+% $v_{j}=\mathcal{I}_{j}\left(f_{1j}\left(\cdot\right),\hdots,f_{mj}\left(\cdot\right)\right)$
+% where $0\leq f_{ij}\left(\cdot\right)\leq 1$ denotes a regulatory transfer function quantifying the influence of factor $i$ on rate $j$.
+% The function $\mathcal{I}_{j}\left(\cdot\right)$ is an integration rule which maps the output of regulatory transfer functions into a control
+% variable. Each regulatory transfer function took the form:
+% \begin{equation}\label{eqn:control-factor}
+% 	f_{ij}\left(\mathcal{Z}_{i},k_{ij},\eta_{ij}\right)=k_{ij}^{\eta_{ij}}\mathcal{Z}_{i}^{\eta_{ij}}/\left({1 + k_{ij}^{\eta_{ij}}\mathcal{Z}_{i}^{\eta_{ij}}}\right)
+% \end{equation}where $\mathcal{Z}_{i}$ denotes the abundance factor $i$, $k_{ij}$ denotes a gain parameter, and $\eta_{ij}$ denotes a cooperativity parameter.
+% In this study, we used $\mathcal{I}_{j}\in\left\{mean\right\}$ \cite{pr3010138}. If a process has no modifying factors, $v_{j}=1$.
+% We used multiple saturation kinetics to model the reaction term $\bar{r}_{j}$:
+% \begin{equation}\label{eqn:rate-bar}
+% 	\bar{r}_{j}=k_{j}^{max}\epsilon_{i}\left(\prod_{s\in{m_{j}^{-}}}\frac{x_{s}}{K_{js} + x_{s}}\right)
+% \end{equation}
+% where $k_{j}^{max}$ denotes the maximum rate for reaction $j$, $\epsilon_{i}$ denotes the scaled enzyme activity which catalyzes reaction $j$, and
+% $K_{js}$ denotes the saturation constant for species $s$ in reaction $j$.
+% The product in Equation~\eqref{eqn:rate-bar} was carried out over the set of \textit{reactants} for reaction $j$ (denoted as $m_{j}^{-}$).
+
+We included 17 allosteric regulation terms, taken from literature, to the CFPS model.
 PEP was modeled as an inhibitor for phosphofructokinase \cite{2010_kotte_MolSystBiol,2011_cabrera_JBiolChem}, PEP carboxykinase \cite{2010_kotte_MolSystBiol}, PEP synthetase \cite{2010_kotte_MolSystBiol,1973_chulavatnatol_JBiolChem}, isocitrate dehydrogenase \cite{2010_kotte_MolSystBiol,2007_ogawa_JBacteriol}, and isocitrate lyase/malate synthase \cite{2010_kotte_MolSystBiol,2007_ogawa_JBacteriol,1988_mackintosh_BiochemJ}, and as an activator for fructose-biphosphatase \cite{2010_kotte_MolSystBiol,2000_donahue_JBacteriol,2006_hines_JBiolChem,2007_hines_JBiolChem}.
 AKG was modeled as an inhibitor for citrate synthase \cite{2010_kotte_MolSystBiol,1994_pereira_JBiolChem,1983_robinson_FEBSLett} and isocitrate lyase/malate synthase \cite{2010_kotte_MolSystBiol,1988_mackintosh_BiochemJ}.
 3PG was modeled as an inhibitor for isocitrate lyase/malate synthase \cite{2010_kotte_MolSystBiol,1988_mackintosh_BiochemJ}.
@@ -379,56 +398,70 @@ FDP was modeled as an activator for pyruvate kinase \cite{2010_kotte_MolSystBiol
 Pyruvate was modeled as an inhibitor for pyruvate dehydrogenase \cite{2010_kotte_MolSystBiol,2007_kale_JBiolChem,2002_arjunan_Biochemistry} and as an activator for lactate dehydrogenase \cite{2008_okino_ApplMicrobiolBiotechnol}.
 Acetyl CoA was modeled as an inhibitor for malate dehydrogenase \cite{2010_kotte_MolSystBiol}.
 
-\subsection*{Generation of model ensemble}
-We generated an ensemble of 100 diverse parameter sets via a Markov chain Monte Carlo random walk.
-Beginning with a single parameter set as a starting point, we calculated its cost function, equal to the sum-squared-error between experimental data and model predictions:
+\subsection*{Estimation of kinetic model parameters.}
+We generated an ensemble of diverse parameter sets using a constrained Markov Chain Monte Carlo (MCMC) random walk strategy.
+Starting from a single best fit parameter set estimated by inspection and literature,
+we calculated the cost function, equal to the sum-squared-error between experimental data and model predictions:
 \begin{equation}\label{eqn:cost-function}
-    cost=\sum_{i=1}^{\mathcal{D}}\left(w_i\sum_{j=1}^{\mathcal{T}_i}\bigg(\frac{x_{ij}^{data}-x_{i}^{sim}|_{t(j)}}{\max\limits_{j}\left(x_{ij}^{data}\right)}\bigg)^2 \right)
+    \texttt{cost}=\sum_{i=1}^{\mathcal{D}}\left[\frac{w_i}{\mathcal{Y}_{i}^2}\sum_{j=1}^{\mathcal{T}_i}\bigg(y_{ij}-x_{i}|_{t(j)}\bigg)^2 \right]
 \end{equation}
-where $\mathcal{D}$ denotes the number of datasets, equal to 37, $w_i$ denotes the weight of the $i$th dataset, $\mathcal{T}_i$ denotes the number of timepoints in the $i$th dataset, $t(j)$ denotes the $j$th timepoint, $x_{ij}^{data}$ denotes the value of the $i$th dataset at the $j$th timepoint, and $x_{i}^{sim}|_{t(j)}$ denotes the simulated value of the metabolite corresponding to the $i$th dataset, interpolated to the $j$th timepoint.
-We then perturbed model parameters:
+where $\mathcal{D}$ denotes the number of datasets ($\mathcal{D}$~=~37),
+$w_i$ denotes the weight of the $i^{th}$ dataset,
+$\mathcal{T}_i$ denotes the number of timepoints in the $i^{th}$ dataset,
+$t(j)$ denotes the $j^{th}$ timepoint, $y_{ij}$ denotes the measurement value of the $i^{th}$ dataset at the $j^{th}$ timepoint,
+and $x_{i}|_{t(j)}$ denotes the simulated value of the metabolite corresponding to the $i^{th}$ dataset, interpolated to the $j^{th}$ timepoint.
+Lastly, the cost calculation was scaled by the maximum experimental value in the $i^{th}$ dataset, $\mathcal{Y}_{i}=\max_{j}\left(y_{ij}\right)$.
+We then perturbed each model parameter:
 \begin{equation}\label{eqn:parameter-perturbation}
-    k_i^{new}=k_i*exp(a\,r_i)\qquad{i=1,2,\hdots,\mathcal{P}}
+    k_i^{new}=k_i \cdot \exp(a\,r_i)\qquad{i=1,2,\hdots,\mathcal{P}}
 \end{equation}
-where $\mathcal{P}$ denotes the number of parameters, equal to 815, which includes 163 rate constants, 163 enzyme degradation rate constants, 455 saturation constants, and 34 control parameters, $k_i^{new}$ denotes the new value of the $i$th parameter, $k_i$ denotes the current value of the $i$th parameter, $a$ denotes a distribution variance, and $r_i$ denotes a random sample from the normal distribution.
+where $\mathcal{P}$ denotes the number of parameters ($\mathcal{P}$~=~815),
+which includes 163 rate constants, 163 enzyme activity decay constants, 455 saturation constants, and 34 control parameters,
+$k_i^{new}$ denotes the new value of the $i^{th}$ parameter,
+$k_i$ denotes the current value of the $i^{th}$ parameter,
+$a$ denotes a distribution variance, and $r_i$ denotes a random sample from the normal distribution.
 For each newly generated parameter set, we re-solved the balance equations and calculated the cost function.
 All sets with a lower cost than the previous set, and some with higher cost, were added to the ensemble.
-After generating 12,437 sets, we selected 100 sets with minimal correlation to each other so as to avoid over-sampling any region of parameter space.
-The original 12,437-set ensemble had a mean Pearson correlation coefficient [REFERENCE NEEDED?] of 0.94 between pairs of sets, while the 100-set ensemble had a mean Pearson correlation coefficient of 0.83 between pairs of sets.
+After generating 12,437 sets, we selected 100 sets with minimal set to set correlation to avoid over-sampling any region of parameter space.
+The original 12,437-set ensemble had a mean Pearson correlation coefficient of 0.94 between pairs of sets,
+while the 100-set ensemble had a mean Pearson correlation coefficient of 0.83 between pairs of sets.
 
-\subsection*{Local sensitivity analysis}
-We determined the reactions most important to protein production by computing the local sensitivity of CAT concentration to each rate constant in the network.
-Each sensitivity index was formulated as:
+\subsection*{Sensitivity analysis of the CFPS model.}
+We determined the reactions most important to protein production by computing the local sensitivity of CAT concentration (denoted as $\texttt{CAT}$)
+to each individual rate constant, and each pair of rate constants in the network.
+The sensitivity index was formulated as:
 \begin{equation}\label{eqn:CAT-sensitivity}
-\begin{split}
-    S_{ij}=norm(CAT(p_i,p_j,t)-CAT(\alpha*p_i,\alpha*p_j,t))\qquad{i,j=1,2,\hdots\mathcal{P}}\\
-\end{split}
+    \mathcal{S}_{ij}^{\texttt{CAT}} = \norm{\texttt{CAT}(p_i,p_j,t)-\texttt{CAT}(\alpha \cdot p_i,\alpha \cdot p_j,t)}_{2}\qquad{i,j=1,2,\hdots\mathcal{P}}
 \end{equation}
-where $S_{ij}$ denotes the sensitivity of CAT production to the $i$th and $j$th parameters, $CAT(p_i,p_j,t)$ denotes CAT concentration as a function of time and the $i$th and $j$th parameters, $\alpha$ denotes the perturbation factor, equal to 1.01, and $\mathcal{P}$ denotes the number of rate constants, equal to 163.
-In calculating the pairwise sensitivities, each parameter was perturbed by 1\%; first-order sensitivities ($i$ = $j$) were subject to two 1\% perturbations, equivalent to a perturbation of 2.01\%.. 
-The array of sensitivity indices was organized into a clustergram (Fig.~\ref{fig:Sensitivity}, top) with both axes corresponding to the 163 rate constants rearranged from most sensitive (top, right) to least sensitive (bottom, left).
+where $\mathcal{S}_{ij}^{\texttt{CAT}}$ denotes the sensitivity of CAT production to the $i^{th}$ and $j^{th}$ parameters,
+$\texttt{CAT}(p_i,p_j,t)$ denotes CAT concentration as a function of time and the $i^{th}$ and $j^{th}$ parameters,
+$\alpha$ denotes the perturbation factor, and $\mathcal{P}$ denotes the number of rate constants ($\mathcal{P}$ = 163).
+In calculating the pairwise sensitivities, each parameter was perturbed by 1\%; first-order sensitivities ($i$ = $j$) were subject to two 1\% perturbations.
+% The array of sensitivity indices was organized into a clustergram with both axes corresponding to the 163 rate constants
+% rearranged from most sensitive (top, right) to least sensitive (bottom, left).
 
-Likewise, we determined the reactions most important to the system as a whole by computing the local sensitivity of the species for which data exist to each rate constant in the network.
-Each sensitivity index was formulated as:
+Likewise, we determined the reactions most important to global system performance by computing the sensitivity of all species for which data exists (denoted as $\texttt{X}$)
+to each rate constant in the network.
+In this case, each sensitivity index was formulated as:
 \begin{equation}\label{eqn:system-sensitivity}
-\begin{split}
-    S_{ij}=norm(X(p_i,p_j,t)-X(\alpha*p_i,\alpha*p_j,t))\qquad{i,j=1,2,\hdots\mathcal{P}}\\
-\end{split}
+    \mathcal{S}_{ij}^{\texttt{X}}=\norm{\texttt{X}(p_i,p_j,t)-\texttt{X}(\alpha*p_i,\alpha*p_j,t)}\qquad{i,j=1,2,\hdots\mathcal{P}}
 \end{equation}
-where $S_{ij}$ denotes the sensitivity of the system state to the $i$th and $j$th parameters, and $X(p_i,p_j,t)$ denotes the system state, an array consisting of the concentration of every species for which data exist as a function of time and the $i$th and $j$th parameters.
-% $\alpha$ denotes the perturbation factor, equal to 1.01, and $\mathcal{P}$ denotes the number of rate constants, equal to 163.
-This array of sensitivity indices was also organized into a clustergram (Fig.~\ref{fig:Sensitivity}, bottom).
+where $\mathcal{S}_{ij}^{\texttt{X}}$ denotes the sensitivity of the system state to the $i^{th}$ and $j^{th}$ parameters,
+and $\texttt{X}(p_i,p_j,t)$ denotes the system state, an array consisting of the concentration of every species for
+which data exists as a function of time and the $i^{th}$ and $j^{th}$ parameters.
+
+% This array of sensitivity indices was also organized into a clustergram (Fig.~\ref{fig:Sensitivity}, bottom).
 
 \subsection*{Sequence-specific FBA and calculation of CAT yield}
 The yield on CAT production was calculated for each case as a ratio of carbon produced as CAT to carbon consumed as reactants (glucose and amino acids):
 \begin{equation}\label{eqn:yield-definition}
 	Yield=\frac{\Delta CAT\;C_{CAT}}{\sum_{i=1}^{\mathcal{R}}\max(\Delta m_{i},0)\;C_{m_i}}
 \end{equation}
-where $\Delta CAT$ denotes the amount of CAT produced, $C_{CAT}$ denotes carbon number of CAT, $\mathcal{R}$ denotes the number of reactants, $\Delta m_{i}$ denotes the amount of the $i$th reactant consumed, never allowed to be negative, and $C_{m_i}$ denotes the carbon number of the $i$th reactant.
+where $\Delta CAT$ denotes the amount of CAT produced, $C_{CAT}$ denotes carbon number of CAT, $\mathcal{R}$ denotes the number of reactants, $\Delta m_{i}$ denotes the amount of the $i^{th}$ reactant consumed, never allowed to be negative, and $C_{m_i}$ denotes the carbon number of the $i^{th}$ reactant.
 Because no data was available for arginine or glutamate, these reactants were left out of all yield calculations.
 Yield of the best-fit parameter set and the experimental data were calculated by setting $\Delta CAT$ equal to the final minus the initial CAT concentration and setting $\Delta m_{i}$ equal to the initial minus the final reactant concentration.
 CAT carbon yields for three cases discussed below were calculated using flux balance anaylsis (FBA) with a sequence-specific description of CAT synthesis.
-This sequence-specific FBA \cite{2002_allen_palsson} problem was formulated as:
+This sequence-specific FBA \citep{Allen:2003aa} problem was formulated as:
 \begin{equation}\nonumber
  \begin{multlined}
 	\qquad \qquad \qquad \max_{\boldsymbol{w}}{} \! \left( w_{obj} = \mathbf{\boldsymbol{\theta}}^T \boldsymbol{w} \right) \\
@@ -441,7 +474,7 @@ where $\mathbf{S}$ denotes the stoichiometric matrix, $\mathbf{w}$ denotes the u
 and $\alpha_i$ and $\beta_i$ denote the lower and upper bounds on flux $w_{i}$, respectively.
 The objective $w_{obj}$ was to maximize the specific rate of CAT formation.
 The specific glucose uptake rate was constrained to allow a maximum flux of 40 mM/hr according to experimental data; the specific amino acid uptake rates were bound to allow a maximum flux of 30 mM/hr, but did not reach this maximum flux.
-The transcription and translation template reactions come from sequence-specific analysis \cite{2002_allen_palsson}, and include transcription initiation, transcription, mRNA degradation, translation initiation, translation, and tRNA charging. 
+The transcription and translation template reactions come from sequence-specific analysis \cite{Allen:2003aa}, and include transcription initiation, transcription, mRNA degradation, translation initiation, translation, and tRNA charging.
 The flux balance analysis problem was solved using the GNU Linear Programming Kit (v4.52) \cite{GLPK}.
 The solution flux vector was used to calculate the carbon yield of CAT for the three FBA cases.
 Glucose, oxygen, and amino acids were modeled as being imported into the system, while CAT synthesis and metabolite byproduct formation were modeled as export from the system.
@@ -457,24 +490,36 @@ The promoter activity was formulated following Moon et al. for synthetic circuit
 \begin{equation}\nonumber
 	P = \frac{K_{1}}{1 + K_{1}}
 \end{equation}
-where $K_{1}$ denotes the state of T7 RNA polymerase binding. 
+where $K_{1}$ denotes the state of T7 RNA polymerase binding.
 The translation rate was formulated as:
  \begin{equation}\nonumber
 	w_{TL} = K_{P}\ Ribo\left(\frac{v_{Ribo}}{l_{Protein}}\right)mRNA_{SS}
 \end{equation}
 where $K_{P}$ denotes the polysome amplification constant, $Ribo$ denotes the ribosome concentration, $v_{Ribo}$ denotes the elongation rate of the ribosome in amino acids per hour, $l_{Protein}$ denotes the number of amino acids in the protein of interest, and $mRNA_{SS}$ denotes the mRNA concentration at steady state, equal to the transcription rate divided by the degradation rate of mRNA.
 
-An ensemble of 100 sets of flux distributions was calculated for three different cases: unconstrained, constrained by transcription and translation (TX/TL) rates, and  constrained by TX/TL rates and experimental data. 
-For the unconstrained case, all rates were left unbounded, except the specific glucose uptake rate. 
+An ensemble of 100 sets of flux distributions was calculated for three different cases: unconstrained, constrained by transcription and translation (TX/TL) rates, and  constrained by TX/TL rates and experimental data.
+For the unconstrained case, all rates were left unbounded, except the specific glucose uptake rate.
 An ensemble of flux distributions was then calculated by randomly sampling the maximum specific glucose uptake rate from within a range of 30 to 40 mM/hr, determined from experimental data.
 For the case constrained by TX/TL rates, an ensemble was generated by randomly sampling RNAP polymerase levels, ribosome levels, and elongation rates in a physiological range determined from literature.
 RNA polymerase levels were sampled between 60 and 80 nM, ribosome levels between 7 and 16 \textmu M, the RNA polymerase elongation rate between 20 and 30 nt/sec, and the ribosome elongation rate between 1.5 and 3 aa/sec \cite{2005_underwood_biotech, 2016_garamella_acssynbio}.
 For the case constrained by TX/TL rates and experimental data, the lower and upper bounds on the fluxes for the data-informed metabolites were sampled within the range given by the experimental noise.
 This included the data for glucose, organic acids, energy species, and amino acids; CAT was not constrained by experimental data, but by the TX/TL rates as stated above.
 
+%Need to talk more about biochemical benefits and importance for biochemical problems
+
 \clearpage
 
-%Need to talk more about biochemical benefits and importance for biochemical problems
+\section*{Competing interests}
+The authors declare that they have no competing interests.
+
+\section*{Author's contributions}
+J.V and A.Y directed the study. R.T, H.J and J.C conducted the cell culture measurements.
+J.V and W.D developed the reduced order HL-60 models and the parameter ensemble.
+W.D analyzed the model ensemble, and generated figures for the manuscript.
+The manuscript was prepared and edited for publication by W.D, A.Y and J.V.
+
+\section*{Acknowledgements}
+We gratefully acknowledge the suggestions from the anonymous reviewers to improve this manuscript.
 
 \section*{Funding}
 This study was supported by a National Science Foundation Graduate Research Fellowship (DGE-1333468) to N.H and by an award from the US Army and Systems Biology of Trauma Induced Coagulopathy (W911NF-10-1-0376) to J.V for the support of M.V.
