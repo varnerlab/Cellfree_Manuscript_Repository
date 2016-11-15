@@ -461,12 +461,12 @@ which data exists as a function of time and the $i^{th}$ and $j^{th}$ parameters
 \subsection*{Sequence-specific FBA and calculation of CAT yield}
 The yield on CAT production was calculated for each case as a ratio of carbon produced as CAT to carbon consumed as reactants (glucose and amino acids):
 \begin{equation}\label{eqn:yield-definition}
-	Yield=\frac{\Delta CAT\;C_{CAT}}{\sum_{i=1}^{\mathcal{R}}\max(\Delta m_{i},0)\;C_{m_i}}
+	Yield=\frac{\Delta m_{CAT}\;C_{CAT}}{\sum_{i=1}^{\mathcal{R}}\max(\Delta m_{i},0)\;C_{m_i}}
 \end{equation}
-where $\Delta CAT$ denotes the amount of CAT produced, $C_{CAT}$ denotes carbon number of CAT, $\mathcal{R}$ denotes the number of reactants, $\Delta m_{i}$ denotes the amount of the $i^{th}$ reactant consumed, never allowed to be negative, and $C_{m_i}$ denotes the carbon number of the $i^{th}$ reactant.
-Because no data was available for arginine or glutamate, these reactants were left out of all yield calculations.
+where $\Delta m_{CAT}$ denotes the amount of CAT produced, $C_{CAT}$ denotes carbon number of CAT, $\mathcal{R}$ denotes the number of reactants, $\Delta m_{i}$ denotes the amount of the $i^{th}$ reactant consumed, never allowed to be negative, and $C_{m_i}$ denotes the carbon number of the $i^{th}$ reactant.
+Because no data was available for arginine or glutamate, these reactants were left out of the experimental yield calculation.
 Yield of the best-fit parameter set and the experimental data were calculated by setting $\Delta CAT$ equal to the final minus the initial CAT concentration and setting $\Delta m_{i}$ equal to the initial minus the final reactant concentration.
-CAT carbon yields for three cases discussed below were calculated using flux balance anaylsis (FBA) with a sequence-specific description of CAT synthesis.
+Theoretical maximum CAT carbon yields for three cases discussed below were calculated using flux balance anaylsis (FBA) with a sequence-specific description of CAT synthesis, where $\Delta m_{i}$ denotes the flux of the $i^{th}$ species.
 This sequence-specific FBA \citep{Allen:2003aa} problem was formulated as:
 \begin{equation}\nonumber
  \begin{multlined}
