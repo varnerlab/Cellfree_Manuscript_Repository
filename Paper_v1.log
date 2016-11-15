@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.4.25)  14 NOV 2016 17:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.4.25)  14 NOV 2016 20:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -967,9 +967,9 @@ LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <12> not available
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <14.4> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 130.
  [1] [1] [2]
-Overfull \hbox (3.3693pt too wide) in paragraph at lines 191--206
-\OT1/phv/m/n/12 pa-ram-e-ters were es-ti-mated from mea-sure-ments of glu-cose,
- or-ganic acids, en-ergy species,
+Overfull \hbox (14.32031pt too wide) in paragraph at lines 189--204
+\OT1/phv/m/n/12 mod-els us-ing the hy-brid cell-free mod-el-ing ap-proach of Wa
+y-man and cowork-ers [REFHERE].
  []
 
 [3] [4] [5
@@ -981,10 +981,10 @@ Overfull \hbox (3.3693pt too wide) in paragraph at lines 191--206
 ]
 
 Package natbib Warning: Citation `pr3010138' on page 14 undefined on input line
- 372.
+ 365.
 
 [14] [15]
-Overfull \hbox (23.26498pt too wide) in paragraph at lines 413--417
+Overfull \hbox (23.26498pt too wide) in paragraph at lines 406--410
 \OT1/phv/m/n/12 where $\OML/cmm/m/it/12 S[]$ \OT1/phv/m/n/12 de-notes the sen-s
 i-tiv-ity of CAT pro-duc-tion to the $\OML/cmm/m/it/12 i$\OT1/phv/m/n/12 th and
  $\OML/cmm/m/it/12 j$\OT1/phv/m/n/12 th pa-ram-e-ters, $\OML/cmm/m/it/12 CAT\OT
@@ -992,7 +992,7 @@ i-tiv-ity of CAT pro-duc-tion to the $\OML/cmm/m/it/12 i$\OT1/phv/m/n/12 th and
  []
 
 [16] [17] [18]
-LaTeX Font Info:    Try loading font information for TS1+phv on input line 484.
+LaTeX Font Info:    Try loading font information for TS1+phv on input line 471.
 
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1phv.fd
 File: ts1phv.fd 2001/06/04 scalable font definitions for TS1/phv.
@@ -1006,63 +1006,63 @@ File: ts1phv.fd 2001/06/04 scalable font definitions for TS1/phv.
 File: ./Figures/CarbonBoth.pdf Graphic file (type pdf)
 
 <use ./Figures/CarbonBoth.pdf>
-Package pdftex.def Info: ./Figures/CarbonBoth.pdf used on input line 503.
+Package pdftex.def Info: ./Figures/CarbonBoth.pdf used on input line 491.
 (pdftex.def)             Requested size: 469.75502pt x 533.82748pt.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 504.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 492.
 
 <./Figures/CarbonBoth_png.pdf, id=106, 2400.46812pt x 2144.54202pt>
 File: ./Figures/CarbonBoth_png.pdf Graphic file (type pdf)
 
 <use ./Figures/CarbonBoth_png.pdf>
-Package pdftex.def Info: ./Figures/CarbonBoth_png.pdf used on input line 510.
+Package pdftex.def Info: ./Figures/CarbonBoth_png.pdf used on input line 498.
 (pdftex.def)             Requested size: 469.75502pt x 419.67291pt.
 
 <./Figures/Energy.pdf, id=107, 794.97pt x 722.7pt>
 File: ./Figures/Energy.pdf Graphic file (type pdf)
  <use ./Figures/Energy.pdf>
-Package pdftex.def Info: ./Figures/Energy.pdf used on input line 517.
+Package pdftex.def Info: ./Figures/Energy.pdf used on input line 505.
 (pdftex.def)             Requested size: 469.75502pt x 427.06198pt.
 
 <./Figures/Amino.pdf, id=108, 794.97pt x 903.375pt>
 File: ./Figures/Amino.pdf Graphic file (type pdf)
  <use ./Figures/Amino.pdf>
-Package pdftex.def Info: ./Figures/Amino.pdf used on input line 524.
+Package pdftex.def Info: ./Figures/Amino.pdf used on input line 512.
 (pdftex.def)             Requested size: 469.75502pt x 533.82748pt.
 
 <./Figures/BoxPlot-KCFM.pdf, id=109, 518.93875pt x 389.455pt>
 File: ./Figures/BoxPlot-KCFM.pdf Graphic file (type pdf)
 
 <use ./Figures/BoxPlot-KCFM.pdf>
-Package pdftex.def Info: ./Figures/BoxPlot-KCFM.pdf used on input line 531.
+Package pdftex.def Info: ./Figures/BoxPlot-KCFM.pdf used on input line 519.
 (pdftex.def)             Requested size: 469.75502pt x 352.5624pt.
 
 <./Figures/Sensitivity.pdf, id=110, 1027.84pt x 770.88pt>
 File: ./Figures/Sensitivity.pdf Graphic file (type pdf)
 
 <use ./Figures/Sensitivity.pdf>
-Package pdftex.def Info: ./Figures/Sensitivity.pdf used on input line 538.
+Package pdftex.def Info: ./Figures/Sensitivity.pdf used on input line 526.
 (pdftex.def)             Requested size: 357.01123pt x 611.02138pt.
 
 
-LaTeX Warning: Float too large for page by 24.59137pt on input line 541.
+LaTeX Warning: Float too large for page by 24.59137pt on input line 529.
 
 <./Figures/CAT_prod_yield.pdf, id=112, 1020.81375pt x 385.44pt>
 File: ./Figures/CAT_prod_yield.pdf Graphic file (type pdf)
 
 <use ./Figures/CAT_prod_yield.pdf>
-Package pdftex.def Info: ./Figures/CAT_prod_yield.pdf used on input line 545.
+Package pdftex.def Info: ./Figures/CAT_prod_yield.pdf used on input line 533.
 (pdftex.def)             Requested size: 446.26582pt x 168.50607pt.
 
 <./Figures/CAT_flux_final.pdf, id=113, 1479.5275pt x 2236.355pt>
 File: ./Figures/CAT_flux_final.pdf Graphic file (type pdf)
 
 <use ./Figures/CAT_flux_final.pdf>
-Package pdftex.def Info: ./Figures/CAT_flux_final.pdf used on input line 552.
+Package pdftex.def Info: ./Figures/CAT_flux_final.pdf used on input line 540.
 (pdftex.def)             Requested size: 375.80544pt x 568.02786pt.
 
 
-LaTeX Warning: Float too large for page by 29.59785pt on input line 555.
+LaTeX Warning: Float too large for page by 29.59785pt on input line 543.
 
 [26 <./Figures/CarbonBoth.pdf>] [27 <./Figures/CarbonBoth_png.pdf>] [28 <./Figu
 res/Energy.pdf>] [29 <./Figures/Amino.pdf>] [30 <./Figures/BoxPlot-KCFM.pdf>]
@@ -1102,7 +1102,7 @@ b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr
 ve/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/urw/helvetic/uhvro8a.pfb>
-Output written on Paper_v1.pdf (35 pages, 1546808 bytes).
+Output written on Paper_v1.pdf (35 pages, 1547121 bytes).
 PDF statistics:
  517 PDF objects out of 1000 (max. 8388607)
  212 compressed objects within 3 object streams
