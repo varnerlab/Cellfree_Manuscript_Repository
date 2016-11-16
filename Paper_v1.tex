@@ -217,7 +217,7 @@ and by adding reactions describing chloramphenicol acetyltransferase (CAT) biosy
 The CFPS model equations were formulated using the hybrid cell-free modeling framework of Wayman et al. \cite{pr3010138}.
 An ensemble of model parameters (N $>$ 10,000) was estimated from measurements of glucose, CAT, organic acids (pyruvate, lactate, acetate, succinate, malate), energy species (A(x)P, G(x)P, C(x)P, U(x)P), and 18 of the 20 proteinogenic amino acids using a constrained Markov Chain Monte Carlo (MCMC) approach.
 The MCMC algorithm minimized the error between the training data and model simulations starting from an initial parameter set assembled from literature and inspection.
-Parameter sets were selected for the ensemble based upon their error, and the Pearson correlation coefficient between the candidate and existing sets the ensemble.
+Parameter sets were selected for the ensemble based upon their error, and the Pearson correlation coefficient between the candidate and existing sets in the ensemble.
 The parameter set with the lowest error value was defined as the best-fit set.
 Central carbon metabolism (Fig.~\ref{fig:CarbonBoth}, top), energy species (Fig.~\ref{fig:Energy}), and amino acids (Fig.~\ref{fig:Amino}) were captured by the ensemble and the best-fit set.
 The constrained MCMC approach estimated parameter sets with a median error greater than two-order of magnitude less than random parameter sets generated within
@@ -226,15 +226,13 @@ Allosteric control was important to the dynamics of the organic acid intermediat
 The acetate, lactate, pyruvate, succinate, malate and CAT trajectories were qualitatively different in the absence of allosteric control following glucose exhaustion.
 In particular, the rate of CAT biosynthesis and lactate accumulation and subsequent consumption decreased following glucose exhaustion in the absence of control.
 
-
-
 % We used the hybrid cell-free modeling framework of Wayman and coworkers to simulate the production of CAT \citep{pr3010138}.
 % The cell-free \textit{E. coli} metabolic network was constructed by removing the growth-associated processes from the model of Palsson and coworkers \cite{2000_edwards_palsson_PNAS}, and by adding reactions for the synthesis of
 % Thus, the model described core central carbon metabolism (glycolysis, pentose phosphate, Enter-Doudoroff, TCA cycle), as well as the synthesis of energy species, amino acids biosynthesis and degradation, and biosynthesis of the CAT protein.
 % An ensemble of model parameters was estimated from dynamic measurements of glucose, CAT, organic acids (pyruvate, lactate, acetate, succinate, malate), energy species (A(x)P, G(x)P, C(x)P, U(x)P), and 18 of the 20 proteinogenic amino acids by minimizing the difference between the experimental dataset and metabolite simulations subject to literature constraints on parameter values and initial conditions.
 % We performed a local sensitivity analysis to determine the network reactions with the greatest effect on protein production and overall system state.
 
-To better understand which parameters, and parameter combinations influenced model performance we performed sensitivity analysis (Fig.~\ref{fig:Sensitivity}).
+To better understand which parameters and parameter combinations influenced model performance we performed sensitivity analysis (Fig.~\ref{fig:Sensitivity}).
 CAT production was most sensitive to the CAT synthesis reaction, oxidative phosphorylation activity, and alanine synthesis (Fig.~\ref{fig:Sensitivity}, top, section A).
 The 16 next most important reactions to CAT production (section B) came from various pathways across the network: four each from glycolysis, the TCA cycle, and amino acid synthesis/degradation; two from the pentose phosphate pathway; and one each from the Entner-Doudoroff pathway and the energy species reactions.
 The pairwise sensitivities (off-diagonal elements) were different from the corresponding first-order sensitivities (diagonal elements), and led to interesting outcomes.
@@ -421,16 +419,22 @@ We then perturbed each model parameter:
 \begin{equation}\label{eqn:parameter-perturbation}
     k_i^{new}=k_i \cdot \exp(a\,r_i)\qquad{i=1,2,\hdots,\mathcal{P}}
 \end{equation}
-where $\mathcal{P}$ denotes the number of parameters ($\mathcal{P}$~=~815),
-which includes 163 rate constants, 163 enzyme activity decay constants, 455 saturation constants, and 34 control parameters,
-$k_i^{new}$ denotes the new value of the $i^{th}$ parameter,
-$k_i$ denotes the current value of the $i^{th}$ parameter,
-$a$ denotes a distribution variance, and $r_i$ denotes a random sample from the normal distribution.
+where $\mathcal{P}$ denotes the number of parameters ($\mathcal{P}$~=~815), which includes 163 rate constants, 163 enzyme activity decay constants, 455 saturation constants, and 34 control parameters, $k_i^{new}$ denotes the new value of the $i^{th}$ parameter, $k_i$ denotes the current value of the $i^{th}$ parameter, $a$ denotes a distribution variance, and $r_i$ denotes a random sample from the normal distribution.
+Parameters were kept between an upper and lower bound that varied by parameter type:
+\begin{equation}\label{eqn:parameter-bounds}
+    k_i^{new,bounded}=\min\left(\max\left(k_i^{new},l_i\right),u_i\right)
+\end{equation}
+where $k_i^{new,bounded}$ denotes the bounded parameter value, $l_i$ denotes the lower bound for that parameter type, and $u_i$ denotes the upper bound for that parameter type.
+Rate constants were bounded between 0 and 500000 mM/h [REFERENCE NEEDED]; this resulted in a mean of 324.6 mM/h and a standard deviation of 4311.2 mM/h for rate constants, giving a coefficient of variation (CV) of 13.3.
+Enzyme degradation rates were bounded between 0 and 1 h$^{-1}$ [REFERENCE NEEDED]; $\mu$ = 0.19 h$^{-1}$, $\sigma$ = 0.32 h$^{-1}$, CV = 1.64.
+Saturation constants were bounded between 0.001 and 10 mM [REFERENCE NEEDED]; $\mu$ = 0.76 mM, $\sigma$ = 1.71 mM, CV = 2.25.
+Control parameters (gains and orders) were left unbounded.
+Control gains: $\mu$ = 0.51, $\sigma$ = 1.21, CV = 2.35.
+Control orders: $\mu$ = 14.6, $\sigma$ = 66.0, CV = 4.53.
 For each newly generated parameter set, we re-solved the balance equations and calculated the cost function.
 All sets with a lower cost than the previous set, and some with higher cost, were added to the ensemble.
 After generating 12,437 sets, we selected 100 sets with minimal set to set correlation to avoid over-sampling any region of parameter space.
-The original 12,437-set ensemble had a mean Pearson correlation coefficient of 0.94 between pairs of sets,
-while the 100-set ensemble had a mean Pearson correlation coefficient of 0.83 between pairs of sets.
+The original 12,437-set ensemble had a mean Pearson correlation coefficient of 0.94 between pairs of sets, while the 100-set ensemble had a mean Pearson correlation coefficient of 0.83 between pairs of sets.
 
 \subsection*{Sensitivity analysis of the CFPS model.}
 We determined the reactions most important to protein production by computing the local sensitivity of CAT concentration (denoted as $\texttt{CAT}$)
@@ -479,7 +483,7 @@ This sequence-specific FBA \citep{Allen:2003aa} problem was formulated as:
 where $\mathbf{S}$ denotes the stoichiometric matrix, $\mathbf{w}$ denotes the unknown flux vector, $\boldsymbol{\theta}$ denotes the objective selection vector
 and $\alpha_i$ and $\beta_i$ denote the lower and upper bounds on flux $w_{i}$, respectively.
 The objective $w_{obj}$ was to maximize the specific rate of CAT formation.
-The specific glucose uptake rate was constrained to allow a maximum flux of 40 mM/hr according to experimental data; the specific amino acid uptake rates were bound to allow a maximum flux of 30 mM/hr, but did not reach this maximum flux.
+The specific glucose uptake rate was constrained to allow a maximum flux of 40 mM/h according to experimental data; the specific amino acid uptake rates were bound to allow a maximum flux of 30 mM/h, but did not reach this maximum flux.
 The transcription and translation template reactions come from sequence-specific analysis \cite{Allen:2003aa}, and include transcription initiation, transcription, mRNA degradation, translation initiation, translation, and tRNA charging.
 The flux balance analysis problem was solved using the GNU Linear Programming Kit (v4.52) \cite{GLPK}.
 The solution flux vector was used to calculate the carbon yield of CAT for the three FBA cases.
@@ -505,7 +509,7 @@ where $K_{P}$ denotes the polysome amplification constant, $Ribo$ denotes the ri
 
 An ensemble of 100 sets of flux distributions was calculated for three different cases: unconstrained, constrained by transcription and translation (TX/TL) rates, and  constrained by TX/TL rates and experimental data.
 For the unconstrained case, all rates were left unbounded, except the specific glucose uptake rate.
-An ensemble of flux distributions was then calculated by randomly sampling the maximum specific glucose uptake rate from within a range of 30 to 40 mM/hr, determined from experimental data.
+An ensemble of flux distributions was then calculated by randomly sampling the maximum specific glucose uptake rate from within a range of 30 to 40 mM/h, determined from experimental data.
 For the case constrained by TX/TL rates, an ensemble was generated by randomly sampling RNAP polymerase levels, ribosome levels, and elongation rates in a physiological range determined from literature.
 RNA polymerase levels were sampled between 60 and 80 nM, ribosome levels between 7 and 16 \textmu M, the RNA polymerase elongation rate between 20 and 30 nt/sec, and the ribosome elongation rate between 1.5 and 3 aa/sec \cite{2005_underwood_biotech, Garamella:2016aa}.
 For the case constrained by TX/TL rates and experimental data, the lower and upper bounds on the fluxes for the data-informed metabolites were sampled within the range given by the experimental noise.
