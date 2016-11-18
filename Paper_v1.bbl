@@ -158,6 +158,12 @@ Wayman JA, Sagar A, Varner JD (2015) Dynamic modeling of cell-free biochemical
 \newblock Processes 3: 138.
 \bibAnnoteFile{pr3010138}
 
+\bibitem{2008_jewett_molsysbiol}
+Jewett MC, Calhoun KA, Voloshin A, Wuu JJ, Swartz JR (2008) An integrated
+  cell-free metabolic platform for protein production and synthetic biology.
+\newblock Molecular Systems Biology 4.
+\bibAnnoteFile{2008_jewett_molsysbiol}
+
 \bibitem{2014_li_PlosOne}
 Li J, Gu L, Aach J, Church GM (2014) Improved cell-free rna and protein
   synthesis system.
@@ -169,12 +175,6 @@ Underwood KA, Swartz JR, Puglisi JD (2005) Quantitative polysome analysis
   identifies limitations in bacterial cell-free protein synthesis.
 \newblock Biotechnology and Bioengineering 91: 425--435.
 \bibAnnoteFile{2005_underwood_biotech}
-
-\bibitem{2008_jewett_molsysbiol}
-Jewett MC, Calhoun KA, Voloshin A, Wuu JJ, Swartz JR (2008) An integrated
-  cell-free metabolic platform for protein production and synthetic biology.
-\newblock Molecular Systems Biology 4.
-\bibAnnoteFile{2008_jewett_molsysbiol}
 
 \bibitem{2010_kotte_MolSystBiol}
 Kotte O, Zaugg JB, Heinemann M (2010) {{B}acterial adaptation through
