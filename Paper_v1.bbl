@@ -47,7 +47,7 @@ Hodgman CE, Jewett MC (2012) Cell-free synthetic biology: thinking outside the
 \bibitem{Pardee:2016aa}
 Pardee K, Slomovic S, Nguyen PQ, Lee JW, Donghia N, et~al. (2016) Portable,
   on-demand biomolecular manufacturing.
-\newblock Cell 167: 248-259.e12.
+\newblock Cell 167: 248-59.e12.
 \bibAnnoteFile{Pardee:2016aa}
 
 \bibitem{1976_fredrickson_BiotechBioeng}
@@ -63,7 +63,7 @@ Domach MM, Leung SK, Cahn RE, Cocks GG, Shuler ML (1984) Computer model for
 
 \bibitem{1989_steinmeyer_shuler_ChemEngSci}
 Steinmeyer D, Shuler M (1989) {Structured model for Saccharomyces cerevisiae.}
-\newblock Chem Eng Sci 44: 2017 - 2030.
+\newblock Chem Eng Sci 44: 2017-30.
 \bibAnnoteFile{1989_steinmeyer_shuler_ChemEngSci}
 
 \bibitem{1992_wu_shuler_AnnNYAcadSci}
@@ -149,7 +149,7 @@ Zomorrodi AR, Suthers PF, Ranganathan S, Maranas CD (2012) Mathematical
 \bibitem{2005_calhoun_BiotechnologyProgress}
 Calhoun KA, Swartz JR (2005) An economical method for cell-free protein
   synthesis using glucose and nucleoside monophosphates.
-\newblock Biotechnology Progress 21: 1146--1153.
+\newblock Biotechnology Progress 21: 1146-53.
 \bibAnnoteFile{2005_calhoun_BiotechnologyProgress}
 
 \bibitem{pr3010138}
@@ -173,7 +173,7 @@ Li J, Gu L, Aach J, Church GM (2014) Improved cell-free rna and protein
 \bibitem{2005_underwood_biotech}
 Underwood KA, Swartz JR, Puglisi JD (2005) Quantitative polysome analysis
   identifies limitations in bacterial cell-free protein synthesis.
-\newblock Biotechnology and Bioengineering 91: 425--435.
+\newblock Biotechnology and Bioengineering 91: 425-35.
 \bibAnnoteFile{2005_underwood_biotech}
 
 \bibitem{2010_kotte_MolSystBiol}
@@ -187,74 +187,74 @@ Cabrera R, Baez M, Pereira HM, Caniuguir A, Garratt RC, et~al. (2011) {{T}he
   crystal complex of phosphofructokinase-2 of {E}scherichia coli with
   fructose-6-phosphate: kinetic and structural analysis of the allosteric
   {A}{T}{P} inhibition}.
-\newblock J Biol Chem 286: 5774--5783.
+\newblock J Biol Chem 286: 5774-83.
 \bibAnnoteFile{2011_cabrera_JBiolChem}
 
 \bibitem{1973_chulavatnatol_JBiolChem}
 Chulavatnatol M, Atkinson DE (1973) {{P}hosphoenolpyruvate synthetase from
   {E}scherichia coli. {E}ffects of adenylate energy charge and modifier
   concentrations}.
-\newblock J Biol Chem 248: 2712--2715.
+\newblock J Biol Chem 248: 2712-5.
 \bibAnnoteFile{1973_chulavatnatol_JBiolChem}
 
 \bibitem{2007_ogawa_JBacteriol}
 Ogawa T, Murakami K, Mori H, Ishii N, Tomita M, et~al. (2007) {{R}ole of
   phosphoenolpyruvate in the {N}{A}{D}{P}-isocitrate dehydrogenase and
   isocitrate lyase reaction in {E}scherichia coli}.
-\newblock J Bacteriol 189: 1176--1178.
+\newblock J Bacteriol 189: 1176-8.
 \bibAnnoteFile{2007_ogawa_JBacteriol}
 
 \bibitem{1988_mackintosh_BiochemJ}
 MacKintosh C, Nimmo HG (1988) {{P}urification and regulatory properties of
   isocitrate lyase from {E}scherichia coli {M}{L}308}.
-\newblock Biochem J 250: 25--31.
+\newblock Biochem J 250: 25-31.
 \bibAnnoteFile{1988_mackintosh_BiochemJ}
 
 \bibitem{2000_donahue_JBacteriol}
 Donahue JL, Bownas JL, Niehaus WG, Larson TJ (2000) {{P}urification and
   characterization of glp{X}-encoded fructose 1, 6-bisphosphatase, a new enzyme
   of the glycerol 3-phosphate regulon of {E}scherichia coli}.
-\newblock J Bacteriol 182: 5624--5627.
+\newblock J Bacteriol 182: 5624-7.
 \bibAnnoteFile{2000_donahue_JBacteriol}
 
 \bibitem{2006_hines_JBiolChem}
 Hines JK, Fromm HJ, Honzatko RB (2006) {{N}ovel allosteric activation site in
   {E}scherichia coli fructose-1,6-bisphosphatase}.
-\newblock J Biol Chem 281: 18386--18393.
+\newblock J Biol Chem 281: 18386-93.
 \bibAnnoteFile{2006_hines_JBiolChem}
 
 \bibitem{2007_hines_JBiolChem}
 Hines JK, Fromm HJ, Honzatko RB (2007) {{S}tructures of activated
   fructose-1,6-bisphosphatase from {E}scherichia coli. {C}oordinate regulation
   of bacterial metabolism and the conservation of the {R}-state}.
-\newblock J Biol Chem 282: 11696--11704.
+\newblock J Biol Chem 282: 11696-704.
 \bibAnnoteFile{2007_hines_JBiolChem}
 
 \bibitem{1994_pereira_JBiolChem}
 Pereira DS, Donald LJ, Hosfield DJ, Duckworth HW (1994) {{A}ctive site mutants
   of {E}scherichia coli citrate synthase. {E}ffects of mutations on catalytic
   and allosteric properties}.
-\newblock J Biol Chem 269: 412--417.
+\newblock J Biol Chem 269: 412-7.
 \bibAnnoteFile{1994_pereira_JBiolChem}
 
 \bibitem{1983_robinson_FEBSLett}
 Robinson MS, Easom RA, Danson MJ, Weitzman PD (1983) {{C}itrate synthase of
   {E}scherichia coli. {C}haracterisation of the enzyme from a plasmid-cloned
   gene and amplification of the intracellular levels}.
-\newblock FEBS Lett 154: 51--54.
+\newblock FEBS Lett 154: 51-4.
 \bibAnnoteFile{1983_robinson_FEBSLett}
 
 \bibitem{2010_zhu_Biochimie}
 Zhu T, Bailey MF, Angley LM, Cooper TF, Dobson RC (2010) {{T}he quaternary
   structure of pyruvate kinase type 1 from {E}scherichia coli at low nanomolar
   concentrations}.
-\newblock Biochimie 92: 116--120.
+\newblock Biochimie 92: 116-20.
 \bibAnnoteFile{2010_zhu_Biochimie}
 
 \bibitem{1972_wohl_JBiolChem}
 Wohl RC, Markus G (1972) {{P}hosphoenolpyruvate carboxylase of {E}scherichia
   coli. {P}urification and some properties}.
-\newblock J Biol Chem 247: 5785--5792.
+\newblock J Biol Chem 247: 5785-92.
 \bibAnnoteFile{1972_wohl_JBiolChem}
 
 \bibitem{2007_kale_JBiolChem}
@@ -262,21 +262,27 @@ Kale S, Arjunan P, Furey W, Jordan F (2007) {{A} dynamic loop at the active
   center of the {E}scherichia coli pyruvate dehydrogenase complex {E}1
   component modulates substrate utilization and chemical communication with the
   {E}2 component}.
-\newblock J Biol Chem 282: 28106--28116.
+\newblock J Biol Chem 282: 28106-16.
 \bibAnnoteFile{2007_kale_JBiolChem}
 
 \bibitem{2002_arjunan_Biochemistry}
 Arjunan P, Nemeria N, Brunskill A, Chandrasekhar K, Sax M, et~al. (2002)
   {{S}tructure of the pyruvate dehydrogenase multienzyme complex {E}1 component
   from {E}scherichia coli at 1.85 {A} resolution}.
-\newblock Biochemistry 41: 5213--5221.
+\newblock Biochemistry 41: 5213-21.
 \bibAnnoteFile{2002_arjunan_Biochemistry}
 
 \bibitem{2008_okino_ApplMicrobiolBiotechnol}
 Okino S, Suda M, Fujikura K, Inui M, Yukawa H (2008) {{P}roduction of
   {D}-lactic acid by {C}orynebacterium glutamicum under oxygen deprivation}.
-\newblock Appl Microbiol Biotechnol 78: 449--454.
+\newblock Appl Microbiol Biotechnol 78: 449-54.
 \bibAnnoteFile{2008_okino_ApplMicrobiolBiotechnol}
+
+\bibitem{Keseler:2013aa}
+Keseler IM, Mackie A, Peralta-Gil M, Santos-Zavaleta A, Gama-Castro S, et~al.
+  (2013) Ecocyc: fusing model organism databases with systems biology.
+\newblock Nucleic Acids Res 41: 605-12.
+\bibAnnoteFile{Keseler:2013aa}
 
 \bibitem{Allen:2003aa}
 Allen TE, Palsson B{\O} (2003) Sequence-based analysis of metabolic demands for

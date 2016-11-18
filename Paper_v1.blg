@@ -6,45 +6,45 @@ Database file #1: References_v1.bib
 Warning--entry type for "GLPK" isn't style-file defined
 --line 291 of file References_v1.bib
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-You've used 45 entries,
+You've used 46 entries,
             2441 wiz_defined-function locations,
-            885 strings with 15262 characters,
-and the built_in function-call counts, 36060 in all, are:
-= -- 3329
-> -- 629
+            893 strings with 15895 characters,
+and the built_in function-call counts, 36928 in all, are:
+= -- 3393
+> -- 653
 < -- 0
-+ -- 315
-- -- 157
-* -- 3042
-:= -- 4345
-add.period$ -- 91
-call.type$ -- 45
-change.case$ -- 45
++ -- 327
+- -- 163
+* -- 3119
+:= -- 4457
+add.period$ -- 93
+call.type$ -- 46
+change.case$ -- 46
 chr.to.int$ -- 0
-cite$ -- 90
-duplicate$ -- 3535
-empty$ -- 3715
-format.name$ -- 200
-if$ -- 7994
+cite$ -- 92
+duplicate$ -- 3675
+empty$ -- 3806
+format.name$ -- 207
+if$ -- 8164
 int.to.chr$ -- 0
-int.to.str$ -- 45
-missing$ -- 469
-newline$ -- 241
-num.names$ -- 44
-pop$ -- 561
+int.to.str$ -- 46
+missing$ -- 482
+newline$ -- 246
+num.names$ -- 45
+pop$ -- 573
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 272
+skip$ -- 284
 stack$ -- 0
-substring$ -- 5117
-swap$ -- 935
+substring$ -- 5185
+swap$ -- 961
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 288
-width$ -- 47
-write$ -- 508
+while$ -- 297
+width$ -- 48
+write$ -- 519
 (There was 1 warning)

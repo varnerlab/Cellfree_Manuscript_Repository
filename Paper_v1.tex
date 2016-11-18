@@ -224,37 +224,6 @@ Allosteric control was important to the dynamics of the organic acid intermediat
 The acetate, lactate, pyruvate, succinate, malate and CAT trajectories were qualitatively different in the absence of allosteric control following glucose exhaustion.
 In particular, the rate of CAT biosynthesis and lactate accumulation and subsequent consumption decreased following glucose exhaustion in the absence of control.
 
-% We used the hybrid cell-free modeling framework of Wayman and coworkers to simulate the production of CAT \citep{pr3010138}.
-% The cell-free \textit{E. coli} metabolic network was constructed by removing the growth-associated processes from the model of Palsson and coworkers \cite{2000_edwards_palsson_PNAS}, and by adding reactions for the synthesis of
-% Thus, the model described core central carbon metabolism (glycolysis, pentose phosphate, Enter-Doudoroff, TCA cycle), as well as the synthesis of energy species, amino acids biosynthesis and degradation, and biosynthesis of the CAT protein.
-% An ensemble of model parameters was estimated from dynamic measurements of glucose, CAT, organic acids (pyruvate, lactate, acetate, succinate, malate), energy species (A(x)P, G(x)P, C(x)P, U(x)P), and 18 of the 20 proteinogenic amino acids by minimizing the difference between the experimental dataset and metabolite simulations subject to literature constraints on parameter values and initial conditions.
-% We performed a local sensitivity analysis to determine the network reactions with the greatest effect on protein production and overall system state.
-
-To better understand which parameters and parameter combinations influenced model performance we performed sensitivity analysis (Fig.~\ref{fig:Sensitivity}).
-CAT production was most sensitive to the CAT synthesis reaction, oxidative phosphorylation activity, and alanine synthesis (Fig.~\ref{fig:Sensitivity}, top, section A).
-The 16 next most important reactions to CAT production (section B) came from various pathways across the network: four each from glycolysis, the TCA cycle, and amino acid synthesis/degradation; two from the pentose phosphate pathway; and one each from the Entner-Doudoroff pathway and the energy species reactions.
-The pairwise sensitivities (off-diagonal elements) were different from the corresponding first-order sensitivities (diagonal elements), and led to interesting outcomes.
-For example, glutamine synthesis and arginine degradation were both among the most important reactions to CAT production (they rank 5th and 10th, respectively).
-This was likely because they both affect the sensitive glutamine-glutamate balance; glutamine synthesis consumes glutamate, while arginine degradation produces it.
-However, when both were perturbed, their combined effect on the model was low, as the respective contributions to consumption and production of glutamate cancelled.
-The system state as a whole was most sensitive to glucose uptake via GTP and the forward reaction of lactate dehydrogenase (Fig.~\ref{fig:Sensitivity}, bottom, section F).
-The 30 next most important reactions to the system state (section G) came from various pathways across the network: eight from amino acid synthesis/degradation; six from glycolysis; four from the TCA cycle; and two each from the pentose phosphate pathway, Entner-Doudoroff, energy/reducing pathways, and small molecule transport; one from oxidative phosphorylation; and one from pyrophosphatase consumption. The system state had more pairwise sensitivities that differ from the corresponding first-order sensitivities and stand out as significant.
-For example, the first-order effect of alanine synthesis was large; it consumes both pyruvate and glutamate, two key species in the network.
-In addition, a handful of alanine synthesis pairwise sensitivities were also large.
-However, there were enough reactions that, when paired with alanine synthesis, had little effect on the model; malic enzyme is one of these, as it produces the pyruvate that alanine synthesis consumes. Thus, the total-order alanine synthesis sensitivity was low, placing it at the very bottom of section I.
-Another interesting result was the intersection of sections F and G with section J.
-The 53 reactions in section J were turned off in the best-fit set (rate constants were set to 0);
-therefore, the perturbation of these reactions had no effect on the model.
-Thus, all pairwise sensitivities with reactions in section J were pseudo first-order sensitivities for the other reactions.
-Interestingly, many reactions in section F and several in section G showed their highest sensitivities when paired with the "non-effects" of section J.
-Of these, three involved pyruvate, strengthening its role as a key metabolite; the others were glucose consumption via GTP/CTP-specific hexokinases,
-fumarate reductase, and SO$_4$ utilization.
-This suggested that these reactions' effects on the model were canceled out or lessened by most other reactions, but were of course not affected by the reactions in section J.
-This was also likely the reason that reactions in section J rank above those in section K, despite having no effect themselves on the model.
-Taken together, sensitivity analysis identified blocks of parameters that either individually, or in combination influenced model performance.
-However, the sensitivity analysis did not establish what the maximum performance of the system was.
-To answer that question we performed sequence-specific flux balance analysis of CAT production.
-
 We used sequence-specific flux balance analysis (ssFBA) to calculate the theoretical maximum CAT carbon yield for different constraint values (Fig.~\ref{fig:CATProdYield}).
 The experimental CAT carbon yield was 0.0821, while the best-fit parameter set had a carbon yield of 0.086 $\pm$ 0.004.
 Thus, although the kinetic model described the experimental data including the yield, it was unclear whether the performance of the CFPS system was optimal.
@@ -269,6 +238,31 @@ this case had no upper bound on the transcription and translation reactions, and
 On the other hand, for realistic constraints on transcription and translation, the CAT carbon yield was 0.226 $\pm$ 0.03 (Fig.~\ref{fig:CATProdYield}B, middle).
 Lastly, when using realistic metabolite and transcription and translation constraints the predicted carbon yield was 0.062 $\pm$ 0.02, similar to the experimental yield Fig.~\ref{fig:CATProdYield}B, end).
 Thus, the experimental dataset and best-fit parameter set each produced CAT at 23\% of the theoretical maximum and 36\% of a theoretical physiological case.
+
+To better understand which parameters and parameter combinations influenced model performance we performed sensitivity analysis (Fig.~\ref{fig:Sensitivity}).
+CAT production was most sensitive to the CAT synthesis reaction, oxidative phosphorylation activity, and alanine synthesis (Fig.~\ref{fig:Sensitivity}, top, section A).
+The 16 next most important reactions to CAT production (section B) came from various pathways across the network: four each from glycolysis, the TCA cycle, and amino acid synthesis/degradation; two from the pentose phosphate pathway; and one each from the Entner-Doudoroff pathway and the energy species reactions.
+The pairwise sensitivities (off-diagonal elements) were different from the corresponding first-order sensitivities (diagonal elements), and led to interesting outcomes.
+For example, glutamine synthesis and arginine degradation were both among the most important reactions to CAT production (they rank 5th and 10th, respectively).
+This was likely because they both affect the sensitive glutamine-glutamate balance; glutamine synthesis consumes glutamate, while arginine degradation produces it.
+However, when both were perturbed, their combined effect on the model was low, as the respective contributions to consumption and production of glutamate cancelled.
+The system state as a whole was most sensitive to glucose uptake via GTP and the forward reaction of lactate dehydrogenase (Fig.~\ref{fig:Sensitivity}, bottom, section F).
+The 30 next most important reactions to the system state (section G) came from various pathways across the network: eight from amino acid synthesis/degradation; six from glycolysis; four from the TCA cycle; and two each from the pentose phosphate pathway, Entner-Doudoroff, energy/reducing pathways, and small molecule transport; one from oxidative phosphorylation; and one from pyrophosphatase consumption. The system state had more pairwise sensitivities that differ from the corresponding first-order sensitivities and stand out as significant.
+For example, the first-order effect of alanine synthesis was large; it consumes both pyruvate and glutamate, two key species in the network.
+In addition, a handful of alanine synthesis pairwise sensitivities were also large.
+However, there were enough reactions that, when paired with alanine synthesis, had little effect on the model; malic enzyme is one of these, as it produces the pyruvate that alanine synthesis consumes. Thus, the total-order alanine synthesis sensitivity was low, placing it at the very bottom of section I.
+Another interesting result was the intersection of sections F and G with section J.
+The 53 reactions in section J were turned off in the best-fit set ($V^{max}=0$);
+therefore, the perturbation of these reactions had no effect on the model.
+Thus, all pairwise sensitivities with reactions in section J were pseudo first-order sensitivities for the other reactions.
+Interestingly, many reactions in section F and several in section G showed their highest sensitivities when paired with the "non-effects" of section J.
+Of these, three involved pyruvate, strengthening its role as a key metabolite; the others were glucose consumption via GTP/CTP-specific hexokinases,
+fumarate reductase, and SO$_4$ utilization.
+This suggested that these reactions' effects on the model were canceled out or lessened by most other reactions, but were of course not affected by the reactions in section J.
+This was also likely the reason that reactions in section J rank above those in section K, despite having no effect themselves on the model.
+Taken together, sensitivity analysis identified blocks of parameters that either individually, or in combination influenced model performance.
+However, the sensitivity analysis did not establish what the maximum performance of the system was.
+To answer that question we performed sequence-specific flux balance analysis of CAT production.
 
 In comparing the flux distributions between the unconstrained and constrained cases (Fig.~\ref{fig:Network}), the constrained cases heavily utilized the first step in the pentose phosphate pathway to generate NADPH.
 In these cases the majority of the flux continued through the Entner–Doudoroff pathway, whereas in the unconstrained case the majority of flux traveled through glycolysis.
@@ -442,34 +436,33 @@ We then perturbed each model parameter between an upper and lower bound that var
 \begin{equation}\label{eqn:parameter-perturbation}
     k_i^{new}=\min\left(\max\left(k_i \cdot \exp(a \cdot r_i),l_i\right),u_i\right)\qquad{i=1,2,\hdots,\mathcal{P}}
 \end{equation}
-where $\mathcal{P}$ denotes the number of parameters ($\mathcal{P}$~=~815), which includes 163 rate constants, 163 enzyme activity decay constants, 455 saturation constants, and 34 control parameters, $k_i^{new}$ denotes the new value of the $i^{th}$ parameter, $k_i$ denotes the current value of the $i^{th}$ parameter, $a$ denotes a distribution variance, $r_i$ denotes a random sample from the normal distribution, $l_i$ denotes the lower bound for that parameter type, and $u_i$ denotes the upper bound for that parameter type.
-Rate constants were bounded between 0 and 500,000 mM/h [REFERENCE NEEDED]; this resulted in a mean of 324.6 mM/h and a standard deviation of 4311.2 mM/h for rate constants, giving a coefficient of variation (CV) of 13.3.
-Enzyme degradation rates were bounded between 0 and 1 h$^{-1}$ [REFERENCE NEEDED]; $\mu$ = 0.19 h$^{-1}$, $\sigma$ = 0.32 h$^{-1}$, CV = 1.64.
-Saturation constants were bounded between 0.001 and 10 mM [REFERENCE NEEDED]; $\mu$ = 0.76 mM, $\sigma$ = 1.71 mM, CV = 2.25.
-Control parameters (gains and orders) were left unbounded.
-Control gains: $\mu$ = 0.51, $\sigma$ = 1.21, CV = 2.35.
-Control orders: $\mu$ = 14.6, $\sigma$ = 66.0, CV = 4.53.
+where $\mathcal{P}$ denotes the number of parameters ($\mathcal{P}$~=~815), which includes 163 maximum reaction rates ($V^{max}$), 163 enzyme activity decay constants, 455 saturation constants ($K_{js}$), and 34 control parameters, $k_i^{new}$ denotes the new value of the $i^{th}$ parameter, $k_i$ denotes the current value of the $i^{th}$ parameter, $a$ denotes a distribution variance, $r_i$ denotes a random sample from the normal distribution, $l_i$ denotes the lower bound for that parameter type, and $u_i$ denotes the upper bound for that parameter type.
+Maximum reaction rates were bounded between 0 and 500,000 mM/h \cite{Keseler:2013aa}.
+Assuming a total enzyme concentration of 50 $\mu$M, this corresponds to catalytic rate bounds of 0 and 2778 s$^{-1}$.
+These bounds resulted in a median catalytic rate of 0.016 s$^{-1}$ across the ensemble.
+Enzyme activity decay constants were bounded between 0 and 1 h$^{-1}$, corresponding to half lives of 42 minutes and infinity; median = 25 min.
+Saturation constants were bounded between 0.001 and 10 mM; median = 0.16 mM.
+Control parameters (gains and orders) were left unbounded; gain median = 0.076, order median = 0.69.
 For each newly generated parameter set, we re-solved the balance equations and calculated the cost function.
 All sets with a lower cost than the previous set, and some with higher cost, were added to the ensemble.
 After generating 12,437 sets, we selected 100 sets with minimal set to set correlation to avoid over-sampling any region of parameter space.
 The original 12,437-set ensemble had a mean Pearson correlation coefficient of 0.94 between pairs of sets, while the 100-set ensemble had a mean Pearson correlation coefficient of 0.83 between pairs of sets.
 
 \subsection*{Sensitivity analysis of the CFPS model.}
-We determined the reactions most important to protein production by computing the local sensitivity of CAT concentration (denoted as $\texttt{CAT}$)
-to each individual rate constant, and each pair of rate constants in the network.
+We determined the reactions most important to protein production by computing the local sensitivity of CAT concentration (denoted as $\texttt{CAT}$) to each individual maximum reaction rate, and each pair of maximum reaction rates in the network.
 The sensitivity index was formulated as:
 \begin{equation}\label{eqn:CAT-sensitivity}
     \mathcal{S}_{ij}^{\texttt{CAT}} = \norm{\texttt{CAT}(p_i,p_j,t)-\texttt{CAT}(\alpha \cdot p_i,\alpha \cdot p_j,t)}_{2}\qquad{i,j=1,2,\hdots\mathcal{P}}
 \end{equation}
 where $\mathcal{S}_{ij}^{\texttt{CAT}}$ denotes the sensitivity of CAT production to the $i^{th}$ and $j^{th}$ parameters,
 $\texttt{CAT}(p_i,p_j,t)$ denotes CAT concentration as a function of time and the $i^{th}$ and $j^{th}$ parameters,
-$\alpha$ denotes the perturbation factor, and $\mathcal{P}$ denotes the number of rate constants ($\mathcal{P}$ = 163).
+$\alpha$ denotes the perturbation factor, and $\mathcal{P}$ denotes the number of maximum reaction rates ($\mathcal{P}$ = 163).
 In calculating the pairwise sensitivities, each parameter was perturbed by 1\%; first-order sensitivities ($i$ = $j$) were subject to two 1\% perturbations.
-% The array of sensitivity indices was organized into a clustergram with both axes corresponding to the 163 rate constants
+% The array of sensitivity indices was organized into a clustergram with both axes corresponding to the 163 maximum reaction rates
 % rearranged from most sensitive (top, right) to least sensitive (bottom, left).
 
 Likewise, we determined the reactions most important to global system performance by computing the sensitivity of all species for which data exists (denoted as $\texttt{X}$)
-to each rate constant in the network.
+to each maximum reaction rate in the network.
 In this case, each sensitivity index was formulated as:
 \begin{equation}\label{eqn:system-sensitivity}
     \mathcal{S}_{ij}^{\texttt{X}}=\norm{\texttt{X}(p_i,p_j,t)-\texttt{X}(\alpha \cdot p_i,\alpha \cdot p_j,t)}\qquad{i,j=1,2,\hdots\mathcal{P}}
@@ -597,7 +590,7 @@ This study was supported by a National Science Foundation Graduate Research Fell
 \begin{figure}[ht]
 \centering
 \includegraphics[width=0.76\textwidth,trim=0 28 615 40,clip]{./Figures/Sensitivity.pdf}
-\caption{Normalized first-order and pairwise sensitivities of CAT production (top) and system state (bottom) to rate constants.}
+\caption{Normalized first-order and pairwise sensitivities of CAT production (top) and system state (bottom) to maximum reaction rates.}
 \label{fig:Sensitivity}
 \end{figure}
 
