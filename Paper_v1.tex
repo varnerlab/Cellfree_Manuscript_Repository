@@ -309,36 +309,36 @@ Taken together, this is the first dynamic model of \textit{E. coli} cell-free pr
 We present an ensemble of models that quantitatively describes the system behavior of cell-free metabolism and production of CAT.
 Experimental observations of the metabolites and cometabolites validate the structure of the model and the estimation of kinetic parameters. 
 This is important in applying metabolic engineering principles to rationally design cell-free production processes and predict the redirection of carbon fluxes to product forming pathways.
-The most sensitivite parameters for model performance are the uptake of glucose followed by pyruvate.
+The most sensitive parameter for the model as a whole is the uptake of glucose, followed by pyruvate.
 This outstanding control on model performace was expected as these metabolites are responsible for driving CFPS and represent the first step in the model network.
-Nevertheless there are further reactions that excercise considerable sensitivity to model performance. 
-Oxidative phosphorylation activity shows to be vital to model performance, since it provides most of the energetic demands of CFPS according to the model.  
-In examining oxidative phosphorylation activity, knockouts in the electron transport pathways disrupt model performance and show CAT carbon yield dropping from 8.6\% to 2.7\%, consistent with literature observations\cite{2008_jewett_molsysbiol}.
-Additional reactions with considerable sensitivity are responsible for the consumption of glucose and pyruvate followed by the accumulation of pyruvate which allows it to be consumed during the second phase of CFPS. 
-Following these reactions, the first step in pentose phosphate pathway is important as it degrades G6P to 6PG and produces NADPH.
-The interconversion of NADPH to NADH shows to be the next sensitive reaction, which helps to supply NADH to oxidative phosphorylation reactions to meet the energetic needs of the system. 
-The insignificant reactions lead to the accumulation of unwanted byproducts such as ethanol and formate.
+Nevertheless, there are further reactions that excercise considerable sensitivity to model performance. 
+Oxidative phosphorylation activity is vital, since it provides most of the energetic needs of CFPS.
+In examining oxidative phosphorylation activity, knockouts in the electron transport pathways disrupt metabolism across the network and show CAT carbon yield dropping from 8.6\% to 2.7\%, consistent with literature observations \cite{2008_jewett_molsysbiol}.
+Jewett and coworkers also saw a decrease in CAT yield, ranging from 1.5-fold to 4-fold, when knocking out oxidative phosphorylation.
+Other reactions with considerable sensitivity are those responsible for the consumption of glucose and the consumption and production of pyruvate, which is consumed during the second phase of CFPS. 
+Also important is the first step in pentose phosphate pathway, as it converts G6P to 6PG and produces NADPH.
+The next most sensitive reaction is the conversion of NADPH to NADH, which helps to supply NADH to oxidative phosphorylation reactions to meet the energetic needs of the system. 
+Many of the insignificant reactions lead to the accumulation of unwanted byproducts such as ethanol and formate.
 
-In analyzing the model sensitive parameters for CAT production, CAT synthesis followed by oxidative phosphorylation are the most sensitive.
-Following these reactions, the same theme of significance is seen as in the sensitivity of overall model performace. 
-The most important are glucose and pyruvate consuming reactions followed by downstream reactions from their respective products which is necessary to drive CFPS.
-In addition, the conversion of ATP to GTP shows significance since it aides in the translation of CAT.
-Thus to improve the efficiency of CAT production, supplementation with additional GTP may be of some benefit. 
-The overall sensitivity results show the substrates driving CFPS are vital to CFPS performance and CAT production, this can be seen by the biphasic operation of CFPS. 
-CFPS has biphasic formation of CAT, with the first phase operating on glucose and the second phase operating on pyruvate. 
-During the first phase, there is an accumulation of metabolite byproducts from central carbon with the majority of flux going towards acetate and some towards pyruvate, lactate, and succinate but these are consumed in the second phase, except for acetate. 
-CFPS operating under glucose consumption has a higher production flux of CAT than that of pyruvate/lactate consumption. 
-In comparing the theoretical maximum carbon yield of CAT from ssFBA predictions to the kinetic model and experimental measurements, this suggests that there is potential for increasing CAT yield in CFPS as well as CFPS performance.
+In analyzing the model parameters' effect on CAT production, CAT synthesis is the most important, followed by oxidative phosphorylation and the glucose and pyruvate consuming reactions, as well as the downstream reactions which are necessary to drive CFPS.
+In addition, the conversion of ATP to GTP shows significance since it facilitates CAT synthesis.
+Thus, supplementation with additional GTP may improve the efficiency of CAT production.
+A similar theme is seen in the sensitivity of overall model performace; the most important reactions are glucose and pyruvate consuming reactions and downstream reactions.
+The overall sensitivity results show that the substrates driving CFPS are vital to system performance and CAT production.
+This can be seen in the biphasic operation of CFPS, with the first phase operating on glucose and the second phase operating on pyruvate. 
+During the first phase, there is an accumulation of byproducts from central carbon with the majority of flux going toward acetate and some toward pyruvate, lactate, and succinate, but with the exception of acetate these are all consumed in the second phase. 
+CFPS operating under glucose consumption has higher CAT production than that of pyruvate/lactate consumption, as can be seen in the experimental data (\texttildelow 10 $\mu$M/h vs \texttildelow 5 $\mu$M/h).
+
+Comparing the theoretical maximum carbon yield of CAT from ssFBA predictions to those of the kinetic model and experimental measurements suggests that there is potential for increasing CAT yield as well as CFPS performance.
 %Yield performance can be potentially improved by diverting carbon flux away from acetate. 
-The theoretical maximum yield of CAT was 36\% for an unconstrained case and 22.6\% for a transcription/translation constrained case.
-Knockouts of \textit{gnd} and phosphate acetyltransferase show carbon can be diverted away from acetate and potentially toward CAT or other proteins of interest expressed in CFPS.
-Another limitation to be addressed in CFPS is the transcription and translation description, since the protein of interest to be expressed is ultimately bounded by these kinetic rates.
+The theoretical maximum CAT yield was 36\% for an unconstrained case and 23\% for a transcription/translation constrained case.
+Knockouts of \textit{gnd} and phosphate acetyltransferase show that carbon can be diverted away from acetate and potentially toward CAT or other proteins of interest expressed in CFPS.
+Another limitation to be addressed in CFPS is the transcription and translation description, since protein production is ultimately bounded by these kinetic rates.
 Li et al. have increased productivity of firefly lucifease by 5-fold in CFPS systems by adding and adjusting factors that affect transcription and translation such as elongation factors, ribosome recyclcing factor, release factors, chaperones, BSA, and tRNAs \cite{2014_li_PlosOne}.
 Underwood and coworkers have also shown that an increase in ribosome levels does not significantly increase protein yields or rates; however, adding elongation factors increased yields by 23\% at 30 minutes \cite{2005_underwood_biotech}.
-In addition to improving CFPS performance, Jewett and coworkers have shown that oxidative phosphorylation operates in cell-free systems, and that knocking out these reactions is detrimental to protein yield\cite{2008_jewett_molsysbiol}.
-However, it is unknown how active oxidative phosphorylation is compared to that of \textit{in vivo} systems, and both of the modeling approaches we present suggest that oxidative phosphorylation is important to CAT production.
-Thus, this is a potential area for improvement of CFPS performance and protein yield.
-
+In addition to improving CFPS performance, Jewett and coworkers have shown that oxidative phosphorylation operates in cell-free systems, and that knocking out these reactions is detrimental to protein yield \cite{2008_jewett_molsysbiol}.
+However, it is unknown how active oxidative phosphorylation is compared to that of \textit{in vivo} systems, and both of the modeling approaches we present suggest its importance to CAT production.
+Thus, oxidative phosphorylation is a potential area for improvement of CFPS performance and protein yield.
 
 %The ensemble of models captured the dynamic distribution of metabolic flux.
 %The ensemble of dynamic models predicted that most of the carbon flux going through glycolysis and the TCA cycle,
