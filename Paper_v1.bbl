@@ -146,6 +146,13 @@ Zomorrodi AR, Suthers PF, Ranganathan S, Maranas CD (2012) Mathematical
 \newblock Metab Eng 14: 672-86.
 \bibAnnoteFile{2012_zomorrodi_maranas_MetaEng}
 
+\bibitem{Feist121}
+Feist AM, Henry CS, Reed JL, Krummenacker M, Joyce AR, et~al. (2007) A
+  genome-scale metabolic reconstruction for escherichia coli k-12 mg1655 that
+  accounts for 1260 orfs and thermodynamic information.
+\newblock Molecular Systems Biology 3.
+\bibAnnoteFile{Feist121}
+
 \bibitem{2005_calhoun_BiotechnologyProgress}
 Calhoun KA, Swartz JR (2005) An economical method for cell-free protein
   synthesis using glucose and nucleoside monophosphates.
@@ -163,6 +170,11 @@ Jewett MC, Calhoun KA, Voloshin A, Wuu JJ, Swartz JR (2008) An integrated
   cell-free metabolic platform for protein production and synthetic biology.
 \newblock Molecular Systems Biology 4.
 \bibAnnoteFile{2008_jewett_molsysbiol}
+
+\bibitem{swartz_nature2001}
+Swartz J (2001) A pure approach to constructive biology.
+\newblock Nature Biotechnology 19: 732-3.
+\bibAnnoteFile{swartz_nature2001}
 
 \bibitem{2014_li_PlosOne}
 Li J, Gu L, Aach J, Church GM (2014) Improved cell-free rna and protein
