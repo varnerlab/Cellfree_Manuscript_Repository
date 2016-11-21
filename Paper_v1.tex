@@ -457,9 +457,9 @@ We then perturbed each model parameter between an upper and lower bound that var
 \end{equation}
 where $\mathcal{P}$ denotes the number of parameters ($\mathcal{P}$~=~815), which includes 163 maximum reaction rates ($V^{max}$), 163 enzyme activity decay constants, 455 saturation constants ($K_{js}$), and 34 control parameters, $k_i^{new}$ denotes the new value of the $i^{th}$ parameter, $k_i$ denotes the current value of the $i^{th}$ parameter, $a$ denotes a distribution variance, $r_i$ denotes a random sample from the normal distribution, $l_i$ denotes the lower bound for that parameter type, and $u_i$ denotes the upper bound for that parameter type.
 Maximum reaction rates were bounded between 0 and 500,000 mM/h \cite{Keseler:2013aa}.
-Assuming a total enzyme concentration of 50 $\mu$M, this corresponds to catalytic rate bounds of 0 and 2778 s$^{-1}$.
-These bounds resulted in a median catalytic rate of 0.016 s$^{-1}$ across the ensemble.
-Enzyme activity decay constants were bounded between 0 and 1 h$^{-1}$, corresponding to half lives of 42 minutes and infinity; median = 25 min.
+Assuming a total enzyme concentration of 5.0 $\mu$M, this corresponds to catalytic rate bounds of 0 and 27,780 s$^{-1}$.
+These bounds resulted in a median catalytic rate of 0.16 s$^{-1}$ across the ensemble.
+Enzyme activity decay constants were bounded between 0 and 1 h$^{-1}$, corresponding to half lives of 42 minutes and infinity; median = 25 h.
 Saturation constants were bounded between 0.001 and 10 mM; median = 0.16 mM.
 Control parameters (gains and orders) were left unbounded; gain median = 0.076, order median = 0.69.
 For each newly generated parameter set, we re-solved the balance equations and calculated the cost function.
@@ -505,7 +505,37 @@ The parameter sensitivities were stratified into five degrees of importance, fro
 
 
 \subsection*{Sequence specific calculation of carbon yield.}
-We estimated the theoretical maximum carbon yield of CAT using sequence-specific flux balance analysis (ssFBA) \cite{Allen:2003aa}.
+We estimated the theoretical maximum CAT carbon yield using sequence-specific flux balance analysis (ssFBA) \cite{Allen:2003aa}.
+The sequence specific flux balance analysis problem was formulated as:
+\begin{equation}
+ \begin{multlined}
+	\qquad \qquad \qquad \max_{\boldsymbol{w}}{} \! \left( w_{TL} = \mathbf{\boldsymbol{\theta}}^T \boldsymbol{w} \right) \\
+	\mathrm{Subject \; to:}
+	 \; \; \mathbf{S}\mathbf{w}=\mathbf{0} \\
+\alpha_i \leq w_i \leq \beta_i  \qquad i=1,2,\hdots,\mathcal{R}
+ \end{multlined}
+\end{equation}
+where $\mathbf{S}$ denotes the stoichiometric matrix, $\mathbf{w}$ denotes the unknown flux vector, $\boldsymbol{\theta}$ denotes the objective selection vector
+and $\alpha_i$ and $\beta_i$ denote the lower and upper bounds on flux $w_{i}$, respectively.
+The glucose uptake rate was bounded in the range [0,40 mM/h] according to experimental data;
+while the amino acid uptake rates were bounded by [0,30 mM/h], but did not reach the maximum flux.
+The transcription and translation rates were modeled using the template reactions: [FILL IN OR REFERENCE TEMPLATE TABLE].
+The transcription rate ($w_{TX}$) was fixed in the ssFBA calculation as:
+\begin{equation}
+	w_{TX} = \left[R_{1}\left(\frac{v_{TX}}{l_{G}}\right)\left(\frac{K_{T7}}{1 + K_{T7}}\right)\right]\left(\frac{G}{K_{TX}+G}\right)
+\end{equation}
+The first term in the brackets denotes the maximum rate of transcription, where $R_{1}$ denotes the concentration of RNA polymerase, $v_{TX}$ denotes the RNA polymerase elongation rate (nt/hr), $l_{G}$ denotes the gene length in nucleotides, and the last term describes T7 promoter activity, where $K_{T7}$ quantifies T7 RNA polymerase binding [REF-HERE].
+The second term denotes the gene saturation term, where $G$ denotes the gene concentration and $K_{TX}$ denotes a saturation coefficient.
+The CAT gene and protein sequences were determined from literature.
+The translation rate ($w_{TL}$) was bounded by:
+ \begin{equation}
+	0\leq w_{TL} \leq \left[K_{P} R_{2}\left(\frac{v_{TL}}{l_{P}}\right)\right]\left(\frac{mRNA_{SS}}{K_{TL}+mRNA_{SS}}\right)
+\end{equation}
+The first term in brackets denotes the maximum translation rate, where $K_{P}$ denotes the polysome amplification constant, $R_{2}$ denotes the ribosome concentration, $v_{TL}$ denotes the ribosome elongation rate (amino acids per hour), $l_{P}$ denotes the number of amino acids in the protein of interest, and $mRNA_{SS}$ denotes the steady-state mRNA concentration:
+\begin{equation}
+	mRNA_{SS}\simeq\frac{w_{TX}}{\lambda}
+\end{equation}where $\lambda$ denotes the rate constant controlling the mRNA degradation rate.
+
 The CAT carbon yield ($Y_{C}^{CAT}$) was calculated as the ratio of carbon produced as CAT dived by the carbon consumed as reactants (glucose and amino acids):
 \begin{equation}\label{eqn:yield-definition}
 	Y_{C}^{CAT}=\frac{\Delta\texttt{CAT}\cdot C_{CAT}}{\displaystyle\sum_{i=1}^{\mathcal{R}}\max(\Delta m_{i},0)\cdot C_{m_i}}
@@ -515,40 +545,6 @@ $\Delta m_{i}$ denotes the amount of the $i^{th}$ reactant consumed (never allow
 Arginine or glutamate were not considered in the yield calculations, as no experimental measurements were available for these amino acids.
 Yield of the best-fit parameter set and the experimental data were calculated by setting $\Delta\texttt{CAT}$ equal to the final minus the initial CAT concentration,
 and setting $\Delta m_{i}$ equal to the initial minus the final reactant concentration.
-
-The sequence specific flux balance analysis problem was formulated as:
-\begin{equation}
- \begin{multlined}
-	\qquad \qquad \qquad \max_{\boldsymbol{w}}{} \! \left( w_{obj} = \mathbf{\boldsymbol{\theta}}^T \boldsymbol{w} \right) \\
-	\mathrm{Subject \; to:}
-	 \; \; \mathbf{S}\mathbf{w}=\mathbf{0} \\
-\alpha_i \leq w_i \leq \beta_i  \qquad i=1,2,\hdots,\mathcal{R}
- \end{multlined}
-\end{equation}
-where $\mathbf{S}$ denotes the stoichiometric matrix, $\mathbf{w}$ denotes the unknown flux vector, $\boldsymbol{\theta}$ denotes the objective selection vector
-and $\alpha_i$ and $\beta_i$ denote the lower and upper bounds on flux $w_{i}$, respectively.
-The objective was to maximize the CAT translation rate.
-The glucose uptake rate was bounded in the range [0,40 mM/h] according to experimental data;
-while the amino acid uptake rates were bounded by [0,30 mM/h], but did not reach the maximum flux.
-The transcription and translation rates were modeled using template reactions
-
-The transcription rate ($w_{TX}$) was fixed in the ssFBA calculation as:
-\begin{equation}
-	w_{TX} = \left[R_{1}\left(\frac{K_{T7}}{1 + K_{T7}}\right)\left(\frac{v_{TX}}{l_{G}}\right)\right]\left(\frac{G}{K_{TX}+G}\right)
-\end{equation}
-where $R_{1}$ denotes the concentration of RNA polymerase, $v_{TX}$ denotes RNA polymerase elongation rate (nt/hr),
-$l_{G}$ denotes the gene length in nucleotides, $G$ denotes the gene concentration and $K_{TX}$ denotes the plasmid saturation coefficient.
-The gene and protein sequence for CAT was determined from literature.
-The last term in the $w_{TX}$ expression describes T7 promoter activity, where $K_{T7}$ quantifies T7 RNA polymerase binding [REFHERE].
-The translation rate ($w_{TL}$) was bounded by:
- \begin{equation}
-	0\leq w_{TL} \leq \left[K_{P} R_{2}\left(\frac{v_{TL}}{l_{P}}\right)\right]\left(\frac{mRNA_{SS}}{K_{TL}+mRNA_{SS}}\right)
-\end{equation}
-where $K_{P}$ denotes the polysome amplification constant, $R_{2}$ denotes the ribosome concentration, $v_{TL}$ denotes the ribosome elongation rate (amino acids per hour),
-$l_{P}$ denotes the number of amino acids in the protein of interest, and $mRNA_{SS}$ denotes the steady-state mRNA concentration:
-\begin{equation}
-	mRNA_{SS}\simeq\frac{w_{TX}}{\lambda}
-\end{equation}where $\lambda$ denotes the mRNA degradation rate.
 
 An ensemble of 100 sets of flux distributions was calculated for three different cases: unconstrained, constrained by transcription/translation rates, and constrained by transcription/translation rates and experimental measurements.
 For the unconstrained case, all rates were left unbounded, except the specific glucose uptake rate.

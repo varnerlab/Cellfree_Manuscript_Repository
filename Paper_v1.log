@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  20 NOV 2016 22:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  20 NOV 2016 23:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -917,45 +917,45 @@ File: ./Figures/allostericControl_noindex.pdf Graphic file (type pdf)
 
 <use ./Figures/allostericControl_noindex.pdf>
 Package pdftex.def Info: ./Figures/allostericControl_noindex.pdf used on input 
-line 599.
+line 595.
 (pdftex.def)             Requested size: 469.75502pt x 423.11395pt.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 600.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 596.
 
 <./Figures/Energy.pdf, id=111, 794.97pt x 722.7pt>
 File: ./Figures/Energy.pdf Graphic file (type pdf)
  <use ./Figures/Energy.pdf>
-Package pdftex.def Info: ./Figures/Energy.pdf used on input line 606.
+Package pdftex.def Info: ./Figures/Energy.pdf used on input line 602.
 (pdftex.def)             Requested size: 469.75502pt x 427.06198pt.
 
 <./Figures/Amino.pdf, id=112, 794.97pt x 903.375pt>
 File: ./Figures/Amino.pdf Graphic file (type pdf)
  <use ./Figures/Amino.pdf>
-Package pdftex.def Info: ./Figures/Amino.pdf used on input line 613.
+Package pdftex.def Info: ./Figures/Amino.pdf used on input line 609.
 (pdftex.def)             Requested size: 469.75502pt x 533.82748pt.
 
 <./Figures/BoxPlot-KCFM.pdf, id=113, 518.93875pt x 389.455pt>
 File: ./Figures/BoxPlot-KCFM.pdf Graphic file (type pdf)
 
 <use ./Figures/BoxPlot-KCFM.pdf>
-Package pdftex.def Info: ./Figures/BoxPlot-KCFM.pdf used on input line 620.
+Package pdftex.def Info: ./Figures/BoxPlot-KCFM.pdf used on input line 616.
 (pdftex.def)             Requested size: 469.75502pt x 352.5624pt.
 
 <./Figures/Sensitivity.pdf, id=114, 316.18124pt x 688.5725pt>
 File: ./Figures/Sensitivity.pdf Graphic file (type pdf)
 
 <use ./Figures/Sensitivity.pdf>
-Package pdftex.def Info: ./Figures/Sensitivity.pdf used on input line 627.
+Package pdftex.def Info: ./Figures/Sensitivity.pdf used on input line 623.
 (pdftex.def)             Requested size: 357.01123pt x -735.43239pt.
 
 <./Figures/oxphos_ko.pdf, id=116, 1024.82875pt x 246.9225pt>
 File: ./Figures/oxphos_ko.pdf Graphic file (type pdf)
 
 <use ./Figures/oxphos_ko.pdf>
-Package pdftex.def Info: ./Figures/oxphos_ko.pdf used on input line 634.
+Package pdftex.def Info: ./Figures/oxphos_ko.pdf used on input line 630.
 (pdftex.def)             Requested size: 469.75502pt x 113.18257pt.
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <10> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 635.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 631.
  [27
 
  <./Figures/allostericControl_noindex.pdf>]
@@ -965,7 +965,7 @@ ty.pdf> <./Figures/BoxPlot-KCFM.pdf>] [31 <./Figures/oxphos_ko.pdf>]
 File: ./Figures/CAT_prod_yield.pdf Graphic file (type pdf)
 
 <use ./Figures/CAT_prod_yield.pdf>
-Package pdftex.def Info: ./Figures/CAT_prod_yield.pdf used on input line 642.
+Package pdftex.def Info: ./Figures/CAT_prod_yield.pdf used on input line 638.
 (pdftex.def)             Requested size: 469.75502pt x 177.37512pt.
  [32
 
@@ -974,11 +974,11 @@ Package pdftex.def Info: ./Figures/CAT_prod_yield.pdf used on input line 642.
 File: ./Figures/CAT_flux_final.pdf Graphic file (type pdf)
 
 <use ./Figures/CAT_flux_final.pdf>
-Package pdftex.def Info: ./Figures/CAT_flux_final.pdf used on input line 650.
+Package pdftex.def Info: ./Figures/CAT_flux_final.pdf used on input line 646.
 (pdftex.def)             Requested size: 375.80544pt x 568.02786pt.
 
 
-LaTeX Warning: Float too large for page by 29.59785pt on input line 653.
+LaTeX Warning: Float too large for page by 29.59785pt on input line 649.
 
 [33 <./Figures/CAT_flux_final.pdf>] 
 AED: lastpage setting LastPage
@@ -990,7 +990,7 @@ AED: lastpage setting LastPage
 Here is how much of TeX's memory you used:
  6620 strings out of 493089
  99700 string characters out of 6134842
- 170233 words of memory out of 5000000
+ 170234 words of memory out of 5000000
  9868 multiletter control sequences out of 15000+600000
  34493 words of font info for 80 fonts, out of 8000000 for 9000
  1142 hyphenation exceptions out of 8191
@@ -1015,7 +1015,7 @@ ve/2015/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2015
 /texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/local/texlive/2015/texmf
 -dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2015/texmf-dist/f
 onts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on Paper_v1.pdf (35 pages, 1378934 bytes).
+Output written on Paper_v1.pdf (35 pages, 1378968 bytes).
 PDF statistics:
  491 PDF objects out of 1000 (max. 8388607)
  237 compressed objects within 3 object streams
