@@ -517,20 +517,24 @@ The sequence specific flux balance analysis problem was formulated as:
 \end{equation}
 where $\mathbf{S}$ denotes the stoichiometric matrix, $\mathbf{w}$ denotes the unknown flux vector, $\boldsymbol{\theta}$ denotes the objective selection vector
 and $\alpha_i$ and $\beta_i$ denote the lower and upper bounds on flux $w_{i}$, respectively.
-The glucose uptake rate was bounded in the range [0,40 mM/h] according to experimental data;
+The objective of the calculation is the maximization of CAT translation rate, $w_{TL}$.
+The total glucose uptake rate was bounded by [0,40 mM/h] according to experimental data;
 while the amino acid uptake rates were bounded by [0,30 mM/h], but did not reach the maximum flux.
-The transcription and translation rates were modeled using the template reactions: 
-
+The transcription and translation rates were modeled using the template reactions:
 \begin{eqnarray*}
 G_{p}+R_{1} &\longrightarrow& G_{p}^{*} \\
-G_{p}^{*}+\sum_{i}\eta_{i}iTP &\longrightarrow& mRNA+G_{p}+R_{1}+2\sum_{i}\eta_{i}P \qquad{i=A,C,G,U}\\
-mRNA &\longrightarrow& \sum_{i}\eta_{i}iMP \\
+G_{p}^{*}+\sum_{k}\eta_{k}\cdot kTP &\longrightarrow& mRNA+G_{p}+R_{1}+2\sum_{k}\eta_{k}\cdot Pi \qquad{k=A,C,G,U}\\
+mRNA &\longrightarrow& \sum_{k}\eta_{k}\cdot kMP \\
 mRNA+R_{2} &\longrightarrow& R_{2}^{*} \\
-\alpha_{j}X_{j}+\alpha_{j}tRNA+\alpha_{j}ATP &\longrightarrow& \alpha_{j}XtRNA_{j}+\alpha_{j}AMP+2\alpha_{j}P \qquad{j=1,2,\hdots,20}\\
-R_{2}^{*}+\sum_{j}\alpha_{j}\Big(XtRNA_{j}+2GTP\Big) &\longrightarrow& Protein+R_{2}+mRNA\\
-&& \quad +\sum_{j}\alpha_{j}\Big(tRNA+2GDP+2P\Big)
+\alpha_{j}\cdot AA_{j}+\alpha_{j}\cdot tRNA+\alpha_{j}\cdot ATP &\longrightarrow& \alpha_{j}\cdot AA_{j}:tRNA_{j}+\alpha_{j}\cdot AMP+2\alpha_{j}\cdot Pi \qquad{j=1,2,\hdots,20}\\
+R_{2}^{*}+\sum_{j}\alpha_{j}\cdot \Big(AA_{j}:tRNA_{j}+2\cdot GTP\Big) &\longrightarrow& \mathcal{P}+R_{2}+mRNA+\\
+&& \quad +\sum_{j}\alpha_{j}\Big(tRNA+2\cdot GDP+2\cdot Pi\Big)
 \end{eqnarray*}
-where $G_{p}$ denotes the gene of protein $p$, $R_{1}$ denotes the concentration of RNA polymerase, $G_{p}^{*}$ denotes the gene bounded by the RNA polymerase, $\eta_{i}$ and $ \alpha_{j}$ denotes the coefficient for species $i$ and $j$ respectively, $P$ denotes phosphate, $R_{2}$ denotes the ribosome concentration, $R_{2}^{*}$ denotes bounded ribosome, and $X_{j}$ denotes the amino acid species $j$. 
+where $G_{p}$ denotes the gene of protein $p$,
+$R_{1}$ denotes the concentration of RNA polymerase,
+$G_{p}^{*}$ denotes the gene bounded by the RNA polymerase,
+$\eta_{i}$ and $ \alpha_{j}$ denote the coefficients for species $i$ and $j$ respectively,
+$P_{i}$ denotes inorganic phosphate, $R_{2}$ denotes the ribosome concentration, $R_{2}^{*}$ denotes bounded ribosome, and $X_{j}$ denotes the amino acid species $j$.
 
 The transcription rate ($w_{TX}$) was fixed in the ssFBA calculation as:
 \begin{equation}
