@@ -534,17 +534,21 @@ The transcription and translation rates were modeled using template reactions
 
 The transcription rate ($w_{TX}$) was fixed in the ssFBA calculation as:
 \begin{equation}
-	w_{TX} = \left[R_{1}\left(\frac{K_{T7}}{1 + K_{T7}}\right)\left(\frac{v_{RNAP}}{l_{mRNA}}\right)\right]\left(\frac{G}{K_{TX}+G}\right)
+	w_{TX} = \left[R_{1}\left(\frac{K_{T7}}{1 + K_{T7}}\right)\left(\frac{v_{TX}}{l_{G}}\right)\right]\left(\frac{G}{K_{TX}+G}\right)
 \end{equation}
 where $R_{1}$ denotes the concentration of RNA polymerase, $v_{TX}$ denotes RNA polymerase elongation rate (nt/hr),
 $l_{G}$ denotes the gene length in nucleotides, $G$ denotes the gene concentration and $K_{TX}$ denotes the plasmid saturation coefficient.
 The gene and protein sequence for CAT was determined from literature.
 The last term in the $w_{TX}$ expression describes T7 promoter activity, where $K_{T7}$ quantifies T7 RNA polymerase binding [REFHERE].
-The translation rate was formulated as:
+The translation rate ($w_{TL}$) was bounded by:
  \begin{equation}
-	w_{TL} = K_{P}\ Ribo\left(\frac{v_{Ribo}}{l_{Protein}}\right)mRNA_{SS}
+	0\leq w_{TL} \leq \left[K_{P} R_{2}\left(\frac{v_{TL}}{l_{P}}\right)\right]\left(\frac{mRNA_{SS}}{K_{TL}+mRNA_{SS}}\right)
 \end{equation}
-where $K_{P}$ denotes the polysome amplification constant, $Ribo$ denotes the ribosome concentration, $v_{Ribo}$ denotes the elongation rate of the ribosome in amino acids per hour, $l_{Protein}$ denotes the number of amino acids in the protein of interest, and $mRNA_{SS}$ denotes the mRNA concentration at steady state, equal to the transcription rate divided by the degradation rate of mRNA.
+where $K_{P}$ denotes the polysome amplification constant, $R_{2}$ denotes the ribosome concentration, $v_{TL}$ denotes the ribosome elongation rate (amino acids per hour),
+$l_{P}$ denotes the number of amino acids in the protein of interest, and $mRNA_{SS}$ denotes the steady-state mRNA concentration:
+\begin{equation}
+	mRNA_{SS}\simeq\frac{w_{TX}}{\lambda}
+\end{equation}where $\lambda$ denotes the mRNA degradation rate.
 
 An ensemble of 100 sets of flux distributions was calculated for three different cases: unconstrained, constrained by transcription/translation rates, and constrained by transcription/translation rates and experimental measurements.
 For the unconstrained case, all rates were left unbounded, except the specific glucose uptake rate.
