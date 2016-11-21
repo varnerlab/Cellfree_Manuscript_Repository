@@ -302,12 +302,6 @@ Allen TE, Palsson B{\O} (2003) Sequence-based analysis of metabolic demands for
 \newblock J Theor Biol 220: 1-18.
 \bibAnnoteFile{Allen:2003aa}
 
-\bibitem{Moon:2012aa}
-Moon~TS TASBVC Lou~C (2012) Genetic programs constructed from layered logic
-  gates in single cells.
-\newblock Nature 491.
-\bibAnnoteFile{Moon:2012aa}
-
 \bibitem{Garamella:2016aa}
 Garamella J, Marshall R, Rustad M, Noireaux V (2016) The all e. coli tx-tl
   toolbox 2.0: A platform for cell-free synthetic biology.

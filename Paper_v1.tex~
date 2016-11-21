@@ -193,7 +193,7 @@ The ensemble of parameter sets described the training data with a median cost th
 First, sensitivity analysis of the dynamic model suggested that CAT production was most sensitive to CAT synthesis parameters, as well as reactions in oxidative phosphorylation and pyruvate consumption.
 Sensitivity analysis also showed that the system as a whole was most sensitive to these same parts of the network and glucose consumption.
 CAT production and other metabolites, specifically organic acid intermediates such as pyruvate, were sensitive to the presence of allosteric control mechanisms.
-Next, to gauge the performance of the cell-free reaction, we compared the observed CAT carbon yield with the maximum theoretical CAT carbon yield calculated using sequence-specific flux balance analysis. The CAT yield estimated from the kinetic model was 23\% of the maximum theoretical yield, but 36\% of the theoretical yield when physiologically realistic constraints were used. 
+Next, to gauge the performance of the cell-free reaction, we compared the observed CAT carbon yield with the maximum theoretical CAT carbon yield calculated using sequence-specific flux balance analysis. The CAT yield estimated from the kinetic model was 23\% of the maximum theoretical yield, but 36\% of the theoretical yield when physiologically realistic constraints were used.
 Taken together, we have integrated traditional kinetics with a logical rule-based description of allosteric control to simulate a comprehensive CFPS dataset.
 This study provides a foundation for genome-scale, dynamic modeling of cell-free \textit{E. coli} protein synthesis.
 
@@ -223,37 +223,37 @@ the same parameter bounds (Fig. \ref{fig:BoxPlot}); thus, we have confidence in 
 The model captures the biphasic nature of CFPS shown by the experimental data: in the first hour glucose consumption powers the system, and CAT is produced at \texttildelow 10 $\mu$M/h; subsequently, pyruvate and lactate reserves are consumed to power metabolism, and CAT is produced less efficiently at \texttildelow 5 $\mu$M/h.
 Allosteric control was important to this biphasic operation, as without it, both phases are sped up, and after 1.5 hours CAT synthesis has ceased (Fig.~\ref{fig:CarbonBoth}, bottom).
 In addition, acetate accumulation also stops after 1.5 hours since there is no more substrate to power the system.
-Interestingly, malate captures the experimental measurements during the glucose consumption phase, but increases sharply during the pyruvate consumption phase. 
+Interestingly, malate captures the experimental measurements during the glucose consumption phase, but increases sharply during the pyruvate consumption phase.
 
 While the model ensemble decribed the experimental data, it was unclear whether the performance of CFPS was optimal.
 To address this question, we used sequence-specific flux balance analysis in combination with a T7 promoter model to estimate the theoretical maximum performance of the system.
 We first validated the ssFBA approach by comparing simulated and measured concentrations of CAT for the first hour under glucose consumption (Fig.~\ref{fig:CATProdYield}A).
 The ssFBA ensemble was able to predict the CAT dataset despite having no adjustable parameters.
-Uncertainty in experimental factors such as RNA polymerase, ribosome concentrations, elongation rates, or the upper bounds for oxygen and glucose consumption rates did not alter the qualitative performance of the model. 
+Uncertainty in experimental factors such as RNA polymerase, ribosome concentrations, elongation rates, or the upper bounds for oxygen and glucose consumption rates did not alter the qualitative performance of the model.
 Thus, the metabolic network and molecular description of transcription and translation were consistent with experimental measurements.
 To gauge the performance of CFPS, we next calculated the CAT carbon yield for three classes of constraints: (i) theoretical maximum glucose, amino acid and oxygen upper bounds, and no transcriptional/translational constraints; (ii) theoretical maximum glucose, amino acid and oxygen upper bounds, and realistic transcriptional/translational constraints; and (iii) metabolite fluxes constrained by the data, and realistic transcriptional/translational constraints (Fig.~\ref{fig:CATProdYield}B).
 The unconstrained theoretical maximum CAT carbon yield (i) was 0.363 $\pm$ 0.02 (Fig.~\ref{fig:CATProdYield}B, left);
 On the other hand, for realistic constraints on transcription and translation (ii), the CAT carbon yield was 0.226 $\pm$ 0.03 (Fig.~\ref{fig:CATProdYield}B, middle).
 Lastly, when using realistic metabolite and transcription and translation constraints (iii), the predicted carbon yield was 0.062 $\pm$ 0.02.
 By comparison, the best-fit parameter set had a CAT carbon yield of 0.086 $\pm$ 0.004, equivalent to 23\% of the theoretical maximum (i) and 36\% of the physiological case (ii).
-The experimental dataset had a CAT carbon yield of 0.0821, similar to both the kinetic model and the experimentally constrained case (iii).  
+The experimental dataset had a CAT carbon yield of 0.0821, similar to both the kinetic model and the experimentally constrained case (iii).
 
 To better understand which parameters and parameter combinations influenced model performance we performed sensitivity analysis (Fig.~\ref{fig:Sensitivity}).
 According to the sensitivity results, CAT production was most dependent on coenzymes and pyruvate.
-CAT production was most sensitive to the CAT synthesis reaction, oxidative phosphorylation, and the pyruvate-consuming alanine synthesis reaction (Fig.~\ref{fig:Sensitivity}, top, section A). 
+CAT production was most sensitive to the CAT synthesis reaction, oxidative phosphorylation, and the pyruvate-consuming alanine synthesis reaction (Fig.~\ref{fig:Sensitivity}, top, section A).
 Taking into account these three reactions as well as the next 16 most important reactions (section B), we see a common theme of reactions that involve the coenzymes ATP, GTP, NADH, and NADPH as well as the metabolites pyruvate and glutamate.
-Glutamate is important as a reagant for the synthesis of all other amino acids which are required to assemble the CAT protein. 
-Meanwhile, the coenzymes are needed to provide energy to power the synthesis of CAT, and pyruvate becomes important for energy supply after glucose is exhausted.  
-In addition, pyruvate is a key metabolite required for the synthesis of several amino acids. 
+Glutamate is important as a reagant for the synthesis of all other amino acids which are required to assemble the CAT protein.
+Meanwhile, the coenzymes are needed to provide energy to power the synthesis of CAT, and pyruvate becomes important for energy supply after glucose is exhausted.
+In addition, pyruvate is a key metabolite required for the synthesis of several amino acids.
 The pairwise sensitivities (off-diagonal elements) were different from the corresponding first-order sensitivities (diagonal elements), and led to interesting outcomes.
-The combination of certain reactions had a greater effect on CAT production than that of the reactions by themselves.  
+The combination of certain reactions had a greater effect on CAT production than that of the reactions by themselves.
 For example, glutamine synthesis and arginine degradation were both among the most important reactions to CAT production (they rank 5th and 10th, respectively).
 This was likely because they both affect the sensitive glutamine-glutamate balance; glutamine synthesis consumes glutamate, while arginine degradation produces it.
 However, when both were perturbed, their combined effect on the model was low, as the respective contributions to consumption and production of glutamate cancelled.
 
-The system state was also most dependent on coenzymes and substrates; however, instead of pyruvate and glutamate, the substrates driving metabolism were glucose and pyruvate. 
+The system state was also most dependent on coenzymes and substrates; however, instead of pyruvate and glutamate, the substrates driving metabolism were glucose and pyruvate.
 The metabolism as a whole was most sensitive to glucose uptake via GTP and the forward reaction of lactate dehydrogenase, consuming pyruvate (Fig.~\ref{fig:Sensitivity}, bottom, section F).
-These two and the next 30 most important reactions (section G) largely involved conenzymes, especially ATP and NADPH, as well as substrate-consuming reactions and oxidative phosphorylation.  
+These two and the next 30 most important reactions (section G) largely involved conenzymes, especially ATP and NADPH, as well as substrate-consuming reactions and oxidative phosphorylation.
 The system state had even more pairwise sensitivities that differed from the corresponding first-order sensitivities and stood out as significant.
 For example, the first-order effect of alanine synthesis was large; it consumes both pyruvate and glutamate, two key species in the network.
 %In addition, a handful of alanine synthesis pairwise sensitivities were also large.
@@ -270,23 +270,23 @@ This suggested that these reactions' effects on the model were canceled out or l
 This was also likely the reason that reactions in section J rank above those in section K, despite having no effect on the model themselves.
 Taken together, sensitivity analysis identified blocks of parameters that either individually, or in combination influenced model performance.
 
-The sensitivity analysis showed oxidative phosphorylation was significant for CAT production as well as the system state. 
+The sensitivity analysis showed oxidative phosphorylation was significant for CAT production as well as the system state.
 To further investigate this, we knocked out key reactions in oxidative phosphorylation to examine its effect on glucose uptake and CAT production (Fig.~\ref{fig:oxphos_ko}).
 A single knockout of the reaction \textit{cyd} was detrimental to model performance and CAT production, reducing the CAT carbon yield from 8.6\% to 2.8\%.
 In addition, the glucose uptake rate was reduced compared to that of the control (no knockouts).
-A knockout of \textit{nuo} showed a less drastic effect, reducing the CAT carbon yield to 6.8\%; however, the glucose uptake rate remained similar to that of the control. 
-Knocking out \textit{app} showed a CAT yield to 8.8\%, but was not statistically different from that of the control.  
-With all three reactions knocked out, CAT yield was 2.7\%, not statistically different from the \textit{cyd} knockout. 
-Thus, the model suggests that the majority of the energetic needs of the system as well as the production of CAT are met by oxidative phosphorylation, specifically by \textit{cyd}. 
+A knockout of \textit{nuo} showed a less drastic effect, reducing the CAT carbon yield to 6.8\%; however, the glucose uptake rate remained similar to that of the control.
+Knocking out \textit{app} showed a CAT yield to 8.8\%, but was not statistically different from that of the control.
+With all three reactions knocked out, CAT yield was 2.7\%, not statistically different from the \textit{cyd} knockout.
+Thus, the model suggests that the majority of the energetic needs of the system as well as the production of CAT are met by oxidative phosphorylation, specifically by \textit{cyd}.
 %The \textit{cyd} enzyme is responsible for transferring electrons with oxygen as an electron acceptor allowing the release of energy to form ATP.
 
 To investigate the difference in yields between the unconstrained and constrained cases, we compared the flux distributions from the ssFBA simulations (Fig.~\ref{fig:Network}).
 The constrained cases (ii \& iii) heavily utilized the first step in the pentose phosphate pathway to generate NADPH; the carbon flux continued through the Entner–Doudoroff pathway toward pyruvate, a key metabolite as shown by sensitivity analysis.
-For case ii, the majority of the flux proceeded toward acetate accumulation, whereas in case iii, the flux accumulated as pyruvate, lactate, and acetate with some going through the TCA cycle.  
+For case ii, the majority of the flux proceeded toward acetate accumulation, whereas in case iii, the flux accumulated as pyruvate, lactate, and acetate with some going through the TCA cycle.
 In comparison, the unconstrained case (i) showed the majority of flux traveling through glycolysis towards pyruvate, leading to an accumulation of lactate, acetate and malate.
 %In the second case (ii), there was a high flux through fumarate dehydrogenase from aspartic acid uptake, whereas in cases i and iii, acetate and lactate accumulation occurred.
 In all cases the energy source was primarily oxidative phosphorylation, and to a lesser extent the TCA cycle.
-%However, oxidative phosphorylation is not operating at its highest efficiency, since there is a mixture of acetate and lactate accumulation. 
+%However, oxidative phosphorylation is not operating at its highest efficiency, since there is a mixture of acetate and lactate accumulation.
 However, the accumulation of acetate and lactate signifies that the system is not operating at its highest efficiency.
 The system produces NADH through lactate dehydrogenase as well as through pyridine nucleotide transhydrogenase (\textit{pntAB}) to power oxidative phosphorylation.
 Oxidative phosphorylation leads to a high redox ratio contributing to the accumulation of acetate overflow and diverting flux away from the TCA cycle.
@@ -311,41 +311,41 @@ The decrease in acetate production and the diversion of carbon flux shows a prom
 
 In this study we present an ensemble of \textit{E. coli} cell-free protein synthesis (CFPS) models that accurately predict a comprehensive CFPS dataset of glucose, CAT, central carbon metabolites, energy species, and amino acid measurements.
 We used the hybrid cell-free modeling approach of Wayman and coworkers, which integrates traditional kinetic modeling with a logic-based description of allosteric regulation.
-CFPS is seen to be biphasic relying on glucose during the first hour and pyruvate and lactate afterward. 
+CFPS is seen to be biphasic relying on glucose during the first hour and pyruvate and lactate afterward.
 Allosteric control was essential to the maintainence of the network and production of CAT, as without it, central carbon metabolism is exhuasted within 1.5 hours leading to low CAT production.
-Having captured the experimental data, we investigated if CAT yield and CFPS performance could be further improved. 
+Having captured the experimental data, we investigated if CAT yield and CFPS performance could be further improved.
 We showed that the model produces CAT at 23\% of the theoretical maximum in terms of carbon yield, and at 36\% of a physiological case in which transcription and translation are constrained.
-The accumulation of waste byproducts, especially acetate, is responsible for this sub-optimal yield. 
-Sensitivity analysis showed that certain substrates and energy species are instrumental to CAT production and overall metabolism. 
+The accumulation of waste byproducts, especially acetate, is responsible for this sub-optimal yield.
+Sensitivity analysis showed that certain substrates and energy species are instrumental to CAT production and overall metabolism.
 The system heavily relied on oxidative phosphorylation for the system's energetic needs as well as for CAT synthesis.
-A single knockout in oxidative phosphorylation reduced the CAT carbon yield \texttildelow 3-fold, as well as disrupting the system state showing its crucial role in CFPS. 
+A single knockout in oxidative phosphorylation reduced the CAT carbon yield \texttildelow 3-fold, as well as disrupting the system state showing its crucial role in CFPS.
 In comparing flux distributions between low and high yield cases, carbon flux could be potentially diverted toward CAT by reducing acetate overflow and minimizing flux through the Entner-Doudoroff pathway.
 Taken together, these findings represent the first dynamic model of \textit{E. coli} cell-free protein synthesis, and an important step toward a functional genome scale description.
 
 We present an ensemble of models that quantitatively describes the system behavior of cell-free metabolism and production of CAT.
-Experimental observations of the metabolites and cometabolites validate the structure of the model and the estimation of kinetic parameters. 
+Experimental observations of the metabolites and cometabolites validate the structure of the model and the estimation of kinetic parameters.
 This is important in applying metabolic engineering principles to rationally design cell-free production processes and predict the redirection of carbon fluxes to product forming pathways.
 In analyzing the model parameters' effect on CAT production, CAT synthesis is the most important, followed by oxidative phosphorylation and the glutamate and pyruvate consuming reactions, as well as coenzyme reactions which are necessary to drive CAT synthesis.
 For example, the conversion of ATP to GTP shows significance since it is necessary for CAT synthesis.
-While Jewett and coworkers have shown that ATP may be at saturation in CFPS \cite{2008_jewett_molsysbiol}, GTP is also required for CAT synthesis and may be a limiting reactant. 
+While Jewett and coworkers have shown that ATP may be at saturation in CFPS \cite{2008_jewett_molsysbiol}, GTP is also required for CAT synthesis and may be a limiting reactant.
 Thus, supplementation with additional GTP may improve the efficiency of CAT production.
 A similar theme is seen in the sensitivity of overall model state, where the most important reactions are glucose and pyruvate consuming reactions and coenzyme reactions which are vital to drive CFPS.
-This can be seen in the biphasic operation of CFPS, with the first phase operating on glucose and the second phase operating on pyruvate. 
-During the first phase, there is an accumulation of byproducts from central carbon with the majority of flux going toward acetate and some toward pyruvate, lactate, and succinate; with the exception of acetate, these are all consumed in the second phase. 
+This can be seen in the biphasic operation of CFPS, with the first phase operating on glucose and the second phase operating on pyruvate.
+During the first phase, there is an accumulation of byproducts from central carbon with the majority of flux going toward acetate and some toward pyruvate, lactate, and succinate; with the exception of acetate, these are all consumed in the second phase.
 This shows that CAT production can be sustained by pyruvate and glutamate in the absence of glucose, which provides alternative strategies to optimize CFPS performance.
 This is in accordance with literature, which showed pyruvate provided a relatively slow but continuous supply of ATP \cite{swartz_nature2001}.
 Taken together, this shows CFPS can be designed towards a specified application either requiring a slow stable energy source or faster production.
 This outstanding control on model performace was expected as these metabolites are responsible for driving CFPS and represent the first step in the model network.
 Nevertheless, there are further reactions with considerable impact on model performance.
-In examining oxidative phosphorylation activity, knockouts in the electron transport pathways disrupt metabolism across the network and show CAT carbon yield dropping from 8.6\% to 2.7\%; Jewett and coworkers also saw a decrease in CAT yield, ranging from 1.5-fold to 4-fold, when knocking out oxidative phosphorylation reactions\cite{2008_jewett_molsysbiol}. 
+In examining oxidative phosphorylation activity, knockouts in the electron transport pathways disrupt metabolism across the network and show CAT carbon yield dropping from 8.6\% to 2.7\%; Jewett and coworkers also saw a decrease in CAT yield, ranging from 1.5-fold to 4-fold, when knocking out oxidative phosphorylation reactions\cite{2008_jewett_molsysbiol}.
 Oxidative phosphorylation is vital, since it provides most of the energetic needs of CFPS.
 However, it is unknown how active oxidative phosphorylation is compared to that of \textit{in vivo} systems, and both of our modeling approaches suggest its importance to CAT production and CFPS.
 Thus, oxidative phosphorylation is a potential area for improvement for CFPS performance and protein yield.
 %Also important is the first step in pentose phosphate pathway, as it converts G6P to 6PG and produces NADPH.
-%The next most sensitive reaction is the conversion of NADPH to NADH, which helps to supply NADH to oxidative phosphorylation reactions. 
+%The next most sensitive reaction is the conversion of NADPH to NADH, which helps to supply NADH to oxidative phosphorylation reactions.
 %Many of the insignificant reactions lead to the accumulation of unwanted byproducts such as ethanol and formate.
 Comparing the theoretical maximum carbon yield of CAT from ssFBA predictions to those of the kinetic model and experimental measurements suggests that there is potential for increasing CAT yield as well as CFPS performance.
-%Yield performance can be potentially improved by diverting carbon flux away from acetate. 
+%Yield performance can be potentially improved by diverting carbon flux away from acetate.
 The model and experimental yields were 36\% of the theoretical maximum and 23\% of a physiologically constrained case.
 Knockouts of \textit{gnd} and phosphate acetyltransferase show that carbon can be diverted away from acetate and potentially toward CAT or other proteins of interest expressed in CFPS.
 Another limitation to be addressed in CFPS is the transcription and translation description, since protein production is ultimately bounded by these kinetic rates.
@@ -439,7 +439,7 @@ Pyruvate was modeled as an inhibitor for pyruvate dehydrogenase \cite{2010_kotte
 Acetyl CoA was modeled as an inhibitor for malate dehydrogenase \cite{2010_kotte_MolSystBiol}.
 
 \subsection*{Estimation of kinetic model parameters.}
-We generated an ensemble of diverse parameter sets using a constrained Markov Chain Monte Carlo (MCMC) random walk strategy.
+We estimated an ensemble of diverse parameter sets using a constrained Markov Chain Monte Carlo (MCMC) random walk strategy.
 Starting from a single best fit parameter set estimated by inspection and literature,
 we calculated the cost function, equal to the sum-squared-error between experimental data and model predictions:
 \begin{equation}\label{eqn:cost-function}
@@ -457,17 +457,17 @@ We then perturbed each model parameter between an upper and lower bound that var
 \end{equation}
 where $\mathcal{P}$ denotes the number of parameters ($\mathcal{P}$~=~815), which includes 163 maximum reaction rates ($V^{max}$), 163 enzyme activity decay constants, 455 saturation constants ($K_{js}$), and 34 control parameters, $k_i^{new}$ denotes the new value of the $i^{th}$ parameter, $k_i$ denotes the current value of the $i^{th}$ parameter, $a$ denotes a distribution variance, $r_i$ denotes a random sample from the normal distribution, $l_i$ denotes the lower bound for that parameter type, and $u_i$ denotes the upper bound for that parameter type.
 Maximum reaction rates were bounded between 0 and 500,000 mM/h \cite{Keseler:2013aa}.
-Assuming a total enzyme concentration of 50 $\mu$M, this corresponds to catalytic rate bounds of 0 and 2778 s$^{-1}$.
-These bounds resulted in a median catalytic rate of 0.016 s$^{-1}$ across the ensemble.
-Enzyme activity decay constants were bounded between 0 and 1 h$^{-1}$, corresponding to half lives of 42 minutes and infinity; median = 25 min.
+Assuming a total enzyme concentration of 5.0 $\mu$M, this corresponds to catalytic rate bounds of 0 and 27,780 s$^{-1}$.
+These bounds resulted in a median catalytic rate of 0.16 s$^{-1}$ across the ensemble.
+Enzyme activity decay constants were bounded between 0 and 1 h$^{-1}$, corresponding to half lives of 42 minutes and infinity; median = 25 h.
 Saturation constants were bounded between 0.001 and 10 mM; median = 0.16 mM.
 Control parameters (gains and orders) were left unbounded; gain median = 0.076, order median = 0.69.
 For each newly generated parameter set, we re-solved the balance equations and calculated the cost function.
-All sets with a lower cost than the previous set, and some with higher cost, were added to the ensemble.
-After generating 12,437 sets, we selected 100 sets with minimal set to set correlation to avoid over-sampling any region of parameter space.
-The original 12,437-set ensemble had a mean Pearson correlation coefficient of 0.94 between pairs of sets, while the 100-set ensemble had a mean Pearson correlation coefficient of 0.83 between pairs of sets.
+All sets with a lower cost (and some with higher cost) were accepted into the ensemble.
+After generating greater that 10,000 sets, we selected N = 100 sets with minimal set to set correlation to avoid over-sampling any region of parameter space.
+% The original 12,437-set ensemble had a mean Pearson correlation coefficient of 0.94 between pairs of sets, while the 100-set ensemble had a mean Pearson correlation coefficient of 0.83 between pairs of sets.
 
-\subsection*{Sensitivity analysis of the CFPS model.}
+\subsection*{Sensitivity analysis of the kinetic CFPS model.}
 We determined the reactions most important to protein production by computing the local sensitivity of CAT concentration (denoted as $\texttt{CAT}$) to each individual maximum reaction rate, and each pair of maximum reaction rates in the network.
 The sensitivity index was formulated as:
 \begin{equation}\label{eqn:CAT-sensitivity}
@@ -477,37 +477,39 @@ where $\mathcal{S}_{ij}^{\texttt{CAT}}$ denotes the sensitivity of CAT productio
 $\texttt{CAT}(p_i,p_j,t)$ denotes CAT concentration as a function of time and the $i^{th}$ and $j^{th}$ parameters,
 $\alpha$ denotes the perturbation factor, and $\mathcal{P}$ denotes the number of maximum reaction rates ($\mathcal{P}$ = 163).
 In calculating the pairwise sensitivities, each parameter was perturbed by 1\%; first-order sensitivities ($i$ = $j$) were subject to two 1\% perturbations.
-Parameters and parameter combinations were categorized into five degrees of importance, from least to most sensitive.
-This was achieved by assigning them a value of 0, 0.25, 0.5, 0.75, or 1.
+Parameters and parameter combinations were stratified into five degrees of importance, from least to most sensitive.
+% This was achieved by assigning them a value of 0, 0.25, 0.5, 0.75, or 1.
 % The array of sensitivity indices was organized into a clustergram with both axes corresponding to the 163 maximum reaction rates
 % rearranged from most sensitive (top, right) to least sensitive (bottom, left).
 
-Likewise, we determined the reactions most important to global system performance by computing the sensitivity of all species for which data exists (denoted as $\texttt{X}$)
+Likewise, we determined which reactions were most important to global system performance by computing the sensitivity of all species for which data exists (denoted as $\texttt{X}$)
 to each maximum reaction rate in the network.
 In this case, each sensitivity index was formulated as:
 \begin{equation}\label{eqn:system-sensitivity}
-    \mathcal{S}_{ij}^{\texttt{X}}=\norm{\texttt{X}(p_i,p_j,t)-\texttt{X}(\alpha \cdot p_i,\alpha \cdot p_j,t)}\qquad{i,j=1,2,\hdots\mathcal{P}}
+    \mathcal{S}_{ij}^{\texttt{X}}=\norm{\texttt{X}(p_i,p_j,t)-\texttt{X}(\alpha \cdot p_i,\alpha \cdot p_j,t)}_{2}\qquad{i,j=1,2,\hdots\mathcal{P}}
 \end{equation}
 where $\mathcal{S}_{ij}^{\texttt{X}}$ denotes the sensitivity of the system state to the $i^{th}$ and $j^{th}$ parameters,
 and $\texttt{X}(p_i,p_j,t)$ denotes the system state, an array consisting of the concentration of every species for
 which data exists as a function of time and the $i^{th}$ and $j^{th}$ parameters.
-The parameter sensitivities were also categorized into five groups, as above.
+The parameter sensitivities were stratified into five degrees of importance, from least to most sensitive, as above.
 
 % This array of sensitivity indices was also organized into a clustergram (Fig.~\ref{fig:Sensitivity}, bottom).
+% Theoretical maximum CAT carbon yields for three cases discussed below were calculated using flux balance anaylsis (FBA) with a sequence-specific description of CAT synthesis, where $\Delta m_{i}$ denotes the flux of the $i^{th}$ species.
+% The transcription and translation template reactions come from sequence-specific analysis \cite{Allen:2003aa}, and include transcription initiation, transcription, mRNA degradation, translation initiation, translation, and tRNA charging.
+% The rest of the network followed a pseudo steady-state assumption where metabolites were not allowed to accumulate; thus, the network could be solved by linear programming instead of solving differential equations.
+% \begin{eqnarray*}
+% G+R_{1} &\longrightarrow& G^{*}\\
+% G^{*}+151 \cdot gtp+144 \cdot ctp+189 \cdot utp+176 \cdot atp &\longrightarrow& mRNA+G+R_{1}+1320 \cdot Pi\\
+% mRNA &\longrightarrow& 151 \cdot gmp+144 \cdot cmp+189 \cdot ump+176 \cdot amp\\
+% \end{eqnarray*}
 
-\subsection*{Sequence-specific FBA and calculation of CAT yield}
-The yield on CAT production was calculated for each case as a ratio of carbon produced as CAT to carbon consumed as reactants (glucose and amino acids):
-\begin{equation}\label{eqn:yield-definition}
-	Yield=\frac{\Delta m_{CAT}\;C_{CAT}}{\sum_{i=1}^{\mathcal{R}}\max(\Delta m_{i},0)\;C_{m_i}}
-\end{equation}
-where $\Delta m_{CAT}$ denotes the amount of CAT produced, $C_{CAT}$ denotes carbon number of CAT, $\mathcal{R}$ denotes the number of reactants, $\Delta m_{i}$ denotes the amount of the $i^{th}$ reactant consumed, never allowed to be negative, and $C_{m_i}$ denotes the carbon number of the $i^{th}$ reactant.
-Because no data was available for arginine or glutamate, these reactants were left out of all yield calculations.
-Yield of the best-fit parameter set and the experimental data were calculated by setting $\Delta CAT$ equal to the final minus the initial CAT concentration and setting $\Delta m_{i}$ equal to the initial minus the final reactant concentration.
-Theoretical maximum CAT carbon yields for three cases discussed below were calculated using flux balance anaylsis (FBA) with a sequence-specific description of CAT synthesis, where $\Delta m_{i}$ denotes the flux of the $i^{th}$ species.
-This sequence-specific FBA \citep{Allen:2003aa} problem was formulated as:
+
+\subsection*{Sequence specific calculation of carbon yield.}
+We estimated the theoretical maximum CAT carbon yield using sequence-specific flux balance analysis (ssFBA) \cite{Allen:2003aa}.
+The sequence specific flux balance analysis problem was formulated as:
 \begin{equation}
  \begin{multlined}
-	\qquad \qquad \qquad \max_{\boldsymbol{w}}{} \! \left( w_{obj} = \mathbf{\boldsymbol{\theta}}^T \boldsymbol{w} \right) \\
+	\qquad \qquad \qquad \max_{\boldsymbol{w}}{} \! \left( w_{TL} = \mathbf{\boldsymbol{\theta}}^T \boldsymbol{w} \right) \\
 	\mathrm{Subject \; to:}
 	 \; \; \mathbf{S}\mathbf{w}=\mathbf{0} \\
 \alpha_i \leq w_i \leq \beta_i  \qquad i=1,2,\hdots,\mathcal{R}
@@ -515,30 +517,46 @@ This sequence-specific FBA \citep{Allen:2003aa} problem was formulated as:
 \end{equation}
 where $\mathbf{S}$ denotes the stoichiometric matrix, $\mathbf{w}$ denotes the unknown flux vector, $\boldsymbol{\theta}$ denotes the objective selection vector
 and $\alpha_i$ and $\beta_i$ denote the lower and upper bounds on flux $w_{i}$, respectively.
-The objective $w_{obj}$ was to maximize the specific rate of CAT formation.
-The specific glucose uptake rate was constrained to allow a maximum flux of 40 mM/h according to experimental data; the specific amino acid uptake rates were bound to allow a maximum flux of 30 mM/h, but did not reach this maximum flux.
-The transcription and translation template reactions come from sequence-specific analysis \cite{Allen:2003aa}, and include transcription initiation, transcription, mRNA degradation, translation initiation, translation, and tRNA charging.
-The flux balance analysis problem was solved using the GNU Linear Programming Kit (v4.52) \cite{GLPK}.
-The solution flux vector was used to calculate the carbon yield of CAT for the three FBA cases.
-Glucose, oxygen, and amino acids were modeled as being imported into the system, while CAT synthesis and metabolite byproduct formation were modeled as export from the system.
-The rest of the network followed a pseudo steady-state assumption where metabolites were not allowed to accumulate; thus, the network could be solved by linear programming instead of solving differential equations.
+The glucose uptake rate was bounded in the range [0,40 mM/h] according to experimental data;
+while the amino acid uptake rates were bounded by [0,30 mM/h], but did not reach the maximum flux.
+The transcription and translation rates were modeled using the template reactions: 
 
-The transcription rate was formulated as:
+\begin{eqnarray*}
+G_{p}+R_{1} &\longrightarrow& G_{p}^{*} \\
+G_{p}^{*}+\sum_{i}\eta_{i}iTP &\longrightarrow& mRNA+G_{p}+R_{1}+2\sum_{i}\eta_{i}P \qquad{i=A,C,G,U}\\
+mRNA &\longrightarrow& \sum_{i}\eta_{i}iMP \\
+mRNA+R_{2} &\longrightarrow& R_{2}^{*} \\
+\alpha_{j}X_{j}+\alpha_{j}tRNA+\alpha_{j}ATP &\longrightarrow& \alpha_{j}XtRNA_{j}+\alpha_{j}AMP+2\alpha_{j}P \qquad{j=1,2,\hdots,20}\\
+R_{2}^{*}+\sum_{j}\alpha_{j}\Big(XtRNA_{j}+2GTP\Big) &\longrightarrow& Protein+R_{2}+mRNA\\
+&& \quad +\sum_{j}\alpha_{j}\Big(tRNA+2GDP+2P\Big)
+\end{eqnarray*}
+where $G_{p}$ denotes the gene of protein $p$, $R_{1}$ denotes the concentration of RNA polymerase, $G_{p}^{*}$ denotes the gene bounded by the RNA polymerase, $\eta_{i}$ and $ \alpha_{j}$ denotes the coefficient for species $i$ and $j$ respectively, $R_{2}$ denotes the ribosome concentration, $R_{2}^{*}$ denotes bounded ribosome, and $X_{j}$ denotes the amino acid species $j$. 
+
+The transcription rate ($w_{TX}$) was fixed in the ssFBA calculation as:
 \begin{equation}
-	w_{TX} = RNAP\left(\frac{v_{RNAP}}{l_{mRNA}}\right)\left(\frac{Gene}{k_m+Gene}\right)P
+	w_{TX} = \left[R_{1}\left(\frac{v_{TX}}{l_{G}}\right)\left(\frac{K_{T7}}{1 + K_{T7}}\right)\right]\left(\frac{G}{K_{TX}+G}\right)
 \end{equation}
-where $w_{TX}$ denotes the transcription rate, $RNAP$ denotes the concentration of RNA polymerase, $v_{RNAP}$ denotes the elongation rate by the RNA polymerase in nucleotides per hour, $l_{mRNA}$ denotes the mRNA length in nucleotides, $Gene$ denotes the gene concentration, $k_m$ denotes the plasmid saturation coefficient, and $P$ denotes the promoter activity.
-The mRNA and protein sequence of CAT was determined from literature.
-The promoter activity was formulated following Moon et al. for synthetic circuits as:
-\begin{equation}
-	P = \frac{K_{1}}{1 + K_{1}}
-\end{equation}
-where $K_{1}$ denotes the state of T7 RNA polymerase binding.
-The translation rate was formulated as:
+The first term in the brackets denotes the maximum rate of transcription, $v_{TX}$ denotes the RNA polymerase elongation rate (nt/hr), $l_{G}$ denotes the gene length in nucleotides, and the last term describes T7 promoter activity, where $K_{T7}$ quantifies T7 RNA polymerase binding \cite{Moon:2012aa}.
+The second term denotes the gene saturation term, where $G$ denotes the gene concentration and $K_{TX}$ denotes a saturation coefficient.
+The CAT gene and protein sequences were determined from literature.
+The translation rate ($w_{TL}$) was bounded by:
  \begin{equation}
-	w_{TL} = K_{P}\ Ribo\left(\frac{v_{Ribo}}{l_{Protein}}\right)mRNA_{SS}
+	0\leq w_{TL} \leq \left[K_{P} R_{2}\left(\frac{v_{TL}}{l_{P}}\right)\right]\left(\frac{mRNA_{SS}}{K_{TL}+mRNA_{SS}}\right)
 \end{equation}
-where $K_{P}$ denotes the polysome amplification constant, $Ribo$ denotes the ribosome concentration, $v_{Ribo}$ denotes the elongation rate of the ribosome in amino acids per hour, $l_{Protein}$ denotes the number of amino acids in the protein of interest, and $mRNA_{SS}$ denotes the mRNA concentration at steady state, equal to the transcription rate divided by the degradation rate of mRNA.
+The first term in brackets denotes the maximum translation rate, where $K_{P}$ denotes the polysome amplification constant, $v_{TL}$ denotes the ribosome elongation rate (amino acids per hour), $l_{P}$ denotes the number of amino acids in the protein of interest, and $mRNA_{SS}$ denotes the steady-state mRNA concentration:
+\begin{equation}
+	mRNA_{SS}\simeq\frac{w_{TX}}{\lambda}
+\end{equation}where $\lambda$ denotes the rate constant controlling the mRNA degradation rate.
+
+The CAT carbon yield ($Y_{C}^{CAT}$) was calculated as the ratio of carbon produced as CAT dived by the carbon consumed as reactants (glucose and amino acids):
+\begin{equation}\label{eqn:yield-definition}
+	Y_{C}^{CAT}=\frac{\Delta\texttt{CAT}\cdot C_{CAT}}{\displaystyle\sum_{i=1}^{\mathcal{R}}\max(\Delta m_{i},0)\cdot C_{m_i}}
+\end{equation}
+where $\Delta\texttt{CAT}$ denotes the abundance of CAT produced, $C_{CAT}$ denotes carbon number of CAT, $\mathcal{R}$ denotes the number of reactants,
+$\Delta m_{i}$ denotes the amount of the $i^{th}$ reactant consumed (never allowed to be negative), and $C_{m_i}$ denotes the carbon number of the $i^{th}$ reactant.
+Arginine or glutamate were not considered in the yield calculations, as no experimental measurements were available for these amino acids.
+Yield of the best-fit parameter set and the experimental data were calculated by setting $\Delta\texttt{CAT}$ equal to the final minus the initial CAT concentration,
+and setting $\Delta m_{i}$ equal to the initial minus the final reactant concentration.
 
 An ensemble of 100 sets of flux distributions was calculated for three different cases: unconstrained, constrained by transcription/translation rates, and constrained by transcription/translation rates and experimental measurements.
 For the unconstrained case, all rates were left unbounded, except the specific glucose uptake rate.
@@ -547,7 +565,10 @@ For the case constrained by transcription/translation rates, an ensemble was gen
 RNA polymerase levels were sampled between 60 and 80 nM, ribosome levels between 7 and 16 \textmu M, the RNA polymerase elongation rate between 20 and 30 nt/sec, and the ribosome elongation rate between 1.5 and 3 aa/sec \cite{2005_underwood_biotech, Garamella:2016aa}.
 For the case constrained by transcription/translation rates and experimental measurements, the lower and upper bounds on the fluxes for the data-informed metabolites were sampled within the range given by the experimental noise.
 This included the data for glucose, organic acids, energy species, and amino acids; CAT was not constrained by experimental data, but by the transcription/translation rates as stated above.
+The flux balance analysis problem was solved using the GNU Linear Programming Kit (v4.52) \cite{GLPK}.
 
+% The solution flux vector was used to calculate the carbon yield of CAT for the three FBA cases.
+% Glucose, oxygen, and amino acids were modeled as being imported into the system, while CAT synthesis and metabolite byproduct formation were modeled as export from the system.
 %Need to talk more about biochemical benefits and importance for biochemical problems
 
 \clearpage

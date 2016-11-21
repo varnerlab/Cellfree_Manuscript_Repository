@@ -519,19 +519,31 @@ where $\mathbf{S}$ denotes the stoichiometric matrix, $\mathbf{w}$ denotes the u
 and $\alpha_i$ and $\beta_i$ denote the lower and upper bounds on flux $w_{i}$, respectively.
 The glucose uptake rate was bounded in the range [0,40 mM/h] according to experimental data;
 while the amino acid uptake rates were bounded by [0,30 mM/h], but did not reach the maximum flux.
-The transcription and translation rates were modeled using the template reactions: [FILL IN OR REFERENCE TEMPLATE TABLE].
+The transcription and translation rates were modeled using the template reactions: 
+
+\begin{eqnarray*}
+G_{p}+R_{1} &\longrightarrow& G_{p}^{*} \\
+G_{p}^{*}+\sum_{i}\eta_{i}iTP &\longrightarrow& mRNA+G_{p}+R_{1}+2\sum_{i}\eta_{i}P \qquad{i=A,C,G,U}\\
+mRNA &\longrightarrow& \sum_{i}\eta_{i}iMP \\
+mRNA+R_{2} &\longrightarrow& R_{2}^{*} \\
+\alpha_{j}X_{j}+\alpha_{j}tRNA+\alpha_{j}ATP &\longrightarrow& \alpha_{j}XtRNA_{j}+\alpha_{j}AMP+2\alpha_{j}P \qquad{j=1,2,\hdots,20}\\
+R_{2}^{*}+\sum_{j}\alpha_{j}\Big(XtRNA_{j}+2GTP\Big) &\longrightarrow& Protein+R_{2}+mRNA\\
+&& \quad +\sum_{j}\alpha_{j}\Big(tRNA+2GDP+2P\Big)
+\end{eqnarray*}
+where $G_{p}$ denotes the gene of protein $p$, $R_{1}$ denotes the concentration of RNA polymerase, $G_{p}^{*}$ denotes the gene bounded by the RNA polymerase, $\eta_{i}$ and $ \alpha_{j}$ denotes the coefficient for species $i$ and $j$ respectively, $P$ denotes phosphate, $R_{2}$ denotes the ribosome concentration, $R_{2}^{*}$ denotes bounded ribosome, and $X_{j}$ denotes the amino acid species $j$. 
+
 The transcription rate ($w_{TX}$) was fixed in the ssFBA calculation as:
 \begin{equation}
 	w_{TX} = \left[R_{1}\left(\frac{v_{TX}}{l_{G}}\right)\left(\frac{K_{T7}}{1 + K_{T7}}\right)\right]\left(\frac{G}{K_{TX}+G}\right)
 \end{equation}
-The first term in the brackets denotes the maximum rate of transcription, where $R_{1}$ denotes the concentration of RNA polymerase, $v_{TX}$ denotes the RNA polymerase elongation rate (nt/hr), $l_{G}$ denotes the gene length in nucleotides, and the last term describes T7 promoter activity, where $K_{T7}$ quantifies T7 RNA polymerase binding [REF-HERE].
+The first term in the brackets denotes the maximum rate of transcription, $v_{TX}$ denotes the RNA polymerase elongation rate (nt/hr), $l_{G}$ denotes the gene length in nucleotides, and the last term describes T7 promoter activity, where $K_{T7}$ quantifies T7 RNA polymerase binding \cite{Moon:2012aa}.
 The second term denotes the gene saturation term, where $G$ denotes the gene concentration and $K_{TX}$ denotes a saturation coefficient.
 The CAT gene and protein sequences were determined from literature.
 The translation rate ($w_{TL}$) was bounded by:
  \begin{equation}
 	0\leq w_{TL} \leq \left[K_{P} R_{2}\left(\frac{v_{TL}}{l_{P}}\right)\right]\left(\frac{mRNA_{SS}}{K_{TL}+mRNA_{SS}}\right)
 \end{equation}
-The first term in brackets denotes the maximum translation rate, where $K_{P}$ denotes the polysome amplification constant, $R_{2}$ denotes the ribosome concentration, $v_{TL}$ denotes the ribosome elongation rate (amino acids per hour), $l_{P}$ denotes the number of amino acids in the protein of interest, and $mRNA_{SS}$ denotes the steady-state mRNA concentration:
+The first term in brackets denotes the maximum translation rate, where $K_{P}$ denotes the polysome amplification constant, $v_{TL}$ denotes the ribosome elongation rate (amino acids per hour), $l_{P}$ denotes the number of amino acids in the protein of interest, and $mRNA_{SS}$ denotes the steady-state mRNA concentration:
 \begin{equation}
 	mRNA_{SS}\simeq\frac{w_{TX}}{\lambda}
 \end{equation}where $\lambda$ denotes the rate constant controlling the mRNA degradation rate.
