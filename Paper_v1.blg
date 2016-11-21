@@ -1,54 +1,59 @@
-This is BibTeX, Version 0.99d (TeX Live 2015)
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: Paper_v1.aux
 The style file: plos2009.bst
 Database file #1: References_v1.bib
 Warning--entry type for "GLPK" isn't style-file defined
---line 323 of file References_v1.bib
+--line 307 of file References_v1.bib
+You're missing a field name---line 556 of file References_v1.bib
+ : 
+ : % Abstract = {EcoCyc (http://EcoCyc.org) is a model organism database built on the genome sequence of Escherichia coli K-12 MG1655. Expert manual curation of the functions of individual E. coli gene products in EcoCyc has been based on information found in the experimental literature for E. coli K-12-derived strains. Updates to EcoCyc content continue to improve the comprehensive picture of E. coli biology. The utility of EcoCyc is enhanced by new tools available on the EcoCyc web site, and the development of EcoCyc as a teaching tool is increasing the impact of the knowledge collected in EcoCyc.},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Too many commas in name 1 of "Moon TS, Lou C, Tamsir A, Stanton BC, Voigt CA" for entry Moon:2012aa
 while executing---line 2643 of file plos2009.bst
 Too many commas in name 1 of "Moon TS, Lou C, Tamsir A, Stanton BC, Voigt CA" for entry Moon:2012aa
 while executing---line 2643 of file plos2009.bst
-You've used 49 entries,
+You've used 48 entries,
             2441 wiz_defined-function locations,
-            908 strings with 16238 characters,
-and the built_in function-call counts, 38969 in all, are:
-= -- 3582
-> -- 685
+            903 strings with 15635 characters,
+and the built_in function-call counts, 37553 in all, are:
+= -- 3445
+> -- 661
 < -- 0
-+ -- 343
-- -- 171
-* -- 3289
-:= -- 4712
-add.period$ -- 99
-call.type$ -- 49
-change.case$ -- 49
++ -- 331
+- -- 165
+* -- 3156
+:= -- 4543
+add.period$ -- 97
+call.type$ -- 48
+change.case$ -- 48
 chr.to.int$ -- 0
-cite$ -- 98
-duplicate$ -- 3889
-empty$ -- 4018
-format.name$ -- 216
-if$ -- 8614
+cite$ -- 96
+duplicate$ -- 3741
+empty$ -- 3872
+format.name$ -- 209
+if$ -- 8302
 int.to.chr$ -- 0
-int.to.str$ -- 49
-missing$ -- 509
-newline$ -- 261
-num.names$ -- 48
-pop$ -- 597
+int.to.str$ -- 48
+missing$ -- 497
+newline$ -- 256
+num.names$ -- 47
+pop$ -- 585
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 302
+skip$ -- 290
 stack$ -- 0
-substring$ -- 5462
-swap$ -- 1011
+substring$ -- 5231
+swap$ -- 989
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 312
-width$ -- 51
-write$ -- 552
-(There were 2 error messages)
+while$ -- 304
+width$ -- 50
+write$ -- 541
+(There were 3 error messages)

@@ -327,7 +327,7 @@ Experimental observations of the metabolites and cometabolites validate the stru
 This is important in applying metabolic engineering principles to rationally design cell-free production processes and predict the redirection of carbon fluxes to product forming pathways.
 In analyzing the model parameters' effect on CAT production, CAT synthesis is the most important, followed by oxidative phosphorylation and the glutamate and pyruvate consuming reactions, as well as coenzyme reactions which are necessary to drive CAT synthesis.
 For example, the conversion of ATP to GTP shows significance since it is necessary for CAT synthesis.
-While Jewett and coworkers have shown that ATP may be at saturation in CFPS \cite{2008_jewett_molsysbiol}, GTP is also required for CAT synthesis and may be a limiting reactant.
+While Jewett and coworkers have shown that ATP may be at saturation in CFPS \cite{Jewett:2008aa}, GTP is also required for CAT synthesis and may be a limiting reactant.
 Thus, supplementation with additional GTP may improve the efficiency of CAT production.
 A similar theme is seen in the sensitivity of overall model state, where the most important reactions are glucose and pyruvate consuming reactions and coenzyme reactions which are vital to drive CFPS.
 This can be seen in the biphasic operation of CFPS, with the first phase operating on glucose and the second phase operating on pyruvate.
@@ -337,7 +337,7 @@ This is in accordance with literature, which showed pyruvate provided a relative
 Taken together, this shows CFPS can be designed towards a specified application either requiring a slow stable energy source or faster production.
 This outstanding control on model performace was expected as these metabolites are responsible for driving CFPS and represent the first step in the model network.
 Nevertheless, there are further reactions with considerable impact on model performance.
-In examining oxidative phosphorylation activity, knockouts in the electron transport pathways disrupt metabolism across the network and show CAT carbon yield dropping from 8.6\% to 2.7\%; Jewett and coworkers also saw a decrease in CAT yield, ranging from 1.5-fold to 4-fold, when knocking out oxidative phosphorylation reactions\cite{2008_jewett_molsysbiol}.
+In examining oxidative phosphorylation activity, knockouts in the electron transport pathways disrupt metabolism across the network and show CAT carbon yield dropping from 8.6\% to 2.7\%; Jewett and coworkers also saw a decrease in CAT yield, ranging from 1.5-fold to 4-fold, when knocking out oxidative phosphorylation reactions\cite{Jewett:2008aa}.
 Oxidative phosphorylation is vital, since it provides most of the energetic needs of CFPS.
 However, it is unknown how active oxidative phosphorylation is compared to that of \textit{in vivo} systems, and both of our modeling approaches suggest its importance to CAT production and CFPS.
 Thus, oxidative phosphorylation is a potential area for improvement for CFPS performance and protein yield.
@@ -456,7 +456,7 @@ We then perturbed each model parameter between an upper and lower bound that var
     k_i^{new}=\min\left(\max\left(k_i \cdot \exp(a \cdot r_i),l_i\right),u_i\right)\qquad{i=1,2,\hdots,\mathcal{P}}
 \end{equation}
 where $\mathcal{P}$ denotes the number of parameters ($\mathcal{P}$~=~815), which includes 163 maximum reaction rates ($V^{max}$), 163 enzyme activity decay constants, 455 saturation constants ($K_{js}$), and 34 control parameters, $k_i^{new}$ denotes the new value of the $i^{th}$ parameter, $k_i$ denotes the current value of the $i^{th}$ parameter, $a$ denotes a distribution variance, $r_i$ denotes a random sample from the normal distribution, $l_i$ denotes the lower bound for that parameter type, and $u_i$ denotes the upper bound for that parameter type.
-Maximum reaction rates were bounded between 0 and 500,000 mM/h \cite{Keseler:2013aa}.
+Maximum reaction rates were bounded between 0 and 500,000 mM/h \cite{Milo:2009aa}.
 Assuming a total enzyme concentration of 5.0 $\mu$M, this corresponds to catalytic rate bounds of 0 and 27,780 s$^{-1}$.
 These bounds resulted in a median catalytic rate of 0.16 s$^{-1}$ across the ensemble.
 Enzyme activity decay constants were bounded between 0 and 1 h$^{-1}$, corresponding to half lives of 42 minutes and infinity; median = 25 h.

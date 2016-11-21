@@ -165,12 +165,6 @@ Wayman JA, Sagar A, Varner JD (2015) Dynamic modeling of cell-free biochemical
 \newblock Processes 3: 138.
 \bibAnnoteFile{pr3010138}
 
-\bibitem{2008_jewett_molsysbiol}
-Jewett MC, Calhoun KA, Voloshin A, Wuu JJ, Swartz JR (2008) An integrated
-  cell-free metabolic platform for protein production and synthetic biology.
-\newblock Molecular Systems Biology 4.
-\bibAnnoteFile{2008_jewett_molsysbiol}
-
 \bibitem{swartz_nature2001}
 Swartz J (2001) A pure approach to constructive biology.
 \newblock Nature Biotechnology 19: 732-3.
@@ -290,11 +284,11 @@ Okino S, Suda M, Fujikura K, Inui M, Yukawa H (2008) {{P}roduction of
 \newblock Appl Microbiol Biotechnol 78: 449-54.
 \bibAnnoteFile{2008_okino_ApplMicrobiolBiotechnol}
 
-\bibitem{Keseler:2013aa}
-Keseler IM, Mackie A, Peralta-Gil M, Santos-Zavaleta A, Gama-Castro S, et~al.
-  (2013) Ecocyc: fusing model organism databases with systems biology.
-\newblock Nucleic Acids Res 41: 605-12.
-\bibAnnoteFile{Keseler:2013aa}
+\bibitem{Milo:2009aa}
+Milo R, Jorgensen P, Moran U, Weber G, Springer M (2009) Bionumbers--the
+  database of key numbers in molecular and cell biology.
+\newblock Nucleic Acids Res 38: 750-3.
+\bibAnnoteFile{Milo:2009aa}
 
 \bibitem{Allen:2003aa}
 Allen TE, Palsson B{\O} (2003) Sequence-based analysis of metabolic demands for
