@@ -103,9 +103,9 @@ Feist AM, Herrg{\aa}rd MJ, Thiele I, Reed JL, Palsson B{\O} (2009)
 \bibAnnoteFile{2009_feist_palsson_NatRevMicrobio}
 
 \bibitem{Feist:2007aa}
-Feist AM, Henry CS, Reed JL, Krummenacker M, Joyce AR, et~al. (2007) A
-  genome-scale metabolic reconstruction for escherichia coli k-12 mg1655 that
-  accounts for 1260 orfs and thermodynamic information.
+Feist AM, Henry CS, Reed JL, Krummenacker M, Joyce AR, et~al. (2007) {A
+  genome-scale metabolic reconstruction for Escherichia coli K-12 MG1655 that
+  accounts for 1260 ORFs and thermodynamic information}.
 \newblock Mol Syst Biol 3: 121.
 \bibAnnoteFile{Feist:2007aa}
 
@@ -145,13 +145,6 @@ Zomorrodi AR, Suthers PF, Ranganathan S, Maranas CD (2012) Mathematical
   optimization applications in metabolic networks.
 \newblock Metab Eng 14: 672-86.
 \bibAnnoteFile{2012_zomorrodi_maranas_MetaEng}
-
-\bibitem{Feist121}
-Feist AM, Henry CS, Reed JL, Krummenacker M, Joyce AR, et~al. (2007) A
-  genome-scale metabolic reconstruction for escherichia coli k-12 mg1655 that
-  accounts for 1260 orfs and thermodynamic information.
-\newblock Molecular Systems Biology 3.
-\bibAnnoteFile{Feist121}
 
 \bibitem{2005_calhoun_BiotechnologyProgress}
 Calhoun KA, Swartz JR (2005) An economical method for cell-free protein
