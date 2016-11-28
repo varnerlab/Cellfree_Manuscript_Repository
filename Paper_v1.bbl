@@ -1,310 +1,300 @@
 \begin{thebibliography}{10}
-\providecommand{\url}[1]{\texttt{#1}}
-\providecommand{\urlprefix}{URL }
-\expandafter\ifx\csname urlstyle\endcsname\relax
-  \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
-  \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
-  \urlstyle{rm}\Url}\fi
-\providecommand{\bibAnnoteFile}[1]{%
-  \IfFileExists{#1}{\begin{quotation}\noindent\textsc{Key:} #1\\
-  \textsc{Annotation:}\ \input{#1}\end{quotation}}{}}
-\providecommand{\bibAnnote}[2]{%
-  \begin{quotation}\noindent\textsc{Key:} #1\\
-  \textsc{Annotation:}\ #2\end{quotation}}
-\providecommand{\eprint}[2][]{\url{#2}}
 
 \bibitem{Jewett:2008aa}
-Jewett MC, Calhoun KA, Voloshin A, Wuu JJ, Swartz JR (2008) An integrated
-  cell-free metabolic platform for protein production and synthetic biology.
-\newblock Mol Syst Biol 4: 220.
-\bibAnnoteFile{Jewett:2008aa}
+Jewett MC, Calhoun KA, Voloshin A, Wuu JJ, Swartz JR.
+\newblock An integrated cell-free metabolic platform for protein production and
+  synthetic biology.
+\newblock Mol Syst Biol. 2008;4:220.
+\newblock doi:{10.1038/msb.2008.57}.
 
 \bibitem{MATTHAEI:1961aa}
-Matthaei JH, Nirenberg MW (1961) Characteristics and stabilization of
-  dnaase-sensitive protein synthesis in e. coli extracts.
-\newblock Proc Natl Acad Sci U S A 47: 1580-8.
-\bibAnnoteFile{MATTHAEI:1961aa}
+Matthaei JH, Nirenberg MW.
+\newblock Characteristics and stabilization of DNAase-sensitive protein
+  synthesis in E. coli extracts.
+\newblock Proc Natl Acad Sci U S A. 1961;47:1580--8.
 
 \bibitem{NIRENBERG:1961aa}
-Nirenberg MW, Matthaei JH (1961) The dependence of cell-free protein synthesis
-  in e. coli upon naturally occurring or synthetic polyribonucleotides.
-\newblock Proc Natl Acad Sci U S A 47: 1588-602.
-\bibAnnoteFile{NIRENBERG:1961aa}
+Nirenberg MW, Matthaei JH.
+\newblock The dependence of cell-free protein synthesis in E. coli upon
+  naturally occurring or synthetic polyribonucleotides.
+\newblock Proc Natl Acad Sci U S A. 1961;47:1588--602.
 
 \bibitem{Lu:2014aa}
-Lu Y, Welsh JP, Swartz JR (2014) Production and stabilization of the trimeric
-  influenza hemagglutinin stem domain for potentially broadly protective
-  influenza vaccines.
-\newblock Proc Natl Acad Sci U S A 111: 125-30.
-\bibAnnoteFile{Lu:2014aa}
+Lu Y, Welsh JP, Swartz JR.
+\newblock Production and stabilization of the trimeric influenza hemagglutinin
+  stem domain for potentially broadly protective influenza vaccines.
+\newblock Proc Natl Acad Sci U S A. 2014;111(1):125--30.
+\newblock doi:{10.1073/pnas.1308701110}.
 
 \bibitem{Hodgman:2012aa}
-Hodgman CE, Jewett MC (2012) Cell-free synthetic biology: thinking outside the
-  cell.
-\newblock Metab Eng 14: 261-9.
-\bibAnnoteFile{Hodgman:2012aa}
+Hodgman CE, Jewett MC.
+\newblock Cell-free synthetic biology: thinking outside the cell.
+\newblock Metab Eng. 2012;14(3):261--9.
+\newblock doi:{10.1016/j.ymben.2011.09.002}.
 
 \bibitem{Pardee:2016aa}
-Pardee K, Slomovic S, Nguyen PQ, Lee JW, Donghia N, et~al. (2016) Portable,
-  on-demand biomolecular manufacturing.
-\newblock Cell 167: 248-59.e12.
-\bibAnnoteFile{Pardee:2016aa}
+Pardee K, Slomovic S, Nguyen PQ, Lee JW, Donghia N, Burrill D, et~al.
+\newblock Portable, On-Demand Biomolecular Manufacturing.
+\newblock Cell. 2016;167(1):248--59.e12.
+\newblock doi:{10.1016/j.cell.2016.09.013}.
 
 \bibitem{1976_fredrickson_BiotechBioeng}
-Fredrickson AG (1976) Formulation of structured growth models.
-\newblock Biotechnol Bioeng 18: 1481-6.
-\bibAnnoteFile{1976_fredrickson_BiotechBioeng}
+Fredrickson AG.
+\newblock Formulation of structured growth models.
+\newblock Biotechnol Bioeng. 1976;18(10):1481--6.
+\newblock doi:{10.1002/bit.260181016}.
 
 \bibitem{1984_domach_shuler_BiotechBioeng_01}
-Domach MM, Leung SK, Cahn RE, Cocks GG, Shuler ML (1984) Computer model for
-  glucose-limited growth of a single cell of escherichia coli b/r-a.
-\newblock Biotechnol Bioeng 26: 203-16.
-\bibAnnoteFile{1984_domach_shuler_BiotechBioeng_01}
+Domach MM, Leung SK, Cahn RE, Cocks GG, Shuler ML.
+\newblock Computer model for glucose-limited growth of a single cell of
+  Escherichia coli B/r-A.
+\newblock Biotechnol Bioeng. 1984;26(3):203--16.
+\newblock doi:{10.1002/bit.260260303}.
 
 \bibitem{1989_steinmeyer_shuler_ChemEngSci}
-Steinmeyer D, Shuler M (1989) {Structured model for Saccharomyces cerevisiae.}
-\newblock Chem Eng Sci 44: 2017-30.
-\bibAnnoteFile{1989_steinmeyer_shuler_ChemEngSci}
+Steinmeyer DE, Shuler ML.
+\newblock {Structured model for Saccharomyces cerevisiae.}
+\newblock Chem Eng Sci. 1989;44:2017--30.
 
 \bibitem{1992_wu_shuler_AnnNYAcadSci}
-Wu P, Ray NG, Shuler ML (1992) A single-cell model for cho cells.
-\newblock Ann N Y Acad Sci 665: 152-87.
-\bibAnnoteFile{1992_wu_shuler_AnnNYAcadSci}
+Wu P, Ray NG, Shuler ML.
+\newblock A single-cell model for CHO cells.
+\newblock Ann N Y Acad Sci. 1992;665:152--87.
 
 \bibitem{2004_castellanos_shuler_PNAS}
-Castellanos M, Wilson DB, Shuler ML (2004) A modular minimal cell model: purine
-  and pyrimidine transport and metabolism.
-\newblock Proc Natl Acad Sci U S A 101: 6681-6.
-\bibAnnoteFile{2004_castellanos_shuler_PNAS}
+Castellanos M, Wilson DB, Shuler ML.
+\newblock A modular minimal cell model: purine and pyrimidine transport and
+  metabolism.
+\newblock Proc Natl Acad Sci U S A. 2004;101(17):6681--6.
+\newblock doi:{10.1073/pnas.0400962101}.
 
 \bibitem{2008_atlas_shuler_IETSysBio}
-Atlas JC, Nikolaev EV, Browning ST, Shuler ML (2008) Incorporating genome-wide
-  dna sequence information into a dynamic whole-cell model of escherichia coli:
-  application to dna replication.
-\newblock IET Syst Biol 2: 369-82.
-\bibAnnoteFile{2008_atlas_shuler_IETSysBio}
+Atlas JC, Nikolaev EV, Browning ST, Shuler ML.
+\newblock Incorporating genome-wide DNA sequence information into a dynamic
+  whole-cell model of Escherichia coli: application to DNA replication.
+\newblock IET Syst Biol. 2008;2(5):369--82.
+\newblock doi:{10.1049/iet-syb:20070079}.
 
 \bibitem{2012_lewis_palsson_NatRevMicrobio}
-Lewis NE, Nagarajan H, Palsson B{\O} (2012) Constraining the metabolic
-  genotype-phenotype relationship using a phylogeny of in silico methods.
-\newblock Nat Rev Microbiol 10: 291-305.
-\bibAnnoteFile{2012_lewis_palsson_NatRevMicrobio}
+Lewis NE, Nagarajan H, Palsson B{\O}.
+\newblock Constraining the metabolic genotype-phenotype relationship using a
+  phylogeny of in silico methods.
+\newblock Nat Rev Microbiol. 2012;10(4):291--305.
+\newblock doi:{10.1038/nrmicro2737}.
 
 \bibitem{2000_edwards_palsson_PNAS}
-Edwards JS, Palsson B{\O} (2000) The escherichia coli mg1655 in silico
-  metabolic genotype: its definition, characteristics, and capabilities.
-\newblock Proc Natl Acad Sci U S A 97: 5528-33.
-\bibAnnoteFile{2000_edwards_palsson_PNAS}
+Edwards JS, Palsson B{\O}.
+\newblock The Escherichia coli MG1655 in silico metabolic genotype: its
+  definition, characteristics, and capabilities.
+\newblock Proc Natl Acad Sci U S A. 2000;97(10):5528--33.
 
 \bibitem{2009_feist_palsson_NatRevMicrobio}
-Feist AM, Herrg{\aa}rd MJ, Thiele I, Reed JL, Palsson B{\O} (2009)
-  Reconstruction of biochemical networks in microorganisms.
-\newblock Nat Rev Microbiol 7: 129-43.
-\bibAnnoteFile{2009_feist_palsson_NatRevMicrobio}
+Feist AM, Herrg{\aa}rd MJ, Thiele I, Reed JL, Palsson B{\O}.
+\newblock Reconstruction of biochemical networks in microorganisms.
+\newblock Nat Rev Microbiol. 2009;7(2):129--43.
+\newblock doi:{10.1038/nrmicro1949}.
 
 \bibitem{Feist:2007aa}
-Feist AM, Henry CS, Reed JL, Krummenacker M, Joyce AR, et~al. (2007) {A
-  genome-scale metabolic reconstruction for Escherichia coli K-12 MG1655 that
-  accounts for 1260 ORFs and thermodynamic information}.
-\newblock Mol Syst Biol 3: 121.
-\bibAnnoteFile{Feist:2007aa}
+Feist AM, Henry CS, Reed JL, Krummenacker M, Joyce AR, Karp PD, et~al.
+\newblock {A genome-scale metabolic reconstruction for Escherichia coli K-12
+  MG1655 that accounts for 1260 ORFs and thermodynamic information}.
+\newblock Mol Syst Biol. 2007;3:121.
+\newblock doi:{10.1038/msb4100155}.
 
 \bibitem{Oh:2007aa}
-Oh YK, Palsson B{\O}, Park SM, Schilling CH, Mahadevan R (2007) Genome-scale
-  reconstruction of metabolic network in bacillus subtilis based on
-  high-throughput phenotyping and gene essentiality data.
-\newblock J Biol Chem 282: 28791-9.
-\bibAnnoteFile{Oh:2007aa}
+Oh YK, Palsson B{\O}, Park SM, Schilling CH, Mahadevan R.
+\newblock Genome-scale reconstruction of metabolic network in Bacillus subtilis
+  based on high-throughput phenotyping and gene essentiality data.
+\newblock J Biol Chem. 2007;282(39):28791--9.
+\newblock doi:{10.1074/jbc.M703759200}.
 
 \bibitem{2002_ibarra_edwards_palsson_Nat}
-Ibarra RU, Edwards JS, Palsson B{\O} (2002) Escherichia coli k-12 undergoes
-  adaptive evolution to achieve in silico predicted optimal growth.
-\newblock Nature 420: 186-9.
-\bibAnnoteFile{2002_ibarra_edwards_palsson_Nat}
+Ibarra RU, Edwards JS, Palsson B{\O}.
+\newblock Escherichia coli K-12 undergoes adaptive evolution to achieve in
+  silico predicted optimal growth.
+\newblock Nature. 2002;420(6912):186--9.
+\newblock doi:{10.1038/nature01149}.
 
 \bibitem{2007_schuetz_sauer_MolSysBio}
-Schuetz R, Kuepfer L, Sauer U (2007) Systematic evaluation of objective
-  functions for predicting intracellular fluxes in escherichia coli.
-\newblock Mol Syst Biol 3: 119.
-\bibAnnoteFile{2007_schuetz_sauer_MolSysBio}
+Schuetz R, Kuepfer L, Sauer U.
+\newblock Systematic evaluation of objective functions for predicting
+  intracellular fluxes in Escherichia coli.
+\newblock Mol Syst Biol. 2007;3:119.
+\newblock doi:{10.1038/msb4100162}.
 
 \bibitem{2013_hyduke_lewis_palsson_MolBioSys}
-Hyduke DR, Lewis NE, Palsson B{\O} (2013) Analysis of omics data with
-  genome-scale models of metabolism.
-\newblock Mol Biosyst 9: 167-74.
-\bibAnnoteFile{2013_hyduke_lewis_palsson_MolBioSys}
+Hyduke DR, Lewis NE, Palsson B{\O}.
+\newblock Analysis of omics data with genome-scale models of metabolism.
+\newblock Mol Biosyst. 2013;9(2):167--74.
+\newblock doi:{10.1039/c2mb25453k}.
 
 \bibitem{2013_mccloskey_palsson_feist_MolSysBio}
-McCloskey D, Palsson B{\O}, Feist AM (2013) Basic and applied uses of
-  genome-scale metabolic network reconstructions of escherichia coli.
-\newblock Mol Syst Biol 9: 661.
-\bibAnnoteFile{2013_mccloskey_palsson_feist_MolSysBio}
+McCloskey D, Palsson B{\O}, Feist AM.
+\newblock Basic and applied uses of genome-scale metabolic network
+  reconstructions of Escherichia coli.
+\newblock Mol Syst Biol. 2013;9:661.
+\newblock doi:{10.1038/msb.2013.18}.
 
 \bibitem{2012_zomorrodi_maranas_MetaEng}
-Zomorrodi AR, Suthers PF, Ranganathan S, Maranas CD (2012) Mathematical
-  optimization applications in metabolic networks.
-\newblock Metab Eng 14: 672-86.
-\bibAnnoteFile{2012_zomorrodi_maranas_MetaEng}
+Zomorrodi AR, Suthers PF, Ranganathan S, Maranas CD.
+\newblock Mathematical optimization applications in metabolic networks.
+\newblock Metab Eng. 2012;14(6):672--86.
+\newblock doi:{10.1016/j.ymben.2012.09.005}.
 
 \bibitem{2005_calhoun_BiotechnologyProgress}
-Calhoun KA, Swartz JR (2005) An economical method for cell-free protein
-  synthesis using glucose and nucleoside monophosphates.
-\newblock Biotechnology Progress 21: 1146-53.
-\bibAnnoteFile{2005_calhoun_BiotechnologyProgress}
+Calhoun KA, Swartz JR.
+\newblock An Economical Method for Cell-Free Protein Synthesis using Glucose
+  and Nucleoside Monophosphates.
+\newblock Biotechnology Progress. 2005;21(4):1146--53.
+\newblock doi:{10.1021/bp050052y}.
 
 \bibitem{pr3010138}
-Wayman JA, Sagar A, Varner JD (2015) Dynamic modeling of cell-free biochemical
-  networks using effective kinetic models.
-\newblock Processes 3: 138.
-\bibAnnoteFile{pr3010138}
+Wayman JA, Sagar A, Varner JD.
+\newblock Dynamic Modeling of Cell-Free Biochemical Networks Using Effective
+  Kinetic Models.
+\newblock Processes. 2015;3(1):138.
+\newblock doi:{10.3390/pr3010138}.
 
 \bibitem{swartz_nature2001}
-Swartz J (2001) A pure approach to constructive biology.
-\newblock Nature Biotechnology 19: 732-3.
-\bibAnnoteFile{swartz_nature2001}
+Swartz J.
+\newblock A PURE approach to constructive biology.
+\newblock Nature Biotechnology. 2001;19:732--3.
 
 \bibitem{2014_li_PlosOne}
-Li J, Gu L, Aach J, Church GM (2014) Improved cell-free rna and protein
-  synthesis system.
-\newblock PLoS ONE 9: 1-11.
-\bibAnnoteFile{2014_li_PlosOne}
+Li J, Gu L, Aach J, Church GM.
+\newblock Improved Cell-Free RNA and Protein Synthesis System.
+\newblock PLoS ONE. 2014;9(9):1--11.
+\newblock doi:{10.1371/journal.pone.0106232}.
 
 \bibitem{2005_underwood_biotech}
-Underwood KA, Swartz JR, Puglisi JD (2005) Quantitative polysome analysis
-  identifies limitations in bacterial cell-free protein synthesis.
-\newblock Biotechnology and Bioengineering 91: 425-35.
-\bibAnnoteFile{2005_underwood_biotech}
+Underwood KA, Swartz JR, Puglisi JD.
+\newblock Quantitative polysome analysis identifies limitations in bacterial
+  cell-free protein synthesis.
+\newblock Biotechnology and Bioengineering. 2005;91(4):425--35.
+\newblock doi:{10.1002/bit.20529}.
 
 \bibitem{2010_kotte_MolSystBiol}
-Kotte O, Zaugg JB, Heinemann M (2010) {{B}acterial adaptation through
-  distributed sensing of metabolic fluxes}.
-\newblock Mol Syst Biol 6: 355.
-\bibAnnoteFile{2010_kotte_MolSystBiol}
+Kotte O, Zaugg JB, Heinemann M.
+\newblock {{B}acterial adaptation through distributed sensing of metabolic
+  fluxes}.
+\newblock Mol Syst Biol. 2010;6:355.
 
 \bibitem{2011_cabrera_JBiolChem}
-Cabrera R, Baez M, Pereira HM, Caniuguir A, Garratt RC, et~al. (2011) {{T}he
-  crystal complex of phosphofructokinase-2 of {E}scherichia coli with
-  fructose-6-phosphate: kinetic and structural analysis of the allosteric
+Cabrera R, Baez M, Pereira HM, Caniuguir A, Garratt RC, Babul J.
+\newblock {{T}he crystal complex of phosphofructokinase-2 of {E}scherichia coli
+  with fructose-6-phosphate: kinetic and structural analysis of the allosteric
   {A}{T}{P} inhibition}.
-\newblock J Biol Chem 286: 5774-83.
-\bibAnnoteFile{2011_cabrera_JBiolChem}
+\newblock J Biol Chem. 2011;286(7):5774--83.
 
 \bibitem{1973_chulavatnatol_JBiolChem}
-Chulavatnatol M, Atkinson DE (1973) {{P}hosphoenolpyruvate synthetase from
-  {E}scherichia coli. {E}ffects of adenylate energy charge and modifier
-  concentrations}.
-\newblock J Biol Chem 248: 2712-5.
-\bibAnnoteFile{1973_chulavatnatol_JBiolChem}
+Chulavatnatol M, Atkinson DE.
+\newblock {{P}hosphoenolpyruvate synthetase from {E}scherichia coli. {E}ffects
+  of adenylate energy charge and modifier concentrations}.
+\newblock J Biol Chem. 1973;248(8):2712--5.
 
 \bibitem{2007_ogawa_JBacteriol}
-Ogawa T, Murakami K, Mori H, Ishii N, Tomita M, et~al. (2007) {{R}ole of
-  phosphoenolpyruvate in the {N}{A}{D}{P}-isocitrate dehydrogenase and
-  isocitrate lyase reaction in {E}scherichia coli}.
-\newblock J Bacteriol 189: 1176-8.
-\bibAnnoteFile{2007_ogawa_JBacteriol}
+Ogawa T, Murakami K, Mori H, Ishii N, Tomita M, Yoshin M.
+\newblock {{R}ole of phosphoenolpyruvate in the {N}{A}{D}{P}-isocitrate
+  dehydrogenase and isocitrate lyase reaction in {E}scherichia coli}.
+\newblock J Bacteriol. 2007;189(3):1176--8.
 
 \bibitem{1988_mackintosh_BiochemJ}
-MacKintosh C, Nimmo HG (1988) {{P}urification and regulatory properties of
-  isocitrate lyase from {E}scherichia coli {M}{L}308}.
-\newblock Biochem J 250: 25-31.
-\bibAnnoteFile{1988_mackintosh_BiochemJ}
+MacKintosh C, Nimmo HG.
+\newblock {{P}urification and regulatory properties of isocitrate lyase from
+  {E}scherichia coli {M}{L}308}.
+\newblock Biochem J. 1988;250(1):25--31.
 
 \bibitem{2000_donahue_JBacteriol}
-Donahue JL, Bownas JL, Niehaus WG, Larson TJ (2000) {{P}urification and
-  characterization of glp{X}-encoded fructose 1, 6-bisphosphatase, a new enzyme
-  of the glycerol 3-phosphate regulon of {E}scherichia coli}.
-\newblock J Bacteriol 182: 5624-7.
-\bibAnnoteFile{2000_donahue_JBacteriol}
+Donahue JL, Bownas JL, Niehaus WG, Larson TJ.
+\newblock {{P}urification and characterization of glp{X}-encoded fructose 1,
+  6-bisphosphatase, a new enzyme of the glycerol 3-phosphate regulon of
+  {E}scherichia coli}.
+\newblock J Bacteriol. 2000;182(19):5624--7.
 
 \bibitem{2006_hines_JBiolChem}
-Hines JK, Fromm HJ, Honzatko RB (2006) {{N}ovel allosteric activation site in
-  {E}scherichia coli fructose-1,6-bisphosphatase}.
-\newblock J Biol Chem 281: 18386-93.
-\bibAnnoteFile{2006_hines_JBiolChem}
+Hines JK, Fromm HJ, Honzatko RB.
+\newblock {{N}ovel allosteric activation site in {E}scherichia coli
+  fructose-1,6-bisphosphatase}.
+\newblock J Biol Chem. 2006;281(27):18386--93.
 
 \bibitem{2007_hines_JBiolChem}
-Hines JK, Fromm HJ, Honzatko RB (2007) {{S}tructures of activated
-  fructose-1,6-bisphosphatase from {E}scherichia coli. {C}oordinate regulation
-  of bacterial metabolism and the conservation of the {R}-state}.
-\newblock J Biol Chem 282: 11696-704.
-\bibAnnoteFile{2007_hines_JBiolChem}
+Hines JK, Fromm HJ, Honzatko RB.
+\newblock {{S}tructures of activated fructose-1,6-bisphosphatase from
+  {E}scherichia coli. {C}oordinate regulation of bacterial metabolism and the
+  conservation of the {R}-state}.
+\newblock J Biol Chem. 2007;282(16):11696--704.
 
 \bibitem{1994_pereira_JBiolChem}
-Pereira DS, Donald LJ, Hosfield DJ, Duckworth HW (1994) {{A}ctive site mutants
-  of {E}scherichia coli citrate synthase. {E}ffects of mutations on catalytic
-  and allosteric properties}.
-\newblock J Biol Chem 269: 412-7.
-\bibAnnoteFile{1994_pereira_JBiolChem}
+Pereira DS, Donald LJ, Hosfield DJ, Duckworth HW.
+\newblock {{A}ctive site mutants of {E}scherichia coli citrate synthase.
+  {E}ffects of mutations on catalytic and allosteric properties}.
+\newblock J Biol Chem. 1994;269(1):412--7.
 
 \bibitem{1983_robinson_FEBSLett}
-Robinson MS, Easom RA, Danson MJ, Weitzman PD (1983) {{C}itrate synthase of
-  {E}scherichia coli. {C}haracterisation of the enzyme from a plasmid-cloned
-  gene and amplification of the intracellular levels}.
-\newblock FEBS Lett 154: 51-4.
-\bibAnnoteFile{1983_robinson_FEBSLett}
+Robinson MS, Easom RA, Danson MJ, Weitzman PD.
+\newblock {{C}itrate synthase of {E}scherichia coli. {C}haracterisation of the
+  enzyme from a plasmid-cloned gene and amplification of the intracellular
+  levels}.
+\newblock FEBS Lett. 1983;154(1):51--4.
 
 \bibitem{2010_zhu_Biochimie}
-Zhu T, Bailey MF, Angley LM, Cooper TF, Dobson RC (2010) {{T}he quaternary
-  structure of pyruvate kinase type 1 from {E}scherichia coli at low nanomolar
-  concentrations}.
-\newblock Biochimie 92: 116-20.
-\bibAnnoteFile{2010_zhu_Biochimie}
+Zhu T, Bailey MF, Angley LM, Cooper TF, Dobson RC.
+\newblock {{T}he quaternary structure of pyruvate kinase type 1 from
+  {E}scherichia coli at low nanomolar concentrations}.
+\newblock Biochimie. 2010;92(1):116--20.
 
 \bibitem{1972_wohl_JBiolChem}
-Wohl RC, Markus G (1972) {{P}hosphoenolpyruvate carboxylase of {E}scherichia
-  coli. {P}urification and some properties}.
-\newblock J Biol Chem 247: 5785-92.
-\bibAnnoteFile{1972_wohl_JBiolChem}
+Wohl RC, Markus G.
+\newblock {{P}hosphoenolpyruvate carboxylase of {E}scherichia coli.
+  {P}urification and some properties}.
+\newblock J Biol Chem. 1972;247(18):5785--92.
 
 \bibitem{2007_kale_JBiolChem}
-Kale S, Arjunan P, Furey W, Jordan F (2007) {{A} dynamic loop at the active
-  center of the {E}scherichia coli pyruvate dehydrogenase complex {E}1
-  component modulates substrate utilization and chemical communication with the
-  {E}2 component}.
-\newblock J Biol Chem 282: 28106-16.
-\bibAnnoteFile{2007_kale_JBiolChem}
+Kale S, Arjunan P, Furey W, Jordan F.
+\newblock {{A} dynamic loop at the active center of the {E}scherichia coli
+  pyruvate dehydrogenase complex {E}1 component modulates substrate utilization
+  and chemical communication with the {E}2 component}.
+\newblock J Biol Chem. 2007;282(38):28106--16.
 
 \bibitem{2002_arjunan_Biochemistry}
-Arjunan P, Nemeria N, Brunskill A, Chandrasekhar K, Sax M, et~al. (2002)
-  {{S}tructure of the pyruvate dehydrogenase multienzyme complex {E}1 component
-  from {E}scherichia coli at 1.85 {A} resolution}.
-\newblock Biochemistry 41: 5213-21.
-\bibAnnoteFile{2002_arjunan_Biochemistry}
+Arjunan P, Nemeria N, Brunskill A, Chandrasekhar K, Sax M, Yan Y, et~al.
+\newblock {{S}tructure of the pyruvate dehydrogenase multienzyme complex {E}1
+  component from {E}scherichia coli at 1.85 {A} resolution}.
+\newblock Biochemistry. 2002;41(16):5213--21.
 
 \bibitem{2008_okino_ApplMicrobiolBiotechnol}
-Okino S, Suda M, Fujikura K, Inui M, Yukawa H (2008) {{P}roduction of
-  {D}-lactic acid by {C}orynebacterium glutamicum under oxygen deprivation}.
-\newblock Appl Microbiol Biotechnol 78: 449-54.
-\bibAnnoteFile{2008_okino_ApplMicrobiolBiotechnol}
+Okino S, Suda M, Fujikura K, Inui M, Yukawa H.
+\newblock {{P}roduction of {D}-lactic acid by {C}orynebacterium glutamicum
+  under oxygen deprivation}.
+\newblock Appl Microbiol Biotechnol. 2008;78(3):449--54.
 
 \bibitem{Milo:2009aa}
-Milo R, Jorgensen P, Moran U, Weber G, Springer M (2009) Bionumbers--the
-  database of key numbers in molecular and cell biology.
-\newblock Nucleic Acids Res 38: 750-3.
-\bibAnnoteFile{Milo:2009aa}
+Milo R, Jorgensen P, Moran U, Weber G, Springer M.
+\newblock BioNumbers--the database of key numbers in molecular and cell
+  biology.
+\newblock Nucleic Acids Res. 2009;38:750--3.
 
 \bibitem{Allen:2003aa}
-Allen TE, Palsson B{\O} (2003) Sequence-based analysis of metabolic demands for
-  protein synthesis in prokaryotes.
-\newblock J Theor Biol 220: 1-18.
-\bibAnnoteFile{Allen:2003aa}
+Allen TE, Palsson B{\O}.
+\newblock Sequence-based analysis of metabolic demands for protein synthesis in
+  prokaryotes.
+\newblock J Theor Biol. 2003;220(1):1--18.
 
 \bibitem{Moon:2012aa}
-Moon~TS TASBVC Lou~C (2012) Genetic programs constructed from layered logic
-  gates in single cells.
-\newblock Nature 491.
-\bibAnnoteFile{Moon:2012aa}
-
-\bibitem{Garamella:2016aa}
-Garamella J, Marshall R, Rustad M, Noireaux V (2016) The all e. coli tx-tl
-  toolbox 2.0: A platform for cell-free synthetic biology.
-\newblock ACS Synth Biol 5: 344-55.
-\bibAnnoteFile{Garamella:2016aa}
+Moon~TS TASBVC Lou~C.
+\newblock Genetic programs constructed from layered logic gates in single
+  cells.
+\newblock Nature. 2012;491.
 
 \bibitem{GLPK}
- (2016).
-\newblock {GNU Linear Programming Kit, Version 4.52}.
-\newblock \urlprefix\url{http://www.gnu.org/software/glpk/glpk.html}.
-\bibAnnoteFile{GLPK}
+type; 2016.
+\newblock Available from: \url{http://www.gnu.org/software/glpk/glpk.html}.
+
+\bibitem{Garamella:2016aa}
+Garamella J, Marshall R, Rustad M, Noireaux V.
+\newblock The All E. coli TX-TL Toolbox 2.0: A Platform for Cell-Free Synthetic
+  Biology.
+\newblock ACS Synth Biol. 2016;5(4):344--55.
+\newblock doi:{10.1021/acssynbio.5b00296}.
 
 \end{thebibliography}

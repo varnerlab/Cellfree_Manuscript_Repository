@@ -57,7 +57,7 @@
 \doublespace
 
 %\bibliographystyle{chicago}
-\bibliographystyle{plos2009}
+\bibliographystyle{plos2015}
 
 \makeatletter
 \renewcommand\subsection{\@startsection
@@ -545,7 +545,7 @@ The parameter sensitivities were stratified into five degrees of importance, fro
 
 \subsection*{Sequence specific calculation of carbon yield.}
 We estimated the theoretical maximum CAT carbon yield using sequence-specific flux balance analysis (ssFBA) \cite{Allen:2003aa}.
-The sequence specific flux balance analysis problem was formulated as:
+The sequence specific flux balance analysis problem was formulated as a linear program:
 \begin{equation}
  \begin{multlined}
 	\qquad \qquad \qquad \max_{\boldsymbol{w}}{} \! \left( w_{TL} = \mathbf{\boldsymbol{\theta}}^T \boldsymbol{w} \right) \\
@@ -556,43 +556,64 @@ The sequence specific flux balance analysis problem was formulated as:
 \end{equation}
 where $\mathbf{S}$ denotes the stoichiometric matrix, $\mathbf{w}$ denotes the unknown flux vector, $\boldsymbol{\theta}$ denotes the objective selection vector
 and $\alpha_i$ and $\beta_i$ denote the lower and upper bounds on flux $w_{i}$, respectively.
-The objective of the calculation is the maximization of CAT translation rate, $w_{TL}$.
-The total glucose uptake rate was bounded by [0,40 mM/h] according to experimental data;
-while the amino acid uptake rates were bounded by [0,30 mM/h], but did not reach the maximum flux.
-The transcription and translation rates were modeled using the template reactions:
+The stoichiometry of the kinetic model was used for the ssFBA calculations, with the execpetion of the transcription and translation rates.
+The transcription (TX) and translation (TL) stoichiometry was modeled using the template reactions taken from Allen and Palsson \cite{Allen:2003aa}:
 \begin{eqnarray*}
-G_{p}+R_{1} &\longrightarrow& G_{p}^{*} \\
-G_{p}^{*}+\sum_{k}\eta_{k}\cdot kTP &\longrightarrow& mRNA+G_{p}+R_{1}+\\
-&& \qquad 2\sum_{k}\eta_{k}\cdot Pi \qquad{k=A,C,G,U}\\
-mRNA &\longrightarrow& \sum_{k}\eta_{k}\cdot kMP \\
-mRNA+R_{2} &\longrightarrow& R_{2}^{*} \\
-\alpha_{j}\cdot AA_{j}+\alpha_{j}\cdot tRNA+\alpha_{j}\cdot ATP &\longrightarrow& \alpha_{j}\cdot AA_{j}:tRNA_{j}+\\
-&& \qquad \alpha_{j}\cdot AMP+2\alpha_{j}\cdot Pi \qquad{j=1,2,\hdots,20}\\
-R_{2}^{*}+\sum_{j}\alpha_{j}\cdot \Big(AA_{j}:tRNA_{j}+2\cdot GTP\Big) &\longrightarrow& \mathcal{P}+R_{2}+mRNA+\\
-&& \quad +\sum_{j}\alpha_{j}\Big(tRNA+2\cdot GDP+2\cdot Pi\Big)
+\mathrm{{G}_{\mathcal{P}}}+\mathrm{{R}_{1}} &\longrightarrow& \mathrm{G_{\mathcal{P}}^{*}} \\
+\mathrm{G_{\mathcal{P}}^{*}}+\sum_{\mathrm{k\in\left\{A,C,G,U\right\}}}\eta_{k}\cdot \mathrm{\left\{k\right\}TP} &\overset{\rm TX}{\longrightarrow}& \mathrm{mRNA}+\mathrm{G_{\mathcal{P}}}+\mathrm{R_{1}}+ \mathrm{\sum_{k\in\left\{A,C,G,U\right\}}2\eta_{k}\cdot Pi}\\
+\mathrm{mRNA} &\longrightarrow& \mathrm{\sum_{k\in\left\{A,C,G,U\right\}}\eta_{k}\cdot \left\{k\right\}MP} \\
+\mathrm{mRNA}+\mathrm{R_{2}} &\longrightarrow& \mathrm{R_{2}^{*}} \\
+\mathrm{\alpha_{j}\cdot AA_{j}+\alpha_{j}\cdot tRNA+\alpha_{j}\cdot ATP} &\longrightarrow& \mathrm{\alpha_{j}\cdot AA_{j}-tRNA_{j}+}\\
+&& \mathrm{\qquad \alpha_{j}\cdot AMP+2\alpha_{j}\cdot Pi} \qquad{j=1,2,\hdots,20}\\
+\mathrm{R_{2}^{*}+\sum_{j\in\left\{AA\right\}}\alpha_{j}\cdot \Big(AA_{j}-tRNA_{j}+2\cdot GTP\Big)} &\stackrel{\rm TL}{\longrightarrow}& \mathcal{P}+\mathrm{R_{2}+mRNA}+\\
+&& \mathrm{\quad +\sum_{j\in\left\{AA\right\}}\alpha_{j}\cdot\Big(tRNA+2\cdot GDP+2\cdot Pi\Big)}
 \end{eqnarray*}
-where $G_{p}$ denotes the gene of protein $p$,
-$R_{1}$ denotes the concentration of RNA polymerase,
-$G_{p}^{*}$ denotes the gene bounded by the RNA polymerase,
-$\eta_{i}$ and $ \alpha_{j}$ denote the coefficients for species $i$ and $j$ respectively,
-$P_{i}$ denotes inorganic phosphate, $R_{2}$ denotes the ribosome concentration, $R_{2}^{*}$ denotes bounded ribosome, and $X_{j}$ denotes the amino acid species $j$.
+where $G_{\mathcal{P}}$ denotes the gene encoding protein product $\mathcal{P}$,
+$\rm R_{1}$ denotes the concentration of RNA polymerase,
+$G_{\mathcal{P}}^{*}$ denotes the gene bounded by the RNA polymerase,
+$\eta_{i}$ and $ \alpha_{j}$ denote the stoichiometric coefficients for nucleotide and amino acid, respectively,
+$\rm Pi$ denotes inorganic phosphate,
+$\rm R_{2}$ denotes the ribosome concentration,
+$\rm R_{2}^{*}$ denotes bounded ribosome,
+and $AA_{j}$ denotes $j^{th}$ amino acid.
 
-The transcription rate ($w_{TX}$) was fixed in the ssFBA calculation as:
+The transcription rate ($w_{TX}$) was fixed in the ssFBA calculation at:
 \begin{equation}
-	w_{TX} = \left[R_{1}\left(\frac{v_{TX}}{l_{G}}\right)\left(\frac{K_{T7}}{1 + K_{T7}}\right)\right]\left(\frac{G}{K_{TX}+G}\right)
+	w_{TX} = V_{TX}^{max}\left(\frac{G}{K_{TX}+G}\right)
 \end{equation}
-The first term in the brackets denotes the maximum rate of transcription, $v_{TX}$ denotes the RNA polymerase elongation rate (nt/hr), $l_{G}$ denotes the gene length in nucleotides, and the last term describes T7 promoter activity, where $K_{T7}$ quantifies T7 RNA polymerase binding \cite{Moon:2012aa}.
-The second term denotes the gene saturation term, where $G$ denotes the gene concentration and $K_{TX}$ denotes a saturation coefficient.
-The CAT gene and protein sequences were determined from literature.
-The translation rate ($w_{TL}$) was bounded by:
+where $G$ denotes the gene concentration, and $K_{TX}$ denotes a transcription saturation coefficient.
+The maximum rate of transcription $V_{TX}^{max}$ was formulated as:
+\begin{equation}
+	V_{TX}^{max} \equiv \left[R_{1}\left(\frac{v_{TX}}{l_{G}}\right)\left(\frac{K_{T7}}{1 + K_{T7}}\right)\right]
+\end{equation}
+The term $R_{1}$ denotes the RNA polymerase abundance,
+$v_{TX}$ denotes the RNA polymerase elongation rate (nt/hr),
+$l_{G}$ denotes the gene length in nucleotides, and the last term describes T7 promoter activity,
+where $K_{T7}$ denotes a T7 RNA polymerase binding constant \cite{Moon:2012aa}.
+On the other hand, the translation rate ($w_{TL}$) was bounded by:
  \begin{equation}
-	0\leq w_{TL} \leq \left[K_{P} R_{2}\left(\frac{v_{TL}}{l_{P}}\right)\right]\left(\frac{mRNA_{SS}}{K_{TL}+mRNA_{SS}}\right)
+	0\leq w_{TL} \leq V_{TL}^{max}\left(\frac{\rm mRNA_{SS}}{K_{TL}+\rm mRNA_{SS}}\right)
 \end{equation}
-The first term in brackets denotes the maximum translation rate, where $K_{P}$ denotes the polysome amplification constant, $v_{TL}$ denotes the ribosome elongation rate (amino acids per hour), $l_{P}$ denotes the number of amino acids in the protein of interest, and $mRNA_{SS}$ denotes the steady-state mRNA concentration:
+where $\rm mRNA_{SS}$ denotes the steady state mRNA abundance, and $K_{TL}$ denotes the translation saturation constant.
+The maximum translation rate $V_{TL}^{max}$ was formulated as:
 \begin{equation}
-	mRNA_{SS}\simeq\frac{w_{TX}}{\lambda}
+	V_{TL}^{max} \equiv \left[K_{P} R_{2}\left(\frac{v_{TL}}{l_{P}}\right)\right]
+\end{equation}
+The term $K_{P}$ denotes the polysome amplification constant,
+$v_{TL}$ denotes the ribosome elongation rate (amino acids per hour),
+$l_{P}$ denotes the number of amino acids in the protein of interest,
+and $\rm mRNA_{SS}$ denotes the steady-state mRNA concentration:
+\begin{equation}
+	\rm mRNA_{SS}\simeq\frac{w_{TX}}{\lambda}
 \end{equation}where $\lambda$ denotes the rate constant controlling the mRNA degradation rate.
 
+The objective of the sequence specific flux balance calculation was to maximize the rate of CAT translation, $w_{TL}$.
+The total glucose uptake rate was bounded by [0,40 mM/h] according to experimental data;
+while the amino acid uptake rates were bounded by [0,30 mM/h], but did not reach the maximum flux.
+The CAT gene and protein sequences were taken from literature.
+The sequence specific flux balance linear program was solved using the GNU Linear Programming Kit (GLPK) v4.52 \cite{GLPK}.
+
+\subsubsection*{Calculation of the carbon yield.}
 The CAT carbon yield ($Y_{C}^{CAT}$) was calculated as the ratio of carbon produced as CAT dived by the carbon consumed as reactants (glucose and amino acids):
 \begin{equation}\label{eqn:yield-definition}
 	Y_{C}^{CAT}=\frac{\Delta\texttt{CAT}\cdot C_{CAT}}{\displaystyle\sum_{i=1}^{\mathcal{R}}\max(\Delta m_{i},0)\cdot C_{m_i}}
@@ -603,6 +624,7 @@ Arginine or glutamate were not considered in the yield calculations, as no exper
 Yield of the best-fit parameter set and the experimental data were calculated by setting $\Delta\texttt{CAT}$ equal to the final minus the initial CAT concentration,
 and setting $\Delta m_{i}$ equal to the initial minus the final reactant concentration.
 
+\subsubsection*{Quantification of uncertainty.}
 An ensemble of 100 sets of flux distributions was calculated for three different cases: unconstrained, constrained by transcription/translation rates, and constrained by transcription/translation rates and experimental measurements.
 For the unconstrained case, all rates were left unbounded, except the specific glucose uptake rate.
 An ensemble of flux distributions was then calculated by randomly sampling the maximum specific glucose uptake rate from within a range of 30 to 40 mM/h, determined from experimental data.
@@ -610,7 +632,8 @@ For the case constrained by transcription/translation rates, an ensemble was gen
 RNA polymerase levels were sampled between 60 and 80 nM, ribosome levels between 7 and 16 \textmu M, the RNA polymerase elongation rate between 20 and 30 nt/sec, and the ribosome elongation rate between 1.5 and 3 aa/sec \cite{2005_underwood_biotech, Garamella:2016aa}.
 For the case constrained by transcription/translation rates and experimental measurements, the lower and upper bounds on the fluxes for the data-informed metabolites were sampled within the range given by the experimental noise.
 This included the data for glucose, organic acids, energy species, and amino acids; CAT was not constrained by experimental data, but by the transcription/translation rates as stated above.
-The flux balance analysis problem was solved using the GNU Linear Programming Kit (v4.52) \cite{GLPK}.
+
+%The flux balance analysis problem was solved using the GNU Linear Programming Kit (v4.52)
 
 % The solution flux vector was used to calculate the carbon yield of CAT for the three FBA cases.
 % Glucose, oxygen, and amino acids were modeled as being imported into the system, while CAT synthesis and metabolite byproduct formation were modeled as export from the system.
@@ -622,17 +645,19 @@ The flux balance analysis problem was solved using the GNU Linear Programming Ki
 The authors declare that they have no competing interests.
 
 \section*{Author's contributions}
-J.V and A.Y directed the study. R.T, H.J and J.C conducted the cell culture measurements.
-J.V and W.D developed the reduced order HL-60 models and the parameter ensemble.
-W.D analyzed the model ensemble, and generated figures for the manuscript.
-The manuscript was prepared and edited for publication by W.D, A.Y and J.V.
-\textcolor{red}{JV: UPDATE THIS TEXT}
+J.V directed the modeling study.
+K.C and J.S conducted the cell free protein synthesis experiments.
+J.V, J.W, and N.H developed the cell free protein synthesis mathematical model, and parameter ensemble.
+J.V and M.V performed the sequence specific flux balance analysis calculations.
+The manuscript was prepared and edited for publication by J.S, N.H, M.V, J.W and J.V.
 
 \section*{Acknowledgements}
 We gratefully acknowledge the suggestions from the anonymous reviewers to improve this manuscript.
 
 \section*{Funding}
-This study was supported by a National Science Foundation Graduate Research Fellowship (DGE-1333468) to N.H and by an award from the US Army and Systems Biology of Trauma Induced Coagulopathy (W911NF-10-1-0376) to J.V for the support of M.V.
+This study was supported by a National Science Foundation Graduate Research Fellowship (DGE-1333468) to N.H.
+Research reported in this publication was also supported by the Systems Biology Coagulopathy of Trauma Program
+with support from the US Army Medical Research and Materiel Command under award number W911NF-10-1-0376.
 
 \clearpage
 

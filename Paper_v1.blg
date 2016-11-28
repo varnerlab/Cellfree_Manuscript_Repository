@@ -1,54 +1,62 @@
 This is BibTeX, Version 0.99d (TeX Live 2015)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: Paper_v1.aux
-The style file: plos2009.bst
+The style file: plos2015.bst
 Database file #1: References_v1.bib
-Warning--entry type for "GLPK" isn't style-file defined
---line 293 of file References_v1.bib
-Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=20001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Too many commas in name 1 of "Moon TS, Lou C, Tamsir A, Stanton BC, Voigt CA" for entry Moon:2012aa
-while executing---line 2643 of file plos2009.bst
+while executing---line 1875 of file plos2015.bst
 Too many commas in name 1 of "Moon TS, Lou C, Tamsir A, Stanton BC, Voigt CA" for entry Moon:2012aa
-while executing---line 2643 of file plos2009.bst
+while executing---line 1875 of file plos2015.bst
+"database on the Internet" is a string literal, `type' is a missing field
+---they aren't the same literal types for entry GLPK
+while executing---line 1875 of file plos2015.bst
+ptr=1, stack=
+{GNU Linear Programming Kit, Version 4.52}
+---the literal stack isn't empty for entry GLPK
+while executing---line 1875 of file plos2015.bst
 You've used 47 entries,
-            2441 wiz_defined-function locations,
-            897 strings with 15497 characters,
-and the built_in function-call counts, 36479 in all, are:
-= -- 3346
-> -- 637
+            3058 wiz_defined-function locations,
+            985 strings with 15451 characters,
+and the built_in function-call counts, 76908 in all, are:
+= -- 9726
+> -- 649
 < -- 0
-+ -- 319
-- -- 159
-* -- 3061
-:= -- 4412
-add.period$ -- 95
++ -- 428
+- -- 162
+* -- 6363
+:= -- 8490
+add.period$ -- 208
 call.type$ -- 47
-change.case$ -- 47
+change.case$ -- 0
 chr.to.int$ -- 0
-cite$ -- 94
-duplicate$ -- 3630
-empty$ -- 3764
-format.name$ -- 202
-if$ -- 8066
+cite$ -- 47
+duplicate$ -- 6429
+empty$ -- 7279
+format.name$ -- 205
+if$ -- 17924
 int.to.chr$ -- 0
 int.to.str$ -- 47
-missing$ -- 485
-newline$ -- 251
+missing$ -- 439
+newline$ -- 259
 num.names$ -- 46
-pop$ -- 573
+pop$ -- 701
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 278
+skip$ -- 670
 stack$ -- 0
-substring$ -- 5077
-swap$ -- 967
+substring$ -- 14635
+swap$ -- 1107
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 296
+while$ -- 437
 width$ -- 49
-write$ -- 530
-(There were 2 error messages)
+write$ -- 560
+(There were 4 error messages)
