@@ -315,17 +315,17 @@ However, the accumulation of acetate and lactate signifies that the system is no
 The system produced NADH through lactate dehydrogenase as well as through pyridine nucleotide transhydrogenase (\textit{pntAB}) to power oxidative phosphorylation.
 Oxidative phosphorylation lead to a high redox ratio contributing to the accumulation of acetate overflow and diverting flux away from the TCA cycle.
 This suggested CAT production could be increased by reducing the accumulation of acetate and lactate.
-To investigate this further, we simulated potential knockouts with constrained transcription/translation rates.
-Knocking out the \textit{gnd} reaction decreased acetate flux by more than half.
-In addition, less uptake of amino acids were required which increased the carbon yield of CAT by 2\% (up to approximately 8\%) compared to the control (no knockouts).
-The simulation showed an increase in oxidative phosphorylation flux and the majority of flux traveling through the pentose phosphate pathway.
+To investigate this further, we simulated potential knockouts with constrained transcription/translation rates  (Fig.~\ref{fig:flux_ko}).
+Knocking out the \textit{gnd} reaction, the first step in Entner-Doudoroff pathway, decreased acetate flux by about half.
+In addition, less uptake of amino acids were required which increased the carbon yield of CAT by 2.7\% (up to approximately 25.3\% $\pm$ 3.6\%) compared to the control (no knockouts).
+The simulation showed an increase in oxidative phosphorylation flux and the flux splitting between glycolysis and pentose phosphate pathway.
 A second simulation with both \textit{gnd} and phosphate acetyltransferase knocked out,
-showed less carbon was needed to meet the translation bound, which increased the carbon yield by 6\% compared to the control (up to approximately 14\%).
-In the dual knockout, flux towards acetate was mostly coming from amino acid degradation.
-Sixty percent of the carbon flux traveled through glycolysis, while the remaining traveled through the pentose phosphate pathway.
+showed less carbon was needed to meet the translation bound, which increased the carbon yield by 4\% compared to the control (up to approximately 26.7\% $\pm$ 3.4\%).
+In the dual knockout, flux towards acetate was almost negligible with some coming from amino acid degradation.
+Sixty-one percent of the carbon flux traveled through glycolysis, while the remaining traveled through pentose phosphate pathway.
 This was similar to the flux distribution of the unconstrained case (case i).
 Taken together, the dual knockout decreased acetate production and required less amino acid consumption, thus it is a promising strategy to increase the CAT carbon yield.
-\textcolor{red}{MIKE: CAN WE GET A FIGURE THAT SHOWS THE KO FLUXES -and- WHAT ARE THE ERRORS ON THE YIELDS?}
+
 
 % To investigate this further, we simulated potential knockouts with constrained transcription/translation rates,
 % and constrained the specific glucose and amino acid rates to the same simulated without knockouts.
@@ -386,7 +386,7 @@ Thus, oxidative phosphorylation is a potential area for improvement for CFPS per
 Comparing the theoretical maximum carbon yield of CAT from ssFBA predictions to those of the kinetic model and experimental measurements suggests that there is potential for increasing CAT yield as well as CFPS performance.
 %Yield performance can be potentially improved by diverting carbon flux away from acetate.
 The model and experimental yields were 36\% of the theoretical maximum and 23\% of a physiologically constrained case.
-Knockouts of \textit{gnd} and phosphate acetyltransferase show that carbon can be diverted away from acetate and potentially toward CAT or other proteins of interest expressed in CFPS.
+Knockouts of \textit{gnd} and phosphate acetyltransferase show that carbon can be diverted away from acetate and toward CAT or other proteins of interest expressed in CFPS.
 Another limitation to be addressed in CFPS is the transcription and translation description, since protein production is ultimately bounded by these kinetic rates.
 Li et al. have increased productivity of firefly lucifease by 5-fold in CFPS systems by adding and adjusting factors that affect transcription and translation such as elongation factors, ribosome recyclcing factor, release factors, chaperones, BSA, and tRNAs \cite{2014_li_PlosOne}.
 Underwood and coworkers have also shown that an increase in ribosome levels does not significantly increase protein yields or rates; however, adding elongation factors increased yields by 23\% at 30 minutes \cite{2005_underwood_biotech}.
@@ -726,9 +726,16 @@ with support from the US Army Medical Research and Materiel Command under award 
 
 \begin{figure}[ht]
 \centering
-\includegraphics[width=0.8\textwidth]{./Figures/CAT_flux_final.pdf}
+\includegraphics[width=0.75\textwidth]{./Figures/CAT_flux_final.pdf}
 \caption{Flux profile for glycolysis, pentose phosphate pathway, Entner-Doudoroff pathway, TCA cycle, NADPH/NADH transfer, and oxidative phosphorylation. Sequence-specific FBA flux value (mean ± standard deviation) across ensemble for 1 hr, normalized to glucose uptake flux. Flux distribution for three different cases: unconstrained except for glucose uptake (top row), constrained by transcription and translation rates (second row), and constrained by transcription, translation rates and experimental measurements where available (bottom row).}
 \label{fig:Network}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.75\textwidth]{./Figures/CAT_flux_ko.pdf}
+\caption{Flux profile with knockouts for glycolysis, pentose phosphate pathway, Entner-Doudoroff pathway, TCA cycle, NADPH/NADH transfer, and oxidative phosphorylation. Sequence-specific FBA flux value (mean ± standard deviation) across ensemble for 1 hr, normalized to glucose uptake flux. Flux distribution for three different cases: constrained by transcription and translation rates (top row), constrained by transcription and translation rates with \textit{gnd} knocked out (second row), and constrained by transcription and translation rates with \textit{gnd} and phosphate acetyltransferase knocked out.}
+\label{fig:flux_ko}
 \end{figure}
 
 \clearpage
