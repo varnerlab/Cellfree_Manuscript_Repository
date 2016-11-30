@@ -233,38 +233,55 @@ However, while the ensemble described the experimental data, it was unclear whic
 
 To better understand which parameters and parameter combinations influenced the performance of the kinetic model, we performed sensitivity analysis (Fig.~\ref{fig:Sensitivity}).
 We perturbed each $V^{max}$ parameter, either individually or in pairwise combinations and measured the change in either CAT production or the overall system state.
-CAT production was most dependent upon the abundance of cofactors such as ATP, GTP, NADH and NADPH and the metabolite pyruvate.
 CAT production was most sensitive to the CAT synthesis reaction, oxidative phosphorylation, and the pyruvate-consuming alanine synthesis reaction (Fig.~\ref{fig:Sensitivity}, top, section A).
-Taking into account these three reactions, and the next 16 most important reactions (section B), we saw a common theme of reactions involving the cofactors ATP, GTP, NADH, and NADPH
-as well as the metabolites pyruvate and glutamate.
-Glutamate was important as a precursor for the synthesis of other amino acids required by CAT production.
+%Taking into account these three reactions, and the next 16 most important reactions (section B), we saw a common theme of reactions involving the cofactors ATP, NADH, NADPH, and coenzyme A, as well as the metabolites pyruvate and glutamate.
+We saw a common theme of the most important reactions producing or consuming the cofactors ATP, NADH, NADPH, and coenzyme A, as well as the metabolites pyruvate and glutamate.
+Of the 25 reactions to which CAT production was most sensitive, 9 produced or consumed ATP, making it the most represented in these top reactions (with the exception of hydrogen and phosphate ion).
+The next most represented were pyruvate, glutamate, and ADP with 7 reactions each, followed by coenzyme A, $\alpha$-ketoglutarate, NAD/NADH, and NADP/NADPH, with 6 reactions each.
+This makes sense, as glutamate was an important precursor for the synthesis of other amino acids required by CAT production.
 Meanwhile, the cofactors provided energy to power CAT synthesis, while pyruvate was important for energy generation following glucose depletion.
 In addition, pyruvate was required for the synthesis of several amino acids.
 The pairwise sensitivities (off-diagonal elements) were different from the corresponding first-order sensitivities (diagonal elements), and led to interesting outcomes.
-The combination of certain reactions had a greater effect on CAT production than that of the individual reactions by themselves.
+The combination of certain reactions had a much greater or lesser effect on CAT production than that of the individual reactions by themselves.
 For example, glutamine synthesis and arginine degradation were both among the most important reactions to CAT production (they ranked 5th and 10th, respectively).
 This was likely because they both affected the sensitive glutamine-glutamate balance; glutamine synthesis consumes glutamate, while arginine degradation produces it.
 However, when both were perturbed, their combined effect on the model was low, as the respective contributions to consumption and production of glutamate cancelled.
-\textcolor{red}{NICK: ARE THERE EXAMPLES OF POSITIVE SYNERGY?}
+An example of positive synergy can be seen in cometabolite interconversion.
+Pyridine nucleotide transhydrogenase catalyzes two reactions: one converts NAD and NADPH into NADH and NADP, while the other does the reverse and also generates a proton gradient.
+Increasing one or the other has little effect on the model, as the reaction is hampered by the loss of reactants.
+Increasing both, however, allows all cometabolites to be conserved and the reactions to continue unhindered.
+Thus, the pairwise sensitivity is much higher than the sum of the first-order sensitivities.
 
-The overall system state was also sensitive to cofactors and substrates; however, instead of pyruvate and glutamate, the substrates driving metabolism were glucose and pyruvate.
-The metabolism as a whole was most sensitive to glucose uptake via GTP and the forward reaction of lactate dehydrogenase, consuming pyruvate (Fig.~\ref{fig:Sensitivity}, bottom, section F).
-These two and the next 30 most important reactions (section G) largely involved cofactors, especially ATP and NADPH, as well as substrate-consuming reactions and oxidative phosphorylation.
-The system state had even more pairwise sensitivities that differed from the corresponding first-order sensitivities and stood out as significant.
-For example, the first-order effect of alanine synthesis was large; it consumed both pyruvate and glutamate, two key species in the network.
-However, there were enough reactions that, when paired with alanine synthesis, had little effect on the model;
-for example, malic enzyme produces pyruvate that can be consumed by alanine synthesis.
-Thus, the total-order alanine synthesis sensitivity was low, placing it at the very bottom of section I.
-Another interesting result was the intersection of sections F and G with section J.
-The 53 reactions in section J were turned off in the best-fit set ($V^{max}=0$);
-therefore, the perturbation of these reactions had no effect on the model.
-As a result, all pairwise sensitivities with reactions in section J were pseudo first-order sensitivities for the other reactions.
-Interestingly, many reactions in section F and several in section G showed their highest sensitivities when paired with the "non-effects" of section J.
-\textcolor{red}{NICK: DOES THIS MAKE SENSE? WHY ARE THESE DIFFERENT THAN THE SINGLE PERTURBATIONS?}
-Of these, three involved pyruvate, strengthening its role as a key metabolite; the others were glucose consumption via GTP/CTP-specific hexokinases,
-fumarate reductase, and SO$_4$ utilization.
-This suggested that these reactions' effects on the model were canceled out or lessened by most other reactions, but were of course not affected by the reactions in section J.
-This was also likely the reason that section J ranked above section K, despite having no effect on the model themselves.
+The overall system state was also sensitive to cofactors and substrates; however, instead of pyruvate and glutamate, the substrates driving metabolism were pyruvate and G3P.
+The system was most sensitive to an oxidative phosphorylation reaction (cytochrome oxidase), which converted ubiquinol to ubiquinone while generating a proton gradient.
+The next 4 most important reactions were all consumers of pyruvate: lactate dehydrogenase, pyruvate formate lyase, alanine synthesis, and PEP synthase.
+Of the 25 reactions to which the system was most sensitive, 7 produced or consumed pyruvate and 7 participated in NAD/NADH exchange.
+With the exception of hydrogen, these were the most represented species in the top 25 reactions.
+Also important were coenzyme A (5 reactions) and acetyl coenzyme A (4 reactions), as well as ubiquinone/ubiquinol, NADP/NADPH, G3P, and ATP  (4 reactions each).
+%We saw a common theme of the most important reactions producing or consuming the cofactors ATP, NADH, NADPH, ubiquinone/ubiquinol, and coenzyme A, as well as the metabolites pyruvate and G3P.
+%These two and the next 30 most important reactions (section G) largely involved cofactors, especially ATP and NADPH, as well as substrate-consuming reactions and oxidative phosphorylation.
+The system state also had pairwise sensitivities that differed from the corresponding first-order sensitivities and stood out as significant.
+For example, alanine degradation was among the most important reactions, as it produced pyruvate; GMP synthesis was also moderately important, as it produced glutamate.
+However, when both reactions were increased, the combined effect on the model was almost zero.
+%This can be understood by also considering a third reaction: alanine synthesis from pyruvate and glutamate.
+This can be understood by considering the reactions that involve both pyruvate and glutamate: they all either produced both of these substrates or consumed both.
+When alanine degradation was increased, the excess pyruvate stimulated these reactions to consume both pyruvate and glutamate; the amounts of both of these substrates could not be conserved.
+But when GMP synthesis was perturbed as well, the glutamate deficiency was corrected, cancelling much of the effect on the system.
+One of the pyruvate- and glutamate-consuming reactions was alanine synthesis; in this case, the levels of pyruvate, glutamate, and alanine were all virtually unchanged.
+%An example of positive synergy can be seen in the interplay of amino acid synthesis and the TCA cycle: aspartate synthesis and the reverse reaction of succinyl coenzyme A synthetase are both relatively unimportant to the system.
+An example of positive synergy can be seen in histidine synthesis, one of the least influential reactions that consumes three units of ATP.
+When perturbed in combination with the reverse reaction of succinyl coenzyme A synthetase, another reaction with little overall effect on the model, the combined effect on the system is much greater.
+This may be because the reverse reaction of succinyl coenzyme A synthetase produced ATP, which further stimulated histidine synthesis.
+%Another interesting result was the intersection of sections F and G with section J.
+%The 53 reactions in section J were turned off in the best-fit set ($V^{max}=0$);
+%therefore, the perturbation of these reactions had no effect on the model.
+%As a result, all pairwise sensitivities with reactions in section J were pseudo first-order sensitivities for the other reactions.
+%Interestingly, many reactions in section F and several in section G showed their highest sensitivities when paired with the "non-effects" of section J.
+%\textcolor{red}{NICK: DOES THIS MAKE SENSE? WHY ARE THESE DIFFERENT THAN THE SINGLE PERTURBATIONS?}
+%Of these, three involved pyruvate, strengthening its role as a key metabolite; the others were glucose consumption via GTP/CTP-specific hexokinases,
+%fumarate reductase, and SO$_4$ utilization.
+%This suggested that these reactions' effects on the model were canceled out or lessened by most other reactions, but were of course not affected by the reactions in section J.
+%This was also likely the reason that section J ranked above section K, despite having no effect on the model themselves.
 Taken together, sensitivity analysis identified blocks of parameters that either individually, or in combination influenced model performance.
 
 Gene knockouts in the electron transport chain significantly reduced the performance of the CFPS reaction (Fig.~\ref{fig:oxphos_ko}).
