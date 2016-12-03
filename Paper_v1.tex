@@ -342,37 +342,34 @@ by sampling plausible ranges for these parameters.
 The ensemble of ssFBA simulations predicted CAT formation as a function of time during the first hour of production when constrained by the experimental metabolite data (Fig.~\ref{fig:CATProdYield}A).
 Thus, the molecular description of transcription and translation were consistent with experimental measurements.
 Next, to gauge the performance of the CFPS reaction, we next calculated the CAT carbon yield for three classes of constraints:
-(i) theoretical maximum glucose, amino acid and oxygen upper bounds, and no transcriptional/translational constraints;
-(ii) theoretical maximum glucose, amino acid and oxygen upper bounds, and realistic transcriptional/translational constraints; and
-(iii) metabolite fluxes constrained by the CAT data, and realistic transcriptional/translational constraints (Fig.~\ref{fig:CATProdYield}B).
-The unconstrained theoretical maximum CAT carbon yield (case i) was 36.3\% $\pm$ 2.0\% (Fig.~\ref{fig:CATProdYield}B, left); this represents optimal network performance if glucose, oxygen and amino acids were produced or consumed at their upper bounds, and transcription and translation were unbounded.
-On the other hand, for realistic transcription and translation constraints (case ii), the optimal CAT carbon yield decreased to 22.6\% $\pm$ 3.0\% (Fig.~\ref{fig:CATProdYield}B, middle).
-Lastly, when both realistic metabolite and transcription/translation constraints were applied (case iii), the predicted carbon yield was 6.2\% $\pm$ 2.0\%
+(i) theoretical maximum glucose, amino acid and oxygen upper bounds, and realistic transcriptional/translational constraints;
+(ii) theoretical maximum glucose, amino acid and oxygen upper bounds, realistic transcriptional/translational constraints and knockouts of amino acid synthesis reactions of amino acids supplemented in the \textit{E. coli} extract preparation.  
+(iii) metabolite fluxes constrained by the CAT data, and realistic transcriptional/translational constraints and knockouts of amino acid synthesis reactions of amino acids supplemented in the \textit{E. coli} extract preparation (Fig.~\ref{fig:CATProdYield}B).
+The physiological theoretical maximum CAT carbon yield (case i) was 21.8\% $\pm$ 2.8\% (Fig.~\ref{fig:CATProdYield}B, left); this represents optimal network performance if glucose, oxygen and amino acids were produced or consumed at their upper bounds, with bounded transcription and translation rates (96\% without glucose contribution).
+On the other hand,(case ii) the optimal CAT carbon yield without certain amino acid synthesis reactions decreased to 18.2\% $\pm$ 3.0\% (Fig.~\ref{fig:CATProdYield}B, middle).
+Lastly, when transcription/translation constraints were applied with experimental measurements of metabolite measurements (case iii), the predicted carbon yield was 6.0\% $\pm$ 2.0\%
 %By comparison, the best-fit parameter set for the kinetic model predicted a CAT carbon yield of 8.6\% $\pm$ 0.4\%, equivalent to 23\% of the theoretical maximum (i) and 35\% of the physiological case (ii).
 By comparison, the best-fit parameter set for the kinetic model predicted a CAT carbon yield (without arginine and glutamate) of 7.9\%, equivalent to 35\% of the physiological case (ii).
 The experimental dataset had a CAT carbon yield of 8.2\%, similar to both the kinetic model and the experimentally constrained ssFBA calculation (case iii).
 Thus, while the CFPS reaction was not optimal, the ssFBA calculations suggested that an approximately three-fold increase in carbon yield was theoretically possible.
 
 To investigate the differences in carbon yields, we compared the flux distributions predicted by ssFBA simulations for the different constraint cases  (Fig.~\ref{fig:Network}).
-The constrained cases (ii \& iii) heavily utilized the first step in the pentose phosphate pathway to generate NADPH;
+All cases heavily utilized the first step in the pentose phosphate pathway to generate NADPH;
 the carbon flux then continued through the Entner–Doudoroff pathway toward pyruvate.
-For case ii, the majority of the flux proceeded toward acetate accumulation, whereas in case iii, the flux accumulated as pyruvate, lactate, and acetate with some flux through the TCA cycle.
-In comparison, the unconstrained case (i) showed the majority of flux traveling through glycolysis towards pyruvate, leading to accumulation of lactate, acetate and malate.
+The majority of the flux proceeded toward acetate accumulation, whereas in case ii, the flux accumulated as lactate and acetate, meanwhile for case iii the flux was distributed between pyruvate, lactate, and acetate.
 In all cases, the energy source was primarily oxidative phosphorylation, and to a lesser extent the TCA cycle.
-However, the accumulation of acetate and lactate signifies that the system is not operating at its highest efficiency.
+However, the accumulation of pyruvate, lacatate, and acetate signifies that the system is not operating at its highest efficiency (case iii).
 The system produced NADH through lactate dehydrogenase as well as through pyridine nucleotide transhydrogenase (\textit{pntAB}) to power oxidative phosphorylation.
 Oxidative phosphorylation lead to a high redox ratio contributing to the accumulation of acetate overflow and diverting flux away from the TCA cycle.
 This suggested CAT production could be increased by reducing the accumulation of acetate and lactate.
 To investigate this further, we simulated potential knockouts with constrained transcription/translation rates  (Fig.~\ref{fig:flux_ko}).
-Knocking out the \textit{gnd} reaction, the first step in Entner-Doudoroff pathway, decreased acetate flux by about half.
-In addition, less uptake of amino acids were required which increased the carbon yield of CAT by 2.7\% (up to approximately 25.3\% $\pm$ 3.6\%) compared to the control (no knockouts).
-The simulation showed an increase in oxidative phosphorylation flux and the flux splitting between glycolysis and pentose phosphate pathway.
+Knocking out the \textit{gnd} reaction, the first step in Entner-Doudoroff pathway, decreased acetate flux by about twenty percent
+In addition, less uptake of amino acids were required which increased the carbon yield of CAT by 1.1\% (up to approximately 22.9\% $\pm$ 2.4\%) compared to the control (no knockouts) for case i.
+The simulation showed an increase in oxidative phosphorylation flux and the flux heavily utilizing glycolysis instead of pentose phosphate pathway.
 A second simulation with both \textit{gnd} and phosphate acetyltransferase knocked out,
-showed less carbon was needed to meet the translation bound, which increased the carbon yield by 4\% compared to the control (up to approximately 26.7\% $\pm$ 3.4\%).
+showed very similar results as the first single knockout.
 In the dual knockout, flux towards acetate was almost negligible with some coming from amino acid degradation.
-Sixty-one percent of the carbon flux traveled through glycolysis, while the remaining traveled through pentose phosphate pathway.
-This was similar to the flux distribution of the unconstrained case (case i).
-Taken together, the dual knockout decreased acetate production and required less amino acid consumption, thus it is a promising strategy to increase the CAT carbon yield.
+Taken together, a \textit{gnd} knockout decreased acetate production and required less amino acid consumption, thus it is a promising strategy to increase the CAT carbon yield.
 
 
 % To investigate this further, we simulated potential knockouts with constrained transcription/translation rates,
@@ -435,7 +432,7 @@ Thus, oxidative phosphorylation is a potential area for improvement for CFPS per
 %Yield performance can be potentially improved by diverting carbon flux away from acetate.
 Comparing the physiologically realistic carbon yield of CAT from ssFBA predictions to those of the kinetic model and experimental measurements suggests that there is potential for increasing CAT yield as well as CFPS performance.
 %The model and experimental yields were 35\% of the physiologically constrained case.
-Knockouts of \textit{gnd} and phosphate acetyltransferase show that carbon can be diverted away from acetate and toward CAT or other proteins of interest expressed in CFPS.
+A knockout of \textit{gnd} and shows that carbon can be diverted away from acetate and toward CAT or other proteins of interest expressed in CFPS.
 Another limitation to be addressed in CFPS is the transcription and translation description, since protein production is ultimately bounded by these kinetic rates.
 Li et al. have increased productivity of firefly lucifease by 5-fold in CFPS systems by adding and adjusting factors that affect transcription and translation such as elongation factors, ribosome recyclcing factor, release factors, chaperones, BSA, and tRNAs \cite{2014_li_PlosOne}.
 Underwood and coworkers have also shown that an increase in ribosome levels does not significantly increase protein yields or rates; however, adding elongation factors increased yields by 23\% at 30 minutes \cite{2005_underwood_biotech}.
@@ -667,7 +664,7 @@ The CAT carbon yield ($Y_{C}^{CAT}$) was calculated as the ratio of carbon produ
 \end{equation}
 where $\Delta\texttt{CAT}$ denotes the abundance of CAT produced, $C_{CAT}$ denotes carbon number of CAT, $\mathcal{R}$ denotes the number of reactants,
 $\Delta m_{i}$ denotes the amount of the $i^{th}$ reactant consumed (never allowed to be negative), and $C_{m_i}$ denotes the carbon number of the $i^{th}$ reactant.
-For flux balance analysis, arginine and glutamate were excluded from the yield calculations, as no experimental measurements were available for these amino acids.
+Arginine and glutamate were excluded from the yield calculations for the experimental yield calculation, as no experimental measurements were available for these amino acids.
 Yield of the best-fit parameter set and the experimental data were calculated by setting $\Delta\texttt{CAT}$ equal to the final minus the initial CAT concentration,
 and setting $\Delta m_{i}$ equal to the initial minus the final reactant concentration.
 The individual CAT production and substrate consumption terms for the best-fit set, kinetic models with knockouts, and experimental data are shown in Table~\ref{tbl:yield_breakdown}.
@@ -782,12 +779,6 @@ with support from the US Army Medical Research and Materiel Command under award 
 \label{fig:Network}
 \end{figure}
 
-\begin{figure}[ht]
-\centering
-\includegraphics[width=0.75\textwidth]{./Figures/CAT_flux_ko.pdf}
-\caption{Flux profile with knockouts for glycolysis, pentose phosphate pathway, Entner-Doudoroff pathway, TCA cycle, NADPH/NADH transfer, and oxidative phosphorylation. Sequence-specific FBA flux value (mean ± standard deviation) across ensemble for 1 hr, normalized to glucose uptake flux. Flux distribution for three different cases: constrained by transcription and translation rates (top row), constrained by transcription and translation rates with \textit{gnd} knocked out (second row), and constrained by transcription and translation rates with \textit{gnd} and phosphate acetyltransferase knocked out.}
-\label{fig:flux_ko}
-\end{figure}
 
 %\begin{center}
 %  \captionof{table}{Your caption here}
