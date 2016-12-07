@@ -312,6 +312,10 @@ This was due to its role in generating other amino acids and as a possible energ
 The much greater consumption of this one amino acid was made possible by its much larger initial condition, as it was present in the cell media in the form of magnesium glutamate, ammonium glutamate, and potassium glutamate [CITE? THESIS NOT CURRENTLY IN BIBLIOGRAPHY].
 Glucose made the next largest contribution, between 20\% and 30\%, dwarfing all amino acids other than glutamate.
 This makes sense, as glucose powers the entire metabolism during the first hour, including energy species synthesis and amino acid synthesis.
+The knockouts in oxidative phosphorylation also reduced the energy efficiency of CAT production  (Fig.~\ref{fig:oxphos_ko}).
+The best-fit set, $\Delta$app, and experimental dataset had efficiencies of 1.8-1.9\%, $\Delta$nuo had an efficiency of 1.6\%, and $\Delta$cyd and $\Delta$cyd$\Delta$nuo$\Delta$app had efficiencies of 0.6\%.
+This was in line with the effect of knockouts on yield, which in turn was more or less proportional to the total amount of CAT produced in each case.
+Taken together, these results show that oxidative phosphorylation, particularly \textit{cyd}, is important to efficient CAT production.
 
 Furthermore, we examined the proportion of amino acid consumption that was due to CAT synthesis in the best-fit set (Table~\ref{tbl:AA_breakdown}).
 Eight of the 20 amino acids had a percentage of 100\% or higher.
@@ -675,6 +679,13 @@ Consumption of amino acids via CAT synthesis was calculated as a percentage of t
 Consumption toward CAT was calculated as CAT production times the stoichiometric coefficient for that amino acid in the CAT synthesis reaction.
 Total net consumption was calculated as amino acid concentration at 3 hours minus concentration at 0 hours, and was excluded if negative.
 
+Energy efficiency was also calculated for best-fit set, knockouts, and experimental data, formulated as:
+\begin{equation}\label{eqn:energy-efficiency-definition}
+	\rm Efficiency=\frac{\Delta\texttt{CAT}\cdot \left(2*\rm {ATP}_{CAT}+\rm {GTP}_{CAT}\right)}{\Delta\texttt{GLC}\cdot \rm {ATP}_{GLC}}
+\end{equation}
+where $\rm Efficiency$ denotes the energy efficiency of CAT production, $\rm {ATP}_{CAT}$ denotes the stoichiometric coefficient of ATP in CAT synthesis (multiplied by 2 because AMP, rather than ADP, is a product of CAT synthesis), $\rm {GTP}_{CAT}$ denotes the stoichiometric coefficient of GTP in CAT synthesis, and $\rm {ATP}_{GLC}$ denotes the number of ATP molecules ideally produced from one molecule of glucose.
+$\rm {ATP}_{CAT}$ = 219, $\rm {GTP}_{CAT}$ = 438, $\rm {ATP}_{GLC}$ = 24.
+
 \subsubsection*{Quantification of uncertainty.}
 An ensemble of 100 sets of flux distributions was calculated for three different cases: unconstrained, constrained by transcription/translation rates, and constrained by transcription/translation rates and experimental measurements.
 For the unconstrained case, all rates were left unbounded, except the specific glucose uptake rate.
@@ -870,8 +881,8 @@ with support from the US Army Medical Research and Materiel Command under award 
 
 \begin{table}
 \centering
-    \caption{CAT carbon yield breakdown for best-fit set, knockouts, and experimental data. Carbon produced as CAT, carbon consumed as glucose and each amino acid, sum of consumed species (with and without arginine and glutamate), and yield  (with and without arginine and glutamate).}
-    \renewcommand{\arraystretch}{1.3}
+    \caption{CAT carbon yield breakdown for best-fit set, knockouts, and experimental data. Carbon produced as CAT, carbon consumed as glucose and each amino acid, sum of consumed species (with and without arginine and glutamate), and yield  (with and without arginine and glutamate). Energy efficiency for best-fit set, knockouts, and experimental data.}
+    \renewcommand{\arraystretch}{1.25}
     \begin{tabular}{lrrrrrr} \toprule
         Carbon Produced (mM) & Best-fit & $\Delta$cyd & $\Delta$nuo & $\Delta$app & $\Delta$cyd $\Delta$nuo $\Delta$app & Data \\ \hline
         CAT & 20.9 & 6.5 & 18.1 & 21.4 & 5.1 & 21.6 \\ \midrule
@@ -900,7 +911,9 @@ with support from the US Army Medical Research and Materiel Command under award 
         Sum & 767.1 & 755.3 & 791.3 & 780.1 & 696.8 & - \\ \hline
         Sum w/o ARG,GLU & 264.3 & 249.3 & 262.0 & 264.6 & 193.7 & 263.7 \\ \midrule
         Yield & 2.7\% & 0.9\% & 2.3\% & 2.7\% & 0.7\% & - \\ \hline
-        Yield w/o ARG, GLU & 7.9\% & 2.6\% & 6.9\% & 8.1\% & 2.7\% & 8.2\% \\ \bottomrule
+        Yield w/o ARG, GLU & 7.9\% & 2.6\% & 6.9\% & 8.1\% & 2.7\% & 8.2\% \\ \midrule
+        Energy Efficiency & 1.8\% & 0.6\% & 1.6\% & 1.8\% & 0.6\% & 1.9\% \\ \bottomrule
+%        Efficiencies based on ATP number of 24: 1.811977 & 0.558704 & 1.565814 & 1.849871 & 0.600006 & 1.873067
     \end{tabular}
 \label{tbl:yield_breakdown}
 \end{table}
@@ -908,7 +921,7 @@ with support from the US Army Medical Research and Materiel Command under award 
 \begin{table}
 \centering
     \caption{Amino acid consumption toward CAT as a percentage of total amino acid consumption, for the best-fit set. Total consumption defined as decrease in amino acid concentration over 3 hours, such that for amino acids with synthesis active, percentage may be greater than 100\%. Alanine and glutamine did not decrease over the timecourse.}
-    \renewcommand{\arraystretch}{1.3}
+    \renewcommand{\arraystretch}{1.25}
     \begin{tabular}{lrrr} \toprule
         Species & Total Consumption & Consumption Toward CAT & Percentage \\ \hline
 %        ALA  & -3.852  & 0.267  & -6.9\% \\ \hline

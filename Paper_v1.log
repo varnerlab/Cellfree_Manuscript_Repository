@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.4.25)  2 DEC 2016 17:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.4.25)  6 DEC 2016 20:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -998,7 +998,7 @@ File: ts1phv.fd 2001/06/04 scalable font definitions for TS1/phv.
 [8] [9] [10] [11] [12
 
 ] [13] [14] [15]
-Overfull \hbox (2.4994pt too wide) in paragraph at lines 471--472
+Overfull \hbox (2.4994pt too wide) in paragraph at lines 474--475
  \OT1/phv/b/n/12 For-mu-la-tion and so-lu-tion of the model equa-tions. \OT1/ph
 v/m/n/12 We used or-di-nary dif-fer-en-tial equa-
  []
@@ -1006,13 +1006,13 @@ v/m/n/12 We used or-di-nary dif-fer-en-tial equa-
 [16
 
 ]
-Overfull \hbox (9.42928pt too wide) in paragraph at lines 520--527
+Overfull \hbox (9.42928pt too wide) in paragraph at lines 523--530
 \OT1/phv/m/n/12 [[]], PEP syn-thetase [[], []], isoc-i-trate de-hy-dro-ge-nase 
 [[], []], and isoc-i-trate lyase/malate
  []
 
 [17] [18]
-Overfull \hbox (19.01259pt too wide) in paragraph at lines 562--571
+Overfull \hbox (19.01259pt too wide) in paragraph at lines 565--574
 \OT1/phv/m/n/12 where $\OMS/cmsy/m/n/12 S[]$ \OT1/phv/m/n/12 de-notes the sen-s
 i-tiv-ity of CAT pro-duc-tion to the $\OML/cmm/m/it/12 i[]$ \OT1/phv/m/n/12 and
  $\OML/cmm/m/it/12 j[]$ \OT1/phv/m/n/12 pa-ram-e-ters, $[]\OT1/cmr/m/n/12 (\OML
@@ -1020,11 +1020,11 @@ i-tiv-ity of CAT pro-duc-tion to the $\OML/cmm/m/it/12 i[]$ \OT1/phv/m/n/12 and
  []
 
 [19]
-Overfull \hbox (8.61337pt too wide) in alignment at lines 608--617
+Overfull \hbox (8.61337pt too wide) in alignment at lines 611--620
  [][][] []
  []
 
-[20] [21] [22] [23] [24
+[20] [21] [22] [23] [24] [25
 
 ] (./Paper_v1.bbl
 Underfull \hbox (badness 2126) in paragraph at lines 36--40
@@ -1032,7 +1032,7 @@ Underfull \hbox (badness 2126) in paragraph at lines 36--40
  D, et al.
  []
 
-[25
+[26
 
 ]
 Underfull \hbox (badness 1168) in paragraph at lines 92--96
@@ -1040,92 +1040,96 @@ Underfull \hbox (badness 1168) in paragraph at lines 92--96
 e-con-struc-tion of
  []
 
-[26]
+[27]
 Underfull \hbox (badness 3407) in paragraph at lines 152--157
 []\OT1/phv/m/n/12 Wayman JA, Sagar A, Varner JD.  Dy-namic Mod-el-ing of Cell-F
 ree Bio-
  []
 
-[27]
+[28]
 Underfull \hbox (badness 2310) in paragraph at lines 221--226
 []\OT1/phv/m/n/12 Hines JK, Fromm HJ, Hon-za-tko RB.  Struc-tures of ac-ti-vate
 d fructose-1,6-
  []
 
-[28]) [29]
-<./Figures/allostericControl_noindex.pdf, id=120, 717.68124pt x 646.415pt>
+[29]) [30]
+<./Figures/allostericControl_noindex.pdf, id=123, 717.68124pt x 646.415pt>
 File: ./Figures/allostericControl_noindex.pdf Graphic file (type pdf)
 
 <use ./Figures/allostericControl_noindex.pdf>
 Package pdftex.def Info: ./Figures/allostericControl_noindex.pdf used on input 
-line 729.
+line 739.
 (pdftex.def)             Requested size: 469.75502pt x 423.11395pt.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 730.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 740.
 
-<./Figures/Energy.pdf, id=121, 794.97pt x 722.7pt>
+<./Figures/Energy.pdf, id=124, 794.97pt x 722.7pt>
 File: ./Figures/Energy.pdf Graphic file (type pdf)
  <use ./Figures/Energy.pdf>
-Package pdftex.def Info: ./Figures/Energy.pdf used on input line 736.
+Package pdftex.def Info: ./Figures/Energy.pdf used on input line 746.
 (pdftex.def)             Requested size: 469.75502pt x 427.06198pt.
 
-<./Figures/Amino.pdf, id=122, 794.97pt x 903.375pt>
+<./Figures/Amino.pdf, id=125, 794.97pt x 903.375pt>
 File: ./Figures/Amino.pdf Graphic file (type pdf)
  <use ./Figures/Amino.pdf>
-Package pdftex.def Info: ./Figures/Amino.pdf used on input line 743.
+Package pdftex.def Info: ./Figures/Amino.pdf used on input line 753.
 (pdftex.def)             Requested size: 469.75502pt x 533.82748pt.
 
-<./Figures/BoxPlot-KCFM.pdf, id=123, 518.93875pt x 389.455pt>
+<./Figures/BoxPlot-KCFM.pdf, id=126, 518.93875pt x 389.455pt>
 File: ./Figures/BoxPlot-KCFM.pdf Graphic file (type pdf)
 
 <use ./Figures/BoxPlot-KCFM.pdf>
-Package pdftex.def Info: ./Figures/BoxPlot-KCFM.pdf used on input line 750.
+Package pdftex.def Info: ./Figures/BoxPlot-KCFM.pdf used on input line 760.
 (pdftex.def)             Requested size: 469.75502pt x 352.5624pt.
 
-<./Figures/Sensitivity.pdf, id=124, 316.18124pt x 688.5725pt>
+<./Figures/Sensitivity.pdf, id=127, 316.18124pt x 688.5725pt>
 File: ./Figures/Sensitivity.pdf Graphic file (type pdf)
 
 <use ./Figures/Sensitivity.pdf>
-Package pdftex.def Info: ./Figures/Sensitivity.pdf used on input line 757.
+Package pdftex.def Info: ./Figures/Sensitivity.pdf used on input line 767.
 (pdftex.def)             Requested size: 357.01123pt x -735.43239pt.
 
-<./Figures/oxphos_ko.pdf, id=126, 1024.82875pt x 246.9225pt>
+<./Figures/oxphos_ko.pdf, id=129, 1024.82875pt x 246.9225pt>
 File: ./Figures/oxphos_ko.pdf Graphic file (type pdf)
 
 <use ./Figures/oxphos_ko.pdf>
-Package pdftex.def Info: ./Figures/oxphos_ko.pdf used on input line 764.
+Package pdftex.def Info: ./Figures/oxphos_ko.pdf used on input line 774.
 (pdftex.def)             Requested size: 469.75502pt x 113.18257pt.
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <10> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 765.
- [30
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 775.
+ [31
 
  <./Figures/allostericControl_noindex.pdf>]
-[31 <./Figures/Energy.pdf>] [32 <./Figures/Amino.pdf>] [33 <./Figures/Sensitivi
-ty.pdf> <./Figures/BoxPlot-KCFM.pdf>] [34 <./Figures/oxphos_ko.pdf>]
-<./Figures/CAT_prod_yield.pdf, id=401, 1020.81375pt x 385.44pt>
+[32 <./Figures/Energy.pdf>] [33 <./Figures/Amino.pdf>] [34 <./Figures/Sensitivi
+ty.pdf> <./Figures/BoxPlot-KCFM.pdf>] [35 <./Figures/oxphos_ko.pdf>]
+<./Figures/CAT_prod_yield.pdf, id=405, 1020.81375pt x 385.44pt>
 File: ./Figures/CAT_prod_yield.pdf Graphic file (type pdf)
 
 <use ./Figures/CAT_prod_yield.pdf>
-Package pdftex.def Info: ./Figures/CAT_prod_yield.pdf used on input line 772.
+Package pdftex.def Info: ./Figures/CAT_prod_yield.pdf used on input line 782.
 (pdftex.def)             Requested size: 469.75502pt x 177.37512pt.
- [35
+ [36
 
  <./Figures/CAT_prod_yield.pdf>]
-<./Figures/CAT_flux_final.pdf, id=430, 1479.5275pt x 2236.355pt>
+<./Figures/CAT_flux_final.pdf, id=433, 1479.5275pt x 2236.355pt>
 File: ./Figures/CAT_flux_final.pdf Graphic file (type pdf)
 
 <use ./Figures/CAT_flux_final.pdf>
-Package pdftex.def Info: ./Figures/CAT_flux_final.pdf used on input line 780.
+Package pdftex.def Info: ./Figures/CAT_flux_final.pdf used on input line 790.
 (pdftex.def)             Requested size: 352.31625pt x 532.53893pt.
 
-<./Figures/CAT_flux_ko.pdf, id=431, 1479.5275pt x 2236.355pt>
+<./Figures/CAT_flux_ko.pdf, id=434, 1479.5275pt x 2236.355pt>
 File: ./Figures/CAT_flux_ko.pdf Graphic file (type pdf)
 
 <use ./Figures/CAT_flux_ko.pdf>
-Package pdftex.def Info: ./Figures/CAT_flux_ko.pdf used on input line 787.
+Package pdftex.def Info: ./Figures/CAT_flux_ko.pdf used on input line 797.
 (pdftex.def)             Requested size: 352.31625pt x 532.53893pt.
- [36 <./Figures/CAT_flux_final.pdf>] [37 <./Figures/CAT_flux_ko.pdf>] [38] [39]
- 
+
+
+LaTeX Warning: Float too large for page by 10.21849pt on input line 918.
+
+[37 <./Figures/CAT_flux_final.pdf>] [38 <./Figures/CAT_flux_ko.pdf>] [39]
+[40] 
 AED: lastpage setting LastPage
 (./Paper_v1.aux) )
 (\end occurred inside a group at level 1)
@@ -1133,10 +1137,10 @@ AED: lastpage setting LastPage
 ### semi simple group (level 1) entered at line 60 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 6745 strings out of 494953
- 99597 string characters out of 6180977
- 172876 words of memory out of 5000000
- 9836 multiletter control sequences out of 15000+600000
+ 6746 strings out of 494953
+ 99631 string characters out of 6180977
+ 172886 words of memory out of 5000000
+ 9837 multiletter control sequences out of 15000+600000
  34493 words of font info for 80 fonts, out of 8000000 for 9000
  15 hyphenation exceptions out of 8191
  42i,13n,43p,930b,1131s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1159,10 +1163,10 @@ e/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvet
 ic/uhvro8a.pfb>
-Output written on Paper_v1.pdf (41 pages, 1635625 bytes).
+Output written on Paper_v1.pdf (42 pages, 1638205 bytes).
 PDF statistics:
- 518 PDF objects out of 1000 (max. 8388607)
- 256 compressed objects within 3 object streams
+ 521 PDF objects out of 1000 (max. 8388607)
+ 258 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  52 words of extra memory for PDF output out of 10000 (max. 10000000)
 
