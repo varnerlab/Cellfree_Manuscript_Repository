@@ -312,13 +312,18 @@ This was due to its role in generating other amino acids and as a possible energ
 The much greater consumption of this one amino acid was made possible by its much larger initial condition, as it was present in the cell media in the form of magnesium glutamate, ammonium glutamate, and potassium glutamate [CITE? THESIS NOT CURRENTLY IN BIBLIOGRAPHY].
 Glucose made the next largest contribution, between 20\% and 30\%, dwarfing all amino acids other than glutamate.
 This makes sense, as glucose powers the entire metabolism during the first hour, including energy species synthesis and amino acid synthesis.
-The knockouts in oxidative phosphorylation also reduced the energy efficiency of CAT production  (Fig.~\ref{fig:oxphos_ko}).
-The best-fit set, $\Delta$app, and experimental dataset had efficiencies of 2.6\%, $\Delta$nuo had an efficiency of 2.2\%, and $\Delta$cyd and $\Delta$cyd$\Delta$nuo$\Delta$app had efficiencies of 0.8\%.
-This was in line with the effect of knockouts on yield, which in turn was more or less proportional to the total amount of CAT produced in each case.
+We also investigated the energy efficiency of CAT production across the kinetic models and experimental dataset.
+%The knockouts in oxidative phosphorylation also reduced the energy efficiency of CAT production  (Fig.~\ref{fig:oxphos_ko}).
+The best-fit set, $\Delta$app, and experimental data had energy efficiencies of 2.6\%, $\Delta$nuo had an efficiency of 2.2\%, and $\Delta$cyd and $\Delta$cyd$\Delta$nuo$\Delta$app had efficiencies of 0.8\%.
+The best-fit set, $\Delta$app, and experimental data had energy efficiencies of 2.6\%, calculated as a ratio of CAT production to glucose consumption, each converted into an equivalent number of ATP molecules.
+$\Delta$nuo had an efficiency of 2.2\%, and $\Delta$cyd and $\Delta$cyd$\Delta$nuo$\Delta$app had efficiencies of 0.8\%.
+%This was in line with the effect of knockouts on yield, which in turn was more or less proportional to the total amount of CAT produced in each case.
+The energy efficiencies across the different cases were more or less proportional to the carbon yields, and in turn the total amount of CAT synthesis.
 Taken together, these results show that oxidative phosphorylation, particularly \textit{cyd}, is important to efficient CAT production.
 
-Furthermore, we examined the proportion of amino acid consumption that was due to CAT synthesis in the best-fit set (Table~\ref{tbl:AA_breakdown}).
-Eight of the 20 amino acids had a percentage of 100\% or higher.
+%Furthermore, we examined the proportion of amino acid consumption that was due to CAT synthesis in the best-fit set (Table~\ref{tbl:AA_breakdown}).
+To better understand where carbon flux goes besides toward CAT, we examined the proportion of amino acid consumption that was due to CAT synthesis in the best-fit set (Table~\ref{tbl:AA_breakdown}).
+Eight of the 20 amino acids had a flux-toward-CAT percentage of 100\% or higher.
 For six of these (isoleucine, leucine, methionine, phenylalanine, tryptophan, valine), synthesis was inactive or negligible, meaning that CAT synthesis was the only reaction that consumed these species.
 This is why methionine, and to a lesser extent isoleucine, leucine, and valine do not fit the experimental data as well as some other amino acids; consumption via CAT synthesis was not enough to fit the data, and no other reactions exist in the network to consume these species.
 For histidine and tyrosine, synthesis was active, allowing the percentage to be higher than 100\%.
@@ -355,8 +360,11 @@ Lastly, when metabolite constraints were applied with experimental measurements 
 %By comparison, the best-fit parameter set for the kinetic model predicted a CAT carbon yield of 8.6\% $\pm$ 0.4\%, equivalent to 23\% of the theoretical maximum (i) and 35\% of the physiological case (ii).
 By comparison, the best-fit parameter set for the kinetic model predicted a CAT carbon yield (without arginine and glutamate) of 7.9\%, equivalent to 36\% of the optimal case (i).
 The experimental dataset had a CAT carbon yield of 8.2\%, similar to both the kinetic model and the experimentally constrained ssFBA calculation (case iii).
-However, the energy efficiency for case i was 18.1\% and 15.5\% for the second case, while for the experimentally constrained case it was 3.9\%.  
-Thus, while the CFPS reaction was not optimal, the ssFBA calculations suggested that an approximately three-fold increase in carbon yield was theoretically possible.
+However, the energy efficiency was 18.1\% for case i and 15.5\% for case ii, while for case iii it was 3.9\%.
+This dramatic decrease in efficiency when fluxes are constrained to data makes sense, as the network is forced toward a multitude of pathways that may not contribute to CAT production.
+However, the case iii efficiency was still about 50\% higher than that of the dataset itself and the best-fit kinetic model (2.6\%).
+This is likely because of the steady-state assumption and the ability to choose the optimum from a variety of flux distributions; meanwhile, the kinetic model diverts flux toward the accumulation of sub-optimal metabolites.
+Thus, while the CFPS reaction was not optimal, the ssFBA calculations suggested that an approximately three-fold increase in carbon yield and a seven-fold increase in energy efficiency were theoretically possible.
 
 To investigate the differences in carbon yields, we compared the flux distributions predicted by ssFBA simulations for the different constraint cases  (Fig.~\ref{fig:Network}).
 All cases heavily utilized the first step in the pentose phosphate pathway to generate NADPH;
@@ -916,8 +924,7 @@ with support from the US Army Medical Research and Materiel Command under award 
 %        Energy Efficiency & 1.8\% & 0.6\% & 1.6\% & 1.8\% & 0.6\% & 1.9\% \\ \bottomrule
         Energy Efficiency & 2.6\% & 0.8\% & 2.2\% & 2.6\% & 0.8\% & 2.6\% \\ \bottomrule
 %        Efficiencies based on ATP number of 17: 2.558085 & 0.788758 & 2.210560 & 2.611583 & 0.847068 & 2.644330
-(CAT[end]-CAT[1])*(2*219+438)/((glc[1]-glc[end])*17)*100
-
+%(CAT[end]-CAT[1])*(2*219+438)/((glc[1]-glc[end])*17)*100
     \end{tabular}
 \label{tbl:yield_breakdown}
 \end{table}
