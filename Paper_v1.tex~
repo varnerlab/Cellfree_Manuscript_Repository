@@ -312,6 +312,10 @@ This was due to its role in generating other amino acids and as a possible energ
 The much greater consumption of this one amino acid was made possible by its much larger initial condition, as it was present in the cell media in the form of magnesium glutamate, ammonium glutamate, and potassium glutamate [CITE? THESIS NOT CURRENTLY IN BIBLIOGRAPHY].
 Glucose made the next largest contribution, between 20\% and 30\%, dwarfing all amino acids other than glutamate.
 This makes sense, as glucose powers the entire metabolism during the first hour, including energy species synthesis and amino acid synthesis.
+The knockouts in oxidative phosphorylation also reduced the energy efficiency of CAT production  (Fig.~\ref{fig:oxphos_ko}).
+The best-fit set, $\Delta$app, and experimental dataset had efficiencies of 1.3\%, $\Delta$nuo had an efficiency of 1.1\%, and $\Delta$cyd and $\Delta$cyd$\Delta$nuo$\Delta$app had efficiencies of 0.4\%.
+This was in line with the effect of knockouts on yield, which in turn was more or less proportional to the total amount of CAT produced in each case.
+Taken together, these results show that oxidative phosphorylation, particularly \textit{cyd}, is important to efficient CAT production.
 
 Furthermore, we examined the proportion of amino acid consumption that was due to CAT synthesis in the best-fit set (Table~\ref{tbl:AA_breakdown}).
 Eight of the 20 amino acids had a percentage of 100\% or higher.
@@ -345,11 +349,11 @@ Next, to gauge the performance of the CFPS reaction, we next calculated the CAT 
 (i) theoretical maximum glucose, amino acid and oxygen upper bounds, and realistic transcriptional/translational constraints;
 (ii) theoretical maximum glucose, amino acid and oxygen upper bounds, realistic transcriptional/translational constraints and knockouts of amino acid synthesis reactions of amino acids supplemented in the \textit{E. coli} extract preparation.  
 (iii) metabolite fluxes constrained by the CAT data, and realistic transcriptional/translational constraints and knockouts of amino acid synthesis reactions of amino acids supplemented in the \textit{E. coli} extract preparation (Fig.~\ref{fig:CATProdYield}B).
-The physiological theoretical maximum CAT carbon yield (case i) was 21.8\% $\pm$ 2.8\% (Fig.~\ref{fig:CATProdYield}B, left); this represents optimal network performance if glucose, oxygen and amino acids were produced or consumed at their upper bounds, with bounded transcription and translation rates (96\% without glucose contribution).
-On the other hand,(case ii) the optimal CAT carbon yield without certain amino acid synthesis reactions decreased to 18.2\% $\pm$ 3.0\% (Fig.~\ref{fig:CATProdYield}B, middle).
-Lastly, when transcription/translation constraints were applied with experimental measurements of metabolite measurements (case iii), the predicted carbon yield was 6.0\% $\pm$ 2.0\%
+The physiological theoretical maximum CAT carbon yield (case i) was 21.8\% $\pm$ 2.8\% (Fig.~\ref{fig:CATProdYield}B, left); this represents optimal network performance if glucose, oxygen and amino acids were produced or consumed at their upper bounds, with bounded transcription and translation rates (96\% without glucose contribution in the carbon yield calculation).
+For case ii, the optimal CAT carbon yield decreased to 18.2\% $\pm$ 3.0\% (Fig.~\ref{fig:CATProdYield}B, middle).
+Lastly, when metabolite constraints were applied with experimental measurements of measurements (case iii), the predicted carbon yield was 6.0\% $\pm$ 2.0\%
 %By comparison, the best-fit parameter set for the kinetic model predicted a CAT carbon yield of 8.6\% $\pm$ 0.4\%, equivalent to 23\% of the theoretical maximum (i) and 35\% of the physiological case (ii).
-By comparison, the best-fit parameter set for the kinetic model predicted a CAT carbon yield (without arginine and glutamate) of 7.9\%, equivalent to 35\% of the physiological case (ii).
+By comparison, the best-fit parameter set for the kinetic model predicted a CAT carbon yield (without arginine and glutamate) of 7.9\%, equivalent to 36\% of the optimal case (i).
 The experimental dataset had a CAT carbon yield of 8.2\%, similar to both the kinetic model and the experimentally constrained ssFBA calculation (case iii).
 Thus, while the CFPS reaction was not optimal, the ssFBA calculations suggested that an approximately three-fold increase in carbon yield was theoretically possible.
 
@@ -657,7 +661,18 @@ while the amino acid uptake rates were bounded by [0,30 mM/h], but did not reach
 The CAT gene and protein sequences were taken from literature.
 The sequence specific flux balance linear program was solved using the GNU Linear Programming Kit (GLPK) v4.52 \cite{GLPK}.
 
-\subsubsection*{Calculation of the carbon yield.}
+
+\subsubsection*{Quantification of uncertainty.}
+An ensemble of 100 sets of flux distributions was calculated for three different cases:  constrained by transcription/translation rates, constrained by transcription/translation rates without amino acid synthesis reactions, and constrained by transcription/translation rates and experimental measurements without amino acid synthesis reactions.
+For the first case, all rates were left unbounded, except the specific glucose uptake rate, transcription and translation rate.
+An ensemble of flux distributions was then calculated by randomly sampling the maximum specific glucose uptake rate from within a range of 30 to 40 mM/h, determined from experimental data and randomly sampling RNAP polymerase levels, ribosome levels, and elongation rates in a physiological range determined from literature..
+For the second case, an ensemble was generated by randomly sampling the same parameters as the first case, however certain amino acid synthesis reactions were removed from the network.
+This included all the amino acids that were present in the preparation of the \textit{E. coli} extract (alanine, arginine, aspartate, cysteine, glutamate, glutamine and serine were excluded from the media), thus reactions producing the excluded amino acids were left in the network. 
+RNA polymerase levels were sampled between 60 and 80 nM, ribosome levels between 7 and 16 \textmu M, the RNA polymerase elongation rate between 20 and 30 nt/sec, and the ribosome elongation rate between 1.5 and 3 aa/sec \cite{2005_underwood_biotech, Garamella:2016aa}.
+For the third case, the ensemble was generated as in the second case, in addition to the lower and upper bounds on the fluxes for the data-informed metabolites were sampled within the range given by the experimental noise.
+This included the data for glucose, organic acids, energy species, and amino acids; CAT was not constrained by experimental data, but by the transcription/translation rates as stated above.
+
+\subsection*{Calculation of the carbon yield.}
 The CAT carbon yield ($Y_{C}^{CAT}$) was calculated as the ratio of carbon produced as CAT divided by the carbon consumed as reactants (glucose and amino acids):
 \begin{equation}\label{eqn:yield-definition}
 	Y_{C}^{CAT}=\frac{\Delta\texttt{CAT}\cdot C_{CAT}}{\displaystyle\sum_{i=1}^{\mathcal{R}}\max(\Delta m_{i},0)\cdot C_{m_i}}
@@ -672,15 +687,20 @@ Consumption of amino acids via CAT synthesis was calculated as a percentage of t
 Consumption toward CAT was calculated as CAT production times the stoichiometric coefficient for that amino acid in the CAT synthesis reaction.
 Total net consumption was calculated as amino acid concentration at 3 hours minus concentration at 0 hours, and was excluded if negative.
 
-\subsubsection*{Quantification of uncertainty.}
-An ensemble of 100 sets of flux distributions was calculated for three different cases: unconstrained, constrained by transcription/translation rates, and constrained by transcription/translation rates and experimental measurements.
-For the unconstrained case, all rates were left unbounded, except the specific glucose uptake rate.
-An ensemble of flux distributions was then calculated by randomly sampling the maximum specific glucose uptake rate from within a range of 30 to 40 mM/h, determined from experimental data.
-For the case constrained by transcription/translation rates, an ensemble was generated by randomly sampling RNAP polymerase levels, ribosome levels, and elongation rates in a physiological range determined from literature.
-RNA polymerase levels were sampled between 60 and 80 nM, ribosome levels between 7 and 16 \textmu M, the RNA polymerase elongation rate between 20 and 30 nt/sec, and the ribosome elongation rate between 1.5 and 3 aa/sec \cite{2005_underwood_biotech, Garamella:2016aa}.
-For the case constrained by transcription/translation rates and experimental measurements, the lower and upper bounds on the fluxes for the data-informed metabolites were sampled within the range given by the experimental noise.
-This included the data for glucose, organic acids, energy species, and amino acids; CAT was not constrained by experimental data, but by the transcription/translation rates as stated above.
+\subsection*{Calculation of energy efficiency.}
+Energy efficiency was also calculated for best-fit set, knockouts, and experimental data, formulated as:
+\begin{equation}\label{eqn:energy-efficiency-definition}
+	\rm Efficiency=\frac{\Delta\texttt{CAT}\cdot \left(2\cdot\rm {ATP}_{CAT}+\rm {GTP}_{CAT}\right)}{\Delta\texttt{GLC}\cdot \rm {ATP}_{GLC}}
+\end{equation}
+where $\rm Efficiency$ denotes the energy efficiency of CAT production, $\rm {ATP}_{CAT}$ denotes the stoichiometric coefficient of ATP in CAT synthesis (multiplied by 2 because AMP, rather than ADP, is a product of CAT synthesis), $\rm {GTP}_{CAT}$ denotes the stoichiometric coefficient of GTP in CAT synthesis, and $\rm {ATP}_{GLC}$ denotes the number of ATP molecules ideally produced from one molecule of glucose.
+$\rm {ATP}_{CAT}$ = 219, $\rm {GTP}_{CAT}$ = 438, $\rm {ATP}_{GLC}$ = 17.
 
+Energy efficiency was also calculated for sequence specific flux balance analysis, formulated as:
+\begin{equation}\label{eqn:energy-efficiency-definition}
+	\rm Efficiency=\frac{\Delta\texttt{CAT}\cdot \left(2\left({ATP}_{TX}+\rm {CTP}_{TX}+\rm {GTP}_{TX}+\rm {UTP}_{TX}\right)+\rm2\cdot\rm {ATP}_{TL}+\rm {GTP}_{TL}\right)}{\Delta\texttt{GLC}\cdot \rm {ATP}_{GLC}}
+\end{equation}
+where $\rm Efficiency$ denotes the energy efficiency of CAT production, $\rm {ATP}_{TX}$, $\rm {CTP}_{TX}$, $\rm {GTP}_{TX}$, $\rm {UTP}_{TX}$ denote the stoichiometric coefficient of each energy species for CAT transcription, $\rm {ATP}_{TL}$ and $\rm {GTP}_{TL}$ denote the stoichiometric coefficient of ATP and GTP, respectively, in CAT translation, and $\rm {ATP}_{GLC}$ denotes the number of ATP molecules produced from one molecule of glucose.
+$\rm {ATP}_{TX}$ = 176, $\rm {CTP}_{TX}$ = 144, $\rm {GTP}_{TX}$ = 151, $\rm {UTP}_{TX}$ = 189, $\rm {ATP}_{TL}$ = 219, $\rm {GTP}_{TL}$ = 438, $\rm {ATP}_{GLC}$ = 17.
 %The flux balance analysis problem was solved using the GNU Linear Programming Kit (v4.52)
 
 % The solution flux vector was used to calculate the carbon yield of CAT for the three FBA cases.
@@ -767,7 +787,7 @@ with support from the US Army Medical Research and Materiel Command under award 
 \begin{figure}[ht]
 \centering
 \includegraphics[width=1\textwidth]{./Figures/CAT_prod_yield.pdf}
-\caption{Sequence-specific flux balance analysis of CAT production and yield. A. 95\% confidence interval of the ensemble (light blue region) for CAT concentration versus time. B. Theoretical maximum carbon yield of CAT calcualted by ssFBA for three different cases: unconstrained except for glucose uptake (black), constrained by transcription/translation (TX/TL) rates (grey), and constrained by transcription/translation (TX/TL) rates and experimental measurements where available (light grey). Error bars represent standard deviation of the ensemble.}
+\caption{Sequence-specific flux balance analysis of CAT production and yield. A. 95\% confidence interval of the ensemble (light blue region) for CAT concentration versus time. B. Theoretical maximum carbon yield of CAT calcualted by ssFBA for three different cases: constrained by transcription/translation (TX/TL) rates (black), same as previous but without amino acid synthesis reactions (grey), and same as previous but constrained by experimental measurements where available (light grey). Error bars represent standard deviation of the ensemble.}
 \label{fig:CATProdYield}
 \end{figure}
 \clearpage
@@ -775,16 +795,10 @@ with support from the US Army Medical Research and Materiel Command under award 
 \begin{figure}[ht]
 \centering
 \includegraphics[width=0.75\textwidth]{./Figures/CAT_flux_final.pdf}
-\caption{Flux profile for glycolysis, pentose phosphate pathway, Entner-Doudoroff pathway, TCA cycle, NADPH/NADH transfer, and oxidative phosphorylation. Sequence-specific FBA flux value (mean ± standard deviation) across ensemble for 1 hr, normalized to glucose uptake flux. Flux distribution for three different cases: unconstrained except for glucose uptake (top row), constrained by transcription and translation rates (second row), and constrained by transcription, translation rates and experimental measurements where available (bottom row).}
+\caption{Flux profile for glycolysis, pentose phosphate pathway, Entner-Doudoroff pathway, TCA cycle, NADPH/NADH transfer, and oxidative phosphorylation. Sequence-specific FBA flux value (mean ± standard deviation) across ensemble for 1 hr, normalized to glucose uptake flux. Flux distribution for three different cases: constrained by transcription and translation rates (top row), same as previous but without amino acid synthesis reactions  (second row), and same as previous but constrained by experimental measurements where available (bottom row).}
 \label{fig:Network}
 \end{figure}
 
-\begin{figure}[ht]
-\centering
-\includegraphics[width=0.75\textwidth]{./Figures/CAT_flux_ko.pdf}
-\caption{Flux profile with knockouts for glycolysis, pentose phosphate pathway, Entner-Doudoroff pathway, TCA cycle, NADPH/NADH transfer, and oxidative phosphorylation. Sequence-specific FBA flux value (mean ± standard deviation) across ensemble for 1 hr, normalized to glucose uptake flux. Flux distribution for three different cases: constrained by transcription and translation rates (top row), constrained by transcription and translation rates with \textit{gnd} knocked out (second row), and constrained by transcription and translation rates with \textit{gnd} and phosphate acetyltransferase knocked out.}
-\label{fig:flux_ko}
-\end{figure}
 
 %\begin{center}
 %  \captionof{table}{Your caption here}
@@ -867,8 +881,8 @@ with support from the US Army Medical Research and Materiel Command under award 
 
 \begin{table}
 \centering
-    \caption{CAT carbon yield breakdown for best-fit set, knockouts, and experimental data. Carbon produced as CAT, carbon consumed as glucose and each amino acid, sum of consumed species (with and without arginine and glutamate), and yield  (with and without arginine and glutamate).}
-    \renewcommand{\arraystretch}{1.3}
+    \caption{CAT carbon yield breakdown for best-fit set, knockouts, and experimental data. Carbon produced as CAT, carbon consumed as glucose and each amino acid, sum of consumed species (with and without arginine and glutamate), and yield  (with and without arginine and glutamate). Energy efficiency for best-fit set, knockouts, and experimental data.}
+    \renewcommand{\arraystretch}{1.25}
     \begin{tabular}{lrrrrrr} \toprule
         Carbon Produced (mM) & Best-fit & $\Delta$cyd & $\Delta$nuo & $\Delta$app & $\Delta$cyd $\Delta$nuo $\Delta$app & Data \\ \hline
         CAT & 20.9 & 6.5 & 18.1 & 21.4 & 5.1 & 21.6 \\ \midrule
@@ -897,7 +911,11 @@ with support from the US Army Medical Research and Materiel Command under award 
         Sum & 767.1 & 755.3 & 791.3 & 780.1 & 696.8 & - \\ \hline
         Sum w/o ARG,GLU & 264.3 & 249.3 & 262.0 & 264.6 & 193.7 & 263.7 \\ \midrule
         Yield & 2.7\% & 0.9\% & 2.3\% & 2.7\% & 0.7\% & - \\ \hline
-        Yield w/o ARG, GLU & 7.9\% & 2.6\% & 6.9\% & 8.1\% & 2.7\% & 8.2\% \\ \bottomrule
+        Yield w/o ARG, GLU & 7.9\% & 2.6\% & 6.9\% & 8.1\% & 2.7\% & 8.2\% \\ \midrule
+%        Energy Efficiency & 1.8\% & 0.6\% & 1.6\% & 1.8\% & 0.6\% & 1.9\% \\ \bottomrule
+        Energy Efficiency & 1.3\% & 0.4\% & 1.1\% & 1.3\% & 0.4\% & 1.3\% \\ \bottomrule
+%        Efficiencies based on ATP number of 24: 1.811977 & 0.558704 & 1.565814 & 1.849871 & 0.600006 & 1.873067
+%        Efficiencies based on ATP number of 24: 1.28348 & 0.395749 & 1.10912 & 1.31033 & 0.425004 & 1.32676
     \end{tabular}
 \label{tbl:yield_breakdown}
 \end{table}
@@ -905,7 +923,7 @@ with support from the US Army Medical Research and Materiel Command under award 
 \begin{table}
 \centering
     \caption{Amino acid consumption toward CAT as a percentage of total amino acid consumption, for the best-fit set. Total consumption defined as decrease in amino acid concentration over 3 hours, such that for amino acids with synthesis active, percentage may be greater than 100\%. Alanine and glutamine did not decrease over the timecourse.}
-    \renewcommand{\arraystretch}{1.3}
+    \renewcommand{\arraystretch}{1.25}
     \begin{tabular}{lrrr} \toprule
         Species & Total Consumption & Consumption Toward CAT & Percentage \\ \hline
 %        ALA  & -3.852  & 0.267  & -6.9\% \\ \hline
