@@ -136,7 +136,7 @@ Cell-free protein expression systems have become widely used in systems and synt
 In this study, we developed an ensemble of dynamic \textit{E. coli} cell-free protein synthesis (CFPS) models.
 Model parameters were estimated from measurements of glucose, organic acids, energy species, amino acids, and the protein product, chloramphenicol acetyltransferase (CAT).
 The ensemble described all of the training data, especially the central carbon metabolism.
-The model predicted a carbon yield for CAT production that was equal to 35\% of yield for a physiologically realistic case, calculated using sequence-specific flux balance analysis.
+The model predicted a carbon yield for CAT production that was equal to 36\% of yield for a physiologically realistic case, and an energy efficiency equal to 9\% of the physiologically realistic case, calculated using sequence-specific flux balance analysis.
 This suggests that CAT production could be further optimized.
 The dynamic modeling approach predicted that substrate consumption and oxidative phosphorylation were most important to both CAT production and the system as a whole, while CAT production alone depended heavily on the CAT synthesis reaction.
 Conversely, CAT production was robust to allosteric control, as was most of the network, with the exception of the organic acids in central carbon metabolism.
@@ -197,7 +197,7 @@ The ensemble of parameter sets described the training data with a median cost th
 First, sensitivity analysis of the dynamic model suggested that CAT production was most sensitive to CAT synthesis parameters, as well as reactions in oxidative phosphorylation and pyruvate consumption.
 Sensitivity analysis also showed that the system as a whole was most sensitive to these same parts of the network and glucose consumption.
 CAT production and other metabolites, specifically organic acid intermediates such as pyruvate, were sensitive to the presence of allosteric control mechanisms.
-Next, to gauge the performance of the cell-free reaction, we compared the observed CAT carbon yield with the maximum theoretical CAT carbon yield calculated using sequence-specific flux balance analysis. The CAT yield estimated from the kinetic model was 35\% of the theoretical yield when physiologically realistic constraints were used.
+Next, to gauge the performance of the cell-free reaction, we compared the observed CAT carbon yield with the maximum theoretical CAT carbon yield calculated using sequence-specific flux balance analysis. The CAT yield estimated from the kinetic model was 36\% of the theoretical yield when physiologically realistic constraints were used.
 Taken together, we have integrated traditional kinetics with a logical rule-based description of allosteric control to simulate a comprehensive CFPS dataset.
 This study provides a foundation for genome-scale, dynamic modeling of cell-free \textit{E. coli} protein synthesis.
 
@@ -309,7 +309,8 @@ This suggested there was a mixture of energy sources supporting CAT production, 
 A similar distribution of the carbon contribution to CAT yield was seen across the best-fit set and all knockouts.
 In all cases, glutamate was responsible for about two-thirds of carbon consumption toward CAT.
 This was due to its role in generating other amino acids and as a possible energy source for metabolism.
-The much greater consumption of this one amino acid was made possible by its much larger initial condition, as it was present in the cell media in the form of magnesium glutamate, ammonium glutamate, and potassium glutamate [CITE? THESIS NOT CURRENTLY IN BIBLIOGRAPHY].
+The much greater consumption of this one amino acid was made possible by its much larger initial condition, as it was present in the cell media in the form of magnesium glutamate, ammonium glutamate, and potassium glutamate.
+% [CITE? THESIS NOT CURRENTLY IN BIBLIOGRAPHY].
 Glucose made the next largest contribution, between 20\% and 30\%, dwarfing all amino acids other than glutamate.
 This makes sense, as glucose powers the entire metabolism during the first hour, including energy species synthesis and amino acid synthesis.
 %We also investigated the energy efficiency of CAT production across the kinetic models and experimental dataset.
@@ -407,7 +408,7 @@ We used the hybrid cell-free modeling approach of Wayman and coworkers, which in
 CFPS is seen to be biphasic relying on glucose during the first hour and pyruvate and lactate afterward.
 Allosteric control was essential to the maintenance of the network and production of CAT, as without it, central carbon metabolism is exhuasted within 1.5 hours leading to low CAT production.
 Having captured the experimental data, we investigated if CAT yield and CFPS performance could be further improved.
-We showed that the model produces CAT with a carbon yield equal to 35\% of that of a physiological case in which transcription and translation are constrained.
+We showed that the model produces CAT with a carbon yield equal to 36\%, and an energy efficiency equal to 9\%, of that of a physiological case in which transcription and translation are constrained.
 The accumulation of waste byproducts, especially acetate, is responsible for this sub-optimal yield.
 Sensitivity analysis showed that certain substrates and energy species are instrumental to CAT production and overall metabolism.
 The system heavily relied on oxidative phosphorylation for the system's energetic needs as well as for CAT synthesis.
@@ -440,7 +441,7 @@ Thus, oxidative phosphorylation is a potential area for improvement for CFPS per
 %Comparing the theoretical maximum carbon yield of CAT from ssFBA predictions to those of the kinetic model and experimental measurements suggests that there is potential for increasing CAT yield as well as CFPS performance.
 %Yield performance can be potentially improved by diverting carbon flux away from acetate.
 Comparing the physiologically realistic carbon yield of CAT from ssFBA predictions to those of the kinetic model and experimental measurements suggests that there is potential for increasing CAT yield as well as CFPS performance.
-%The model and experimental yields were 35\% of the physiologically constrained case.
+%The model and experimental yields were 36\% of the physiologically constrained case.
 A knockout of \textit{gnd} and shows that carbon can be diverted away from acetate and toward CAT or other proteins of interest expressed in CFPS.
 Another limitation to be addressed in CFPS is the transcription and translation description, since protein production is ultimately bounded by these kinetic rates.
 Li et al. have increased productivity of firefly lucifease by 5-fold in CFPS systems by adding and adjusting factors that affect transcription and translation such as elongation factors, ribosome recyclcing factor, release factors, chaperones, BSA, and tRNAs \cite{2014_li_PlosOne}.
