@@ -251,8 +251,8 @@ This was likely because they both affected the sensitive glutamine-glutamate bal
 However, when both were perturbed, their combined effect on the model was low, as the respective contributions to consumption and production of glutamate cancelled.
 An example of positive synergy can be seen in cometabolite interconversion.
 Pyridine nucleotide transhydrogenase catalyzes two reactions: one converts NAD and NADPH into NADH and NADP, while the other does the reverse and also generates a proton gradient.
-Increasing one or the other has little effect on the model, as the reaction is hampered by the loss of reactants.
-Increasing both, however, allows all cometabolites to be conserved and the reactions to continue unhindered.
+Increasing one or the other has little effect on the model, as any increase in reaction flux is hampered by the imbalance created.
+Increasing both, however, allows all cometabolites to balance, so that the reaction fluxes increase unhindered.
 Thus, the pairwise sensitivity is much higher than the sum of the first-order sensitivities.
 
 The overall system state was also sensitive to cofactors and substrates; however, instead of pyruvate and glutamate, the substrates driving metabolism were pyruvate and G3P.
@@ -287,43 +287,46 @@ This may be because the reverse reaction of succinyl coenzyme A synthetase produ
 %This was also likely the reason that section J ranked above section K, despite having no effect on the model themselves.
 Taken together, sensitivity analysis identified blocks of parameters that either individually, or in combination influenced model performance.
 
-Gene knockouts in the electron transport chain significantly reduced the performance of the CFPS reaction (Fig.~\ref{fig:oxKO_ssFBA_yields}).
+To understand whether the CFPS performance was optimal, we calculated the carbon yield and energy efficiency of CAT production (Fig.~\ref{fig:?????}).
+The best-fit parameter set for the kinetic model predicted a CAT carbon yield of 7.9\%, while the experimental dataset had a CAT carbon yield of 8.2\%.
+This was calculated as the increase in CAT concentration times the CAT carbon number, divided by the sum of the consumption terms for glucose and all amino acids excpet arginine and glutamate, as no data were available for these, weighted by their respective carbon numbers.
+To explain where the remainder of carbon was going, we performed a carbon balance for the best-fit set.
+Of the other 92\% of carbon, 35\% accumulated as organic acids (lactate, acetate, succinate and malate) and 9\% accumulated as amino acids (alanine and glutamine).
+The remaining 48\% went to the net accumulation of all other metabolites, particularly carbon dioxide.
+The best-fit set produced CAT with an energy efficiency of 6.4\%.
+This was calculated as the increase in CAT concentration times the CAT number of equivalent ATP molecules, divided by glucose consumption times times the number of equivalent ATP molecules for glucose, equal to 15 in the optimal case.
+An additional 62\% of energy went to the accumulation of glycolysis metabolites, 6.4\% to TCA cycle metabolites, 0.2\% to pentose phosphate metabolites, and 25\% to acetate and lactate.
+This shows that there is much room for improvement of the efficiency of CFPS.
+Gene knockouts in the electron transport chain further reduced the performance of the CFPS reaction (Fig.~\ref{fig:oxKO_ssFBA_yields}).
 A key finding of both the CAT and overall system state sensitivity analysis was the importance of oxidative phosphorylation.
-To investigate this further, we knocked out key oxidative phosphorylation reactions in the ensemble of kinetic models to examine the effect on glucose uptake and CAT production.
-%A single \textit{cyd} knockout reduced the CAT carbon yield from 7.9\% to 2.6\% (Table~\ref{tbl:yield_breakdown}).
-A single \textit{cyd} knockout reduced the CAT carbon yield from 2.7\% to 0.9\% (Table~\ref{tbl:yield_breakdown}).
-%In addition, the glucose uptake rate was reduced compared to that of the control (no knockouts).
-%On the other hand, a \textit{nuo} knockout showed a less dramatic decrease in yield,
-%reducing the CAT carbon yield to 6.9\%; however, the glucose uptake rate remained similar to that of the control.
+To investigate this further, we knocked out key oxidative phosphorylation reactions in the ensemble of kinetic models to examine the effect on CAT production and carbon yield.
+A single \textit{cyd} knockout reduced the CAT carbon yield from 7.9\% to 2.6\% (Table~\ref{tbl:yield_breakdown}).
 On the other hand, a \textit{nuo} knockout showed a less dramatic decrease in yield,
-reducing the CAT carbon yield to 2.3\%.
-%; however, the glucose uptake rate remained similar to that of the control.
-%Knocking out \textit{app} increased CAT yield to 8.3\%, but this increase was not statistically significantly different from that of the control.
-Knocking out \textit{app} did not change the CAT yield (it remained at 2.7\%).
-%Lastly, knocking out all three reactions reduced the CAT yield to 3.0\%, but this was not statistically significantly different from the \textit{cyd} knockout alone.
+reducing the CAT carbon yield to 6.9\%.
+Knocking out \textit{app} increased CAT yield to 8.1\%, but this increase was not statistically significantly different from that of the control.
 Lastly, knocking out all three reactions reduced the CAT yield to 0.7\%, similar to knocking out the \textit{cyd} alone.
 Thus, the model suggested the key step in oxidative phosphorylation was catalyzed by the gene product of \textit{cyd}.
-However, while disruption of \textit{cyd} significantly reduced the CAT carbon yield, it did not eliminate the ability of CFPS reaction to produce CAT.
+However, while disruption of \textit{cyd} significantly reduced the CAT carbon yield, it did not completely eliminate the production of CAT.
 This suggested there was a mixture of energy sources supporting CAT production, with the most significant being oxidative phosphorylation.
 %The \textit{cyd} enzyme is responsible for transferring electrons with oxygen as an electron acceptor allowing the release of energy to form ATP.
-%The sensitivity analysis showed oxidative phosphorylation was significant for CAT production as well as the system state.
+
 Sequence-specific flux balance analysis (ssFBA) predicted optimal CAT yields with no adjustable parameters (Fig.~\ref{fig:oxKO_ssFBA_yields}).
 Before exploring CFPS optimality, we first validated the ssFBA approach by comparing simulated and measured concentrations of CAT for the first hour of glucose consumption.
-We chose this time window (during the first phase of CAT production) because it was approximately linear in both glucose consumption and by-/production formation.
-The ssFBA calculation had no adjustable parameters; bounds on transcription and translation rates, and biochemical fluxes were either estimated from data, or
-from mechanistic models parameterized from literature.
+We chose this time window (during the first phase of CAT production) because it was approximately linear both in glucose consumption and in the accumulation of most organic acids.
+As the ssFBA calculation had no adjustable parameters, bounds on transcription and translation rates and biochemical fluxes were either estimated from data or from mechanistic models parameterized from literature.
 Uncertainty in experimental factors such as RNA polymerase, ribosome concentrations, elongation rates, or the upper bounds for oxygen and glucose consumption rates was addressed
 by sampling plausible ranges for these parameters.
-The ensemble of ssFBA simulations predicted CAT formation as a function of time during the first hour of production when constrained by the experimental metabolite data (Fig.~\ref{fig:oxKO_ssFBA_yields}A).
+The ensemble of ssFBA simulations predicted CAT formation as a function of time during the first hour of production when constrained by the experimental metabolite data (Fig.~\ref{fig:oxKO_ssFBA_yields}C).
 Thus, the molecular description of transcription and translation were consistent with experimental measurements.
 Next, to gauge the performance of the CFPS reaction, we next calculated the CAT carbon yield for three classes of constraints:
 (i) theoretical maximum glucose, amino acid and oxygen upper bounds, and realistic transcriptional/translational constraints;
 (ii) theoretical maximum glucose, amino acid and oxygen upper bounds, realistic transcriptional/translational constraints and knockouts of amino acid synthesis reactions of amino acids supplemented in the \textit{E. coli} extract preparation.  
-(iii) metabolite fluxes constrained by the CAT data, and realistic transcriptional/translational constraints and knockouts of amino acid synthesis reactions of amino acids supplemented in the \textit{E. coli} extract preparation (Fig.~\ref{fig:oxKO_ssFBA_yields}B).
-The physiological theoretical maximum CAT carbon yield (case i) was 21.8\% $\pm$ 2.8\% (Fig.~\ref{fig:oxKO_ssFBA_yields}B, left); this represents optimal network performance if glucose, oxygen and amino acids were produced or consumed at their upper bounds, with bounded transcription and translation rates (96\% without glucose contribution in the carbon yield calculation).
-For case ii, the optimal CAT carbon yield decreased to 18.2\% $\pm$ 3.0\% (Fig.~\ref{fig:oxKO_ssFBA_yields}B, middle).
-Lastly, when metabolite constraints were applied with experimental measurements of measurements (case iii), the predicted carbon yield was 6.0\% $\pm$ 2.0\%.
-By comparison, the best-fit parameter set for the kinetic model predicted a CAT carbon yield (without arginine and glutamate) of 7.9\%, equivalent to 36\% of the optimal case (i).
+(iii) metabolite fluxes constrained by the CAT data, and realistic transcriptional/translational constraints and knockouts of amino acid synthesis reactions of amino acids supplemented in the \textit{E. coli} extract preparation (Fig.~\ref{fig:oxKO_ssFBA_yields}D).
+The physiological theoretical maximum CAT carbon yield (case i) was 21.8\% $\pm$ 2.8\% (Fig.~\ref{fig:oxKO_ssFBA_yields}D, left); this represents optimal network performance if glucose, oxygen and amino acids were produced or consumed at their upper bounds, with bounded transcription and translation rates (96\% without glucose contribution in the carbon yield calculation).
+For case ii, the optimal CAT carbon yield decreased to 18.2\% $\pm$ 3.0\% (Fig.~\ref{fig:oxKO_ssFBA_yields}D, middle).
+Lastly, when metabolite constraints were applied with experimental measurements of measurements (case iii), the predicted carbon yield was 6.0\% $\pm$ 2.0\% (Fig.~\ref{fig:oxKO_ssFBA_yields}D, right).
+%By comparison, the best-fit parameter set for the kinetic model predicted a CAT carbon yield (without arginine and glutamate) of 7.9\%, equivalent to 36\% of the optimal case (i).
+By comparison, the best-fit parameter set for the kinetic model predicted a CAT carbon yield of 7.9\%, equivalent to 36\% of the optimal case (i).
 The experimental dataset had a CAT carbon yield of 8.2\%, similar to both the kinetic model and the experimentally constrained ssFBA calculation (case iii).
 We also investigated the energy efficiency of CAT production for the best-fit set and the three sequence-specific cases, based on the amount of CAT production versus ATP production.
 For cases i and ii the energy efficiencies were 99.8\% and 94.4\%, respectively, while for case iii it was 31.9\%.
@@ -332,21 +335,22 @@ However, the case iii efficiency was still much higher than that of the best-fit
 This is likely because of the steady-state assumption and the ability to choose the optimum from a variety of flux distributions; meanwhile, the kinetic model diverts flux toward the accumulation of sub-optimal metabolites.
 Thus, the CFPS reaction was not optimal; the ssFBA calculations suggested that an approximately three-fold increase in carbon yield and an eleven-fold increase in energy efficiency were theoretically possible.
 
-A similar distribution of the carbon contribution to CAT yield was seen across the best-fit set and all knockouts (Table~\ref{tbl:yield_breakdown}).
-In all cases, glutamate was responsible for about two-thirds of carbon consumption toward CAT.
-This was due to its role in generating other amino acids and as a possible energy source for metabolism.
-The much greater consumption of this one amino acid was made possible by its much larger initial condition, as it was present in the cell media in the form of magnesium glutamate, ammonium glutamate, and potassium glutamate.
-% [CITE? THESIS NOT CURRENTLY IN BIBLIOGRAPHY].
-Glucose made the next largest contribution, between 20\% and 30\%, dwarfing all amino acids other than glutamate.
-This makes sense, as glucose powers the entire metabolism during the first hour, including energy species synthesis and amino acid synthesis.
+%A similar distribution of the carbon contribution to CAT yield was seen across the best-fit set and all knockouts (Table~\ref{tbl:yield_breakdown}).
+%In all cases, glutamate was responsible for about two-thirds of carbon consumption toward CAT.
+%This was due to its role in generating other amino acids and as a possible energy source for metabolism.
+%The much greater consumption of this one amino acid was made possible by its much larger initial condition, as it was present in the cell media in the form of magnesium glutamate, ammonium glutamate, and potassium glutamate.
+%% [CITE? THESIS NOT CURRENTLY IN BIBLIOGRAPHY].
+%Glucose made the next largest contribution, between 20\% and 30\%, dwarfing all amino acids other than glutamate.
+%This makes sense, as glucose powers the entire metabolism during the first hour, including energy species synthesis and amino acid synthesis.
 %We also investigated the energy efficiency of CAT production across the kinetic models and experimental dataset.
 %The best-fit set, $\Delta$app, and experimental data had energy efficiencies of 2.6\%, $\Delta$nuo had an efficiency of 2.2\%, and $\Delta$cyd and $\Delta$cyd$\Delta$nuo$\Delta$app had efficiencies of 0.8\%.
 %The best-fit set, $\Delta$app, and experimental data had energy efficiencies of 2.6\%, calculated as a ratio of CAT production to glucose consumption, each converted into an equivalent number of ATP molecules.
 %$\Delta$nuo had an efficiency of 2.2\%, and $\Delta$cyd and $\Delta$cyd$\Delta$nuo$\Delta$app had efficiencies of 0.8\%.
 %The energy efficiencies across the different cases were more or less proportional to the carbon yields, and in turn the total amount of CAT synthesis.
-Taken together, these results show that oxidative phosphorylation, particularly \textit{cyd}, is important to efficient CAT production.
+%Taken together, these results show that oxidative phosphorylation, particularly \textit{cyd}, is important to efficient CAT production.
 
 Furthermore, we performed a carbon balance on the best-fit set to determine the proportion of carbon consumption going toward CAT synthesis (Fig.~\ref{fig:Carbon_Balance}).
+
 %To better understand where carbon flux goes besides toward CAT, we examined the proportion of amino acid consumption that was due to CAT synthesis in the best-fit set (Table~\ref{tbl:AA_breakdown}).
 %Eight of the 20 amino acids had a flux-toward-CAT percentage of 100\% or higher.
 %For six of these (isoleucine, leucine, methionine, phenylalanine, tryptophan, valine), synthesis was inactive or negligible, meaning that CAT synthesis was the only reaction that consumed these species.
@@ -830,34 +834,34 @@ with support from the US Army Medical Research and Materiel Command under award 
     \caption{CAT carbon yield breakdown for best-fit set, knockouts, and experimental data. Carbon produced as CAT, carbon consumed as glucose and each amino acid, sum of consumed species, and yield.}
     \renewcommand{\arraystretch}{1.3}
     \begin{tabular}{lrrrrrr} \toprule
-        Carbon Produced (C-mM) & Best-fit & $\Delta$cyd & $\Delta$nuo & $\Delta$app & \parbox{1 cm}{$\Delta$cyd $\Delta$nuo $\Delta$app} & Data \\ \hline
-        CAT & 20.9 & 6.5 & 18.1 & 21.4 & 5.1 & 21.6 \\ \midrule
+        Carbon Produced (C-mM) & Best-fit & $\Delta$app & $\Delta$nuo & $\Delta$cyd & \parbox{1 cm}{$\Delta$app $\Delta$nuo $\Delta$cyd} & Data \\ \hline
+        CAT & 20.9 & 21.4 & 18.1 & 6.5 & 5.1 & 21.6 \\ \midrule
         Carbon Consumed (C-mM) \\ \hline
         GLC & 215.4 & 215.4 & 215.4 & 215.4 & 159.8 & 215.4 \\ \hline
         ALA & 0.0 & 0.0 & 1.7 & 0.0 & 0.0 & 0.0 \\ \hline
-%        ARG & 10.2 & 0.9 & 1.1 & 9.9 & 1.3 & - \\ \hline
-        ASN & 6.2 & 6.3 & 6.2 & 6.2 & 6.3 & 6.3 \\ \hline
-        ASP & 7.5 & 0.0 & 3.9 & 7.5 & 0.0 & 9.6 \\ \hline
-        CYS & 3.0 & 2.9 & 3.0 & 3.1 & 2.9 & 3.7 \\ \hline
-        GLN & 0.0 & 1.8 & 0.0 & 0.0 & 2.7 & 0.0 \\ \hline
-%        GLU & 492.6 & 505.1 & 528.2 & 505.6 & 501.8 & - \\ \hline
-        GLY & 3.1 & 1.1 & 2.6 & 3.1 & 0.9 & 1.5 \\ \hline
-        HIS & 0.2 & 0.4 & 1.1 & 0.2 & 0.3 & 0.0 \\ \hline
-        ILE & 1.0 & 0.3 & 0.8 & 1.0 & 0.2 & 1.7 \\ \hline
-        LEU & 1.4 & 0.4 & 1.2 & 1.4 & 0.3 & 2 \\ \hline
-        LYS & 10.7 & 13.2 & 13.1 & 10.7 & 13.2 & 8.3 \\ \hline
-        MET & 0.8 & 0.2 & 0.7 & 0.8 & 0.2 & 2.9 \\ \hline
-        PHE & 3.2 & 1.0 & 2.8 & 3.3 & 0.8 & 1.6 \\ \hline
-        PRO & 2.4 & 0.2 & 0.7 & 2.4 & 0.2 & 1.9 \\ \hline
-        SER & 2.5 & 2.1 & 2.4 & 2.5 & 2.1 & 1.8 \\ \hline
-        THR & 3.4 & 2.9 & 3.3 & 3.4 & 2.8 & 2.8 \\ \hline
-        TRP & 1.0 & 0.3 & 0.8 & 1.0 & 0.2 & 1.2 \\ \hline
-        TYR & 1.1 & 0.4 & 1.1 & 1.1 & 0.4 & 0.6 \\ \hline
-        VAL & 1.4 & 0.4 & 1.2 & 1.5 & 0.4 & 2.4 \\ \midrule
-%        Sum & 767.1 & 755.3 & 791.3 & 780.1 & 696.8 & - \\ \hline
-        Sum & 264.3 & 249.3 & 262.0 & 264.6 & 193.7 & 263.7 \\ \midrule
-%        Yield & 2.7\% & 0.9\% & 2.3\% & 2.7\% & 0.7\% & - \\ \hline
-        Yield & 7.9\% & 2.6\% & 6.9\% & 8.1\% & 2.7\% & 8.2\% \\ \bottomrule
+%        ARG & 10.2 & 9.9 & 1.1 & 0.9 & 1.3 & - \\ \hline
+        ASN & 6.2 & 6.2 & 6.2 & 6.3 & 6.3 & 6.3 \\ \hline
+        ASP & 7.5 & 7.5 & 3.9 & 0.0 & 0.0 & 9.6 \\ \hline
+        CYS & 3.0 & 3.1 & 3.0 & 2.9 & 2.9 & 3.7 \\ \hline
+        GLN & 0.0 & 0.0 & 0.0 & 1.8 & 2.7 & 0.0 \\ \hline
+%        GLU & 492.6 & 505.6 & 528.2 & 505.1 & 501.8 & - \\ \hline
+        GLY & 3.1 & 3.1 & 2.6 & 1.1 & 0.9 & 1.5 \\ \hline
+        HIS & 0.2 & 0.2 & 1.1 & 0.4 & 0.3 & 0.0 \\ \hline
+        ILE & 1.0 & 1.0 & 0.8 & 0.3 & 0.2 & 1.7 \\ \hline
+        LEU & 1.4 & 1.4 & 1.2 & 0.4 & 0.3 & 2.0 \\ \hline
+        LYS & 10.7 & 10.7 & 13.1 & 13.2 & 13.2 & 8.3 \\ \hline
+        MET & 0.8 & 0.8 & 0.7 & 0.2 & 0.2 & 2.9 \\ \hline
+        PHE & 3.2 & 3.3 & 2.8 & 1.0 & 0.8 & 1.6 \\ \hline
+        PRO & 2.4 & 2.4 & 0.7 & 0.2 & 0.2 & 1.9 \\ \hline
+        SER & 2.5 & 2.5 & 2.4 & 2.1 & 2.1 & 1.8 \\ \hline
+        THR & 3.4 & 3.4 & 3.3 & 2.9 & 2.8 & 2.8 \\ \hline
+        TRP & 1.0 & 1.0 & 0.8 & 0.3 & 0.2 & 1.2 \\ \hline
+        TYR & 1.1 & 1.1 & 1.1 & 0.4 & 0.4 & 0.6 \\ \hline
+        VAL & 1.4 & 1.5 & 1.2 & 0.4 & 0.4 & 2.4 \\ \midrule
+%        Sum & 767.1 & 780.1 & 791.3 & 755.3 & 696.8 & - \\ \hline
+        Sum & 264.3 & 264.6 & 262.0 & 249.3 & 193.7 & 263.7 \\ \midrule
+%        Yield & 2.7\% & 2.7\% & 2.3\% & 0.9\% & 0.7\% & - \\ \hline
+        Yield & 7.9\% & 8.1\% & 6.9\% & 2.6\% & 2.7\% & 8.2\% \\ \bottomrule
     \end{tabular}
 \label{tbl:yield_breakdown}
 \end{table}
