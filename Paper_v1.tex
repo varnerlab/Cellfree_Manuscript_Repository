@@ -290,7 +290,7 @@ Taken together, sensitivity analysis identified blocks of parameters that either
 To understand whether the CFPS performance was optimal, we calculated the carbon yield and energy efficiency of CAT production (Fig.~\ref{fig:?????}).
 The best-fit parameter set for the kinetic model predicted a CAT carbon yield of 7.9\%, while the experimental dataset had a CAT carbon yield of 8.2\%.
 This was calculated as the increase in CAT concentration times the CAT carbon number, divided by the sum of the consumption terms for glucose and all amino acids excpet arginine and glutamate, as no data were available for these, weighted by their respective carbon numbers.
-To explain where the remainder of carbon was going, we performed a carbon balance for the best-fit set.
+To explain where the remainder of carbon was going, we performed a carbon balance for the best-fit set (Fig.~\ref{fig:Carbon_Balance}).
 Of the other 92\% of carbon, 35\% accumulated as organic acids (lactate, acetate, succinate and malate) and 9\% accumulated as amino acids (alanine and glutamine).
 The remaining 48\% went to the net accumulation of all other metabolites, particularly carbon dioxide.
 The best-fit set produced CAT with an energy efficiency of 6.4\%.
@@ -322,34 +322,18 @@ Next, to gauge the performance of the CFPS reaction, we next calculated the CAT 
 (i) theoretical maximum glucose, amino acid and oxygen upper bounds, and realistic transcriptional/translational constraints;
 (ii) theoretical maximum glucose, amino acid and oxygen upper bounds, realistic transcriptional/translational constraints and knockouts of amino acid synthesis reactions of amino acids supplemented in the \textit{E. coli} extract preparation.  
 (iii) metabolite fluxes constrained by the CAT data, and realistic transcriptional/translational constraints and knockouts of amino acid synthesis reactions of amino acids supplemented in the \textit{E. coli} extract preparation (Fig.~\ref{fig:oxKO_ssFBA_yields}D).
-The physiological theoretical maximum CAT carbon yield (case i) was 21.8\% $\pm$ 2.8\% (Fig.~\ref{fig:oxKO_ssFBA_yields}D, left); this represents optimal network performance if glucose, oxygen and amino acids were produced or consumed at their upper bounds, with bounded transcription and translation rates (96\% without glucose contribution in the carbon yield calculation).
-For case ii, the optimal CAT carbon yield decreased to 18.2\% $\pm$ 3.0\% (Fig.~\ref{fig:oxKO_ssFBA_yields}D, middle).
-Lastly, when metabolite constraints were applied with experimental measurements of measurements (case iii), the predicted carbon yield was 6.0\% $\pm$ 2.0\% (Fig.~\ref{fig:oxKO_ssFBA_yields}D, right).
-%By comparison, the best-fit parameter set for the kinetic model predicted a CAT carbon yield (without arginine and glutamate) of 7.9\%, equivalent to 36\% of the optimal case (i).
-By comparison, the best-fit parameter set for the kinetic model predicted a CAT carbon yield of 7.9\%, equivalent to 36\% of the optimal case (i).
-The experimental dataset had a CAT carbon yield of 8.2\%, similar to both the kinetic model and the experimentally constrained ssFBA calculation (case iii).
-We also investigated the energy efficiency of CAT production for the best-fit set and the three sequence-specific cases, based on the amount of CAT production versus ATP production.
-For cases i and ii the energy efficiencies were 99.8\% and 94.4\%, respectively, while for case iii it was 31.9\%.
+%The physiological theoretical maximum CAT carbon yield (case i) was 21.8\% $\pm$ 2.8\% (Fig.~\ref{fig:oxKO_ssFBA_yields}D, left); this represents optimal network performance if glucose, oxygen and amino acids were produced or consumed at their upper bounds, with bounded transcription and translation rates (96\% without glucose contribution in the carbon yield calculation).
+%For case ii, the optimal CAT carbon yield decreased to 18.2\% $\pm$ 3.0\% (Fig.~\ref{fig:oxKO_ssFBA_yields}D, middle).
+%Lastly, when metabolite constraints were applied with experimental measurements (case iii), the predicted carbon yield was 6.0\% $\pm$ 2.0\% (Fig.~\ref{fig:oxKO_ssFBA_yields}D, right).
+The physiological theoretical maximum CAT carbon yield (case i) was 49.3\% $\pm$ 3.5\% (Fig.~\ref{fig:oxKO_ssFBA_yields}D, left); this represents optimal network performance if glucose, oxygen and amino acids were produced or consumed at their upper bounds, with bounded transcription and translation rates (96\% without glucose contribution in the carbon yield calculation).
+For case ii, the optimal CAT carbon yield decreased to 48.9\% $\pm$ 3.5\% (Fig.~\ref{fig:oxKO_ssFBA_yields}D, middle).
+Lastly, when metabolite constraints based on experimental measurements were applied (case iii), the predicted carbon yield was 6.4\% $\pm$ 2.9\% (Fig.~\ref{fig:oxKO_ssFBA_yields}D, right).
+Unsurprisingly, this range of carbon yield encompasses both the best-fit set (7.9\%) and the experimental dataset (8.2\%).
+For cases i and ii the energy efficiencies were 72.1\% and 71.2\%, respectively, while for case iii it was only 5.1\%.
 This dramatic decrease in efficiency when fluxes are constrained to data makes sense, as the network is forced toward a multitude of pathways that may not contribute to CAT production.
-However, the case iii efficiency was still much higher than that of the best-fit kinetic model (9.2\%).
-This is likely because of the steady-state assumption and the ability to choose the optimum from a variety of flux distributions; meanwhile, the kinetic model diverts flux toward the accumulation of sub-optimal metabolites.
-Thus, the CFPS reaction was not optimal; the ssFBA calculations suggested that an approximately three-fold increase in carbon yield and an eleven-fold increase in energy efficiency were theoretically possible.
-
-%A similar distribution of the carbon contribution to CAT yield was seen across the best-fit set and all knockouts (Table~\ref{tbl:yield_breakdown}).
-%In all cases, glutamate was responsible for about two-thirds of carbon consumption toward CAT.
-%This was due to its role in generating other amino acids and as a possible energy source for metabolism.
-%The much greater consumption of this one amino acid was made possible by its much larger initial condition, as it was present in the cell media in the form of magnesium glutamate, ammonium glutamate, and potassium glutamate.
-%% [CITE? THESIS NOT CURRENTLY IN BIBLIOGRAPHY].
-%Glucose made the next largest contribution, between 20\% and 30\%, dwarfing all amino acids other than glutamate.
-%This makes sense, as glucose powers the entire metabolism during the first hour, including energy species synthesis and amino acid synthesis.
-%We also investigated the energy efficiency of CAT production across the kinetic models and experimental dataset.
-%The best-fit set, $\Delta$app, and experimental data had energy efficiencies of 2.6\%, $\Delta$nuo had an efficiency of 2.2\%, and $\Delta$cyd and $\Delta$cyd$\Delta$nuo$\Delta$app had efficiencies of 0.8\%.
-%The best-fit set, $\Delta$app, and experimental data had energy efficiencies of 2.6\%, calculated as a ratio of CAT production to glucose consumption, each converted into an equivalent number of ATP molecules.
-%$\Delta$nuo had an efficiency of 2.2\%, and $\Delta$cyd and $\Delta$cyd$\Delta$nuo$\Delta$app had efficiencies of 0.8\%.
-%The energy efficiencies across the different cases were more or less proportional to the carbon yields, and in turn the total amount of CAT synthesis.
-%Taken together, these results show that oxidative phosphorylation, particularly \textit{cyd}, is important to efficient CAT production.
-
-Furthermore, we performed a carbon balance on the best-fit set to determine the proportion of carbon consumption going toward CAT synthesis (Fig.~\ref{fig:Carbon_Balance}).
+However, %the case iii efficiency was still much higher than that of the best-fit kinetic model (9.2\%).
+%This is likely because of the steady-state assumption and the ability to choose the optimum from a variety of flux distributions; meanwhile, the kinetic model diverts flux toward the accumulation of sub-optimal metabolites.
+%Thus, the CFPS reaction was not optimal; the ssFBA calculations suggested that an approximately three-fold increase in carbon yield and an eleven-fold increase in energy efficiency were theoretically possible.
 
 %To better understand where carbon flux goes besides toward CAT, we examined the proportion of amino acid consumption that was due to CAT synthesis in the best-fit set (Table~\ref{tbl:AA_breakdown}).
 %Eight of the 20 amino acids had a flux-toward-CAT percentage of 100\% or higher.
@@ -370,22 +354,22 @@ Furthermore, we performed a carbon balance on the best-fit set to determine the 
 %THR R_thr_deg4, maybe negligible
 %Finally, alanine and glutamine increased during the timecourse, meaning that synthesis outweighed all consumption (including consumption toward CAT).
 
-To investigate the differences in carbon yields, we compared the flux distributions predicted by ssFBA simulations for the different constraint cases  (Fig.~\ref{fig:Network}).
-All cases heavily utilized the first step in the pentose phosphate pathway to generate NADPH;
-the carbon flux then continued through the Entner–Doudoroff pathway toward pyruvate.
-The majority of the flux proceeded toward acetate accumulation, whereas in case ii, the flux accumulated as lactate and acetate, meanwhile for case iii the flux was distributed between pyruvate, lactate, and acetate.
-In all cases, the energy source was primarily oxidative phosphorylation, and to a lesser extent the TCA cycle.
-However, the accumulation of pyruvate, lacatate, and acetate signifies that the system is not operating at its highest efficiency (case iii).
-The system produced NADH through lactate dehydrogenase as well as through pyridine nucleotide transhydrogenase (\textit{pntAB}) to power oxidative phosphorylation.
-Oxidative phosphorylation lead to a high redox ratio contributing to the accumulation of acetate overflow and diverting flux away from the TCA cycle.
-This suggested CAT production could be increased by reducing the accumulation of acetate and lactate.
-To investigate this further, we simulated potential knockouts with constrained transcription/translation rates  (Fig.~\ref{fig:flux_ko}).
-Knocking out the \textit{gnd} reaction, the first step in Entner-Doudoroff pathway, decreased acetate flux by about twenty percent
-In addition, less uptake of amino acids were required which increased the carbon yield of CAT by 1.1\% (up to approximately 22.9\% $\pm$ 2.4\%) compared to the control (no knockouts) for case i.
-The simulation showed an increase in oxidative phosphorylation flux and the flux heavily utilizing glycolysis instead of pentose phosphate pathway.
-A second simulation with both \textit{gnd} and phosphate acetyltransferase knocked out,
-showed very similar results as the first single knockout.
-In the dual knockout, flux towards acetate was almost negligible with some coming from amino acid degradation.
+To investigate %the differences in carbon yields, we compared the flux distributions predicted by ssFBA simulations for the different constraint cases (Fig.~\ref{fig:Network}).
+%All cases heavily utilized the first step in the pentose phosphate pathway to generate NADPH;
+%the carbon flux then continued through the Entner–Doudoroff pathway toward pyruvate.
+%The majority of the flux proceeded toward acetate accumulation, whereas in case ii, the flux accumulated as lactate and acetate, meanwhile for case iii the flux was distributed between pyruvate, lactate, and acetate.
+%In all cases, the energy source was primarily oxidative phosphorylation, and to a lesser extent the TCA cycle.
+%However, the accumulation of pyruvate, lacatate, and acetate signifies that the system is not operating at its highest efficiency (case iii).
+%The system produced NADH through lactate dehydrogenase as well as through pyridine nucleotide transhydrogenase (\textit{pntAB}) to power oxidative phosphorylation.
+%Oxidative phosphorylation lead to a high redox ratio contributing to the accumulation of acetate overflow and diverting flux away from the TCA cycle.
+%This suggested CAT production could be increased by reducing the accumulation of acetate and lactate.
+%To investigate this further, we simulated potential knockouts with constrained transcription/translation rates  (Fig.~\ref{fig:flux_ko}).
+%Knocking out the \textit{gnd} reaction, the first step in Entner-Doudoroff pathway, decreased acetate flux by about twenty percent
+%In addition, less uptake of amino acids were required which increased the carbon yield of CAT by 1.1\% (up to approximately 22.9\% $\pm$ 2.4\%) compared to the control (no knockouts) for case i.
+%The simulation showed an increase in oxidative phosphorylation flux and the flux heavily utilizing glycolysis instead of pentose phosphate pathway.
+%A second simulation with both \textit{gnd} and phosphate acetyltransferase knocked out,
+%showed very similar results as the first single knockout.
+%In the dual knockout, flux towards acetate was almost negligible with some coming from amino acid degradation.
 Taken together, a \textit{gnd} knockout decreased acetate production and required less amino acid consumption, thus it is a promising strategy to increase the CAT carbon yield.
 
 % To investigate this further, we simulated potential knockouts with constrained transcription/translation rates,
