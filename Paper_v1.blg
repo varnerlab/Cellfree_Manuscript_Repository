@@ -18,45 +18,45 @@ ptr=1, stack=
 {GNU Linear Programming Kit, Version 4.52}
 ---the literal stack isn't empty for entry GLPK
 while executing---line 1875 of file plos2015.bst
-You've used 47 entries,
+You've used 46 entries,
             3058 wiz_defined-function locations,
-            985 strings with 15451 characters,
-and the built_in function-call counts, 76908 in all, are:
-= -- 9726
-> -- 649
+            975 strings with 15194 characters,
+and the built_in function-call counts, 75469 in all, are:
+= -- 9551
+> -- 633
 < -- 0
-+ -- 428
-- -- 162
-* -- 6363
-:= -- 8490
-add.period$ -- 208
-call.type$ -- 47
++ -- 419
+- -- 158
+* -- 6245
+:= -- 8326
+add.period$ -- 203
+call.type$ -- 46
 change.case$ -- 0
 chr.to.int$ -- 0
-cite$ -- 47
-duplicate$ -- 6429
-empty$ -- 7279
-format.name$ -- 205
-if$ -- 17924
+cite$ -- 46
+duplicate$ -- 6320
+empty$ -- 7143
+format.name$ -- 200
+if$ -- 17591
 int.to.chr$ -- 0
-int.to.str$ -- 47
-missing$ -- 439
-newline$ -- 259
-num.names$ -- 46
-pop$ -- 701
+int.to.str$ -- 46
+missing$ -- 429
+newline$ -- 253
+num.names$ -- 45
+pop$ -- 686
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 670
+skip$ -- 655
 stack$ -- 0
-substring$ -- 14635
-swap$ -- 1107
+substring$ -- 14370
+swap$ -- 1081
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 437
-width$ -- 49
-write$ -- 560
+while$ -- 427
+width$ -- 48
+write$ -- 547
 (There were 4 error messages)

@@ -160,19 +160,6 @@ Swartz J.
 \newblock A PURE approach to constructive biology.
 \newblock Nature Biotechnology. 2001;19:732--3.
 
-\bibitem{2014_li_PlosOne}
-Li J, Gu L, Aach J, Church GM.
-\newblock Improved Cell-Free RNA and Protein Synthesis System.
-\newblock PLoS ONE. 2014;9(9):1--11.
-\newblock doi:{10.1371/journal.pone.0106232}.
-
-\bibitem{2005_underwood_biotech}
-Underwood KA, Swartz JR, Puglisi JD.
-\newblock Quantitative polysome analysis identifies limitations in bacterial
-  cell-free protein synthesis.
-\newblock Biotechnology and Bioengineering. 2005;91(4):425--35.
-\newblock doi:{10.1002/bit.20529}.
-
 \bibitem{2010_kotte_MolSystBiol}
 Kotte O, Zaugg JB, Heinemann M.
 \newblock {{B}acterial adaptation through distributed sensing of metabolic
@@ -289,6 +276,13 @@ Moon~TS TASBVC Lou~C.
 \bibitem{GLPK}
 type; 2016.
 \newblock Available from: \url{http://www.gnu.org/software/glpk/glpk.html}.
+
+\bibitem{2005_underwood_biotech}
+Underwood KA, Swartz JR, Puglisi JD.
+\newblock Quantitative polysome analysis identifies limitations in bacterial
+  cell-free protein synthesis.
+\newblock Biotechnology and Bioengineering. 2005;91(4):425--35.
+\newblock doi:{10.1002/bit.20529}.
 
 \bibitem{Garamella:2016aa}
 Garamella J, Marshall R, Rustad M, Noireaux V.
