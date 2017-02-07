@@ -286,15 +286,16 @@ This may be because the reverse reaction of succinyl coenzyme A synthetase produ
 %This was also likely the reason that section J ranked above section K, despite having no effect on the model themselves.
 Taken together, sensitivity analysis identified blocks of parameters that either individually, or in combination influenced model performance.
 
-To understand whether the CFPS performance was optimal, we calculated the carbon yield and energy efficiency of CAT production (Fig.~\ref{fig:?????}).
+To understand whether the CFPS performance was optimal, we calculated the carbon yield and energy efficiency of CAT production (Fig.~\ref{CAT_balances}).
 The best-fit parameter set for the kinetic model predicted a CAT carbon yield of 7.9\%, while the experimental dataset had a CAT carbon yield of 8.2\%.
 This was calculated as the increase in CAT concentration times the CAT carbon number, divided by the sum of the consumption terms for glucose and all amino acids excpet arginine and glutamate, as no data were available for these, weighted by their respective carbon numbers.
-To explain where the remainder of carbon was going, we performed a carbon balance for the best-fit set (Fig.~\ref{fig:Carbon_Balance}).
+To explain where the remainder of carbon was going, we performed a carbon balance for the best-fit set (Fig.~\ref{fig:CAT_balances}A).
 Of the other 92\% of carbon, 35\% accumulated as organic acids (lactate, acetate, succinate and malate) and 9\% accumulated as amino acids (alanine and glutamine).
 The remaining 48\% went to the net accumulation of all other metabolites, particularly carbon dioxide.
-The best-fit set and the experimental dataset both produced CAT with an energy efficiency of 7\%.
+The best-fit set and the experimental dataset both produced CAT with an energy efficiency of 7\% (Fig.~\ref{fig:CAT_balances}B).
 This was calculated as the increase in CAT concentration times the CAT number of equivalent ATP molecules, divided by glucose consumption times times the number of equivalent ATP molecules for glucose, equal to 15 in the optimal case.
-An additional 62\% of energy went to the accumulation of glycolysis metabolites, 6\% to TCA cycle metabolites, and 25\% to acetate and lactate.
+%An additional 62\% of energy went to the accumulation of glycolysis metabolites, 6\% to TCA cycle metabolites, and 25\% to acetate and lactate.
+An additional 62\% of energy went to the accumulation of glycolysis metabolites, and 31\% to organic acids (lactate, acetate, succinate and malate).
 This shows that there is much room for improvement of the efficiency of CFPS.
 Gene knockouts in the electron transport chain further reduced the performance of the CFPS reaction (Fig.~\ref{fig:oxKO_ssFBA_yields}).
 A key finding of both the CAT and overall system state sensitivity analysis was the importance of oxidative phosphorylation.
@@ -632,7 +633,7 @@ The CAT carbon yield ($Y_{C}^{CAT}$) was calculated as the ratio of carbon produ
 \end{equation}
 where $\Delta\texttt{CAT}$ denotes the abundance of CAT produced, $C_{CAT}$ denotes carbon number of CAT, $\mathcal{R}$ denotes the number of reactants,
 $\Delta m_{i}$ denotes the amount of the $i^{th}$ reactant consumed (never allowed to be negative), and $C_{m_i}$ denotes the carbon number of the $i^{th}$ reactant.
-Arginine and glutamate were excluded from the yield calculations for the experimental yield calculation, as no experimental measurements were available for these amino acids.
+Arginine and glutamate were excluded from the yield calculations, as no experimental measurements were available for these amino acids.
 Yield of the best-fit parameter set and the experimental data were calculated by setting $\Delta\texttt{CAT}$ equal to the final minus the initial CAT concentration,
 and setting $\Delta m_{i}$ equal to the initial minus the final reactant concentration.
 The individual CAT production and substrate consumption terms for the best-fit set, kinetic models with knockouts, and experimental data are shown in Table~\ref{tbl:yield_breakdown}.
@@ -642,34 +643,12 @@ Consumption toward CAT was calculated as CAT concentration at 3 hours minus conc
 The difference between these was defined as other consumption, equal to consumption from reactions other than CAT synthesis minus amino acid production.
 
 \subsection*{Calculation of energy efficiency.}
-%Energy efficiency was also calculated for best-fit set, knockouts, and experimental data, formulated as:
-%\begin{equation}\label{eqn:energy-efficiency-definition}
-%	\rm Efficiency=\frac{\Delta\texttt{CAT}\cdot \left(2\cdot\rm {ATP}_{CAT}+\rm {GTP}_{CAT}\right)}{\Delta\texttt{GLC}\cdot \rm {ATP}_{GLC}}
-%\end{equation}
-%where $\rm Efficiency$ denotes the energy efficiency of CAT production, $\rm {ATP}_{CAT}$ denotes the stoichiometric coefficient of ATP in CAT synthesis (multiplied by 2 because AMP, rather than ADP, is a product of CAT synthesis), $\rm {GTP}_{CAT}$ denotes the stoichiometric coefficient of GTP in CAT synthesis, and $\rm {ATP}_{GLC}$ denotes the number of ATP molecules ideally produced from one molecule of glucose.
-%$\rm {ATP}_{CAT}$ = 219, $\rm {GTP}_{CAT}$ = 438, $\rm {ATP}_{GLC}$ = 17.
-
-Energy efficiency was also calculated for the best-fit set:
+Energy efficiency was calculated as the ratio of CAT production to glucose consumption, both in terms of equivalent ATP molecules:
 \begin{equation}\label{eqn:energy-efficiency-definition}
-	\rm Efficiency=\frac{\Delta\texttt{CAT}\cdot \left(2\cdot\rm {ATP}_{CAT}+\rm {GTP}_{CAT}\right)}{\Delta\texttt{ATP}}
+	\rm Efficiency=\frac{\Delta\texttt{CAT}\cdot \left(2\left({ATP}_{TX}+\rm {CTP}_{TX}+\rm {GTP}_{TX}+\rm {UTP}_{TX}\right)+\rm2\cdot\rm {ATP}_{TL}+\rm {GTP}_{TL}\right)}{\Delta\texttt{GLC}\cdot \rm {ATP}_{GLC}}
 \end{equation}
-where $\rm Efficiency$ denotes the energy efficiency of CAT production, $\rm {ATP}_{CAT}$ denotes the stoichiometric coefficient of ATP in CAT synthesis (multiplied by 2 because AMP, rather than ADP, is a product of CAT synthesis), $\rm {GTP}_{CAT}$ denotes the stoichiometric coefficient of GTP in CAT synthesis, and $\rm \Delta ATP$ denotes the amount of ATP production in 3 hours, equal to the sum of ATP-producing fluxes integrated over the timecourse.
-$\rm {ATP}_{CAT}$ = 219, $\rm {GTP}_{CAT}$ = 438.
-%, $\rm \Delta CAT$ = 0.018 mM/h, $\rm \Delta ATP$ = 170 mM/h.
-
-%Energy efficiency was also calculated for sequence-specific flux balance analysis, formulated as:
-%\begin{equation}\label{eqn:energy-efficiency-definition}
-%	\rm Efficiency=\frac{\Delta\texttt{CAT}\cdot \left(2\left({ATP}_{TX}+\rm {CTP}_{TX}+\rm {GTP}_{TX}+\rm {UTP}_{TX}\right)+\rm2\cdot\rm {ATP}_{TL}+\rm {GTP}_{TL}\right)}{\Delta\texttt{GLC}\cdot \rm {ATP}_{GLC}}
-%\end{equation}
-%where $\rm Efficiency$ denotes the energy efficiency of CAT production, $\rm {ATP}_{TX}$, $\rm {CTP}_{TX}$, $\rm {GTP}_{TX}$, $\rm {UTP}_{TX}$ denote the stoichiometric coefficient of each energy species for CAT transcription, $\rm {ATP}_{TL}$ and $\rm {GTP}_{TL}$ denote the stoichiometric coefficient of ATP and GTP, respectively, in CAT translation, and $\rm {ATP}_{GLC}$ denotes the number of ATP molecules produced from one molecule of glucose.
-%$\rm {ATP}_{TX}$ = 176, $\rm {CTP}_{TX}$ = 144, $\rm {GTP}_{TX}$ = 151, $\rm {UTP}_{TX}$ = 189, $\rm {ATP}_{TL}$ = 219, $\rm {GTP}_{TL}$ = 438, $\rm {ATP}_{GLC}$ = 17.
-
-For sequence-specific flux balance analysis, with a more in-depth biological description of CAT synthesis, energy efficiency was calculated slightly differently:
-\begin{equation}\label{eqn:energy-efficiency-definition}
-	\rm Efficiency=\frac{\Delta\texttt{CAT}\cdot \left(2\left({ATP}_{TX}+\rm {CTP}_{TX}+\rm {GTP}_{TX}+\rm {UTP}_{TX}\right)+\rm2\cdot\rm {ATP}_{TL}+\rm {GTP}_{TL}\right)}{\Delta\texttt{ATP}}
-\end{equation}
-where $\rm {ATP}_{TX}$, $\rm {CTP}_{TX}$, $\rm {GTP}_{TX}$, $\rm {UTP}_{TX}$ denote the stoichiometric coefficients of each energy species for CAT transcription, and $\rm {ATP}_{TL}$, $\rm {GTP}_{TL}$ denote the stoichiometric coefficients of ATP and GTP for CAT translation.
-$\rm {ATP}_{TX}$ = 176, $\rm {CTP}_{TX}$ = 144, $\rm {GTP}_{TX}$ = 151, $\rm {UTP}_{TX}$ = 189, $\rm {ATP}_{TL}$ = 219, $\rm {GTP}_{TL}$ = 438.
+where $\rm {ATP}_{TX}$, $\rm {CTP}_{TX}$, $\rm {GTP}_{TX}$, $\rm {UTP}_{TX}$ denote the stoichiometric coefficients of each energy species for CAT transcription, $\rm {ATP}_{TL}$, $\rm {GTP}_{TL}$ denote the stoichiometric coefficients of ATP and GTP for CAT translation, $\Delta\texttt{GLC}$ denotes the glucose consumption, equal to the initial minus the final glucose concentration, and $\rm {ATP}_{GLC}$ denotes the equivalent ATP number for glucose.
+$\rm {ATP}_{TX}$ = 176, $\rm {CTP}_{TX}$ = 144, $\rm {GTP}_{TX}$ = 151, $\rm {UTP}_{TX}$ = 189, $\rm {ATP}_{TL}$ = 219, $\rm {GTP}_{TL}$ = 438, $\rm {ATP}_{GLC}$ = 15.
 
 \clearpage
 
@@ -811,9 +790,9 @@ with support from the US Army Medical Research and Materiel Command under award 
 
 \begin{figure}[ht]
 \centering
-\includegraphics[width=0.75\textwidth]{./Figures/Carbon-Balance-BFS.pdf}
-\caption{Carbon balance for the best-fit set. Carbon moles produced as CAT, amino acids (alanine and glutamine), organic acids (lactate, acetate, succinate, and malate), and other byproducts including carbon dioxide, as percentages of total carbon consumption (glucose and all other amino acids).}
-\label{fig:Carbon_Balance}
+\includegraphics[width=1.00\textwidth]{./Figures/CAT_balances.pdf}
+\caption{Carbon and energy balances for the best-fit set. A. Carbon moles produced as CAT, amino acids (alanine and glutamine), organic acids (lactate, acetate, succinate, and malate), and other byproducts including carbon dioxide, as percentages of total carbon consumption (glucose and all other amino acids). B. Energy cost of CAT production, accumulation of organic acids (lactate, acetate, succinate, and malate), and glycolytic and pentose phosphate metabolites, as percentages of total energy utilization from glucose. Energy costs calculated in terms of equivalent ATP molecules.}
+\label{fig:CAT_balances}
 \end{figure}
 
 %\begin{table}
