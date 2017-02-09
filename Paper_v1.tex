@@ -216,7 +216,7 @@ This study provides a foundation for genome-scale, dynamic modeling of cell-free
 \section*{Results}
 
 The ensemble of kinetic CFPS models captured the time evolution of CAT biosynthesis (Fig.~\ref{fig:CarbonBoth} - \ref{fig:Amino}).
-The cell-free \textit{E.~coli} metabolic network was constructed by removing growth associated reactions from the MG1655 reconstruction \cite{Feist:2007aa}, and by adding reactions describing chloramphenicol acetyltransferase (CAT) biosynthesis, a model protein for which there exists a comprehensive training dataset \cite{2005_calhoun_BiotechnologyProgress}.
+The cell-free \textit{E.~coli} metabolic network was constructed by removing growth associated reactions from the \textit{i}AF1260 reconstruction of K-12 MG1655 \textit{E.~coli} \cite{Feist:2007aa}, and by adding reactions describing chloramphenicol acetyltransferase (CAT) biosynthesis, a model protein for which there exists a comprehensive training dataset \cite{2005_calhoun_BiotechnologyProgress}.
 In addition, reactions that were knocked out from the cell extract preparation were removed from the network ($\Delta$speA, $\Delta$tnaA, $\Delta$sdaA, $\Delta$sdaB, $\Delta$gshA, $\Delta$tonA, $\Delta$endA).
 The CFPS model equations were formulated using the hybrid cell-free modeling framework of Wayman et al. \cite{pr3010138}.
 An ensemble of model parameters (N $>$ 10,000) was estimated from measurements of glucose, CAT, organic acids (pyruvate, lactate, acetate, succinate, malate), energy species (A(x)P, G(x)P, C(x)P, U(x)P), and 18 of the 20 proteinogenic amino acids using a constrained Markov Chain Monte Carlo (MCMC) approach.
@@ -753,19 +753,19 @@ with support from the US Army Medical Research and Materiel Command under award 
 
 \begin{table}
 \centering
-    \caption{CAT carbon yield breakdown for best-fit set, knockouts, and experimental data. Carbon produced as CAT, carbon consumed as glucose and each amino acid, sum of consumed species, and yield.}
+    \caption{CAT carbon yield breakdown for best-fit set, knockouts, and experimental data. Carbon produced as CAT, carbon consumed as glucose and each amino acid, sum of consumed species, and yield. Accumulation of alanine and glutamine (negative consumption terms) was not considered in yield calculation.}
     \renewcommand{\arraystretch}{1.3}
     \begin{tabular}{lrrrrrr} \toprule
         Carbon Produced (C-mM) & Best-fit & $\Delta$app & $\Delta$nuo & $\Delta$cyd & \parbox{1 cm}{$\Delta$app $\Delta$nuo $\Delta$cyd} & Data \\ \hline
         CAT & 20.9 & 21.4 & 18.1 & 6.5 & 5.1 & 21.6 \\ \midrule
         Carbon Consumed (C-mM) \\ \hline
         GLC & 215.4 & 215.4 & 215.4 & 215.4 & 159.8 & 215.4 \\ \hline
-        ALA & 0.0 & 0.0 & 1.7 & 0.0 & 0.0 & 0.0 \\ \hline
+        ALA & -11.6 & -11.4 & 1.7 & -3.8 & -3.2 & -12.1 \\ \hline
 %        ARG & 10.2 & 9.9 & 1.1 & 0.9 & 1.3 & - \\ \hline
         ASN & 6.2 & 6.2 & 6.2 & 6.3 & 6.3 & 6.3 \\ \hline
         ASP & 7.5 & 7.5 & 3.9 & 0.0 & 0.0 & 9.6 \\ \hline
         CYS & 3.0 & 3.1 & 3.0 & 2.9 & 2.9 & 3.7 \\ \hline
-        GLN & 0.0 & 0.0 & 0.0 & 1.8 & 2.7 & 0.0 \\ \hline
+        GLN & -11.4 & -11.3 & -4.0 & 1.8 & 2.7 & -11.7 \\ \hline
 %        GLU & 492.6 & 505.6 & 528.2 & 505.1 & 501.8 & - \\ \hline
         GLY & 3.1 & 3.1 & 2.6 & 1.1 & 0.9 & 1.5 \\ \hline
         HIS & 0.2 & 0.2 & 1.1 & 0.4 & 0.3 & 0.0 \\ \hline
