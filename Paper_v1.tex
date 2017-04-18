@@ -214,23 +214,37 @@ This study provides a foundation for genome-scale, dynamic modeling of cell-free
 
 \section*{Results}
 
-The ensemble of kinetic CFPS models captured the time evolution of CAT biosynthesis (Fig.~\ref{fig:CarbonBoth} - \ref{fig:Amino}).
+The ensemble of kinetic CFPS models captured the time evolution of CAT biosynthesis (Fig.~\ref{fig:Carbon} - \ref{fig:Amino}).
 The cell-free \textit{E.~coli} metabolic network was constructed by removing growth associated reactions from the \textit{i}AF1260 reconstruction of K-12 MG1655 \textit{E.~coli} \cite{Feist:2007aa}, and by adding reactions describing chloramphenicol acetyltransferase (CAT) biosynthesis, a model protein for which there exists a comprehensive training dataset \cite{2005_calhoun_BiotechnologyProgress}.
 In addition, reactions that were knocked out from the cell extract preparation were removed from the network ($\Delta$speA, $\Delta$tnaA, $\Delta$sdaA, $\Delta$sdaB, $\Delta$gshA, $\Delta$tonA, $\Delta$endA).
 The CFPS model equations were formulated using the hybrid cell-free modeling framework of Wayman et al. \cite{pr3010138}.
-An ensemble of model parameters (N $>$ 10,000) was estimated from measurements of glucose, CAT, organic acids (pyruvate, lactate, acetate, succinate, malate), energy species (A(x)P, G(x)P, C(x)P, U(x)P), and 18 of the 20 proteinogenic amino acids using a constrained Markov Chain Monte Carlo (MCMC) approach.
+An initial ensemble of model parameter sets (N $>$ 5,000) was estimated from measurements of glucose, CAT, organic acids (pyruvate, lactate, acetate, succinate, malate), energy species (A(x)P, G(x)P, C(x)P, U(x)P), and 18 of the 20 proteinogenic amino acids using a constrained Markov Chain Monte Carlo (MCMC) approach.
 The MCMC algorithm minimized the error between the training data and model simulations starting from an initial parameter set assembled from literature and inspection.
-Parameter sets were selected for the ensemble based upon their error, and the Pearson correlation coefficient between the candidate and existing sets in the ensemble.
+Parameter sets were selected for the final ensemble (N $=$ 1,000) based upon their error and the Pearson correlation coefficient between the candidate and the existing sets in the ensemble; thus, an accurate yet diverse ensemble was created.
 The parameter set with the lowest error value was defined as the best-fit set.
-Central carbon metabolism (Fig.~\ref{fig:CarbonBoth}, top), energy species (Fig.~\ref{fig:Energy}), and amino acids (Fig.~\ref{fig:Amino}) were captured by the ensemble and the best-fit set.
-The constrained MCMC approach estimated parameter sets with a median error greater than two-order of magnitude less than random parameter sets generated within
-the same parameter bounds (Fig. \ref{fig:BoxPlot}); thus, we have confidence in the predictive capability of the estimated parameters.
+Central carbon metabolism (Fig.~\ref{fig:Carbon}, top), energy species (Fig.~\ref{fig:Energy}), and amino acids (Fig.~\ref{fig:Amino}) were captured by the ensemble and the best-fit set.
+The constrained MCMC approach estimated parameter sets with a median error greater than two-order of magnitude less than random parameter sets generated within the same parameter bounds (Fig.~\ref{fig:BoxPlot}); thus, we have confidence in the predictive capability of the estimated parameters.
 The model captured the biphasic CAT production: during the first hour glucose powers production, and CAT is produced at \texttildelow 10 $\mu$M/h; subsequently, pyruvate and lactate reserves are consumed to power metabolism, and CAT is produced less efficiently at \texttildelow 5 $\mu$M/h.
-Allosteric control was important to biphasic CAT production; without control, the CAT production rate increased and then ceased after 1.5 hr (Fig.~\ref{fig:CarbonBoth}, bottom).
-In addition, acetate no longer accumulated after 1.5 hours, in the absence of allosteric control.
-Interestingly, the simulated malate abundance tracked the experimental measurements during the glucose consumption phase, but increased sharply during the pyruvate consumption phase,
-without allosteric control. Taken together, we produced an ensemble of kinetic models that was consistent with time series measurements of the production of a model protein.
-However, while the ensemble described the experimental data, it was unclear which kinetic parameters most influenced CAT production, and whether the performance of the CFPS reaction was optimal.
+%Allosteric control was important to biphasic CAT production; without control, the CAT production rate increased and then ceased after 1.5 h (Fig.~\ref{fig:Carbon}, bottom).
+%In addition, acetate no longer accumulated after 1.5 hours, in the absence of allosteric control.
+%Interestingly, the simulated malate abundance tracked the experimental measurements during the glucose consumption phase, but increased sharply during the pyruvate consumption phase, without allosteric control.
+Allosteric control was important to central carbon metabolism, especially pyruvate and succinate, and to a lesser extent acetate and malate (Fig.~\ref{fig:Carbon}, bottom).
+Taken together, we produced an ensemble of kinetic models that was consistent with time series measurements of the production of a model protein.
+Although the ensemble described the experimental data, it was unclear which kinetic parameters most influenced CAT production, and whether the performance of the CFPS reaction was optimal.
+
+To better understand the effect of network reactions on system performance we conducted a group knockout analysis (Fig.~\ref{fig:GroupKO}).
+The network was divided into 19 groups of reactions, spanning central carbon metabolism, energetics, and amino aicd biosynthesis.
+The reactions in each of these groups were turned off, and the resulting change in cost function and system state were recorded.
+Then each pair of groups was knocked out to determine pairwise effects.
+These were summed with the first-order effect to obtain a total-order coefficient for each group for the change in cost function and system state.
+
+
+The two largest total-order effects on the cost function are cysteine/methionine biosynthesis and anaplerotic/glyoxylate reactions.
+This is likely because...
+The effect of knocking out both of these reaction groups is understandably very great.
+However, the largest pairwise effect is seen when knocking out the Entner-Doudoroff pathway and the TCA cycle, two of the reaction groups with the smallest total-order effects.
+This is true of both the cost function knockout array and the system state knockout array.
+This may be because...
 
 To better understand which parameters and parameter combinations influenced the performance of the kinetic model, we performed sensitivity analysis (Fig.~\ref{fig:Sensitivity-CAT}).
 We perturbed each $V^{max}$ parameter, either individually or in pairwise combinations and measured the change in either CAT production or the overall system state.
@@ -471,8 +485,8 @@ Saturation constants were bounded between 0.001 and 10 mM; median = 0.16 mM.
 Control parameters (gains and orders) were left unbounded; gain median = 0.076, order median = 0.69.
 For each newly generated parameter set, we re-solved the balance equations and calculated the cost function.
 All sets with a lower cost (and some with higher cost) were accepted into the ensemble.
-After generating greater that 10,000 sets, we selected N = 100 sets with minimal set to set correlation to avoid over-sampling any region of parameter space.
-% The original 12,437-set ensemble had a mean Pearson correlation coefficient of 0.94 between pairs of sets, while the 100-set ensemble had a mean Pearson correlation coefficient of 0.83 between pairs of sets.
+After generating XXX sets, we selected N = 1000 sets with minimal set to set correlation to avoid over-sampling any region of parameter space.
+% The original 12,437-set ensemble had a mean Pearson correlation coefficient of 0.94 between pairs of sets, while the 1000-set ensemble had a mean Pearson correlation coefficient of 0.83 between pairs of sets.
 
 \subsection*{Sensitivity analysis of the kinetic CFPS model.}
 We determined the reactions most important to protein production by computing the local sensitivity of CAT concentration (denoted as $\texttt{CAT}$) to each individual maximum reaction rate, and each pair of maximum reaction rates in the network.
@@ -582,7 +596,7 @@ The sequence-specific flux balance linear program was solved using the GNU Linea
 
 
 \subsubsection*{Quantification of uncertainty.}
-An ensemble of 100 sets of flux distributions was calculated for three different cases:  constrained by transcription/translation rates, constrained by transcription/translation rates without amino acid synthesis reactions, and constrained by transcription/translation rates and experimental measurements without amino acid synthesis reactions.
+An ensemble of 1000 sets of flux distributions was calculated for three different cases:  constrained by transcription/translation rates, constrained by transcription/translation rates without amino acid synthesis reactions, and constrained by transcription/translation rates and experimental measurements without amino acid synthesis reactions.
 For the first case, all rates were left unbounded, except the specific glucose uptake rate, transcription and translation rate.
 An ensemble of flux distributions was then calculated by randomly sampling the maximum specific glucose uptake rate from within a range of 30 to 40 mM/h, determined from experimental data and randomly sampling RNAP polymerase levels, ribosome levels, and elongation rates in a physiological range determined from literature..
 For the second case, an ensemble was generated by randomly sampling the same parameters as the first case, however certain amino acid synthesis reactions were removed from the network.
@@ -644,29 +658,29 @@ with support from the US Army Medical Research and Materiel Command under award 
 % Figures and captions go here ...
 % \begin{figure}[ht]
 % \centering
-% \includegraphics[width=1.00\textwidth]{./Figures/CarbonBoth.pdf}
-% \caption{Central carbon metabolism in the presence (top) and absence (bottom) of allosteric control, including glucose (substrate), CAT (product), and intermediates, as well as total concentration of energy species. Best-fit parameter set (orange line) versus experimental data (points). 95\% confidence interval (blue shaded region) and 95\% confidence interval of the mean (gray shaded region) over the ensemble of 100 sets.}
-% \label{fig:CarbonBoth}
+% \includegraphics[width=1.00\textwidth]{./Figures/Carbon.pdf}
+% \caption{Central carbon metabolism in the presence (top) and absence (bottom) of allosteric control, including glucose (substrate), CAT (product), and intermediates, as well as total concentration of energy species. Best-fit parameter set (orange line) versus experimental data (points). 95\% confidence interval (blue shaded region) and 95\% confidence interval of the mean (gray shaded region) over the ensemble of 1000 sets.}
+% \label{fig:Carbon}
 % \end{figure}
 
 \begin{figure}[ht]
 \centering
 \includegraphics[width=1.00\textwidth]{./Figures/Carbon.pdf}
-\caption{Central carbon metabolism in the presence (top) and absence (bottom) of allosteric control, including glucose (substrate), CAT (product), and intermediates, as well as total concentration of energy species. Best-fit parameter set (orange line) versus experimental data (points). 95\% confidence interval (blue shaded region) and 95\% confidence interval of the mean (gray shaded region) over the ensemble of 100 sets.}
-\label{fig:CarbonBoth}
+\caption{Central carbon metabolism in the presence (top) and absence (bottom) of allosteric control, including glucose (substrate), CAT (product), and intermediates, as well as total concentration of energy species. Best-fit parameter set (orange line) versus experimental data (points). 95\% confidence interval (blue or gray shaded region) over the ensemble of 1000 sets.}
+\label{fig:Carbon}
 \end{figure}
 
 \begin{figure}[ht]
 \centering
 \includegraphics[width=1.00\textwidth]{./Figures/Energy.pdf}
-\caption{Energy species and energy totals by base in the presence of allosteric control. Best-fit parameter set (orange line) versus experimental data (points). 95\% confidence interval (blue shaded region) and 95\% confidence interval of the mean (gray shaded region) over the ensemble of 100 sets.}
+\caption{Energy species and energy totals by base in the presence of allosteric control. Best-fit parameter set (orange line) versus experimental data (points). 95\% confidence interval (blue shaded region) over the ensemble of 1000 sets.}
 \label{fig:Energy}
 \end{figure}
 
 \begin{figure}[ht]
 \centering
 \includegraphics[width=1.00\textwidth]{./Figures/Amino.pdf}
-\caption{Amino acids in the presence of allosteric control. Best-fit parameter set (orange line) versus experimental data (points). 95\% confidence interval (blue shaded region) and 95\% confidence interval of the mean (gray shaded region) over the ensemble of 100 sets.}
+\caption{Amino acids in the presence of allosteric control. Best-fit parameter set (orange line) versus experimental data (points). 95\% confidence interval (blue shaded region) over the ensemble of 1000 sets.}
 \label{fig:Amino}
 \end{figure}
 
@@ -679,6 +693,20 @@ with support from the US Army Medical Research and Materiel Command under award 
 
 \begin{figure}[ht]
 \centering
+\includegraphics[width=0.75\textwidth]{./Figures/GroupKO_vert.pdf}
+\caption{Effect of group knockouts on system. A. Log change in cost function when one (diagonal) or two (off-diagonal) reaction groups are turned off. B. Log change in system state (only species for which data exist) when one (diagonal) or two (off-diagonal) reaction groups are turned off. Total-order effect  for each group calculated as the sum of first-order effect and all pairwise effects. Larger and darker circles represent a greater effect.}
+\label{fig:GroupKO}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=1.00\textwidth]{./Figures/GroupKO_horiz.pdf}
+\caption{Effect of group knockouts on system. A. Log change in cost function when one (diagonal) or two (off-diagonal) reaction groups are turned off. B. Log change in system state (only species for which data exist) when one (diagonal) or two (off-diagonal) reaction groups are turned off. Total-order effect  for each group calculated as the sum of first-order effect and all pairwise effects. Larger and darker circles represent a greater effect.}
+\label{fig:GroupKO_}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
 \includegraphics[width=0.95\textwidth]{./Figures/Sensitivity-CAT.pdf}
 \caption{Sensitivity of CAT production to model parameters, decomposed into eigenmodes. Sensitivity of top 10 eigenvectors  (columns, left to right) to top 20 most influential parameters (rows, bottom to top). Relative magnitudes of eigenvalues expressed as percentages.}
 \label{fig:Sensitivity-CAT}
@@ -686,7 +714,7 @@ with support from the US Army Medical Research and Materiel Command under award 
 
 \begin{figure}[ht]
 \centering
-\includegraphics[width=1\textwidth]{./Figures/oxKO_ssFBA_yields.pdf}
+\includegraphics[width=1.00\textwidth]{./Figures/oxKO_ssFBA_yields.pdf}
 \caption{The effects of oxidative phosphorylation and amino acid synthesis pathways on CAT production and carbon yield. A. 95\% confidence interval of the ensemble of kinetic models for CAT concentration versus time, for the best-fit set with no knockouts (black shaded region and dashed line), \textit{nuo} knockout (medium gray), and \textit{cyd} knockout (light gray). B. CAT carbon yield of the ensemble of kinetic models for no knockouts (black), \textit{app} knockout (dark gray), \textit{nuo} knockout (medium gray), \textit{cyd} knockout (light gray), and all three knockouts (white). Error bars represent standard deviation of the ensemble. C. 95\% confidence interval of the ensemble of ssFBA simulations (light blue region) of CAT concentration over time, against experimental data (black). D. Theoretical maximum carbon yield of CAT production, calcualted by ssFBA for three different cases: constrained by transcription/translation (TX/TL) rates (black), same as previous but without amino acid synthesis reactions (medium gray), and same as previous but constrained by experimental measurements where available (light gray). Error bars represent standard deviation of the ensemble.}
 \label{fig:oxKO_ssFBA_yields}
 \end{figure}
