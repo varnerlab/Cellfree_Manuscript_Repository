@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.4.14)  20 APR 2017 16:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.4.14)  20 APR 2017 18:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1096,13 +1096,13 @@ Package pdftex.def Info: ./Figures/GroupKO.pdf used on input line 696.
 
 LaTeX Warning: Float too large for page by 12.6006pt on input line 699.
 
-<./Figures/Sens_productivity.pdf, id=118, 436.63126pt x 505.89pt>
+<./Figures/Sens_productivity.pdf, id=118, 445.665pt x 505.89pt>
 File: ./Figures/Sens_productivity.pdf Graphic file (type pdf)
 
 <use ./Figures/Sens_productivity.pdf>
 Package pdftex.def Info: ./Figures/Sens_productivity.pdf used on input line 703
 .
-(pdftex.def)             Requested size: 469.75502pt x 544.26884pt.
+(pdftex.def)             Requested size: 469.75502pt x 533.23804pt.
 
 <./Figures/oxKO_ssFBA_yields.pdf, id=119, 1002.74625pt x 746.79pt>
 File: ./Figures/oxKO_ssFBA_yields.pdf Graphic file (type pdf)
@@ -1161,7 +1161,7 @@ LaTeX Warning: There were undefined references.
 Here is how much of TeX's memory you used:
  6747 strings out of 494953
  99424 string characters out of 6180977
- 170407 words of memory out of 5000000
+ 170405 words of memory out of 5000000
  9837 multiletter control sequences out of 15000+600000
  34180 words of font info for 79 fonts, out of 8000000 for 9000
  15 hyphenation exceptions out of 8191
@@ -1184,7 +1184,7 @@ b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr
 fonts/type1/urw/helvetic/uhvb8a.pfb></home/nick/texmf/fonts/type1/urw/helvetic/
 uhvbo8a.pfb></home/nick/texmf/fonts/type1/urw/helvetic/uhvr8a.pfb></home/nick/t
 exmf/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on Paper_v1.pdf (40 pages, 2370384 bytes).
+Output written on Paper_v1.pdf (40 pages, 2370987 bytes).
 PDF statistics:
  418 PDF objects out of 1000 (max. 8388607)
  296 compressed objects within 3 object streams
