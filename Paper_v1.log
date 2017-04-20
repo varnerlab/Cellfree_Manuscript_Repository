@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.4.14)  18 APR 2017 19:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.4.14)  20 APR 2017 16:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1070,12 +1070,13 @@ File: ./Figures/Energy.pdf Graphic file (type pdf)
 <use ./Figures/Energy.pdf>
 Package pdftex.def Info: ./Figures/Energy.pdf used on input line 675.
 (pdftex.def)             Requested size: 469.75502pt x 375.81596pt.
- <./Figures/Amino.pdf, id=115, 692.5875pt x 562.1pt>
+
+<./Figures/Amino.pdf, id=115, 704.6325pt x 702.625pt>
 File: ./Figures/Amino.pdf Graphic file (type pdf)
 
 <use ./Figures/Amino.pdf>
 Package pdftex.def Info: ./Figures/Amino.pdf used on input line 682.
-(pdftex.def)             Requested size: 469.75502pt x 381.26233pt.
+(pdftex.def)             Requested size: 469.75502pt x 468.41908pt.
 
 <./Figures/CostArray-BoxPlot.pdf, id=116, 499.8675pt x 386.44376pt>
 File: ./Figures/CostArray-BoxPlot.pdf Graphic file (type pdf)
@@ -1085,78 +1086,70 @@ Package pdftex.def Info: ./Figures/CostArray-BoxPlot.pdf used on input line 689
 .
 (pdftex.def)             Requested size: 469.75502pt x 363.17462pt.
 
-<./Figures/GroupKO_vert.pdf, id=117, 1059.96pt x 1727.45375pt>
-File: ./Figures/GroupKO_vert.pdf Graphic file (type pdf)
+<./Figures/GroupKO.pdf, id=117, 1063.975pt x 1821.80624pt>
+File: ./Figures/GroupKO.pdf Graphic file (type pdf)
 
-<use ./Figures/GroupKO_vert.pdf>
-Package pdftex.def Info: ./Figures/GroupKO_vert.pdf used on input line 696.
-(pdftex.def)             Requested size: 352.31625pt x 574.17348pt.
+<use ./Figures/GroupKO.pdf>
+Package pdftex.def Info: ./Figures/GroupKO.pdf used on input line 696.
+(pdftex.def)             Requested size: 328.82707pt x 563.03061pt.
 
 
-LaTeX Warning: Float too large for page by 23.74347pt on input line 699.
+LaTeX Warning: Float too large for page by 12.6006pt on input line 699.
 
-<./Figures/GroupKO_horiz.pdf, id=118, 1919.17pt x 992.70876pt>
-File: ./Figures/GroupKO_horiz.pdf Graphic file (type pdf)
+<./Figures/Sens_productivity.pdf, id=118, 436.63126pt x 505.89pt>
+File: ./Figures/Sens_productivity.pdf Graphic file (type pdf)
 
-<use ./Figures/GroupKO_horiz.pdf>
-Package pdftex.def Info: ./Figures/GroupKO_horiz.pdf used on input line 703.
-(pdftex.def)             Requested size: 469.75502pt x 242.98099pt.
+<use ./Figures/Sens_productivity.pdf>
+Package pdftex.def Info: ./Figures/Sens_productivity.pdf used on input line 703
+.
+(pdftex.def)             Requested size: 469.75502pt x 544.26884pt.
 
-<./Figures/Sensitivity-CAT.pdf, id=119, 441.65pt x 560.0925pt>
-File: ./Figures/Sensitivity-CAT.pdf Graphic file (type pdf)
-
-<use ./Figures/Sensitivity-CAT.pdf>
-Package pdftex.def Info: ./Figures/Sensitivity-CAT.pdf used on input line 710.
-(pdftex.def)             Requested size: 446.26582pt x 565.97098pt.
-
-<./Figures/oxKO_ssFBA_yields.pdf, id=120, 1002.74625pt x 746.79pt>
+<./Figures/oxKO_ssFBA_yields.pdf, id=119, 1002.74625pt x 746.79pt>
 File: ./Figures/oxKO_ssFBA_yields.pdf Graphic file (type pdf)
 
 <use ./Figures/oxKO_ssFBA_yields.pdf>
-Package pdftex.def Info: ./Figures/oxKO_ssFBA_yields.pdf used on input line 717
+Package pdftex.def Info: ./Figures/oxKO_ssFBA_yields.pdf used on input line 710
 .
 (pdftex.def)             Requested size: 469.75502pt x 349.85184pt.
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <10> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 718.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 711.
  [28
 
  <./Figures/Carbon.pdf>] [29 <./Figures/Energy.pdf>] [30 <./Figures/Amino.pdf>]
- [31 <./Figures/CostArray-BoxPlot.pdf>] [32 <./Figures/GroupKO_vert.pdf>] [33 <
-./Figures/GroupKO_horiz.pdf>] [34 <./Figures/Sensitivity-CAT.pdf>] [35 <./Figur
-es/oxKO_ssFBA_yields.pdf>]
-<./Figures/NetworkFlux.pdf, id=306, 759.83875pt x 754.82pt>
+ [31 <./Figures/CostArray-BoxPlot.pdf>] [32 <./Figures/GroupKO.pdf>] [33 <./Fig
+ures/Sens_productivity.pdf>] [34 <./Figures/oxKO_ssFBA_yields.pdf>]
+<./Figures/NetworkFlux.pdf, id=260, 759.83875pt x 754.82pt>
 File: ./Figures/NetworkFlux.pdf Graphic file (type pdf)
 
 <use ./Figures/NetworkFlux.pdf>
-Package pdftex.def Info: ./Figures/NetworkFlux.pdf used on input line 725.
+Package pdftex.def Info: ./Figures/NetworkFlux.pdf used on input line 718.
 (pdftex.def)             Requested size: 469.75502pt x 466.65906pt.
 
-Overfull \hbox (1.35458pt too wide) in paragraph at lines 736--736
+Overfull \hbox (1.35458pt too wide) in paragraph at lines 729--729
 []$\OT1/cmr/m/n/12 ^^A$\OT1/phv/m/n/12 app
  []
 
 
-Overfull \hbox (1.2346pt too wide) in paragraph at lines 736--736
+Overfull \hbox (1.2346pt too wide) in paragraph at lines 729--729
 \OT1/cmr/m/n/12 ^^A$\OT1/phv/m/n/12 nuo
  []
 
-<./Figures/CAT_balances.pdf, id=307, 864.22874pt x 418.56375pt>
+<./Figures/CAT_balances.pdf, id=261, 864.22874pt x 418.56375pt>
 File: ./Figures/CAT_balances.pdf Graphic file (type pdf)
 
 <use ./Figures/CAT_balances.pdf>
-Package pdftex.def Info: ./Figures/CAT_balances.pdf used on input line 770.
+Package pdftex.def Info: ./Figures/CAT_balances.pdf used on input line 763.
 (pdftex.def)             Requested size: 469.75502pt x 227.50916pt.
- [36 <./Figures/NetworkFlux.pdf>] [37] [38 <./Figures/CAT_balances.pdf>]
-<./Figures/Sensitivity-System.pdf, id=382, 417.56pt x 564.1075pt>
-File: ./Figures/Sensitivity-System.pdf Graphic file (type pdf)
+ [35 <./Figures/NetworkFlux.pdf>] [36] [37 <./Figures/CAT_balances.pdf>]
+<./Figures/Sens_state.pdf, id=337, 436.63126pt x 505.89pt>
+File: ./Figures/Sens_state.pdf Graphic file (type pdf)
 
-<use ./Figures/Sensitivity-System.pdf>
-Package pdftex.def Info: ./Figures/Sensitivity-System.pdf used on input line 83
-0.
-(pdftex.def)             Requested size: 422.77664pt x 571.19014pt.
+<use ./Figures/Sens_state.pdf>
+Package pdftex.def Info: ./Figures/Sens_state.pdf used on input line 823.
+(pdftex.def)             Requested size: 469.75502pt x 544.26884pt.
  
 AED: lastpage setting LastPage
-[1 <./Figures/Sensitivity-System.pdf>] (./Paper_v1.aux)
+[1 <./Figures/Sens_state.pdf>] (./Paper_v1.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -1166,10 +1159,10 @@ LaTeX Warning: There were undefined references.
 ### semi simple group (level 1) entered at line 60 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 6753 strings out of 494953
- 99637 string characters out of 6180977
- 172390 words of memory out of 5000000
- 9842 multiletter control sequences out of 15000+600000
+ 6747 strings out of 494953
+ 99424 string characters out of 6180977
+ 170407 words of memory out of 5000000
+ 9837 multiletter control sequences out of 15000+600000
  34180 words of font info for 79 fonts, out of 8000000 for 9000
  15 hyphenation exceptions out of 8191
  42i,13n,43p,1317b,1124s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1191,10 +1184,10 @@ b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr
 fonts/type1/urw/helvetic/uhvb8a.pfb></home/nick/texmf/fonts/type1/urw/helvetic/
 uhvbo8a.pfb></home/nick/texmf/fonts/type1/urw/helvetic/uhvr8a.pfb></home/nick/t
 exmf/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on Paper_v1.pdf (41 pages, 2420863 bytes).
+Output written on Paper_v1.pdf (40 pages, 2370384 bytes).
 PDF statistics:
- 471 PDF objects out of 1000 (max. 8388607)
- 332 compressed objects within 4 object streams
+ 418 PDF objects out of 1000 (max. 8388607)
+ 296 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 56 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 51 words of extra memory for PDF output out of 10000 (max. 10000000)
 
