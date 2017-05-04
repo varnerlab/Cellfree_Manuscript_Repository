@@ -218,26 +218,33 @@ The ensemble of kinetic CFPS models captured the time evolution of CAT biosynthe
 The cell-free \textit{E.~coli} metabolic network was constructed by removing growth associated reactions from the \textit{i}AF1260 reconstruction of K-12 MG1655 \textit{E.~coli} \cite{Feist:2007aa}, and by adding reactions describing chloramphenicol acetyltransferase (CAT) biosynthesis, a model protein for which there exists a comprehensive training dataset \cite{2005_calhoun_BiotechnologyProgress}.
 In addition, reactions that were knocked out from the cell extract preparation were removed from the network ($\Delta$speA, $\Delta$tnaA, $\Delta$sdaA, $\Delta$sdaB, $\Delta$gshA, $\Delta$tonA, $\Delta$endA).
 The CFPS model equations were formulated using the hybrid cell-free modeling framework of Wayman et al. \cite{pr3010138}.
-An initial ensemble of model parameter sets (N $>$ 5,000) was estimated from measurements of glucose, CAT, organic acids (pyruvate, lactate, acetate, succinate, malate), energy species (A(x)P, G(x)P, C(x)P, U(x)P), and 18 of the 20 proteinogenic amino acids using a constrained Markov Chain Monte Carlo (MCMC) approach.
+An initial ensemble of model parameter sets (N $\approx$ 30,000) was estimated from measurements of glucose, CAT, organic acids (pyruvate, lactate, acetate, succinate, malate), energy species (A(x)P, G(x)P, C(x)P, U(x)P), and 18 of the 20 proteinogenic amino acids using a constrained Markov Chain Monte Carlo (MCMC) approach.
 The MCMC algorithm minimized the error between the training data and model simulations starting from an initial parameter set assembled from literature and inspection.
-Parameter sets were selected for the final ensemble (N $=$ 1,000) based upon their error and the Pearson correlation coefficient between the candidate and the existing sets in the ensemble; thus, an accurate yet diverse ensemble was created.
-The parameter set with the lowest error value was defined as the best-fit set.
+A final ensemble of parameter sets (N $=$ 100) was constructed by selecting the sets with the lowest errors, the lowest of which was defined as the best-fit set.
+Parameter sets in the final ensemble had an average Pearson correlation coefficient of 0.77; thus, an accurate yet diverse ensemble was created.
+%had a median Pearson correlation coefficient of 0.79;
 Central carbon metabolism (Fig.~\ref{fig:Carbon}, top), energy species (Fig.~\ref{fig:Energy}), and amino acids (Fig.~\ref{fig:Amino}) were captured by the ensemble and the best-fit set.
-The constrained MCMC approach estimated parameter sets with a median error greater than two-order of magnitude less than random parameter sets generated within the same parameter bounds (Fig.~\ref{fig:BoxPlot}); thus, we have confidence in the predictive capability of the estimated parameters.
+The constrained MCMC approach estimated parameter sets with a median error an order of magnitude less than random parameter sets generated within the same parameter bounds (Fig.~\ref{fig:BoxPlot}); thus, we have confidence in the predictive capability of the estimated parameters.
 The model captured the biphasic CAT production: during the first hour glucose powers production, and CAT is produced at \texttildelow 10 $\mu$M/h; subsequently, pyruvate and lactate reserves are consumed to power metabolism, and CAT is produced less efficiently at \texttildelow 5 $\mu$M/h.
 %Allosteric control was important to biphasic CAT production; without control, the CAT production rate increased and then ceased after 1.5 h (Fig.~\ref{fig:Carbon}, bottom).
 %In addition, acetate no longer accumulated after 1.5 hours, in the absence of allosteric control.
 %Interestingly, the simulated malate abundance tracked the experimental measurements during the glucose consumption phase, but increased sharply during the pyruvate consumption phase, without allosteric control.
-Allosteric control was important to central carbon metabolism, especially pyruvate and succinate, and to a lesser extent acetate and malate (Fig.~\ref{fig:Carbon}, bottom).
+Allosteric control was important to central carbon metabolism, especially pyruvate, acetate, and succinate (Fig.~\ref{fig:Carbon}, bottom).
+The difference between the allosteric control and no-control cases is mostly seen in the second phase of CAT production, after glucose is exhausted.
 Taken together, we produced an ensemble of kinetic models that was consistent with time series measurements of the production of a model protein.
 Although the ensemble described the experimental data, it was unclear which kinetic parameters most influenced CAT production, and whether the performance of the CFPS reaction was optimal.
 
 To better understand the effect of network reactions on system performance we conducted a group knockout analysis (Fig.~\ref{fig:GroupKO}).
-The network was divided into 19 groups of reactions, spanning central carbon metabolism, energetics, and amino aicd biosynthesis.
-The reactions in each of these groups were turned off, and the resulting change in cost function and system state were recorded.
+The network was divided into 19 groups of reactions, spanning central carbon metabolism, energetics, and amino acid biosynthesis.
+The reactions in each of these groups were turned off, and the resulting change in productivity and system state were recorded.
 Then each pair of groups was knocked out to determine pairwise effects.
-These were summed with the first-order effect to obtain a total-order coefficient for each group for the change in cost function and system state.
-
+These were summed with the first-order effect to obtain a total-order coefficient for each group for the change in productivity and system state.
+Glycolysis/gluconeogenesis and oxidative phosphorylation were seen to have the greatest effect on both productivity and system state.
+This is explained by their role in both central carbon metabolism and energy generation.
+In addition, CAT productivity is affected by two sectors of amino acid biosynthesis: alanine/aspartate/asparagine, and glutamate/glutamine.
+This is likely because aspartate, glutamate, and glutamine are key reactants in the biosynthesis of many other amino acids, all of which are required for CAT synthesis.
+%these amino acids are key reactants
+Meanwhile, the TCA cycle and the overflow metabolism, which includes acetyl-coA/acetate reactions
 
 The two largest total-order effects on the cost function are cysteine/methionine biosynthesis and anaplerotic/glyoxylate reactions.
 This is likely because...
@@ -694,7 +701,7 @@ with support from the US Army Medical Research and Materiel Command under award 
 \begin{figure}[ht]
 \centering
 \includegraphics[width=0.7\textwidth]{./Figures/GroupKO.pdf}
-\caption{Effect of group knockouts on system. A. Log change in cost function when one (diagonal) or two (off-diagonal) reaction groups are turned off. B. Log change in system state (only species for which data exist) when one (diagonal) or two (off-diagonal) reaction groups are turned off. Total-order effect  for each group calculated as the sum of first-order effect and all pairwise effects. Larger and darker circles represent a greater effect.}
+\caption{Effect of group knockouts on system. A. Log change in CAT productivity when one (diagonal) or two (off-diagonal) reaction groups are turned off. B. Log change in system state (only species for which data exist) when one (diagonal) or two (off-diagonal) reaction groups are turned off. Total-order effect for each group calculated as the sum of first-order effect and all pairwise effects. Larger and darker circles represent greater effects.}
 \label{fig:GroupKO}
 \end{figure}
 
