@@ -261,22 +261,6 @@ Milo R, Jorgensen P, Moran U, Weber G, Springer M.
   biology.
 \newblock Nucleic Acids Res. 2009;38:750--3.
 
-\bibitem{Allen:2003aa}
-Allen TE, Palsson B{\O}.
-\newblock Sequence-based analysis of metabolic demands for protein synthesis in
-  prokaryotes.
-\newblock J Theor Biol. 2003;220(1):1--18.
-
-\bibitem{Moon:2012aa}
-Moon~TS TASBVC Lou~C.
-\newblock Genetic programs constructed from layered logic gates in single
-  cells.
-\newblock Nature. 2012;491.
-
-\bibitem{GLPK}
-type; 2016.
-\newblock Available from: \url{http://www.gnu.org/software/glpk/glpk.html}.
-
 \bibitem{2005_underwood_biotech}
 Underwood KA, Swartz JR, Puglisi JD.
 \newblock Quantitative polysome analysis identifies limitations in bacterial

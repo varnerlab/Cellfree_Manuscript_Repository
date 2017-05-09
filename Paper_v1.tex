@@ -47,6 +47,7 @@
 %\usepackage[space]{cite}
 \urlstyle{rm}
 \hyphenation{dec-ades} %Latex does not know how to hyphenate this by default, so we add it to the list
+\def\wl{\par \vspace{\baselineskip}}
 
 %\textwidth = 6.50 in
 %\textheight = 9.5 in
@@ -136,7 +137,7 @@ Cell-free protein expression systems have become widely used in systems and synt
 In this study, we developed an ensemble of dynamic \textit{E. coli} cell-free protein synthesis (CFPS) models.
 Model parameters were estimated from measurements of glucose, organic acids, energy species, amino acids, and the protein product, chloramphenicol acetyltransferase (CAT).
 The ensemble described all of the training data, especially the central carbon metabolism.
-The model predicted CAT production with a carbon yield equal to 16\%, and an energy efficiency equal to 9\%, of that of a physiologically realistic case calculated using sequence-specific flux balance analysis.
+XXX Talk about carbon and energy balances XXX
 This suggests that CAT production could be further optimized.
 The dynamic modeling approach predicted that substrate consumption and oxidative phosphorylation were most important to both CAT production and the system as a whole, while CAT production alone depended heavily on the CAT synthesis reaction.
 Conversely, CAT production was robust to allosteric control, as was most of the network, with the exception of the organic acids in central carbon metabolism.
@@ -195,20 +196,8 @@ The ensemble of parameter sets described the training data with a median cost th
 First, sensitivity analysis of the dynamic model suggested that CAT production was most sensitive to CAT synthesis parameters, as well as reactions in oxidative phosphorylation and pyruvate consumption.
 Sensitivity analysis also showed that the system as a whole was most sensitive to these same parts of the network and glucose consumption.
 CAT production and other metabolites, specifically organic acid intermediates such as pyruvate, were sensitive to the presence of allosteric control mechanisms.
-Next, to gauge the performance of the cell-free reaction, we compared the observed CAT carbon yield with the maximum theoretical CAT carbon yield calculated using sequence-specific flux balance analysis. The CAT yield estimated from the kinetic model was equal to 16\% of the theoretical yield when physiologically realistic constraints were used.
 Taken together, we have integrated traditional kinetics with a logical rule-based description of allosteric control to simulate a comprehensive CFPS dataset.
 This study provides a foundation for genome-scale, dynamic modeling of cell-free \textit{E. coli} protein synthesis.
-
-% In this study, we present an effective biochemical network modeling framework for building dynamic cell-free metabolic models.
-% The key innovation of our approach is the seamless integration of simple effective rules encoding complex regulation with traditional kinetic pathway modeling.
-% This integration allows the description of complex regulatory interactions in the absence of specific mechanistic information.
-% The regulatory rules are easy to understand, easy to formulate and do not rely on overarching theoretical abstractions or restrictive assumptions.
-% Using this approach, we have built an ensemble of models that predict an experimental dataset for CAT production in a cell-free \textit{E. coli} system.
-% We calculated the CAT yield for the ensemble at 45\% of the theoretical maximum according to constraint-based modeling, and determined through sensitivity analysis that CAT production was most sensitive to the parameters associated with CAT synthesis and the synthesis of GTP, GMP, and amino acids.
-% While only an initial proof-of-concept, the framework presented here could be an important first step toward genome-scale cell-free kinetic modeling of the biosynthetic capacity of industrially important organisms.
-% In the second case (ii), there was a high flux through fumarate dehydrogenase from aspartic acid uptake, whereas in cases i and iii, acetate and lactate accumulation occurred.
-% However, oxidative phosphorylation is not operating at its highest efficiency, since there is a mixture of acetate and lactate accumulation.
-% In addition, a handful of alanine synthesis pairwise sensitivities were also large.
 
 \clearpage
 
@@ -283,55 +272,7 @@ This was calculated as the increase in CAT concentration times the CAT number of
 %An additional 62\% of energy went to the accumulation of glycolysis metabolites, 6\% to TCA cycle metabolites, and 25\% to acetate and lactate.
 An additional 62\% of energy went to the accumulation of glycolysis metabolites, and 31\% to organic acids (lactate, acetate, succinate and malate).
 This shows that there is much room for improvement of the efficiency of CFPS.
-Gene knockouts in the electron transport chain further reduced the performance of the CFPS reaction (Fig.~\ref{fig:oxKO_ssFBA_yields}).
 A key finding of both the CAT and overall system state sensitivity analysis was the importance of oxidative phosphorylation.
-To investigate this further, we knocked out key oxidative phosphorylation reactions in the ensemble of kinetic models to examine the effect on CAT production and carbon yield.
-A single \textit{cyd} knockout reduced the CAT carbon yield from 7.9\% to 2.6\% (Table~\ref{tbl:yield_breakdown}).
-On the other hand, a \textit{nuo} knockout showed a less dramatic decrease in yield,
-reducing the CAT carbon yield to 6.9\%.
-Knocking out \textit{app} increased CAT yield to 8.1\%, but this increase was not statistically significantly different from that of the control.
-Lastly, knocking out all three reactions reduced the CAT yield to 0.7\%, similar to knocking out the \textit{cyd} alone.
-Thus, the model suggested the key step in oxidative phosphorylation was catalyzed by the gene product of \textit{cyd}.
-However, while disruption of \textit{cyd} significantly reduced the CAT carbon yield, it did not completely eliminate the production of CAT.
-This suggested there was a mixture of energy sources supporting CAT production, with the most significant being oxidative phosphorylation.
-%The \textit{cyd} enzyme is responsible for transferring electrons with oxygen as an electron acceptor allowing the release of energy to form ATP.
-
-Sequence-specific flux balance analysis (ssFBA) predicted optimal CAT yields with no adjustable parameters (Fig.~\ref{fig:oxKO_ssFBA_yields}).
-Before exploring CFPS optimality, we first validated the ssFBA approach by comparing simulated and measured concentrations of CAT for the first hour of glucose consumption.
-We chose this time window (during the first phase of CAT production) because it was approximately linear both in glucose consumption and in the accumulation of most organic acids.
-As the ssFBA calculation had no adjustable parameters, bounds on transcription and translation rates and biochemical fluxes were either estimated from data or from mechanistic models parameterized from literature.
-Uncertainty in experimental factors such as RNA polymerase, ribosome concentrations, elongation rates, or the upper bounds for oxygen and glucose consumption rates was addressed
-by sampling plausible ranges for these parameters.
-The ensemble of ssFBA simulations predicted CAT formation as a function of time during the first hour of production when constrained by the experimental metabolite data (Fig.~\ref{fig:oxKO_ssFBA_yields}C).
-Thus, the molecular description of transcription and translation were consistent with experimental measurements.
-Next, to gauge the performance of the CFPS reaction, we next calculated the CAT carbon yield for three classes of constraints:
-(i) theoretical maximum glucose, amino acid and oxygen upper bounds, and realistic transcriptional/translational constraints;
-(ii) theoretical maximum glucose, amino acid and oxygen upper bounds, realistic transcriptional/translational constraints and knockouts of amino acid synthesis reactions of amino acids supplemented in the \textit{E. coli} extract preparation.
-(iii) metabolite fluxes constrained by the CAT data, and realistic transcriptional/translational constraints and knockouts of amino acid synthesis reactions of amino acids supplemented in the \textit{E. coli} extract preparation (Fig.~\ref{fig:oxKO_ssFBA_yields}D).
-%The physiological theoretical maximum CAT carbon yield (case i) was 21.8\% $\pm$ 2.8\% (Fig.~\ref{fig:oxKO_ssFBA_yields}D, left); this represents optimal network performance if glucose, oxygen and amino acids were produced or consumed at their upper bounds, with bounded transcription and translation rates (96\% without glucose contribution in the carbon yield calculation).
-%For case ii, the optimal CAT carbon yield decreased to 18.2\% $\pm$ 3.0\% (Fig.~\ref{fig:oxKO_ssFBA_yields}D, middle).
-%Lastly, when metabolite constraints were applied with experimental measurements (case iii), the predicted carbon yield was 6.0\% $\pm$ 2.0\% (Fig.~\ref{fig:oxKO_ssFBA_yields}D, right).
-The physiological theoretical maximum CAT carbon yield (case i) was 49.3\% $\pm$ 3.5\% (Fig.~\ref{fig:oxKO_ssFBA_yields}D, left); this represents optimal network performance if glucose, oxygen and amino acids were produced or consumed at their upper bounds, with bounded transcription and translation rates (96\% without glucose contribution in the carbon yield calculation).
-For case ii, the optimal CAT carbon yield was 48.9\% $\pm$ 3.5\% (Fig.~\ref{fig:oxKO_ssFBA_yields}D, middle).
-Lastly, when metabolite constraints based on experimental measurements were applied (case iii), the predicted carbon yield was 6.4\% $\pm$ 2.9\% (Fig.~\ref{fig:oxKO_ssFBA_yields}D, right).
-Unsurprisingly, this range of carbon yield encompasses both the best-fit set (7.9\%) and the experimental dataset (8.2\%).
-For cases i and ii the energy efficiencies were 72.1\% $\pm$ 9.5\% and 71.2\% $\pm$ 9.6\%, respectively, while for case iii it was only 5.1\% $\pm$ 2.4\%.
-This dramatic decrease in efficiency when fluxes are constrained to data makes sense, as the network is forced toward a multitude of pathways that may not contribute to CAT production.
-This range of energy efficiency encompasses both the best-fit set and the experimental dataset (7\%).
-However, the model and the experimental dataset fall short of the optimum (cases i and ii).
-This suggests there is much room for improvement, primarily by reducing byproduct formation.
-%This is likely because of the steady-state assumption and the ability to choose the optimum from a variety of flux distributions; meanwhile, the kinetic model diverts flux toward the accumulation of sub-optimal metabolites.
-%Thus, the CFPS reaction was not optimal; the ssFBA calculations suggested that an approximately three-fold increase in carbon yield and an eleven-fold increase in energy efficiency were theoretically possible.
-
-To investigate the differences in carbon yield and energy efficiency, we compared the flux distributions predicted by ssFBA simulations for the different constraint cases (Fig.~\ref{fig:NetworkFlux}).
-%All cases heavily utilized the first step in the pentose phosphate pathway to generate NADPH; the carbon flux then continued through the Entner–Doudoroff pathway toward pyruvate.
-In cases i and ii, glycolysis was used for energy generation, and most of the carbon flux accumulated as acetate.
-The system produced NADH through lactate dehydrogenase as well as through pyridine nucleotide transhydrogenase (\textit{pntAB}) to power oxidative phosphorylation.
-Case iii heavily utilized the first step in the pentose phosphate pathway to generate NADPH; the carbon flux then continued primarily through the Entner–Doudoroff pathway toward pyruvate.
-Case iii also predicted the accumulation of pyruvate, lacatate, acetate, and carbon dioxide, which contributed to the much lower carbon yield and energy efficiency.
-In all cases, the energy source was primarily oxidative phosphorylation converting cofactors generated throughout the network into ATP.
-%Oxidative phosphorylation lead to a high redox ratio contributing to the accumulation of acetate overflow.
-Taken together, this suggested CAT production could be increased by reducing the accumulation of acetate, lactate, and carbon dioxide.
 
 \clearpage
 
@@ -355,7 +296,6 @@ The accumulation of waste byproducts, especially acetate and carbon dioxide, is 
 Sensitivity analysis showed that certain substrates and energy species are instrumental to CAT production and overall metabolism.
 The system heavily relied on oxidative phosphorylation for the system's energetic needs as well as for CAT synthesis.
 A single knockout in oxidative phosphorylation reduced the CAT carbon yield \texttildelow 3-fold, as well as disrupting the system state, showing its crucial role in CFPS.
-In comparing flux distributions between low and high yield cases, carbon flux could be potentially diverted toward CAT by reducing acetate overflow and minimizing flux through the Entner-Doudoroff pathway.
 Taken together, these findings represent the first dynamic model of \textit{E. coli} cell-free protein synthesis, and an important step toward a functional genome scale description.
 
 We present an ensemble of models that quantitatively describes the system behavior of cell-free metabolism and production of CAT.
@@ -376,22 +316,7 @@ Nevertheless, there are further reactions with considerable impact on model perf
 In examining oxidative phosphorylation activity, knockouts in the electron transport pathways disrupt metabolism across the network and drop CAT carbon yield from 7.9\% to 2.6\%; Jewett and coworkers also saw a similar decrease in CAT yield with pyruvate as the substrate, ranging from 1.5-fold to 4-fold, when knocking out oxidative phosphorylation reactions \cite{Jewett:2008aa}.
 Oxidative phosphorylation is vital, since it provides most of the energetic needs of CFPS.
 While it is unknown how active oxidative phosphorylation is compared to that of \textit{in vivo} systems, both of our modeling approaches suggest its importance to improving CFPS performance and protein yield.
-%Also important is the first step in pentose phosphate pathway, as it converts G6P to 6PG and produces NADPH.
-%The next most sensitive reaction is the conversion of NADPH to NADH, which helps to supply NADH to oxidative phosphorylation reactions.
-%Many of the insignificant reactions lead to the accumulation of unwanted byproducts such as ethanol and formate.
 
-%The ensemble of models captured the dynamic distribution of metabolic flux.
-%The ensemble of dynamic models predicted that most of the carbon flux going through glycolysis and the TCA cycle,
-%while the constraint-based approach predicted most of the carbon flux went through the Entner-Doudoroff pathway and only part of glycolysis.
-% We present the first dynamic, cell-free model of \textit{E. coli} metabolism and biosynthesis at this scope.
-% While the early models of Shuler and coworkers achieved large-scale, dynamic descriptions of single cells \citep{1984_domach_shuler_BiotechBioeng_01}, and the stoichiometric models associated with the FBA approach are computationally efficient amd widespread \citep{2009_feist_palsson_NatRevMicrobio}, none have yet been able to construct genome-scale kinetic models of cell-free \textit{E. coli} metabolism.
-% This study should provide a foundation for genome-scale, dynamic modeling of cell-free \textit{E. coli} metabolism, toward industrial-scale biosynthetic production.
-%However, the low sensitivities to glucose and oxygen only apply in the specific case of the parameter sets that were studied.
-%When other species' initial conditions and associated parameters are different, glucose and oxygen could become more important to CAT production.
-
-A logical next step for this work would be sequence-specific dynamic modeling, as the kinetic modeling approach in this study used a single reaction to approximate CAT synthesis.
-Including specific transcription and translation steps for CAT would allow more accurate modeling of the complexity and the resource cost of protein synthesis.
-Sensitivity analysis could then be performed on these new parameters to determine the robustness of CAT synthesis to the processes of transcription and translation.
 %Another area for future work is to more thoroughly sample parameter space.
 %Parameters were varied so as to best fit the dataset; however, the resulting ensemble may not represent every biological possibility.
 %In a different region of parameter space, the system may behave differently but still fit the experimental data.
@@ -399,7 +324,6 @@ Sensitivity analysis could then be performed on these new parameters to determin
 %Testing the model under a variety of conditions could strengthen or challenge the findings of this study.
 In addition, further experimentation could also be used to gain a deeper understanding of model performance under a variety of conditions.
 Specifically, CAT production performed in the absence of amino acids could inform the system's ability to manufacture them, while experimentation in the absence of glucose or oxygen could shed light on the importance of those substrates.
-%how important they are to protein synthesis, and under which conditions.
 Finally, the approach should be extended to other protein products.
 CAT is only a test protein used for model identification; the modeling framework, and to some extent the parameter values, should be protein agnostic.
 An important extension of this study would be to apply its insights to other protein applications, where possible.
@@ -493,7 +417,6 @@ Control parameters (gains and orders) were left unbounded; gain median = 0.076, 
 For each newly generated parameter set, we re-solved the balance equations and calculated the cost function.
 All sets with a lower cost (and some with higher cost) were accepted into the ensemble.
 After generating XXX sets, we selected N = 100 sets with minimal set to set correlation to avoid over-sampling any region of parameter space.
-% The original 12,437-set ensemble had a mean Pearson correlation coefficient of 0.94 between pairs of sets, while the 100-set ensemble had a mean Pearson correlation coefficient of 0.83 between pairs of sets.
 
 \subsection*{Sensitivity analysis of the kinetic CFPS model.}
 We determined the reactions most important to protein production by computing the local sensitivity of CAT concentration (denoted as $\texttt{CAT}$) to each individual maximum reaction rate, and each pair of maximum reaction rates in the network.
@@ -506,9 +429,6 @@ $\texttt{CAT}(p_i,p_j,t)$ denotes CAT concentration as a function of time and th
 $\alpha$ denotes the perturbation factor, and $\mathcal{P}$ denotes the number of maximum reaction rates ($\mathcal{P}$ = 163).
 In calculating the pairwise sensitivities, each parameter was perturbed by 1\%; first-order sensitivities ($i$ = $j$) were subject to two 1\% perturbations.
 Parameters and parameter combinations were stratified into five degrees of importance, from least to most sensitive.
-% This was achieved by assigning them a value of 0, 0.25, 0.5, 0.75, or 1.
-% The array of sensitivity indices was organized into a clustergram with both axes corresponding to the 163 maximum reaction rates
-% rearranged from most sensitive (top, right) to least sensitive (bottom, left).
 
 Likewise, we determined which reactions were most important to global system performance by computing the sensitivity of all species for which data exists (denoted as $\texttt{X}$)
 to each maximum reaction rate in the network.
@@ -520,87 +440,11 @@ where $\mathcal{S}_{ij}^{\texttt{X}}$ denotes the sensitivity of the system stat
 and $\texttt{X}(p_i,p_j,t)$ denotes the system state, an array consisting of the concentration of every species for
 which data exists as a function of time and the $i^{th}$ and $j^{th}$ parameters.
 The parameter sensitivities were stratified into five degrees of importance, from least to most sensitive, as above.
-
-% This array of sensitivity indices was also organized into a clustergram (Fig.~\ref{fig:Sensitivity-CAT}, bottom).
-% Theoretical maximum CAT carbon yields for three cases discussed below were calculated using flux balance anaylsis (FBA) with a sequence-specific description of CAT synthesis, where $\Delta m_{i}$ denotes the flux of the $i^{th}$ species.
-% The transcription and translation template reactions come from sequence-specific analysis \cite{Allen:2003aa}, and include transcription initiation, transcription, mRNA degradation, translation initiation, translation, and tRNA charging.
-% The rest of the network followed a pseudo steady-state assumption where metabolites were not allowed to accumulate; thus, the network could be solved by linear programming instead of solving differential equations.
 % \begin{eqnarray*}
 % G+R_{1} &\longrightarrow& G^{*}\\
 % G^{*}+151 \cdot gtp+144 \cdot ctp+189 \cdot utp+176 \cdot atp &\longrightarrow& mRNA+G+R_{1}+1320 \cdot Pi\\
 % mRNA &\longrightarrow& 151 \cdot gmp+144 \cdot cmp+189 \cdot ump+176 \cdot amp\\
 % \end{eqnarray*}
-
-\subsection*{Sequence-specific calculation of carbon yield.}
-We estimated the theoretical maximum CAT carbon yield using sequence-specific flux balance analysis (ssFBA) \cite{Allen:2003aa}.
-The sequence-specific flux balance analysis problem was formulated as a linear program:
-\begin{equation}
- \begin{multlined}
-	\qquad \qquad \qquad \max_{\boldsymbol{w}}{} \! \left( w_{TL} = \mathbf{\boldsymbol{\theta}}^T \boldsymbol{w} \right) \\
-	\mathrm{Subject \; to:}
-	 \; \; \mathbf{S}\mathbf{w}=\mathbf{0} \\
-\alpha_i \leq w_i \leq \beta_i  \qquad i=1,2,\hdots,\mathcal{R}
- \end{multlined}
-\end{equation}
-where $\mathbf{S}$ denotes the stoichiometric matrix, $\mathbf{w}$ denotes the unknown flux vector, $\boldsymbol{\theta}$ denotes the objective selection vector
-and $\alpha_i$ and $\beta_i$ denote the lower and upper bounds on flux $w_{i}$, respectively.
-The stoichiometry of the kinetic model was used for the ssFBA calculations, with the execpetion of the transcription and translation rates.
-The transcription (TX) and translation (TL) stoichiometry was modeled using the template reactions taken from Allen and Palsson \cite{Allen:2003aa}:
-\begin{eqnarray*}
-\mathrm{{G}_{\mathcal{P}}}+\mathrm{{R}_{1}} &\longrightarrow& \mathrm{G_{\mathcal{P}}^{*}} \\
-\mathrm{G_{\mathcal{P}}^{*}}+\sum_{\mathrm{k\in\left\{A,C,G,U\right\}}}\eta_{k}\cdot \mathrm{\left\{k\right\}TP} &\overset{\rm TX}{\longrightarrow}& \mathrm{mRNA}+\mathrm{G_{\mathcal{P}}}+\mathrm{R_{1}}+ \mathrm{\sum_{k\in\left\{A,C,G,U\right\}}2\eta_{k}\cdot Pi}\\
-\mathrm{mRNA} &\longrightarrow& \mathrm{\sum_{k\in\left\{A,C,G,U\right\}}\eta_{k}\cdot \left\{k\right\}MP} \\
-\mathrm{mRNA}+\mathrm{R_{2}} &\longrightarrow& \mathrm{R_{2}^{*}} \\
-\mathrm{\alpha_{j}\cdot AA_{j}+\alpha_{j}\cdot tRNA+\alpha_{j}\cdot ATP} &\longrightarrow& \mathrm{\alpha_{j}\cdot AA_{j}-tRNA_{j}+}\\
-&& \mathrm{\qquad \alpha_{j}\cdot AMP+2\alpha_{j}\cdot Pi} \qquad{j=1,2,\hdots,20}\\
-\mathrm{R_{2}^{*}+\sum_{j\in\left\{AA\right\}}\alpha_{j}\cdot \Big(AA_{j}-tRNA_{j}+2\cdot GTP\Big)} &\stackrel{\rm TL}{\longrightarrow}& \mathcal{P}+\mathrm{R_{2}+mRNA}+\\
-&& \mathrm{\quad +\sum_{j\in\left\{AA\right\}}\alpha_{j}\cdot\Big(tRNA+2\cdot GDP+2\cdot Pi\Big)}
-\end{eqnarray*}
-where $G_{\mathcal{P}}$ denotes the gene encoding protein product $\mathcal{P}$,
-$\rm R_{1}$ denotes the concentration of RNA polymerase,
-$G_{\mathcal{P}}^{*}$ denotes the gene bounded by the RNA polymerase,
-$\eta_{i}$ and $ \alpha_{j}$ denote the stoichiometric coefficients for nucleotide and amino acid, respectively,
-$\rm Pi$ denotes inorganic phosphate,
-$\rm R_{2}$ denotes the ribosome concentration,
-$\rm R_{2}^{*}$ denotes bounded ribosome,
-and $AA_{j}$ denotes $j^{th}$ amino acid.
-
-The transcription rate ($w_{TX}$) was fixed in the ssFBA calculation at:
-\begin{equation}
-	w_{TX} = V_{TX}^{max}\left(\frac{G}{K_{TX}+G}\right)
-\end{equation}
-where $G$ denotes the gene concentration, and $K_{TX}$ denotes a transcription saturation coefficient.
-The maximum rate of transcription $V_{TX}^{max}$ was formulated as:
-\begin{equation}
-	V_{TX}^{max} \equiv \left[R_{1}\left(\frac{v_{TX}}{l_{G}}\right)\left(\frac{K_{T7}}{1 + K_{T7}}\right)\right]
-\end{equation}
-The term $R_{1}$ denotes the RNA polymerase abundance,
-$v_{TX}$ denotes the RNA polymerase elongation rate (nt/hr),
-$l_{G}$ denotes the gene length in nucleotides, and the last term describes T7 promoter activity,
-where $K_{T7}$ denotes a T7 RNA polymerase binding constant \cite{Moon:2012aa}.
-On the other hand, the translation rate ($w_{TL}$) was bounded by:
- \begin{equation}
-	0\leq w_{TL} \leq V_{TL}^{max}\left(\frac{\rm mRNA_{SS}}{K_{TL}+\rm mRNA_{SS}}\right)
-\end{equation}
-where $\rm mRNA_{SS}$ denotes the steady state mRNA abundance, and $K_{TL}$ denotes the translation saturation constant.
-The maximum translation rate $V_{TL}^{max}$ was formulated as:
-\begin{equation}
-	V_{TL}^{max} \equiv \left[K_{P} R_{2}\left(\frac{v_{TL}}{l_{P}}\right)\right]
-\end{equation}
-The term $K_{P}$ denotes the polysome amplification constant,
-$v_{TL}$ denotes the ribosome elongation rate (amino acids per hour),
-$l_{P}$ denotes the number of amino acids in the protein of interest,
-and $\rm mRNA_{SS}$ denotes the steady-state mRNA concentration:
-\begin{equation}
-	\rm mRNA_{SS}\simeq\frac{w_{TX}}{\lambda}
-\end{equation}where $\lambda$ denotes the rate constant controlling the mRNA degradation rate.
-
-The objective of the sequence-specific flux balance calculation was to maximize the rate of CAT translation, $w_{TL}$.
-The total glucose uptake rate was bounded by [0,40 mM/h] according to experimental data;
-while the amino acid uptake rates were bounded by [0,30 mM/h], but did not reach the maximum flux.
-The CAT gene and protein sequences were taken from literature.
-The sequence-specific flux balance linear program was solved using the GNU Linear Programming Kit (GLPK) v4.52 \cite{GLPK}.
-
 
 \subsubsection*{Quantification of uncertainty.}
 An ensemble of 100 sets of flux distributions was calculated for three different cases:  constrained by transcription/translation rates, constrained by transcription/translation rates without amino acid synthesis reactions, and constrained by transcription/translation rates and experimental measurements without amino acid synthesis reactions.
@@ -645,7 +489,6 @@ The authors declare that they have no competing interests.
 J.V directed the modeling study.
 K.C and J.S conducted the cell free protein synthesis experiments.
 J.V, J.W, and N.H developed the cell free protein synthesis mathematical model, and parameter ensemble.
-J.V and M.V performed the sequence-specific flux balance analysis calculations.
 The manuscript was prepared and edited for publication by J.S, N.H, M.V, J.W and J.V.
 
 \section*{Acknowledgements}
@@ -663,144 +506,212 @@ with support from the US Army Medical Research and Materiel Command under award 
 \clearpage
 
 % Figures and captions go here ...
-% \begin{figure}[ht]
-% \centering
-% \includegraphics[width=1.00\textwidth]{./Figures/Carbon.pdf}
-% \caption{Central carbon metabolism in the presence (top) and absence (bottom) of allosteric control, including glucose (substrate), CAT (product), and intermediates, as well as total concentration of energy species. Best-fit parameter set (orange line) versus experimental data (points). 95\% confidence interval (blue shaded region) and 95\% confidence interval of the mean (gray shaded region) over the ensemble of 100 sets.}
-% \label{fig:Carbon}
-% \end{figure}
 
 \begin{figure}[ht]
 \centering
-\includegraphics[width=1.00\textwidth]{./Figures/Carbon.pdf}
+\includegraphics[width=1.00\textwidth]{./Figures/Fig_1_Carbon.pdf}
 \caption{Central carbon metabolism in the presence (top) and absence (bottom) of allosteric control, including glucose (substrate), CAT (product), and intermediates, as well as total concentration of energy species. Best-fit parameter set (orange line) versus experimental data (points). 95\% confidence interval (blue or gray shaded region) over the ensemble of 100 sets.}
 \label{fig:Carbon}
 \end{figure}
 
 \begin{figure}[ht]
 \centering
-\includegraphics[width=1.00\textwidth]{./Figures/Energy.pdf}
+\includegraphics[width=1.00\textwidth]{./Figures/Fig_2_Energy.pdf}
 \caption{Energy species and energy totals by base in the presence of allosteric control. Best-fit parameter set (orange line) versus experimental data (points). 95\% confidence interval (blue shaded region) over the ensemble of 100 sets.}
 \label{fig:Energy}
 \end{figure}
 
 \begin{figure}[ht]
 \centering
-\includegraphics[width=1.00\textwidth]{./Figures/Amino.pdf}
+\includegraphics[width=1.00\textwidth]{./Figures/Fig_3_Amino.pdf}
 \caption{Amino acids in the presence of allosteric control. Best-fit parameter set (orange line) versus experimental data (points). 95\% confidence interval (blue shaded region) over the ensemble of 100 sets.}
 \label{fig:Amino}
 \end{figure}
 
 \begin{figure}[ht]
 \centering
-\includegraphics[width=1.00\textwidth]{./Figures/CostArray-BoxPlot.pdf}
+\includegraphics[width=1.00\textwidth]{./Figures/Fig_4_EnsembleVsRandom.pdf}
 \caption{Log of cost function across 37 datasets for data-trained ensemble (blue) and randomly generated ensemble (red, gray background). Median (bars), interquartile range (boxes), range excluding outliers (dashed lines), and outliers (circles) for each dataset. Median across all datasets (large bar overlaid).}
 \label{fig:BoxPlot}
 \end{figure}
 
 \begin{figure}[ht]
 \centering
-\includegraphics[width=0.7\textwidth]{./Figures/GroupKO.pdf}
+\includegraphics[width=0.7\textwidth]{./Figures/Fig_5_GroupKO.pdf}
 \caption{Effect of group knockouts on system. A. Change in CAT productivity when one (diagonal) or two (off-diagonal) reaction groups are turned off. B. Change in system state (only species for which data exist) when one (diagonal) or two (off-diagonal) reaction groups are turned off. Total-order effect for each group calculated as the sum of first-order effect and all pairwise effects. Larger and darker circles represent greater effects.}
 \label{fig:GroupKO}
 \end{figure}
 
-\begin{figure}[ht]
-\centering
-\includegraphics[width=1.00\textwidth]{./Figures/Sens_productivity.pdf}
-\caption{Sensitivity of CAT production to model parameters, decomposed into eigenmodes. Sensitivity of top 10 eigenvectors  (columns, left to right) to top 20 most influential parameters (rows, bottom to top). Relative magnitudes of eigenvalues expressed as percentages.}
-\label{fig:Sensitivity-CAT}
-\end{figure}
+\clearpage
 
-\begin{figure}[ht]
+%\begin{table}
+%\centering
+% \caption{}
+% \renewcommand{\arraystretch}{1.3}
+% \begin{tabular}{llrrr} \toprule
+% & \multicolumn{1}{r}{\textbf{Original value}} & \multicolumn{2}{r}{\textbf{After dilution factor}} & \textbf{BN ID} \\ \hline
+%\smallskip
+%\rule{0pt}{3ex} \parbox{4.3 cm}{Characteristic Enzyme Concentration} & \multicolumn{1}{r}{5 $\mu$M} & \multicolumn{2}{r}{0.1667 $\mu$M} & 100735 \\ \toprule
+%\phantom{i}\textbf{Enzyme} & \textbf{Reaction name} & \textbf{Kcat (h$^-1$)} & 
+% \textbf{Vmax (mM/h)} & \textbf{BN ID} \\ \hline
+%\phantom{i}Serine dehydrase & R\_ser\_deg & 624000 & 104 & 101119 \\ \hline
+%\phantom{i}Isocitrate dehydrogenase & R\_icd & 714000 & 119 & 101152 \\ \hline
+%\phantom{i}Lactate dehydrogenase & R\_ldh & 348000 & 58 & 101036 \\ \hline
+%\phantom{i}Aspartate transaminase & R\_aspC, R\_tyr, R\_phe & 1548000 & 258 & 101108 \\ \hline
+%\phantom{i}Enolase & R\_eno & 792000 & 132 & 101028 \\ \hline
+%\smallskip
+%\rule{0pt}{3ex}
+%Pyruvate kinase & R\_pyk & 1500000 & 250 & \parbox{1.4 cm}{101029, 101030} \\ \hline
+%\phantom{i}Malic enzyme & R\_maeA, R\_maeB & 2124000 & 354 & 101167 \\ \hline
+%\phantom{i}Phosphofructokinase & R\_pfk & 33264000 & 5544 & 104955 \\ \hline
+%\phantom{i}Malate dehydrogenase & R\_mdh & 1980000 & 330 & 101163 \\ \hline
+%\phantom{i}Citrate Synthase & R\_gltA & 2520000 & 420 & 101149 \\ \hline
+%\phantom{i}6PG dehydrogenase & R\_zwf, R\_pgl, R\_gnd & 192000 & 32 & 101048 \\ \hline
+%\phantom{i}Succinate dehydrogenase & R\_sdh & 7260 & 1.21 & 101162 \\ \hline
+%\phantom{i}Succinyl-coA Synthetase & R\_sucCD & 282000 & 47 & 101158 \\ \hline
+%\phantom{i}3PGA dehydrogenase & R\_gpm & 66000 & 11 & 101135 \\ \hline
+%\phantom{i}PEP carboxylase & R\_ppc & 2124000 & 354 & 101139 \\ \hline
+%\phantom{i}3PGA kinase & R\_pgk & 258000 & 43 & 101016 \\ \midrule
+%\phantom{i}Geometric mean & & & 110 & \\ \toprule
+%\phantom{i}\textbf{Transcription/Translation} & \textbf{AA-tRNA complex (mM)} & \textbf{Kcat (h$^-1$)} & \textbf{Vmax (mM/h)} & \textbf{BN ID} \\ \hline
+%\phantom{i}tRNA charging & 0.03 & 14040 & 4212 & 104980 \\ \hline
+%% Serine dehydrase & Yield & 8.1\% & 6.9\% & 2.6\% \\ \bottomrule
+% \end{tabular}
+%\label{tbl:Literature_values}
+%\end{table}
+
+\begin{table}
 \centering
-\includegraphics[width=1.00\textwidth]{./Figures/oxKO_ssFBA_yields.pdf}
-\caption{The effects of oxidative phosphorylation and amino acid synthesis pathways on CAT production and carbon yield. A. 95\% confidence interval of the ensemble of kinetic models for CAT concentration versus time, for the best-fit set with no knockouts (black shaded region and dashed line), \textit{nuo} knockout (medium gray), and \textit{cyd} knockout (light gray). B. CAT carbon yield of the ensemble of kinetic models for no knockouts (black), \textit{app} knockout (dark gray), \textit{nuo} knockout (medium gray), \textit{cyd} knockout (light gray), and all three knockouts (white). Error bars represent standard deviation of the ensemble. C. 95\% confidence interval of the ensemble of ssFBA simulations (light blue region) of CAT concentration over time, against experimental data (black). D. Theoretical maximum carbon yield of CAT production, calcualted by ssFBA for three different cases: constrained by transcription/translation (TX/TL) rates (black), same as previous but without amino acid synthesis reactions (medium gray), and same as previous but constrained by experimental measurements where available (light gray). Error bars represent standard deviation of the ensemble.}
-\label{fig:oxKO_ssFBA_yields}
-\end{figure}
+ \caption{}
+ \renewcommand{\arraystretch}{1.3}
+ \begin{tabular}{llrrr} \toprule
+\smallskip
+ & & \textbf{Original value} & \parbox{2.8 cm}{\textbf{After cell-free dilution factor}} & \textbf{BN ID} \\ \hline
+\smallskip
+\rule{0pt}{3ex} \parbox{4.3 cm}{Characteristic Enzyme Concentration} & & 5 $\mu$M & 167 nM & 100735 \\ \toprule
+\phantom{i}\textbf{Enzyme} & \textbf{Reaction} & \textbf{Kcat (min$^{-1}$)} & 
+ \textbf{Vmax (mM/h)} & \textbf{BN ID} \\ \hline
+\phantom{i}Serine dehydrase & R\_ser\_deg & 10400 & 104 & 101119 \\ \hline
+\phantom{i}Isocitrate dehydrogenase & R\_icd & 11900 & 119 & 101152 \\ \hline
+\phantom{i}Lactate dehydrogenase & R\_ldh & 5800 & 58 & 101036 \\ \hline
+\smallskip
+\rule{0pt}{4.5ex}
+Aspartate transaminase & \parbox{1 cm}{R\_aspC, R\_tyr, R\_phe} & 25800 & 258 & 101108 \\ \hline
+\phantom{i}Enolase & R\_eno & 13200 & 132 & 101028 \\ \hline
+\smallskip
+\rule{0pt}{3ex}
+Pyruvate kinase & R\_pyk & 25000 & 250 & \parbox{1.4 cm}{101029, 101030} \\ \hline
+\smallskip
+\rule{0pt}{3ex}
+Malic enzyme & \parbox{1 cm}{R\_maeA, R\_maeB} & 35400 & 354 & 101167 \\ \hline
+\phantom{i}Phosphofructokinase & R\_pfk & 554400 & 5544 & 104955 \\ \hline
+\phantom{i}Malate dehydrogenase & R\_mdh & 33000 & 330 & 101163 \\ \hline
+\phantom{i}Citrate Synthase & R\_gltA & 42000 & 420 & 101149 \\ \hline
+\smallskip
+\rule{0pt}{4.5ex}
+6PG dehydrogenase & \parbox{1 cm}{R\_zwf, R\_pgl, R\_gnd} &3200 & 32 & 101048 \\ \hline
+\phantom{i}Succinate dehydrogenase & R\_sdh & 121 & 1.21 & 101162 \\ \hline
+\phantom{i}Succinyl-coA synthetase & R\_sucCD & 4700 & 47 & 101158 \\ \hline
+\phantom{i}3PGA dehydrogenase & R\_gpm & 1100 & 11 & 101135 \\ \hline
+\phantom{i}PEP carboxylase & R\_ppc & 35400 & 354 & 101139 \\ \hline
+\phantom{i}3PGA kinase & R\_pgk & 4300 & 43 & 101016 \\ \midrule
+\phantom{i}Geometric mean & & & 110 & \\ \toprule
+\phantom{i}\textbf{Transcription/Translation} \\ \hline
+%\phantom{i}\textbf{Transcription/Translation} & \textbf{AA-tRNA (mM)} & \textbf{Kcat (h$^-1$)} & \textbf{Vmax (mM/h)} & \textbf{BN ID} \\ \hline
+\phantom{i}tRNA charging & 0.03 & 14040 & 4212 & 104980 \\ \hline
+% \bottomrule
+ \end{tabular}
+\label{tbl:Literature_values}
+\end{table}
+
+%\begin{table}
+%\centering
+% \caption{}
+% \renewcommand{\arraystretch}{1.3}
+% \begin{tabular}{llrrr} \toprule
+% & & \textbf{Original value} & \textbf{After dilution factor} & \textbf{BN ID} \\ \hline
+%\smallskip
+%\rule{0pt}{3ex} \parbox{4.3 cm}{Characteristic Enzyme Concentration} & & 5 $\mu$M & 0.1667 $\mu$M & 100735 \\ \toprule
+%\phantom{i}\textbf{Enzyme} & \textbf{Reaction} & \textbf{Kcat (h$^-1$)} & 
+% \textbf{Vmax (mM/h)} & \textbf{BN ID} \\ \hline
+%\phantom{i}Serine dehydrase & R\_ser\_deg & 624000 & 104 & 101119 \\ \hline
+%\phantom{i}Isocitrate dehydrogenase & R\_icd & 714000 & 119 & 101152 \\ \hline
+%\phantom{i}Lactate dehydrogenase & R\_ldh & 348000 & 58 & 101036 \\ \hline
+%\smallskip
+%\rule{0pt}{4.5ex}
+%Aspartate transaminase & \parbox{1 cm}{R\_aspC, R\_tyr, R\_phe} & 1548000 & 258 & 101108 \\ \hline
+%\phantom{i}Enolase & R\_eno & 792000 & 132 & 101028 \\ \hline
+%\smallskip
+%\rule{0pt}{3ex}
+%Pyruvate kinase & R\_pyk & 1500000 & 250 & \parbox{1.4 cm}{101029, 101030} \\ \hline
+%\smallskip
+%\rule{0pt}{3ex}
+%Malic enzyme & \parbox{1 cm}{R\_maeA, R\_maeB} & 2124000 & 354 & 101167 \\ \hline
+%\phantom{i}Phosphofructokinase & R\_pfk & 33264000 & 5544 & 104955 \\ \hline
+%\phantom{i}Malate dehydrogenase & R\_mdh & 1980000 & 330 & 101163 \\ \hline
+%\phantom{i}Citrate Synthase & R\_gltA & 2520000 & 420 & 101149 \\ \hline
+%\smallskip
+%\rule{0pt}{4.5ex}
+%6PG dehydrogenase & \parbox{1 cm}{R\_zwf, R\_pgl, R\_gnd} & 192000 & 32 & 101048 \\ \hline
+%\phantom{i}Succinate dehydrogenase & R\_sdh & 7260 & 1.21 & 101162 \\ \hline
+%\phantom{i}Succinyl-coA synthetase & R\_sucCD & 282000 & 47 & 101158 \\ \hline
+%\phantom{i}3PGA dehydrogenase & R\_gpm & 66000 & 11 & 101135 \\ \hline
+%\phantom{i}PEP carboxylase & R\_ppc & 2124000 & 354 & 101139 \\ \hline
+%\phantom{i}3PGA kinase & R\_pgk & 258000 & 43 & 101016 \\ \midrule
+%\phantom{i}Geometric mean & & & 110 & \\ \toprule
+%%\phantom{i}\textbf{Transcription/Translation} & \textbf{AA-tRNA (mM)} & \textbf{Kcat (h$^-1$)} & \textbf{Vmax (mM/h)} & \textbf{BN ID} \\ \hline
+%\phantom{i}tRNA charging & 0.03 & 14040 & 4212 & 104980 \\ \hline
+%% \bottomrule
+% \end{tabular}
+%\label{tbl:Literature_values}
+%\end{table}
+
+%\begin{table}
+%\centering
+%    \caption{CAT carbon yield breakdown for best-fit set, knockouts, and experimental data. Carbon produced as CAT, carbon consumed as glucose and each amino acid, sum of consumed species, and yield. Accumulation of alanine and glutamine (negative consumption terms) was not considered in yield calculation.}
+%    \renewcommand{\arraystretch}{1.3}
+%    \begin{tabular}{lrrrrrr} \toprule
+%        Carbon Produced (C-mM) & Best-fit & $\Delta$app & $\Delta$nuo & $\Delta$cyd & \parbox{1 cm}{$\Delta$app $\Delta$nuo $\Delta$cyd} & Data \\ \hline
+%        CAT & 20.9 & 21.4 & 18.1 & 6.5 & 5.1 & 21.6 \\ \midrule
+%        Carbon Consumed (C-mM) \\ \hline
+%        GLC & 215.4 & 215.4 & 215.4 & 215.4 & 159.8 & 215.4 \\ \hline
+%        ALA & -11.6 & -11.4 & 1.7 & -3.8 & -3.2 & -12.1 \\ \hline
+%%        ARG & 10.2 & 9.9 & 1.1 & 0.9 & 1.3 & - \\ \hline
+%        ASN & 6.2 & 6.2 & 6.2 & 6.3 & 6.3 & 6.3 \\ \hline
+%        ASP & 7.5 & 7.5 & 3.9 & 0.0 & 0.0 & 9.6 \\ \hline
+%        CYS & 3.0 & 3.1 & 3.0 & 2.9 & 2.9 & 3.7 \\ \hline
+%        GLN & -11.4 & -11.3 & -4.0 & 1.8 & 2.7 & -11.7 \\ \hline
+%%        GLU & 492.6 & 505.6 & 528.2 & 505.1 & 501.8 & - \\ \hline
+%        GLY & 3.1 & 3.1 & 2.6 & 1.1 & 0.9 & 1.5 \\ \hline
+%        HIS & 0.2 & 0.2 & 1.1 & 0.4 & 0.3 & 0.0 \\ \hline
+%        ILE & 1.0 & 1.0 & 0.8 & 0.3 & 0.2 & 1.7 \\ \hline
+%        LEU & 1.4 & 1.4 & 1.2 & 0.4 & 0.3 & 2.0 \\ \hline
+%        LYS & 10.7 & 10.7 & 13.1 & 13.2 & 13.2 & 8.3 \\ \hline
+%        MET & 0.8 & 0.8 & 0.7 & 0.2 & 0.2 & 2.9 \\ \hline
+%        PHE & 3.2 & 3.3 & 2.8 & 1.0 & 0.8 & 1.6 \\ \hline
+%        PRO & 2.4 & 2.4 & 0.7 & 0.2 & 0.2 & 1.9 \\ \hline
+%        SER & 2.5 & 2.5 & 2.4 & 2.1 & 2.1 & 1.8 \\ \hline
+%        THR & 3.4 & 3.4 & 3.3 & 2.9 & 2.8 & 2.8 \\ \hline
+%        TRP & 1.0 & 1.0 & 0.8 & 0.3 & 0.2 & 1.2 \\ \hline
+%        TYR & 1.1 & 1.1 & 1.1 & 0.4 & 0.4 & 0.6 \\ \hline
+%        VAL & 1.4 & 1.5 & 1.2 & 0.4 & 0.4 & 2.4 \\ \midrule
+%%        Sum & 767.1 & 780.1 & 791.3 & 755.3 & 696.8 & - \\ \hline
+%        Sum & 264.3 & 264.6 & 262.0 & 249.3 & 193.7 & 263.7 \\ \midrule
+%%        Yield & 2.7\% & 2.7\% & 2.3\% & 0.9\% & 0.7\% & - \\ \hline
+%        Yield & 7.9\% & 8.1\% & 6.9\% & 2.6\% & 2.7\% & 8.2\% \\ \bottomrule
+%    \end{tabular}
+%\label{tbl:yield_breakdown}
+%\end{table}
+
 \clearpage
 
 \begin{figure}[ht]
 \centering
-\includegraphics[width=1.00\textwidth]{./Figures/NetworkFlux.pdf}
-\caption{Flux profile for glycolysis, pentose phosphate pathway, Entner-Doudoroff pathway, TCA cycle, NADPH/NADH transfer, oxidative phosphorylation, and protein synthesis. Thicker and redder arrows signify larger flux values (see colorbar). A. ssFBA constrained by transcription and translation rates, with or without amino acid synthesis reactions. B. ssFBA constrained by transcription and translation rates and experimental measurements where available.}
-%Sequence-specific FBA flux value (mean ± standard deviation) across ensemble for 1 hr, normalized to glucose uptake flux. Flux distribution for three different cases: constrained by transcription and translation rates (top row), same as previous but without amino acid synthesis reactions  (second row), and same as previous but constrained by experimental measurements where available (bottom row).}
-\label{fig:NetworkFlux}
-\end{figure}
-
-\begin{table}
-\centering
-    \caption{CAT carbon yield breakdown for best-fit set, knockouts, and experimental data. Carbon produced as CAT, carbon consumed as glucose and each amino acid, sum of consumed species, and yield. Accumulation of alanine and glutamine (negative consumption terms) was not considered in yield calculation.}
-    \renewcommand{\arraystretch}{1.3}
-    \begin{tabular}{lrrrrrr} \toprule
-        Carbon Produced (C-mM) & Best-fit & $\Delta$app & $\Delta$nuo & $\Delta$cyd & \parbox{1 cm}{$\Delta$app $\Delta$nuo $\Delta$cyd} & Data \\ \hline
-        CAT & 20.9 & 21.4 & 18.1 & 6.5 & 5.1 & 21.6 \\ \midrule
-        Carbon Consumed (C-mM) \\ \hline
-        GLC & 215.4 & 215.4 & 215.4 & 215.4 & 159.8 & 215.4 \\ \hline
-        ALA & -11.6 & -11.4 & 1.7 & -3.8 & -3.2 & -12.1 \\ \hline
-%        ARG & 10.2 & 9.9 & 1.1 & 0.9 & 1.3 & - \\ \hline
-        ASN & 6.2 & 6.2 & 6.2 & 6.3 & 6.3 & 6.3 \\ \hline
-        ASP & 7.5 & 7.5 & 3.9 & 0.0 & 0.0 & 9.6 \\ \hline
-        CYS & 3.0 & 3.1 & 3.0 & 2.9 & 2.9 & 3.7 \\ \hline
-        GLN & -11.4 & -11.3 & -4.0 & 1.8 & 2.7 & -11.7 \\ \hline
-%        GLU & 492.6 & 505.6 & 528.2 & 505.1 & 501.8 & - \\ \hline
-        GLY & 3.1 & 3.1 & 2.6 & 1.1 & 0.9 & 1.5 \\ \hline
-        HIS & 0.2 & 0.2 & 1.1 & 0.4 & 0.3 & 0.0 \\ \hline
-        ILE & 1.0 & 1.0 & 0.8 & 0.3 & 0.2 & 1.7 \\ \hline
-        LEU & 1.4 & 1.4 & 1.2 & 0.4 & 0.3 & 2.0 \\ \hline
-        LYS & 10.7 & 10.7 & 13.1 & 13.2 & 13.2 & 8.3 \\ \hline
-        MET & 0.8 & 0.8 & 0.7 & 0.2 & 0.2 & 2.9 \\ \hline
-        PHE & 3.2 & 3.3 & 2.8 & 1.0 & 0.8 & 1.6 \\ \hline
-        PRO & 2.4 & 2.4 & 0.7 & 0.2 & 0.2 & 1.9 \\ \hline
-        SER & 2.5 & 2.5 & 2.4 & 2.1 & 2.1 & 1.8 \\ \hline
-        THR & 3.4 & 3.4 & 3.3 & 2.9 & 2.8 & 2.8 \\ \hline
-        TRP & 1.0 & 1.0 & 0.8 & 0.3 & 0.2 & 1.2 \\ \hline
-        TYR & 1.1 & 1.1 & 1.1 & 0.4 & 0.4 & 0.6 \\ \hline
-        VAL & 1.4 & 1.5 & 1.2 & 0.4 & 0.4 & 2.4 \\ \midrule
-%        Sum & 767.1 & 780.1 & 791.3 & 755.3 & 696.8 & - \\ \hline
-        Sum & 264.3 & 264.6 & 262.0 & 249.3 & 193.7 & 263.7 \\ \midrule
-%        Yield & 2.7\% & 2.7\% & 2.3\% & 0.9\% & 0.7\% & - \\ \hline
-        Yield & 7.9\% & 8.1\% & 6.9\% & 2.6\% & 2.7\% & 8.2\% \\ \bottomrule
-    \end{tabular}
-\label{tbl:yield_breakdown}
-\end{table}
-
-\begin{figure}[ht]
-\centering
-\includegraphics[width=1.00\textwidth]{./Figures/CAT_balances.pdf}
-\caption{Carbon and energy balances for the best-fit set. A. Carbon moles produced as CAT, amino acids (alanine and glutamine), organic acids (lactate, acetate, succinate, and malate), and other byproducts including carbon dioxide, as percentages of total carbon consumption (glucose and all other amino acids). B. Energy cost of CAT production, accumulation of organic acids (lactate, acetate, succinate, and malate), and glycolytic and pentose phosphate metabolites, as percentages of total energy utilization from glucose. Energy costs calculated in terms of equivalent ATP molecules.}
+\includegraphics[width=0.6\textwidth]{./Figures/Fig_6_CarbonEnergyBalances.pdf}
+%\caption{Carbon and energy balances for the best-fit set. A. Carbon moles produced as CAT, amino acids (alanine and glutamine), organic acids (lactate, acetate, succinate, and malate), and other byproducts including carbon dioxide, as percentages of total carbon consumption (glucose and all other amino acids). B. Energy cost of CAT production, accumulation of organic acids (lactate, acetate, succinate, and malate), and glycolytic and pentose phosphate metabolites, as percentages of total energy utilization from glucose. Energy costs calculated in terms of equivalent ATP molecules.}
+\caption{Carbon and energy balances for the best-fit set. A. Carbon moles produced as CAT, amino acids (alanine and glutamine), organic acids (lactate, acetate, succinate, and malate), and other byproducts including carbon dioxide, as percentages of total carbon consumption (glucose and all other amino acids). B. Energy cost of CAT production, accumulation of amino acids (alanine and glutamine), accumulation of organic acids (lactate, acetate, succinate, and malate), and other byproducts, as percentages of total energy utilization from glucose. Energy costs calculated in terms of equivalent ATP molecules.}
 \label{fig:CAT_balances}
 \end{figure}
-
-%\begin{table}
-%\centering
-%    \caption{Amino acid total net consumption, consumption toward CAT, and net consumption other than toward CAT for the best-fit set. Total net consumption defined as decrease in amino acid concentration over 3 hours. Consumption toward CAT defined as increase in CAT concentration over 3 hours, multiplied by stoichiometric coefficient for given amino acid in CAT synthesis.}
-%    \renewcommand{\arraystretch}{1.3}
-%    \begin{tabular}{lrrr} \toprule
-%        & \parbox{3.6cm}{Total Net \phantom{abcdefgh} Consumption (mM)} & \parbox{3.4cm}{Consumption \phantom{abc} Toward CAT (mM)} & \parbox{3.6cm}{Other \phantom{abcdefgh} Consumption (mM)} \\ \hline
-%        ALA  & -3.85 & 0.27 & -4.12 \\ \hline
-%        ARG  & 1.70  & 0.18  & 1.52 \\ \hline
-%        ASN  & 1.55  & 0.09  & 1.46 \\ \hline
-%        ASP  & 1.87  & 0.21  & 1.66 \\ \hline
-%        CYS  & 1.02  & 0.09  & 0.93 \\ \hline
-%        GLN  & -2.28 & 0.21 & -2.49 \\ \hline
-%        GLU  & 98.53  & 0.23  & 98.30 \\ \hline
-%        GLY  & 1.55  & 0.18  & 1.37 \\ \hline
-%        HIS  & 0.04  & 0.21  & -0.17 \\ \hline
-%        ILE  & 0.16  & 0.16  & 0.00 \\ \hline
-%        LEU  & 0.23  & 0.23  & 0.00 \\ \hline
-%        LYS  & 1.79  & 0.21  & 1.58 \\ \hline
-%        MET  & 0.16  & 0.16  & 0.00 \\ \hline
-%        PHE  & 0.36  & 0.36  & 0.00 \\ \hline
-%        PRO  & 0.48  & 0.12  & 0.36 \\ \hline
-%        SER  & 0.83  & 0.18  & 0.65 \\ \hline
-%        THR  & 0.86  & 0.23  & 0.63 \\ \hline
-%        TRP  & 0.09  & 0.09  & 0.00 \\ \hline
-%        TYR  & 0.12  & 0.20  & -0.08 \\ \hline
-%        VAL  & 0.29  & 0.29  & 0.00 \\ \bottomrule
-%    \end{tabular}
-%\label{tbl:AA_breakdown}
-%\end{table}
 
 \clearpage
 
@@ -824,14 +735,6 @@ with support from the US Army Medical Research and Materiel Command under award 
 %\caption{Captiontext goes here}
 %}\label{fig:<label_name>}
 %\end{figure}
-
-\begin{figure}[ht]
-\centering
-\includegraphics[width=1.00\textwidth]{./Figures/Sens_state.pdf}
-\caption{Sensitivity of system state to model parameters, decomposed into eigenmodes. Sensitivity of top 10 eigenvectors  (columns, left to right) to top 20 most influential parameters (rows, bottom to top). Relative magnitudes of eigenvalues expressed as percentages.}
-\label{fig:Sensitivity-System}
-\end{figure}
-
 
 \end{document}
 \grid
