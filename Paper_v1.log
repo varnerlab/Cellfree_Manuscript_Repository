@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.4.14)  9 MAY 2017 15:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.4.14)  9 MAY 2017 16:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1154,16 +1154,16 @@ Overfull \hbox (4.54698pt too wide) in paragraph at lines 612--612
  []
 
 [29]
-<./Figures/Fig_6_CarbonEnergyBalances.pdf, id=189, 886.31125pt x 1723.43875pt>
+<./Figures/Fig_6_CarbonEnergyBalances.pdf, id=189, 790.955pt x 1711.39375pt>
 File: ./Figures/Fig_6_CarbonEnergyBalances.pdf Graphic file (type pdf)
 
 <use ./Figures/Fig_6_CarbonEnergyBalances.pdf>
 Package pdftex.def Info: ./Figures/Fig_6_CarbonEnergyBalances.pdf used on input
  line 710.
-(pdftex.def)             Requested size: 281.85587pt x 548.0667pt.
+(pdftex.def)             Requested size: 258.36668pt x 559.01666pt.
 
 
-LaTeX Warning: Float too large for page by 9.63669pt on input line 714.
+LaTeX Warning: Float too large for page by 20.58665pt on input line 714.
 
 [30 <./Figures/Fig_6_CarbonEnergyBalances.pdf>]
 
@@ -1201,7 +1201,7 @@ sy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb
 texmf/fonts/type1/urw/helvetic/uhvb8a.pfb></home/nick/texmf/fonts/type1/urw/hel
 vetic/uhvbo8a.pfb></home/nick/texmf/fonts/type1/urw/helvetic/uhvr8a.pfb></home/
 nick/texmf/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on Paper_v1.pdf (32 pages, 1379293 bytes).
+Output written on Paper_v1.pdf (32 pages, 1378683 bytes).
 PDF statistics:
  325 PDF objects out of 1000 (max. 8388607)
  228 compressed objects within 3 object streams
