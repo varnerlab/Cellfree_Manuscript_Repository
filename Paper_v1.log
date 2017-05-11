@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.4.14)  9 MAY 2017 16:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.4.14)  11 MAY 2017 19:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -986,26 +986,18 @@ LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <12> not available
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <14.4> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 135.
  [1] [1] [2] [3]
-LaTeX Font Info:    Try loading font information for TS1+phv on input line 217.
+LaTeX Font Info:    Try loading font information for TS1+phv on input line 221.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1phv.fd
 File: ts1phv.fd 2001/06/04 scalable font definitions for TS1/phv.
 ) [4
 
-] [5]
+] [5] [6] [7
 
-LaTeX Warning: Reference `fig:Sensitivity-CAT' on page 6 undefined on input lin
-e 245.
-
-
-LaTeX Warning: Reference `fig:Sensitivity-System' on page 6 undefined on input 
-line 254.
-
-[6] [7] [8
-
-] [9] [10]
-Overfull \hbox (2.4994pt too wide) in paragraph at lines 336--337
+]
+[8] [9] [10]
+Overfull \hbox (2.4994pt too wide) in paragraph at lines 368--369
  \OT1/phv/b/n/12 For-mu-la-tion and so-lu-tion of the model equa-tions. \OT1/ph
 v/m/n/12 We used or-di-nary dif-fer-en-tial equa-
  []
@@ -1013,29 +1005,36 @@ v/m/n/12 We used or-di-nary dif-fer-en-tial equa-
 [11
 
 ]
-Overfull \hbox (9.42928pt too wide) in paragraph at lines 385--392
+Overfull \hbox (9.42928pt too wide) in paragraph at lines 396--403
 \OT1/phv/m/n/12 [[]], PEP syn-thetase [[], []], isoc-i-trate de-hy-dro-ge-nase 
 [[], []], and isoc-i-trate lyase/malate
  []
 
 [12] [13]
-Overfull \hbox (19.01259pt too wide) in paragraph at lines 426--432
-\OT1/phv/m/n/12 where $\OMS/cmsy/m/n/12 S[]$ \OT1/phv/m/n/12 de-notes the sen-s
-i-tiv-ity of CAT pro-duc-tion to the $\OML/cmm/m/it/12 i[]$ \OT1/phv/m/n/12 and
- $\OML/cmm/m/it/12 j[]$ \OT1/phv/m/n/12 pa-ram-e-ters, $[]\OT1/cmr/m/n/12 (\OML
-/cmm/m/it/12 p[]; p[]; t\OT1/cmr/m/n/12 )$
+Overfull \hbox (4.85147pt too wide) in paragraph at lines 444--451
+ \OT1/phv/b/n/12 Group knock-outs. \OT1/phv/m/n/12 The net-work was di-vided in
+to 19 groups: gly-col-y-sis/gluconeogenesis,
  []
 
-[14] [15]
 
-LaTeX Warning: Reference `tbl:yield_breakdown' on page 16 undefined on input li
-ne 469.
+Overfull \hbox (38.6893pt too wide) in paragraph at lines 444--451
+\OT1/phv/m/n/12 ac-tions, anaplerotic/glyoxylate re-ac-tions, over-flow metabol
+ism, fo-late syn-the-sis, purine/pyrimidine
+ []
 
 
-LaTeX Warning: Reference `tbl:AA_breakdown' on page 16 undefined on input line 
-470.
+Overfull \hbox (31.13876pt too wide) in paragraph at lines 444--451
+\OT1/phv/m/n/12 nine/proline syn-the-sis, glycine/serine syn-the-sis, cys-teine
+/methionine syn-the-sis, thre-o-nine/lysine
+ []
 
-[16] [17] [18
+
+Overfull \hbox (78.21423pt too wide) in paragraph at lines 444--451
+\OT1/phv/m/n/12 syn-the-sis, his-ti-dine syn-the-sis, ty-ro-sine/tryptophan/phe
+nylalanine syn-the-sis, and va-line/leucine/isoleucine
+ []
+
+[14] [15] [16
 
 ] (./Paper_v1.bbl
 Underfull \hbox (badness 2126) in paragraph at lines 36--40
@@ -1043,7 +1042,7 @@ Underfull \hbox (badness 2126) in paragraph at lines 36--40
  D, et al.
  []
 
-[19
+[17
 
 ]
 Underfull \hbox (badness 1168) in paragraph at lines 92--96
@@ -1051,160 +1050,166 @@ Underfull \hbox (badness 1168) in paragraph at lines 92--96
 e-con-struc-tion of
  []
 
-[20]
+[18]
 Underfull \hbox (badness 3407) in paragraph at lines 152--157
 []\OT1/phv/m/n/12 Wayman JA, Sagar A, Varner JD.  Dy-namic Mod-el-ing of Cell-F
 ree Bio-
  []
 
-[21]
+[19]
 Underfull \hbox (badness 2310) in paragraph at lines 208--213
 []\OT1/phv/m/n/12 Hines JK, Fromm HJ, Hon-za-tko RB.  Struc-tures of ac-ti-vate
 d fructose-1,6-
  []
 
-[22]) [23] <./Figures/Fig_1_Carbon.pdf, id=99, 767.86874pt x 603.25375pt>
+[20]) [21] <./Figures/Fig_1_Carbon.pdf, id=91, 767.86874pt x 603.25375pt>
 File: ./Figures/Fig_1_Carbon.pdf Graphic file (type pdf)
 
 <use ./Figures/Fig_1_Carbon.pdf>
-Package pdftex.def Info: ./Figures/Fig_1_Carbon.pdf used on input line 512.
+Package pdftex.def Info: ./Figures/Fig_1_Carbon.pdf used on input line 535.
 (pdftex.def)             Requested size: 469.75502pt x 369.05202pt.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 513.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 536.
 
-<./Figures/Fig_2_Energy.pdf, id=100, 695.59875pt x 551.05875pt>
+<./Figures/Fig_2_Energy.pdf, id=92, 695.59875pt x 551.05875pt>
 File: ./Figures/Fig_2_Energy.pdf Graphic file (type pdf)
 
 <use ./Figures/Fig_2_Energy.pdf>
-Package pdftex.def Info: ./Figures/Fig_2_Energy.pdf used on input line 519.
+Package pdftex.def Info: ./Figures/Fig_2_Energy.pdf used on input line 542.
 (pdftex.def)             Requested size: 469.75502pt x 372.14198pt.
 
-<./Figures/Fig_3_Amino.pdf, id=101, 696.6025pt x 695.59875pt>
+<./Figures/Fig_3_Amino.pdf, id=93, 696.6025pt x 695.59875pt>
 File: ./Figures/Fig_3_Amino.pdf Graphic file (type pdf)
 
 <use ./Figures/Fig_3_Amino.pdf>
-Package pdftex.def Info: ./Figures/Fig_3_Amino.pdf used on input line 526.
+Package pdftex.def Info: ./Figures/Fig_3_Amino.pdf used on input line 549.
 (pdftex.def)             Requested size: 469.75502pt x 469.07373pt.
 
-<./Figures/Fig_4_EnsembleVsRandom.pdf, id=102, 788.9475pt x 720.6925pt>
+<./Figures/Fig_4_EnsembleVsRandom.pdf, id=94, 788.9475pt x 720.6925pt>
 File: ./Figures/Fig_4_EnsembleVsRandom.pdf Graphic file (type pdf)
 
 <use ./Figures/Fig_4_EnsembleVsRandom.pdf>
 Package pdftex.def Info: ./Figures/Fig_4_EnsembleVsRandom.pdf used on input lin
-e 533.
+e 556.
 (pdftex.def)             Requested size: 469.75502pt x 429.10878pt.
 
-<./Figures/Fig_5_GroupKO.pdf, id=103, 1059.96pt x 1796.7125pt>
+<./Figures/Fig_5_GroupKO.pdf, id=95, 1059.96pt x 1796.7125pt>
 File: ./Figures/Fig_5_GroupKO.pdf Graphic file (type pdf)
 
 <use ./Figures/Fig_5_GroupKO.pdf>
-Package pdftex.def Info: ./Figures/Fig_5_GroupKO.pdf used on input line 540.
+Package pdftex.def Info: ./Figures/Fig_5_GroupKO.pdf used on input line 563.
 (pdftex.def)             Requested size: 328.82707pt x 557.38635pt.
 
 
-LaTeX Warning: Float too large for page by 6.95634pt on input line 543.
+LaTeX Warning: Float too large for page by 6.95634pt on input line 566.
 
-[24
+[22
 
- <./Figures/Fig_1_Carbon.pdf>] [25 <./Figures/Fig_2_Energy.pdf>] [26 <./Figures
-/Fig_3_Amino.pdf>] [27 <./Figures/Fig_4_EnsembleVsRandom.pdf>] [28 <./Figures/F
+ <./Figures/Fig_1_Carbon.pdf>] [23 <./Figures/Fig_2_Energy.pdf>] [24 <./Figures
+/Fig_3_Amino.pdf>] [25 <./Figures/Fig_4_EnsembleVsRandom.pdf>] [26 <./Figures/F
 ig_5_GroupKO.pdf>]
-Overfull \hbox (15.51497pt too wide) in paragraph at lines 599--599
+Underfull \hbox (badness 10000) in paragraph at lines 612--612
+[]\OT1/phv/b/n/12 Original
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 612--612
+[]\OT1/phv/b/n/12 Cell-free []
+ []
+
+
+Overfull \hbox (15.51497pt too wide) in paragraph at lines 622--622
 []\OT1/phv/m/n/12 R[]aspC,
  []
 
 
-Overfull \hbox (0.59892pt too wide) in paragraph at lines 599--599
+Overfull \hbox (0.59892pt too wide) in paragraph at lines 622--622
 \OT1/phv/m/n/12 R[]tyr,
  []
 
 
-Overfull \hbox (4.54698pt too wide) in paragraph at lines 599--599
+Overfull \hbox (4.54698pt too wide) in paragraph at lines 622--622
 \OT1/phv/m/n/12 R[]phe 
  []
 
 
-Overfull \hbox (3.53372pt too wide) in paragraph at lines 603--603
-[]\OT1/phv/m/n/12 101029,
- []
-
-
-Overfull \hbox (19.2108pt too wide) in paragraph at lines 606--606
+Overfull \hbox (19.2108pt too wide) in paragraph at lines 629--629
 []\OT1/phv/m/n/12 R[]maeA,
  []
 
 
-Overfull \hbox (15.87492pt too wide) in paragraph at lines 606--606
+Overfull \hbox (15.87492pt too wide) in paragraph at lines 629--629
 \OT1/phv/m/n/12 R[]maeB 
  []
 
 
-Overfull \hbox (5.507pt too wide) in paragraph at lines 612--612
+Overfull \hbox (5.507pt too wide) in paragraph at lines 635--635
 []\OT1/phv/m/n/12 R[]zwf,
  []
 
 
-Overfull \hbox (3.8749pt too wide) in paragraph at lines 612--612
+Overfull \hbox (3.8749pt too wide) in paragraph at lines 635--635
 \OT1/phv/m/n/12 R[]pgl,
  []
 
 
-Overfull \hbox (4.54698pt too wide) in paragraph at lines 612--612
+Overfull \hbox (4.54698pt too wide) in paragraph at lines 635--635
 \OT1/phv/m/n/12 R[]gnd 
  []
 
-[29]
-<./Figures/Fig_6_CarbonEnergyBalances.pdf, id=189, 790.955pt x 1711.39375pt>
+
+Overfull \hbox (24.09624pt too wide) in paragraph at lines 610--648
+ [][] 
+ []
+
+[27] [28]
+<./Figures/Fig_6_CarbonEnergyBalances.pdf, id=185, 790.955pt x 1711.39375pt>
 File: ./Figures/Fig_6_CarbonEnergyBalances.pdf Graphic file (type pdf)
 
 <use ./Figures/Fig_6_CarbonEnergyBalances.pdf>
 Package pdftex.def Info: ./Figures/Fig_6_CarbonEnergyBalances.pdf used on input
- line 710.
+ line 774.
 (pdftex.def)             Requested size: 258.36668pt x 559.01666pt.
 
 
-LaTeX Warning: Float too large for page by 20.58665pt on input line 714.
+LaTeX Warning: Float too large for page by 20.58665pt on input line 778.
 
-[30 <./Figures/Fig_6_CarbonEnergyBalances.pdf>]
+[29 <./Figures/Fig_6_CarbonEnergyBalances.pdf>]
 
 AED: lastpage setting LastPage
-(./Paper_v1.aux)
-
-LaTeX Warning: There were undefined references.
-
- )
+(./Paper_v1.aux) )
 (\end occurred inside a group at level 1)
 
 ### semi simple group (level 1) entered at line 61 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 6704 strings out of 494953
- 98737 string characters out of 6180977
- 165791 words of memory out of 5000000
- 9805 multiletter control sequences out of 15000+600000
- 30453 words of font info for 71 fonts, out of 8000000 for 9000
+ 6703 strings out of 494953
+ 98574 string characters out of 6180977
+ 168750 words of memory out of 5000000
+ 9799 multiletter control sequences out of 15000+600000
+ 32025 words of font info for 77 fonts, out of 8000000 for 9000
  15 hyphenation exceptions out of 8191
- 42i,12n,43p,724b,1073s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,12n,43p,724b,1068s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/te
 xmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-sy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></home/nick/
+t/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cms
+y10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></home/nick/
 texmf/fonts/type1/urw/helvetic/uhvb8a.pfb></home/nick/texmf/fonts/type1/urw/hel
 vetic/uhvbo8a.pfb></home/nick/texmf/fonts/type1/urw/helvetic/uhvr8a.pfb></home/
 nick/texmf/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on Paper_v1.pdf (32 pages, 1378683 bytes).
+Output written on Paper_v1.pdf (31 pages, 1378298 bytes).
 PDF statistics:
- 325 PDF objects out of 1000 (max. 8388607)
- 228 compressed objects within 3 object streams
+ 322 PDF objects out of 1000 (max. 8388607)
+ 226 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  31 words of extra memory for PDF output out of 10000 (max. 10000000)
 
