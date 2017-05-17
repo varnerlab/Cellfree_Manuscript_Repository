@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.4.14)  15 MAY 2017 12:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.4.14)  17 MAY 2017 15:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1147,19 +1147,14 @@ Overfull \hbox (3.87419pt too wide) in paragraph at lines 595--633
  []
 
 [25]
-<./Figures/Fig_6_CarbonEnergyBalances.pdf, id=176, 790.955pt x 1711.39375pt>
+<./Figures/Fig_6_CarbonEnergyBalances.pdf, id=176, 1030.85126pt x 926.46124pt>
 File: ./Figures/Fig_6_CarbonEnergyBalances.pdf Graphic file (type pdf)
 
 <use ./Figures/Fig_6_CarbonEnergyBalances.pdf>
 Package pdftex.def Info: ./Figures/Fig_6_CarbonEnergyBalances.pdf used on input
  line 759.
-(pdftex.def)             Requested size: 258.36668pt x 559.01666pt.
-
-
-LaTeX Warning: Float too large for page by 20.58665pt on input line 763.
-
-[26 <./Figures/Fig_6_CarbonEnergyBalances.pdf>]
-
+(pdftex.def)             Requested size: 469.75502pt x 422.17667pt.
+ [26 <./Figures/Fig_6_CarbonEnergyBalances.pdf>] 
 AED: lastpage setting LastPage
 (./Paper_v1.aux) )
 (\end occurred inside a group at level 1)
@@ -1169,11 +1164,11 @@ AED: lastpage setting LastPage
 Here is how much of TeX's memory you used:
  6674 strings out of 494953
  97525 string characters out of 6180977
- 162596 words of memory out of 5000000
+ 164785 words of memory out of 5000000
  9770 multiletter control sequences out of 15000+600000
  32025 words of font info for 77 fonts, out of 8000000 for 9000
  15 hyphenation exceptions out of 8191
- 42i,12n,43p,724b,1048s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,12n,43p,1397b,1048s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texl
@@ -1190,10 +1185,10 @@ share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></home/nick/
 texmf/fonts/type1/urw/helvetic/uhvb8a.pfb></home/nick/texmf/fonts/type1/urw/hel
 vetic/uhvbo8a.pfb></home/nick/texmf/fonts/type1/urw/helvetic/uhvr8a.pfb></home/
 nick/texmf/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on Paper_v1.pdf (28 pages, 1371614 bytes).
+Output written on Paper_v1.pdf (28 pages, 1379991 bytes).
 PDF statistics:
- 312 PDF objects out of 1000 (max. 8388607)
- 219 compressed objects within 3 object streams
+ 365 PDF objects out of 1000 (max. 8388607)
+ 254 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  31 words of extra memory for PDF output out of 10000 (max. 10000000)
 
