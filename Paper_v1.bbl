@@ -202,4 +202,11 @@ Milo R, Jorgensen P, Moran U, Weber G, Springer M.
   biology.
 \newblock Nucleic Acids Res. 2009;38:750--3.
 
+\bibitem{Garamella:2016aa}
+Garamella J, Marshall R, Rustad M, Noireaux V.
+\newblock The All E. coli TX-TL Toolbox 2.0: A Platform for Cell-Free Synthetic
+  Biology.
+\newblock ACS Synth Biol. 2016;5(4):344--55.
+\newblock doi:{10.1021/acssynbio.5b00296}.
+
 \end{thebibliography}

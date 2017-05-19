@@ -36,7 +36,6 @@
 \usepackage{amsmath}
 \usepackage{color}
 \usepackage{booktabs}
-\usepackage{xfrac}
 \setlength\heavyrulewidth{0.4ex}
 \setlength\lightrulewidth{0.25ex}
 %\usepackage{textgreek}
@@ -137,17 +136,19 @@
 Cell-free protein expression systems have become widely used in systems and synthetic biology.
 In this study, we developed an ensemble of dynamic \textit{E. coli} cell-free protein synthesis (CFPS) models.
 Model parameters were estimated from a training dataset for the cell-free production of a protein product, chloramphenicol acetyltransferase (CAT).
+%This protein was used as a proof-of-concept
 The dataset consisted of measurements of glucose, organic acids, energy species, amino acids, and CAT.
 The ensemble accurately predicted these measurements, especially those of the central carbon metabolism.
 We then used the trained model to evaluate the optimality of protein production.
 CAT was produced with a carbon yield of 7\% and an energy efficiency of 5\%, suggesting that the process could be further optimized.
 Reaction group knockouts showed that protein productivity and the metabolism as a whole depend most on oxidative phosphorylation and glycolysis and gluconeogenesis.
 Amino acid biosynthesis is also important for productivity, while the overflow metabolism and TCA cycle affect the overall system state.
+%The dynamic modeling approach predicted that substrate consumption and oxidative phosphorylation were most important to both CAT production and the system as a whole, while CAT production alone depended heavily on the CAT synthesis reaction.
 In addition, CAT production was robust to allosteric control, as was most of the network, with the exception of the organic acids in central carbon metabolism.
 This study is the first to use kinetic modeling to predict dynamic protein production in a cell-free \textit{E. coli} system, and should provide a foundation for genome scale, dynamic modeling of cell-free \textit{E. coli} protein synthesis.
 
 \vspace{0.1in}
-{\noindent \textbf{Keywords:}~Biochemical engineering, systems biology, \textit{E. coli}, cell-free protein synthesis, kinetic modeling}
+{\noindent \textbf{Keywords:}~Biochemical engineering, systems biology, cell-free protein synthesis}
 
 \pagebreak
 
@@ -178,6 +179,7 @@ Cell-free protein synthesis (CFPS) systems are arguably the most prominent examp
 However, CFPS is not new; CFPS in crude \textit{E.~coli} extracts has been used since the 1960s to explore fundamentally important biological mechanisms \citep{MATTHAEI:1961aa,NIRENBERG:1961aa}.
 Today, cell-free systems are used in a variety of applications ranging from therapeutic protein production \citep{Lu:2014aa} to synthetic biology \citep{Hodgman:2012aa,Pardee:2016aa}.
 However, if CFPS is to become a mainstream technology for applications such as point of care manufacturing, we must first understand the performance limits of these systems.
+%One tool to address this question is mathematical modeling.
 One tool we can use to achieve this understanding is mathematical modeling.
 
 Mathematical modeling has long contributed to our understanding of metabolism.
@@ -190,16 +192,16 @@ Shuler and coworkers generated many single cell kinetic models, including single
 %Traditionally, stoichiometric models have also neglected explicit descriptions of metabolic regulation and control mechanisms, instead opting to describe the choice of pathways by prescribing an objective function on metabolism. Interestingly, similar to early cybernetic models, the most common metabolic objective function has been the optimization of biomass formation \citep{2002_ibarra_edwards_palsson_Nat}, although other metabolic objectives have also been estimated \citep{2007_schuetz_sauer_MolSysBio}.
 %Recent advances in constraint-based modeling have overcome the early shortcomings of the platform, including capturing metabolic regulation and control \citep{2013_hyduke_lewis_palsson_MolBioSys}.
 %Thus, modern constraint-based approaches have proven extremely useful in the discovery of metabolic engineering strategies and represent the state of the art in metabolic modeling \citep{2013_mccloskey_palsson_feist_MolSysBio, 2012_zomorrodi_maranas_MetaEng}.
-However, cell-free genome scale kinetic models of industrially important organisms such as \textit{E. coli} have yet to be constructed.
+However, genome scale kinetic models of industrial important organisms such as \textit{E. coli} have yet to be constructed.
 
 In this study, we developed an ensemble of kinetic cell-free protein synthesis (CFPS) models using dynamic metabolite measurements in an \textit{E. coli} cell-free extract.
 Model parameters were estimated from measurements of glucose, organic acids, energy species, amino acids, and the protein product, chloramphenicol acetyltransferase (CAT).
-The parameter estimation problem was constrained by characteristic values for model parameters from literature.
+%Characteristic values for model parameters and metabolite initial conditions, estimated from literature, were used to constrain the parameter estimation problem.
+The parameter estimation problem was constrained by characteristic values for model parameters and metabolite initial conditions estimated from literature.
 The ensemble of parameter sets described the training data with a median cost that was more than two orders of magnitude smaller than random sets constructed using the literature parameter constraints.
-We then used the ensemble of kinetic models to analyze the optimality of the CFPS system, and the pathways most important to CAT production.
+We then used the ensemble of kinetic models to analyze the optimality of the CFPS reaction, and the pathways most important to CAT production.
 We calculated that CAT was produced with a carbon yield of 7\% and an energy efficiency of 5\%, suggesting that much of the resources for protein synthesis were diverted to non-productive pathways.
-By knocking out metabolic enzymes in groups, we showed that the system metabolism and protein production depend most on oxidative phosphorylation and glycolysis\slash gluconeogenesis.
-%By knocking out metabolic enzymes in groups, we showed that CAT productivity depends most on oxidative phosphorylation, glycolysis\slash gluconeogenesis, and certain amino acid synthesis reactions, while the system state is most sensitive to glycolysis\slash gluconeogenesis, oxidative phosphorylation, the overflow metabolism, and the TCA cycle reactions.
+By knocking out metabolic enzymes in groups, we showed that CAT productivity depends most on oxidative phosphorylation, glycolysis\slash gluconeogenesis, and certain amino acid synthesis reactions, while the system state is most sensitive to glycolysis\slash gluconeogenesis, oxidative phosphorylation, the overflow metabolism, and the TCA cycle reactions.
 %First, sensitivity analysis of the dynamic model suggested that CAT production was most sensitive to CAT synthesis parameters, as well as reactions in oxidative phosphorylation and pyruvate consumption.
 %Sensitivity analysis also showed that the system as a whole was most sensitive to these same parts of the network and glucose consumption.
 %CAT production and other metabolites, specifically organic acid intermediates such as pyruvate, were sensitive to the presence of allosteric control mechanisms.
@@ -214,7 +216,8 @@ The cell-free \textit{E.~coli} metabolic network was constructed by removing gro
 In addition, reactions that were knocked out from the cell extract preparation were removed from the network ($\Delta$speA, $\Delta$tnaA, $\Delta$sdaA, $\Delta$sdaB, $\Delta$gshA, $\Delta$tonA, $\Delta$endA).
 The CFPS model equations were formulated using the hybrid cell-free modeling framework of Wayman et al. \cite{pr3010138}.
 An initial ensemble of model parameter sets (N $>$ 30,000) was estimated from measurements of glucose, CAT, organic acids (pyruvate, lactate, acetate, succinate, malate), energy species (A(x)P, G(x)P, C(x)P, U(x)P), and 18 of the 20 proteinogenic amino acids using a constrained Markov Chain Monte Carlo (MCMC) approach.
-%The MCMC algorithm minimized the error between the training data and model simulations starting from an initial parameter set assembled from literature and inspection.
+%$\approx$
+The MCMC algorithm minimized the error between the training data and model simulations starting from an initial parameter set assembled from literature and inspection.
 A final ensemble of parameter sets (N $=$ 100) was constructed by selecting the sets with the lowest errors, the lowest of which was defined as the best-fit set.
 Parameter sets in the final ensemble had a mean Pearson correlation coefficient of 0.77; thus, an accurate yet diverse ensemble was created.
 
@@ -228,43 +231,44 @@ The model captured the biphasic CAT production: during the first hour glucose po
 %Interestingly, the simulated malate abundance tracked the experimental measurements during the glucose consumption phase, but increased sharply during the pyruvate consumption phase, without allosteric control.
 Allosteric control was important to central carbon metabolism, especially pyruvate, acetate, and succinate (Fig.~\ref{fig:Carbon}, bottom).
 The difference between the allosteric control and no-control cases is mostly seen in the second phase of CAT production, after glucose is exhausted.
-Specifically, there is an increase in the consumption of pyruvate, succinate, and malate, as well as the accumulation of acetate.
 Taken together, we produced an ensemble of kinetic models that was consistent with time series measurements of the production of a model protein.
 Although the ensemble described the experimental data, it was unclear which kinetic parameters most influenced CAT production, and whether the performance of the CFPS reaction was optimal.
 
 To better understand the effect of network reactions on system performance we conducted a group knockout analysis (Fig.~\ref{fig:GroupKO}).
 The network was divided into 19 groups of reactions, spanning central carbon metabolism, energetics, and amino acid biosynthesis.
+%The reactions in each of these groups were turned off, 
 The enzymes in each of these groups were knocked out, and the resulting change in productivity and system state were recorded.
 Then each pair of groups was knocked out to determine pairwise effects.
 These were summed with the first-order effect to obtain a total-order coefficient for each group for the change in productivity and system state.
 Glycolysis\slash gluconeogenesis and oxidative phosphorylation were seen to have the greatest effect on both productivity and system state.
-This supports previous findings that oxidative phosphorylation does occur in a cell-free system \cite{Jewett:2008aa}.
-Jewett and coworkers observed a decrease in CAT yield, ranging from 1.5-fold to 4-fold, when knocking out oxidative phosphorylation reactions in cell-free (the Cytomim platform) with both pyruvate and glutamate as substrates.
-CAT productivity was also affected by two sectors of amino acid biosynthesis: alanine\slash aspartate\slash asparagine, and glutamate\slash glutamine.
+This is explained by their role in both central carbon metabolism and energy generation.
+In addition, CAT productivity is affected by two sectors of amino acid biosynthesis: alanine\slash aspartate\slash asparagine, and glutamate\slash glutamine.
 This is likely because aspartate, glutamate, and glutamine are key reactants in the biosynthesis of many other amino acids, all of which are required for CAT synthesis.
-Meanwhile, the TCA cycle and overflow metabolism (which includes acetyl-coA\slash acetate reactions and the interconversion of pyruvate and lactate) have a significant effect on the system state, defined as all species for which ata exist.
+Meanwhile, the TCA cycle and the overflow metabolism (which includes acetyl-coA\slash acetate reactions and the interconversion of pyruvate and lactate) have a significant effect on the system state.
 These reactions directly impact key species in the system state: succinate and malate in the TCA cycle, and acetate, pyruvate, and lactate in the overflow metabolism.
 
 To understand whether the CFPS performance was optimal, we calculated the carbon yield and energy efficiency of the two phases of CAT production for the best-fit set (Fig.~\ref{fig:CAT_balances}).
-The equivalent ATP numbers for glucose, amino acids, and organic acids were calculated from the network stoichiometry; for example, 21 molecules of ATP shold be generated from one glucose molecule if the optimal path through glycolysis, the TCA cycle, and oxidative phosphorylation is taken.
-The ATP number for CAT was simply equal to the cost of transcription and translation.
-During the first phase, with glucose as the substrate, CAT was produced with a carbon yield of 5\% and an energy efficiency of 3\%.
+During the first phase, with glucose as the substrate, CAT is produced with a carbon yield of 5\% and an energy efficiency of 3\%.
 Of the remaining carbon, 4\% is accounted for by the accumulation of amino acids (alanine, isoleucine, glutamine, proline, and tyrosine), 39\% by organic acid accumulation (pyruvate, lactate, acetate, succinate, and malate), and 52\% by the accumulation of other byproducts, primarily glycolytic intermediates and carbon dioxide.
 The breakdown is very similar with the energy efficiency: 4\% amino acids, 41\% organic acids, and 52\% other byproducts.
 This suggests that for glucose-driven production, the best ways to improve efficiency are by ensuring that the flux through glycolysis and the TCA cycle is constant throughout, preventing any accumulation of intermediates.
-However, the accumulated organic acids (except acetate) were then utilized as substrates in the second phase once glucose was depleted.
-Although succinate and malate were consumed in the second phase, they only account for 14\% of the substrate consumption; thus, it may be reasonable to consider this as pyruvate-driven production.
+However, the accumulated organic acids (except acetate) were then utilized as substrates in the second phase once glucose had run out.
+Although succinate and malate are consumed in the second phase, they only account for 14\% of the substrate consumption; thus, it may be reasonable to consider this as pyruvate-driven production.
 Interestingly, this mode of protein production showed higher carbon yield and energy efficiency: 6\% in each case.
 Of the remaining carbon, 11\% went to amino acids (alanine, glutamine, proline, and serine), 31\% went to organic acids (only acetate in this case), and 52\% went to other byproducts.
-The remainder of the energy was accounted by 21\% in amino acids, 49\% in organic acids, and 24\% in other byproducts.
-While the efficiency of production is higher for the pyruvate-driven phase, it is still relatively low, and could be improved by utilizing more of the resources that are generated (amino aicds and glycoltyic\slash TCA intermediates).
+The remainder of the energy is accounted for by 21\% amino acids, 49\% organic acids, and 24\% other byproducts.
+While efficiency appears to be higher for the pyruvate-driven phase, it must be noted that the productivity is not: 3 $\mu$M/h, as opposed to 10 $\mu$M/h under glucose.
 %Of the carbon taken up as glucose and consumed as amino acids, 7\% went to CAT production.
 %Another 7\% went to the accumulation of alanine and glutamine, in line with experimental data (these were not included in the amino acid consumption term).
 %25\% of the carbon was accounted for by the net accumulation of organic acids (only lactate, acetate, succinate, and malate showed positive net accumulation), leaving 61\% as accumulation of other byproducts, species for which data do not exist.
 %CFPS also showed an energy efficiency of 5\%; this was formulated as the equivalent ATP value of CAT produced divided by the equivalent ATP value of glucose consumed.
 %The remainder of the balance was very similar to that of the carbon balance: 8\% to alanine and glutamine, 26\% to organic acids, and 61\% to other byproducts.
+%The equivalent ATP numbers for glucose, amino acids, and organic acids were calculated from the network stoichiometry; for example, 21 molecules of ATP shold be generated from one glucose molecule if the optimal path through glycolysis, the TCA cycle, and oxidative phosphorylation is taken.
+%The ATP number for CAT was simply equal to the cost of transcription and translation.
+%%These results show 
 %%The fact that so much carbon and energy are spent on non-productive pathways
 %The low carbon yield and energy efficiency show that there is much room for improvement; CFPS efficiency could be increased by diverting flux away from some of the less efficient or altogether unnecessary metabolic pathways.
+%%pathways of energy generation
 
 \clearpage
 
@@ -281,35 +285,67 @@ While the efficiency of production is higher for the pyruvate-driven phase, it i
 In this study we present an ensemble of \textit{E. coli} cell-free protein synthesis (CFPS) models that accurately predict a comprehensive CFPS dataset of glucose, CAT, central carbon metabolites, energy species, and amino acid measurements.
 We used the hybrid cell-free modeling approach of Wayman and coworkers, which integrates traditional kinetic modeling with a logic-based description of allosteric regulation.
 Our ensemble of models accurately predicts dynamic experimental measurements of central carbon metabolism, energy species, and amino acids over 100 times better than random sets in the same region of parameter space.
-CFPS was seen to be biphasic, relying on glucose during the first hour and pyruvate and lactate afterward.
-Allosteric control was essential to the maintenance of the network, specifically central carbon metabolism.
-Without it, pyruvate, succinate, and malate were consumed more quickly following glucose exhaustion to power downstream reactions and ultimately CAT synthesis.
+%goodness-of-fit
+CFPS is seen to be biphasic, relying on glucose during the first hour and pyruvate and lactate afterward.
+Allosteric control was essential to the maintenance of the network, specifically the central carbon metabolism.
+% and production of CAT.
+% central carbon metabolism is exhuasted within 1.5 hours, leading to low CAT production.
+Without it, pyruvate, succinate, and malate are consumed more quickly following glucose exhaustion to power downstream reactions and ultimately CAT synthesis.
+%Meanwhile, acetate accumulation increased after the first hour, suggesting a decrease in sytem efficiency.
 Interestingly, CAT production is virtually unaffected; this is because the amino acids and energy species that are reactants for CAT synthesis were also not affected by allosteric control.
 
 Having captured the experimental data, we investigated if CAT yield and CFPS performance could be further improved.
 We showed that the model predicts CAT production with a carbon yield of 5\% and energy efficiency of 3\% under glucose, and a carbon yield and energy efficiency of 6\% under pyruvate.
-The accumulation of glycolytic intermediates and byproducts such as acetate and carbon dioxide were responsible for this sub-optimal performance.
+%We showed that the model produces CAT with a carbon yield equal to 16\% of that of a physiological case in which transcription and translation are constrained, and an energy efficiency equal to 9\% of that of the physiological case.
+The accumulation of glycolytic intermediates and byproducts such as acetate and carbon dioxide was responsible for this sub-optimal performance.
 If fluxes could be balanced such that intermediates were fully utilized, CAT production would increase.
+%However, there is also some accumulation of useful metabolites in the central carbon metabolism; if these could be utilized fully, CAT production would likely increase.
 Knocking out sections of network metabolism revealed that glycolysis\slash gluconeogenesis and oxidative phosphorylation were the most important to CAT production and the system as a whole.
 Productivity was also heavily dependent on the synthesis reactions of alanine, aspartate, asparagine, glutamate, and glutamine, while TCA cycle and overflow reactions affected the system state.
 Taken together, these findings represent the first dynamic model of \textit{E. coli} cell-free protein synthesis, and an important step toward a functional genome scale description.
 
-We present an ensemble of models that quantitatively described the system behavior of cell-free metabolism and production of CAT.
+We present an ensemble of models that quantitatively describes the system behavior of cell-free metabolism and production of CAT.
 Experimental observations of the metabolites validate the structure of the model and the estimation of kinetic parameters.
+% and cometabolites
 This is important in applying metabolic engineering principles to rationally design cell-free production processes and predicting the redirection of carbon fluxes to product-forming pathways.
-In analyzing the effect of reaction groups on CAT production and the system state, the regions of metabolism associated with substrate utilization and energy generation are the most important.
+In analyzing the effect of reaction groups on CAT production and the system state, the regions of metabolism associated with substrate utilization and subsequent energy generation are the most important.
 Oxidative phosphorylation is vital, since it provides most of the energetic needs of CFPS.
+Jewett and coworkers observed a decrease in CAT yield, between 1.5-fold and 4-fold, when knocking out oxidative phosphorylation reactions \cite{Jewett:2008aa}.
+% with pyruvate as the substrate
 While it is unknown how active oxidative phosphorylation is compared to that of \textit{in vivo} systems, our modeling approach suggests its importance to CFPS performance and protein yield.
 However, the biphasic operation of CFPS highlights the ability of the system to respond to an absence of glucose.
+% with the first phase operating on glucose and the second phase operating on pyruvate.
 During the first phase, there is an accumulation of central carbon metabolites with the majority of flux going toward acetate and some toward pyruvate, lactate, succinate and malate.
-While acetate continued to accumulate as a byproduct, the other organic acids were consumed as secondary substrates after glucose is no longer available.
-Glutamate also served as a substrate throughout both phases, powering amino acid synthesis.
-These results confirm experimental findings that CAT production can be sustained by other substrates in the absence of glucose, providing alternative strategies to optimize CFPS performance.
+While acetate continues to accumulate as a byproduct, the other organic acids are consumed as secondary substrates after glucose is no longer available.
+Glutamate also serves as a substrate throughout both phases, powering amino acid synthesis.
+These results show that CAT production can be sustained by other substrates in the absence of glucose, providing alternative strategies to optimize CFPS performance.
+% sustained by pyruvate and glutamate
 While CAT synthesis can be powered by other substrates, the productivity is significantly lower (3 $\mu$M/h, as opposed to 10 $\mu$M/h).
 This is in accordance with literature, where pyruvate provided a relatively slow but continuous supply of ATP \cite{swartz_nature2001}.
 %This outstanding control on model performace was expected, as these metabolites are responsible for driving CFPS and represent the first step in the model network.
 Taken together, this shows CFPS can be designed towards a specified application, either requiring a slow stable energy source or faster production.
-%\textcolor{red}{This paragraph should also compare other work done in literature, since this is mostly a modeling paper, maybe compare other cell-free models? Or say modeling efforts in CFPS are weak)}
+
+%CAT synthesis is the most important, followed by oxidative phosphorylation and the glutamate and pyruvate consuming reactions, as well as cofactor reactions which are necessary to drive CAT synthesis.
+%For example, the conversion of ATP to GTP shows significance since it is necessary for CAT synthesis.
+%While Jewett and coworkers have shown that ATP may be at saturation in CFPS \cite{Jewett:2008aa}, GTP is also required for CAT synthesis and may be a limiting reactant.
+%Thus, supplementation with additional GTP may improve the efficiency of CAT production.
+%A similar theme is seen in the sensitivity of overall model state, where the most important reactions are glucose and pyruvate consuming reactions and cofactor reactions which are vital to drive CFPS.
+%This can be seen in the biphasic operation of CFPS, with the first phase operating on glucose and the second phase operating on pyruvate.
+%During the first phase, there is an accumulation of byproducts from central carbon with the majority of flux going toward acetate and some toward pyruvate, lactate, and succinate; with the exception of acetate, these are all consumed in the second phase.
+%This shows that CAT production can be sustained by pyruvate and glutamate in the absence of glucose, which provides alternative strategies to optimize CFPS performance.
+%This is in accordance with literature, which showed pyruvate provided a relatively slow but continuous supply of ATP \cite{swartz_nature2001}.
+%Taken together, this shows CFPS can be designed towards a specified application either requiring a slow stable energy source or faster production.
+%This outstanding control on model performace was expected as these metabolites are responsible for driving CFPS and represent the first step in the model network.
+%Nevertheless, there are further reactions with considerable impact on model performance.
+%In examining oxidative phosphorylation activity, knockouts in the electron transport pathways disrupt metabolism across the network and drop CAT carbon yield from 7.9\% to 2.6\%; Jewett and coworkers also saw a similar decrease in CAT yield with pyruvate as the substrate, ranging from 1.5-fold to 4-fold, when knocking out oxidative phosphorylation reactions \cite{Jewett:2008aa}.
+%Oxidative phosphorylation is vital, since it provides most of the energetic needs of CFPS.
+%While it is unknown how active oxidative phosphorylation is compared to that of \textit{in vivo} systems, both of our modeling approaches suggest its importance to improving CFPS performance and protein yield.
+
+%Another area for future work is to more thoroughly sample parameter space.
+%Parameters were varied so as to best fit the dataset; however, the resulting ensemble may not represent every biological possibility.
+%In a different region of parameter space, the system may behave differently but still fit the experimental data.
+%This could include the flux distribution through the network, the variation of predictions across the ensemble, and the relative sensitivity values.
+%Testing the model under a variety of conditions could strengthen or challenge the findings of this study.
 
 This work represents the first dynamic model of \textit{E. coli} cell-free protein synthesis.
 We apply a hybrid modeling framework to capture an experimental dataset for production of a test protein, and identify system limitations and areas of improvement for production efficiency.
@@ -380,31 +416,9 @@ where $\mathcal{P}$ denotes the number of parameters ($\mathcal{P}$~=~815), whic
 
 %catalytic rate bounds of 0 and 27,780 s$^{-1}$.
 Model parameters were constrained by literature \cite{Milo:2009aa}.
-The rate maximum for CAT transcription was calculated as 8.3 $\mu$M/h:
-\begin{equation}\label{eqn:transcription}
-	V_{max}^{TX}=\left(\frac{k_{TX}}{l_{mRNA}}\right)\cdot RNAP\cdot P
-\end{equation}
-where $k_{TX}$ denotes the average mRNA elongation rate (25 nt/s, \cite{Garamella:2016aa}), $l_{mRNA}$ denotes the CAT mRNA length (660 nt), $RNAP$ denotes the RNA polymerase concentration (67.5 nM, \cite{Garamella:2016aa}), and $P$ denotes the level of promoter activity (estimated at 0.9).
-The rate maximum for CAT translation was calculated as 480 $\mu$M/h:
-\begin{equation}\label{eqn:transcription}
-	V_{max}^{TL}=\left(\frac{k_{TL}}{l_{protein}}\right)\cdot Ribo\cdot K_P
-\end{equation}
-where $k_{TL}$ denotes the peptide chain elongation rate (1.5 aa/s, \cite{Garamella:2016aa}), $l_{protein}$ denotes the CAT protein length (219 aa), $Ribo$ denotes the ribosome concentration (2300 nM, \cite{Garamella:2016aa}), and $K_P$ denotes the polysome amplification constant (estimated at 8.5).
-The rate maximum for mRNA degradation was calculated as 520 nM/h:
-\begin{equation}\label{eqn:transcription}
-	V_{max}^{mRNA}=\left(\frac{log(2)}{t_{\sfrac{1}{2}}}\right)\cdot mRNA
-\end{equation}
-where $t_{\sfrac{1}{2}}$ denotes the mRNA degradation time (8 min, BNID 106253), and $mRNA$ denotes the mRNA concentration (estimated at 100 nM, consistent with the kinetic model).
-The rate maximum for tRNA charging was calculated as 4200 mM/h:
-\begin{equation}\label{eqn:transcription}
-	V_{max}^{tRNA}=k_{tRNA}\cdot tRNA-AA
-\end{equation}
-where $k_{tRNA}$ denotes the tRNA charging catalytic rate (39 s$^{-1}$, BNID 104980), and $mRNA$ denotes the tRNA-amino acid complex concentration (estimated at 30 $\mu$M, consistent with the kinetic model).
-Transcription, translation, mRNA degradation, and tRNA charging were bounded within two orders of magnitude of their calculated values.
-A characteristic cell-free enzyme concentration of 167 nM was calculated by diluting the one-tenth maximal amount \textit{lacZ} (5 $\mu$M, BNID 100735) by a cell-free dilution factor of 30.
+A characteristic cell-free enzyme concentration of 167 nM was calculated by diluting the one-tenth maximal amount \textit{lacZ} (5 $\mu$M, BNID 100735) by  a cell-free dilution factor of 30.
 This enzyme level was then used to calculate rate maxima from turnover numbers for various enzymes from literature (Table~\ref{tbl:Rate_maxima}).
 Rate maxima were bounded within one order of magnitude of the calculated value where available; all other rate maxima were bounded within two orders of magnitude of the geometric mean of the available values.
-
 The median maximum reaction rate was 7.8 mM/h; assuming a total cell-free enzyme concentration of 167 nM, this corresponds to a median catalytic rate of 0.08 s$^{-1}$ across the ensemble.
 Enzyme activity decay constants were bounded between 0 and 1 h$^{-1}$, corresponding to half lives of 42 minutes and infinity; median = 156 h.
 Saturation constants were bounded between 0.0001 and 10 mM; median = 1.0 mM.
@@ -493,8 +507,6 @@ where $\rm {ATP}_{TX}$, $\rm {CTP}_{TX}$, $\rm {GTP}_{TX}$, $\rm {UTP}_{TX}$ den
 %$\Delta\texttt{GLC}$ denotes the glucose consumption, equal to the initial minus the final glucose concentration, and $\rm {ATP}_{GLC}$ denotes the equivalent ATP number for glucose.
 $\rm {ATP}_{TX}$ = 176, $\rm {CTP}_{TX}$ = 144, $\rm {GTP}_{TX}$ = 151, $\rm {UTP}_{TX}$ = 189, $\rm {ATP}_{TL}$ = 219, $\rm {GTP}_{TL}$ = 438, $\rm {ATP}_{GLC}$ = 21, $\rm {ATP}_{PYR}$ = 8, $\rm {ATP}_{LAC}$ = 9.5, $\rm {ATP}_{SUCC}$ = 11.5, $\rm {ATP}_{MAL}$ = 10.5.
 This analysis was also extended to the accumulation of amino acids, organic acids, and other byproducts to create a complete energy balance through the network (Fig.~\ref{fig:CAT_balances}, right).
-These terms were calculated as accumulation times equivalent ATP number over total energy consumption.
-Equivalent ATP numbers for glucose, amino acids, and organic acids were calculated from the network stoichiometry.
 In the first phase, amino acid accumulation consisted of alanine, isoleucine, glutamine, proline, and tyrosine, while organic acid accumulation consisted of pyruvate, lactate, acetate, succinate, and malate.
 Glucose was considered the substrate.
 In the second phase, amino acid accumulation consisted of alanine, glutamine, proline, and serine, while organic acid accumulation consisted of acetate only.
@@ -606,33 +618,41 @@ with support from the US Army Medical Research and Materiel Command under award 
  \caption{Reference values for reaction rate maxima (V$_{max}$) from literature. V$_{max}$ values calculated from turnover numbers (K$_{cat}$) from literature, and a characteristic enzyme concentration of 167 nM. Characteristic rate maximum for all other reactions calculated as geometric mean of calculated rate maxima.}
  \renewcommand{\arraystretch}{1.3}
  \begin{tabular}{llrrr} \toprule
+%\smallskip
+% & & \parbox{2.1 cm}{\textbf{Original value ($\mu$M)}} & \parbox{3.1 cm}{\textbf{Cell-free \phantom{abc} equivalent (nM)}} & \textbf{Reference} \\ \hline
+%\smallskip
+%\rule{0pt}{3ex} \parbox{4.2 cm}{Characteristic enzyme concentration} & & 5 & 167 & BNID 100735 \\ \toprule
 \phantom{i}\textbf{Enzyme} & \textbf{Reaction} & \textbf{K$_{cat}$ (min$^{-1}$)} & 
- \textbf{V$_{max}$ (mM/h)} & \textbf{BNID \#} \\ \hline
-\phantom{i}Serine dehydrase & R\_ser\_deg & 10400 & 104 & 101119 \\ \hline
-\phantom{i}Isocitrate dehydrogenase & R\_icd & 11900 & 119 & 101152 \\ \hline
-\phantom{i}Lactate dehydrogenase & R\_ldh & 5800 & 58 & 101036 \\ \hline
+ \textbf{V$_{max}$ (mM/h)} & \textbf{Reference} \\ \hline
+\phantom{i}Serine dehydrase & R\_ser\_deg & 10400 & 104 & BNID 101119 \\ \hline
+\phantom{i}Isocitrate dehydrogenase & R\_icd & 11900 & 119 & BNID 101152 \\ \hline
+\phantom{i}Lactate dehydrogenase & R\_ldh & 5800 & 58 & BNID 101036 \\ \hline
 \smallskip
 \rule{0pt}{4.5ex}
-Aspartate transaminase & \parbox{1 cm}{R\_aspC, R\_tyr, R\_phe} & 25800 & 258 & 101108 \\ \hline
-\phantom{i}Enolase & R\_eno & 13200 & 132 & 101028 \\ \hline
+Aspartate transaminase & \parbox{1 cm}{R\_aspC, R\_tyr, R\_phe} & 25800 & 258 & BNID 101108 \\ \hline
+\phantom{i}Enolase & R\_eno & 13200 & 132 & BNID 101028 \\ \hline
 \smallskip
 \rule{0pt}{3ex}
-Pyruvate kinase & R\_pyk & 25000 & 250 & \parbox{1.4 cm}{101029 101030} \\ \hline
+Pyruvate kinase & R\_pyk & 25000 & 250 & \parbox{2.52 cm}{BNID 101029 BNID 101030} \\ \hline
 \smallskip
 \rule{0pt}{3ex}
-Malic enzyme & \parbox{1 cm}{R\_maeA, R\_maeB} & 35400 & 354 & 101167 \\ \hline
-\phantom{i}Phosphofructokinase & R\_pfk & 554400 & 5544 & 104955 \\ \hline
-\phantom{i}Malate dehydrogenase & R\_mdh & 33000 & 330 & 101163 \\ \hline
-\phantom{i}Citrate Synthase & R\_gltA & 42000 & 420 & 101149 \\ \hline
+Malic enzyme & \parbox{1 cm}{R\_maeA, R\_maeB} & 35400 & 354 & BNID 101167 \\ \hline
+\phantom{i}Phosphofructokinase & R\_pfk & 554400 & 5544 & BNID 104955 \\ \hline
+\phantom{i}Malate dehydrogenase & R\_mdh & 33000 & 330 & BNID 101163 \\ \hline
+\phantom{i}Citrate Synthase & R\_gltA & 42000 & 420 & BNID 101149 \\ \hline
 \smallskip
 \rule{0pt}{4.5ex}
-6PG dehydrogenase & \parbox{1 cm}{R\_zwf, R\_pgl, R\_gnd} &3200 & 32 & 101048 \\ \hline
-\phantom{i}Succinate dehydrogenase & R\_sdh & 121 & 1.21 & 101162 \\ \hline
-\phantom{i}Succinyl-coA synthetase & R\_sucCD & 4700 & 47 & 101158 \\ \hline
-\phantom{i}3PGA dehydrogenase & R\_gpm & 1100 & 11 & 101135 \\ \hline
-\phantom{i}PEP carboxylase & R\_ppc & 35400 & 354 & 101139 \\ \hline
-\phantom{i}3PGA kinase & R\_pgk & 4300 & 43 & 101016 \\ \hline
-\phantom{i}Characteristic rate maximum & & & 110 & \\ \bottomrule
+6PG dehydrogenase & \parbox{1 cm}{R\_zwf, R\_pgl, R\_gnd} &3200 & 32 & BNID 101048 \\ \hline
+\phantom{i}Succinate dehydrogenase & R\_sdh & 121 & 1.21 & BNID 101162 \\ \hline
+\phantom{i}Succinyl-coA synthetase & R\_sucCD & 4700 & 47 & BNID 101158 \\ \hline
+\phantom{i}3PGA dehydrogenase & R\_gpm & 1100 & 11 & BNID 101135 \\ \hline
+\phantom{i}PEP carboxylase & R\_ppc & 35400 & 354 & BNID 101139 \\ \hline
+\phantom{i}3PGA kinase & R\_pgk & 4300 & 43 & BNID 101016 \\ \midrule
+\phantom{i}Characteristic rate maximum & & & 110 & \\ \toprule
+\phantom{i}\textbf{Transcription\slash Translation} & \textbf{Reaction} & \textbf{K$_{cat}$ (min$^{-1}$)} & \textbf{V$_{max}$ (mM/h)} & \textbf{Reference} \\ \hline
+\phantom{i}mRNA degradation & 5.2 (1/h) & 0.08667 & 0.00052 & BNID 104980 \\ \hline
+\phantom{i}tRNA charging & 0.03 & 2340 & 4212 & BNID 104980 \\ \hline
+% \bottomrule
  \end{tabular}
 \label{tbl:Rate_maxima}
 \end{table}
@@ -649,7 +669,7 @@ Malic enzyme & \parbox{1 cm}{R\_maeA, R\_maeB} & 35400 & 354 & 101167 \\ \hline
 %\phantom{i}CAT gene & 5.19e-6 & XX \\ \hline
 %\phantom{i}RNA polymerase & 6.75e-5 & \cite{Garamella:2016aa} \\ \hline
 %\phantom{i}Ribosome & 2e-3 & \cite{Garamella:2016aa} \\ \hline
-%\phantom{i}tRNA & 1.6 & 108611 \\ \hline
+%\phantom{i}tRNA & 1.6 & BNID 108611 \\ \hline
 %\phantom{i}NAD & 1.47 & XX \\ \hline
 %\phantom{i}NADH & 0.1 & XX \\ \hline
 %\phantom{i}NADP & 0.195 & XX \\ \hline
