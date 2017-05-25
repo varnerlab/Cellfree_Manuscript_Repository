@@ -342,8 +342,7 @@ We used multiple saturation kinetics to model the reaction term $\bar{r}_{j}$:
 \begin{equation}\label{eqn:rate-bar}
 	\bar{r}_{j}=V_{j}^{max}\epsilon_{i}\prod_{s\in{m_{j}^{-}}}\frac{x_{s}}{K_{js} + x_{s}}
 \end{equation}
-where $V_{j}^{max}$ denotes the maximum rate for reaction $j$, $\epsilon_{i}$ denotes the scaled enzyme activity which catalyzes reaction $j$,
-$K_{js}$ denotes the saturation constant for species $s$ in reaction $j$ and $m_{j}^{-}$ denotes the set of \textit{reactants} for reaction $j$.
+where $V_{j}^{max}$ denotes the maximum rate for reaction $j$, $\epsilon_{i}$ denotes the scaled enzyme activity which catalyzes reaction $j$, $K_{js}$ denotes the saturation constant for species $s$, in reaction $j$ and $m_{j}^{-}$ denotes the set of \textit{reactants} for reaction $j$.
 On the other hand, the control term $0\leq v_{j}\leq 1$ depended upon the combination of factors which influenced rate process $j$.
 For each rate, we used a rule-based approach to select from competing control factors.
 If rate j was influenced by $1,\dots,m$ factors, we modeled this relationship as
@@ -359,6 +358,26 @@ AKG was modeled as an inhibitor for citrate synthase \cite{2010_kotte_MolSystBio
 FDP was modeled as an activator for pyruvate kinase \cite{2010_kotte_MolSystBiol,2010_zhu_Biochimie} and PEP carboxylase \cite{2010_kotte_MolSystBiol,1972_wohl_JBiolChem}.
 Pyruvate was modeled as an inhibitor for pyruvate dehydrogenase \cite{2010_kotte_MolSystBiol,2007_kale_JBiolChem,2002_arjunan_Biochemistry} and as an activator for lactate dehydrogenase \cite{2008_okino_ApplMicrobiolBiotechnol}.
 Acetyl CoA was modeled as an inhibitor for malate dehydrogenase \cite{2010_kotte_MolSystBiol}.
+
+Transcription was modeled as first-order in RNA polymerase, since it acts like an enzyme:
+\begin{equation}\label{eqn:transcription}
+    \bar{r}^{TX} = V_{max}^{TX}\cdot{\rm RNAP}\left(\frac{{\rm GENE}}{K_{GENE}^{TX}+{\rm GENE}}\right)\epsilon_{i}\prod_{s\in{m_{TX}^{-}}}\frac{x_{s}}{K_{s}^{TX}+x_{s}}
+\end{equation}
+where $V_{max}^{TX}$ denotes the maximum transcription rate, ${\rm RNAP}$ denotes the RNA polymerase concentration, $GENE$ denotes the gene concentration, $K_{GENE}^{TX}$ denotes the gene saturation constant, $\epsilon_{i}$ denotes the scaled enzyme activity, $K_{s}^{TX}$ denotes the saturation constant for species $s$, and $m_{TX}^{-}$ denotes the set of \textit{reactants} for transcription: ATP, GTP, CTP, UTP, and water.
+While transcription is modeled as saturating with respect to gene concentration, the gene is not considered a reactant in the stoichiometry as it is not consumed.
+
+Translation was modeled as first-order in ribosome, since it acts like an enzyme:
+\begin{equation}\label{eqn:translation}
+    \bar{r}^{TL} = V_{max}^{TL}\cdot{\rm RIBO}\left(\frac{{\rm mRNA}}{K_{mRNA}^{TL}+{\rm mRNA}}\right)\epsilon_{i}\prod_{s\in{m_{TL}^{-}}}\frac{x_{s}}{K_{s}^{TL}+x_{s}}
+\end{equation}
+where $V_{max}^{TL}$ denotes the maximum translation rate, ${\rm RIBO}$ denotes the ribosome concentration, ${\rm mRNA}$ denotes the transcript concentration, $K_{mRNA}^{TL}$ denotes the transcript saturation constant, $\epsilon_{i}$ denotes the scaled enzyme activity, $K_{s}^{TL}$ denotes the saturation constant for species $s$, and $m_{TL}^{-}$ denotes the set of \textit{reactants} for translation: GTP, water, and the 20 species representing tRNA charged with amino acids.
+While translation is modeled as saturating with respect to transcript concentration, the transcript is not considered a reactant in the stoichiometry as it is not consumed.
+
+Transcript degradation was modeled as first-order in transcript:
+\begin{equation}\label{eqn:mRNA_degradation}
+    \bar{r}_{deg}^{mRNA} = k_{deg}^{mRNA}\cdot{\rm mRNA}
+\end{equation}
+where $k_{deg}^{mRNA}$ denotes the transcript degradation rate constant.
 
 \subsection*{Estimation of kinetic model parameters.}
 We estimated an ensemble of diverse parameter sets using a constrained Markov Chain Monte Carlo (MCMC) random walk strategy.
@@ -378,28 +397,29 @@ We then perturbed each model parameter between an upper and lower bound that var
 \end{equation}
 where $\mathcal{P}$ denotes the number of parameters ($\mathcal{P}$~=~815), which includes 163 maximum reaction rates ($V^{max}$), 163 enzyme activity decay constants, 455 saturation constants ($K_{js}$), and 34 control parameters, $k_i^{new}$ denotes the new value of the $i^{th}$ parameter, $k_i$ denotes the current value of the $i^{th}$ parameter, $a$ denotes a distribution variance, $r_i$ denotes a random sample from the normal distribution, $l_i$ denotes the lower bound for that parameter type, and $u_i$ denotes the upper bound for that parameter type.
 
-%catalytic rate bounds of 0 and 27,780 s$^{-1}$.
 Model parameters were constrained by literature \cite{Milo:2009aa}.
-The rate maximum for CAT transcription was calculated as 8.3 $\mu$M/h:
+The rate maximum for CAT transcription was calculated as 123 h$^{-1}$:
 \begin{equation}\label{eqn:transcription}
-	V_{max}^{TX}=\left(\frac{k_{TX}}{l_{mRNA}}\right)\cdot RNAP\cdot P
+	V_{max}^{TX}=\left(\frac{k_{TX}}{l_{mRNA}}\right)\cdot P
 \end{equation}
-where $k_{TX}$ denotes the average mRNA elongation rate (25 nt/s, \cite{Garamella:2016aa}), $l_{mRNA}$ denotes the CAT mRNA length (660 nt), $RNAP$ denotes the RNA polymerase concentration (67.5 nM, \cite{Garamella:2016aa}), and $P$ denotes the level of promoter activity (estimated at 0.9).
-The rate maximum for CAT translation was calculated as 480 $\mu$M/h:
+where $k_{TX}$ denotes the average mRNA elongation rate (25 nt/s, \cite{Garamella:2016aa}), $l_{mRNA}$ denotes the CAT mRNA length (660 nt), and $P$ denotes the level of promoter activity (estimated at 0.9).
+% $RNAP$ denotes the RNA polymerase concentration (67.5 nM, \cite{Garamella:2016aa}),
+The rate maximum for CAT translation was calculated as 247 h$^{-1}$:
 \begin{equation}\label{eqn:transcription}
-	V_{max}^{TL}=\left(\frac{k_{TL}}{l_{protein}}\right)\cdot Ribo\cdot K_P
+	V_{max}^{TL}=\left(\frac{k_{TL}}{l_{protein}}\right)\cdot K_P
 \end{equation}
-where $k_{TL}$ denotes the peptide chain elongation rate (1.5 aa/s, \cite{Garamella:2016aa}), $l_{protein}$ denotes the CAT protein length (219 aa), $Ribo$ denotes the ribosome concentration (2300 nM, \cite{Garamella:2016aa}), and $K_P$ denotes the polysome amplification constant (estimated at 8.5).
-The rate maximum for mRNA degradation was calculated as 520 nM/h:
+where $k_{TL}$ denotes the peptide chain elongation rate (1.5 aa/s, \cite{Garamella:2016aa}), $l_{protein}$ denotes the CAT protein length (219 aa), and $K_P$ denotes the polysome amplification constant (estimated at 10).
+% $Ribo$ denotes the ribosome concentration (2000 nM, \cite{Garamella:2016aa}),
+The transcript degradation rate constant was calculated as 5.2 h$^{-1}$:
 \begin{equation}\label{eqn:transcription}
-	V_{max}^{mRNA}=\left(\frac{log(2)}{t_{\sfrac{1}{2}}}\right)\cdot mRNA
+	k_{deg}^{mRNA}=\left(\frac{log(2)}{t_{\sfrac{1}{2}}}\right)\cdot{\rm mRNA}
 \end{equation}
-where $t_{\sfrac{1}{2}}$ denotes the mRNA degradation time (8 min, BNID 106253), and $mRNA$ denotes the mRNA concentration (estimated at 100 nM, consistent with the kinetic model).
-The rate maximum for tRNA charging was calculated as 4200 mM/h:
-\begin{equation}\label{eqn:transcription}
-	V_{max}^{tRNA}=k_{tRNA}\cdot tRNA-AA
-\end{equation}
-where $k_{tRNA}$ denotes the tRNA charging catalytic rate (39 s$^{-1}$, BNID 104980), and $mRNA$ denotes the tRNA-amino acid complex concentration (estimated at 30 $\mu$M, consistent with the kinetic model).
+where $t_{\sfrac{1}{2}}$ denotes the mRNA degradation time (8 min, BNID 106253).
+%The rate maximum for tRNA charging was calculated as 4200 mM/h:
+%\begin{equation}\label{eqn:transcription}
+%	V_{max}^{tRNA}=k_{tRNA}\cdot{\rm tRNA}
+%\end{equation}
+%where $k_{tRNA}$ denotes the tRNA charging catalytic rate (39 s$^{-1}$, BNID 104980), and ${\rm tRNA}$ denotes the charged tRNA concentration (estimated at 30 $\mu$M, consistent with the kinetic model).
 Transcription, translation, mRNA degradation, and tRNA charging were bounded within two orders of magnitude of their calculated values.
 A characteristic cell-free enzyme concentration of 167 nM was calculated by diluting the one-tenth maximal amount \textit{lacZ} (5 $\mu$M, BNID 100735) by a cell-free dilution factor of 30.
 This enzyme level was then used to calculate rate maxima from turnover numbers for various enzymes from literature (Table~\ref{tbl:Rate_maxima}).
