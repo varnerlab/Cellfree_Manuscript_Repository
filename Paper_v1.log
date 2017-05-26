@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.4.14)  25 MAY 2017 17:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.4.14)  26 MAY 2017 15:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1165,33 +1165,33 @@ v/m/n/12 We used or-di-nary dif-fer-en-tial equa-
 [10
 
 ] [11] [12]
-LaTeX Font Info:    Calculating math sizes for size <8.39996> on input line 415
+LaTeX Font Info:    Calculating math sizes for size <8.39996> on input line 413
 .
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <4.19998> not available
-(Font)              size <5> substituted on input line 415.
+(Font)              size <5> substituted on input line 413.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <4.19998> not available
-(Font)              size <5> substituted on input line 415.
+(Font)              size <5> substituted on input line 413.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <4.19998> not available
-(Font)              size <5> substituted on input line 415.
+(Font)              size <5> substituted on input line 413.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <4.19998> not available
-(Font)              size <5> substituted on input line 415.
+(Font)              size <5> substituted on input line 413.
 
 [13] [14]
-Overfull \hbox (4.85147pt too wide) in paragraph at lines 445--452
+Overfull \hbox (4.85147pt too wide) in paragraph at lines 443--450
  \OT1/phv/b/n/12 Group knock-outs. \OT1/phv/m/n/12 The net-work was di-vided in
 to 19 groups: gly-col-y-sis/gluconeogenesis,
  []
 
 
-Overfull \hbox (0.46716pt too wide) in paragraph at lines 445--452
+Overfull \hbox (0.46716pt too wide) in paragraph at lines 443--450
 \OT1/phv/m/n/12 sis, thre-o-nine/lysine syn-the-sis, his-ti-dine syn-the-sis, t
 y-ro-sine/tryptophan/phenylalanine syn-
  []
@@ -1222,23 +1222,23 @@ d fructose-1,6-
 File: ./Figures/Fig_1_Carbon.pdf Graphic file (type pdf)
 
 <use ./Figures/Fig_1_Carbon.pdf>
-Package pdftex.def Info: ./Figures/Fig_1_Carbon.pdf used on input line 553.
+Package pdftex.def Info: ./Figures/Fig_1_Carbon.pdf used on input line 551.
 (pdftex.def)             Requested size: 469.75502pt x 369.05202pt.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 554.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 552.
 
 <./Figures/Fig_2_Energy.pdf, id=96, 695.59875pt x 551.05875pt>
 File: ./Figures/Fig_2_Energy.pdf Graphic file (type pdf)
 
 <use ./Figures/Fig_2_Energy.pdf>
-Package pdftex.def Info: ./Figures/Fig_2_Energy.pdf used on input line 560.
+Package pdftex.def Info: ./Figures/Fig_2_Energy.pdf used on input line 558.
 (pdftex.def)             Requested size: 469.75502pt x 372.14198pt.
 
 <./Figures/Fig_3_Amino.pdf, id=97, 696.6025pt x 695.59875pt>
 File: ./Figures/Fig_3_Amino.pdf Graphic file (type pdf)
 
 <use ./Figures/Fig_3_Amino.pdf>
-Package pdftex.def Info: ./Figures/Fig_3_Amino.pdf used on input line 567.
+Package pdftex.def Info: ./Figures/Fig_3_Amino.pdf used on input line 565.
 (pdftex.def)             Requested size: 469.75502pt x 469.07373pt.
 
 <./Figures/Fig_4_EnsembleVsRandom.pdf, id=98, 788.9475pt x 720.6925pt>
@@ -1246,60 +1246,60 @@ File: ./Figures/Fig_4_EnsembleVsRandom.pdf Graphic file (type pdf)
 
 <use ./Figures/Fig_4_EnsembleVsRandom.pdf>
 Package pdftex.def Info: ./Figures/Fig_4_EnsembleVsRandom.pdf used on input lin
-e 574.
+e 572.
 (pdftex.def)             Requested size: 469.75502pt x 429.10878pt.
 
 <./Figures/Fig_5_GroupKO.pdf, id=99, 1059.96pt x 1796.7125pt>
 File: ./Figures/Fig_5_GroupKO.pdf Graphic file (type pdf)
 
 <use ./Figures/Fig_5_GroupKO.pdf>
-Package pdftex.def Info: ./Figures/Fig_5_GroupKO.pdf used on input line 581.
+Package pdftex.def Info: ./Figures/Fig_5_GroupKO.pdf used on input line 579.
 (pdftex.def)             Requested size: 328.82707pt x 557.38635pt.
 
 
-LaTeX Warning: Float too large for page by 6.95634pt on input line 584.
+LaTeX Warning: Float too large for page by 6.95634pt on input line 582.
 
 [23
 
  <./Figures/Fig_1_Carbon.pdf>] [24 <./Figures/Fig_2_Energy.pdf>] [25 <./Figures
 /Fig_3_Amino.pdf>] [26 <./Figures/Fig_4_EnsembleVsRandom.pdf>] [27 <./Figures/F
 ig_5_GroupKO.pdf>]
-Overfull \hbox (15.51497pt too wide) in paragraph at lines 636--636
+Overfull \hbox (15.51497pt too wide) in paragraph at lines 634--634
 []\OT1/phv/m/n/12 R[]aspC,
  []
 
 
-Overfull \hbox (0.59892pt too wide) in paragraph at lines 636--636
+Overfull \hbox (0.59892pt too wide) in paragraph at lines 634--634
 \OT1/phv/m/n/12 R[]tyr,
  []
 
 
-Overfull \hbox (4.54698pt too wide) in paragraph at lines 636--636
+Overfull \hbox (4.54698pt too wide) in paragraph at lines 634--634
 \OT1/phv/m/n/12 R[]phe 
  []
 
 
-Overfull \hbox (19.2108pt too wide) in paragraph at lines 643--643
+Overfull \hbox (19.2108pt too wide) in paragraph at lines 641--641
 []\OT1/phv/m/n/12 R[]maeA,
  []
 
 
-Overfull \hbox (15.87492pt too wide) in paragraph at lines 643--643
+Overfull \hbox (15.87492pt too wide) in paragraph at lines 641--641
 \OT1/phv/m/n/12 R[]maeB 
  []
 
 
-Overfull \hbox (5.507pt too wide) in paragraph at lines 649--649
+Overfull \hbox (5.507pt too wide) in paragraph at lines 647--647
 []\OT1/phv/m/n/12 R[]zwf,
  []
 
 
-Overfull \hbox (3.8749pt too wide) in paragraph at lines 649--649
+Overfull \hbox (3.8749pt too wide) in paragraph at lines 647--647
 \OT1/phv/m/n/12 R[]pgl,
  []
 
 
-Overfull \hbox (4.54698pt too wide) in paragraph at lines 649--649
+Overfull \hbox (4.54698pt too wide) in paragraph at lines 647--647
 \OT1/phv/m/n/12 R[]gnd 
  []
 
@@ -1309,11 +1309,11 @@ File: ./Figures/Fig_6_CarbonEnergyBalances.pdf Graphic file (type pdf)
 
 <use ./Figures/Fig_6_CarbonEnergyBalances.pdf>
 Package pdftex.def Info: ./Figures/Fig_6_CarbonEnergyBalances.pdf used on input
- line 784.
+ line 782.
 (pdftex.def)             Requested size: 469.75502pt x 463.21317pt.
 
 
-LaTeX Warning: Float too large for page by 8.78316pt on input line 789.
+LaTeX Warning: Float too large for page by 8.78316pt on input line 787.
 
 [29 <./Figures/Fig_6_CarbonEnergyBalances.pdf>]
 
@@ -1356,7 +1356,7 @@ xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></home/nick/texmf/fo
 nts/type1/urw/helvetic/uhvb8a.pfb></home/nick/texmf/fonts/type1/urw/helvetic/uh
 vbo8a.pfb></home/nick/texmf/fonts/type1/urw/helvetic/uhvr8a.pfb></home/nick/tex
 mf/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on Paper_v1.pdf (31 pages, 1401165 bytes).
+Output written on Paper_v1.pdf (31 pages, 1400739 bytes).
 PDF statistics:
  376 PDF objects out of 1000 (max. 8388607)
  262 compressed objects within 3 object streams

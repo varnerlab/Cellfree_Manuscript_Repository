@@ -343,7 +343,25 @@ We used multiple saturation kinetics to model the reaction term $\bar{r}_{j}$:
 	\bar{r}_{j}=V_{j}^{max}\epsilon_{i}\prod_{s\in{m_{j}^{-}}}\frac{x_{s}}{K_{js} + x_{s}}
 \end{equation}
 where $V_{j}^{max}$ denotes the maximum rate for reaction $j$, $\epsilon_{i}$ denotes the scaled enzyme activity which catalyzes reaction $j$, $K_{js}$ denotes the saturation constant for species $s$, in reaction $j$ and $m_{j}^{-}$ denotes the set of \textit{reactants} for reaction $j$.
-On the other hand, the control term $0\leq v_{j}\leq 1$ depended upon the combination of factors which influenced rate process $j$.
+Transcription was modeled as first-order in RNA polymerase, since it acts like an enzyme:
+\begin{equation}\label{eqn:transcription}
+    \bar{r}^{TX} = k_{cat}^{TX}\cdot{\rm RNAP}\left(\frac{{\rm GENE}}{K_{GENE}^{TX}+{\rm GENE}}\right)\prod_{s\in{m_{TX}^{-}}}\frac{x_{s}}{K_{s}^{TX}+x_{s}}
+\end{equation}
+where $k_{cat}^{TX}$ denotes the maximum transcription rate, ${\rm RNAP}$ denotes the RNA polymerase concentration, $GENE$ denotes the gene concentration, $K_{GENE}^{TX}$ denotes the gene saturation constant, $K_{s}^{TX}$ denotes the saturation constant for species $s$, and $m_{TX}^{-}$ denotes the set of \textit{reactants} for transcription: ATP, GTP, CTP, UTP, and water.
+While transcription is modeled as saturating with respect to gene concentration, the gene is not considered a reactant in the stoichiometry as it is not consumed.
+Translation was modeled as first-order in ribosome, since it acts like an enzyme:
+\begin{equation}\label{eqn:translation}
+    \bar{r}^{TL} = k_{cat}^{TL}\cdot{\rm RIBO}\left(\frac{{\rm mRNA}}{K_{mRNA}^{TL}+{\rm mRNA}}\right)\prod_{s\in{m_{TL}^{-}}}\frac{x_{s}}{K_{s}^{TL}+x_{s}}
+\end{equation}
+where $k_{cat}^{TL}$ denotes the maximum translation rate, ${\rm RIBO}$ denotes the ribosome concentration, ${\rm mRNA}$ denotes the transcript concentration, $K_{mRNA}^{TL}$ denotes the transcript saturation constant, $K_{s}^{TL}$ denotes the saturation constant for species $s$, and $m_{TL}^{-}$ denotes the set of \textit{reactants} for translation: GTP, water, and the 20 species representing tRNA charged with amino acids.
+While translation is modeled as saturating with respect to transcript concentration, the transcript is not considered a reactant in the stoichiometry as it is not consumed.
+Transcript degradation was modeled as first-order in transcript:
+\begin{equation}\label{eqn:mRNA_degradation}
+    \bar{r}_{deg}^{mRNA} = k_{deg}^{mRNA}\cdot{\rm mRNA}
+\end{equation}
+where $k_{deg}^{mRNA}$ denotes the transcript degradation rate constant.
+
+The control term $0\leq v_{j}\leq 1$ depended upon the combination of factors which influenced rate process $j$.
 For each rate, we used a rule-based approach to select from competing control factors.
 If rate j was influenced by $1,\dots,m$ factors, we modeled this relationship as
 $v_{j}=\mathcal{I}_{j}\left(f_{1j}\left(\cdot\right),\hdots,f_{mj}\left(\cdot\right)\right)$
@@ -358,26 +376,6 @@ AKG was modeled as an inhibitor for citrate synthase \cite{2010_kotte_MolSystBio
 FDP was modeled as an activator for pyruvate kinase \cite{2010_kotte_MolSystBiol,2010_zhu_Biochimie} and PEP carboxylase \cite{2010_kotte_MolSystBiol,1972_wohl_JBiolChem}.
 Pyruvate was modeled as an inhibitor for pyruvate dehydrogenase \cite{2010_kotte_MolSystBiol,2007_kale_JBiolChem,2002_arjunan_Biochemistry} and as an activator for lactate dehydrogenase \cite{2008_okino_ApplMicrobiolBiotechnol}.
 Acetyl CoA was modeled as an inhibitor for malate dehydrogenase \cite{2010_kotte_MolSystBiol}.
-
-Transcription was modeled as first-order in RNA polymerase, since it acts like an enzyme:
-\begin{equation}\label{eqn:transcription}
-    \bar{r}^{TX} = V_{max}^{TX}\cdot{\rm RNAP}\left(\frac{{\rm GENE}}{K_{GENE}^{TX}+{\rm GENE}}\right)\epsilon_{i}\prod_{s\in{m_{TX}^{-}}}\frac{x_{s}}{K_{s}^{TX}+x_{s}}
-\end{equation}
-where $V_{max}^{TX}$ denotes the maximum transcription rate, ${\rm RNAP}$ denotes the RNA polymerase concentration, $GENE$ denotes the gene concentration, $K_{GENE}^{TX}$ denotes the gene saturation constant, $\epsilon_{i}$ denotes the scaled enzyme activity, $K_{s}^{TX}$ denotes the saturation constant for species $s$, and $m_{TX}^{-}$ denotes the set of \textit{reactants} for transcription: ATP, GTP, CTP, UTP, and water.
-While transcription is modeled as saturating with respect to gene concentration, the gene is not considered a reactant in the stoichiometry as it is not consumed.
-
-Translation was modeled as first-order in ribosome, since it acts like an enzyme:
-\begin{equation}\label{eqn:translation}
-    \bar{r}^{TL} = V_{max}^{TL}\cdot{\rm RIBO}\left(\frac{{\rm mRNA}}{K_{mRNA}^{TL}+{\rm mRNA}}\right)\epsilon_{i}\prod_{s\in{m_{TL}^{-}}}\frac{x_{s}}{K_{s}^{TL}+x_{s}}
-\end{equation}
-where $V_{max}^{TL}$ denotes the maximum translation rate, ${\rm RIBO}$ denotes the ribosome concentration, ${\rm mRNA}$ denotes the transcript concentration, $K_{mRNA}^{TL}$ denotes the transcript saturation constant, $\epsilon_{i}$ denotes the scaled enzyme activity, $K_{s}^{TL}$ denotes the saturation constant for species $s$, and $m_{TL}^{-}$ denotes the set of \textit{reactants} for translation: GTP, water, and the 20 species representing tRNA charged with amino acids.
-While translation is modeled as saturating with respect to transcript concentration, the transcript is not considered a reactant in the stoichiometry as it is not consumed.
-
-Transcript degradation was modeled as first-order in transcript:
-\begin{equation}\label{eqn:mRNA_degradation}
-    \bar{r}_{deg}^{mRNA} = k_{deg}^{mRNA}\cdot{\rm mRNA}
-\end{equation}
-where $k_{deg}^{mRNA}$ denotes the transcript degradation rate constant.
 
 \subsection*{Estimation of kinetic model parameters.}
 We estimated an ensemble of diverse parameter sets using a constrained Markov Chain Monte Carlo (MCMC) random walk strategy.
@@ -400,13 +398,13 @@ where $\mathcal{P}$ denotes the number of parameters ($\mathcal{P}$~=~815), whic
 Model parameters were constrained by literature \cite{Milo:2009aa}.
 The rate maximum for CAT transcription was calculated as 123 h$^{-1}$:
 \begin{equation}\label{eqn:transcription}
-	V_{max}^{TX}=\left(\frac{k_{TX}}{l_{mRNA}}\right)\cdot P
+	k_{cat}^{TX}=\left(\frac{k_{TX}}{l_{mRNA}}\right)\cdot P
 \end{equation}
 where $k_{TX}$ denotes the average mRNA elongation rate (25 nt/s, \cite{Garamella:2016aa}), $l_{mRNA}$ denotes the CAT mRNA length (660 nt), and $P$ denotes the level of promoter activity (estimated at 0.9).
 % $RNAP$ denotes the RNA polymerase concentration (67.5 nM, \cite{Garamella:2016aa}),
 The rate maximum for CAT translation was calculated as 247 h$^{-1}$:
 \begin{equation}\label{eqn:transcription}
-	V_{max}^{TL}=\left(\frac{k_{TL}}{l_{protein}}\right)\cdot K_P
+	k_{cat}^{TL}=\left(\frac{k_{TL}}{l_{protein}}\right)\cdot K_P
 \end{equation}
 where $k_{TL}$ denotes the peptide chain elongation rate (1.5 aa/s, \cite{Garamella:2016aa}), $l_{protein}$ denotes the CAT protein length (219 aa), and $K_P$ denotes the polysome amplification constant (estimated at 10).
 % $Ribo$ denotes the ribosome concentration (2000 nM, \cite{Garamella:2016aa}),
