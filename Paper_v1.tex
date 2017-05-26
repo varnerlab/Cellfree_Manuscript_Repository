@@ -410,7 +410,7 @@ where $k_{TL}$ denotes the peptide chain elongation rate (1.5 aa/s, \cite{Garame
 % $Ribo$ denotes the ribosome concentration (2000 nM, \cite{Garamella:2016aa}),
 The transcript degradation rate constant was calculated as 5.2 h$^{-1}$:
 \begin{equation}\label{eqn:transcription}
-	k_{deg}^{mRNA}=\left(\frac{log(2)}{t_{\sfrac{1}{2}}}\right)\cdot{\rm mRNA}
+	k_{deg}^{mRNA}=\frac{log(2)}{t_{\sfrac{1}{2}}}
 \end{equation}
 where $t_{\sfrac{1}{2}}$ denotes the mRNA degradation time (8 min, BNID 106253).
 %The rate maximum for tRNA charging was calculated as 4200 mM/h:
@@ -420,7 +420,7 @@ where $t_{\sfrac{1}{2}}$ denotes the mRNA degradation time (8 min, BNID 106253).
 %where $k_{tRNA}$ denotes the tRNA charging catalytic rate (39 s$^{-1}$, BNID 104980), and ${\rm tRNA}$ denotes the charged tRNA concentration (estimated at 30 $\mu$M, consistent with the kinetic model).
 Transcription, translation, mRNA degradation, and tRNA charging were bounded within two orders of magnitude of their calculated values.
 A characteristic cell-free enzyme concentration of 167 nM was calculated by diluting the one-tenth maximal amount \textit{lacZ} (5 $\mu$M, BNID 100735) by a cell-free dilution factor of 30.
-This enzyme level was then used to calculate rate maxima from turnover numbers for various enzymes from literature (Table~\ref{tbl:Rate_maxima}).
+This enzyme level was then used to calculate rate maxima from turnover numbers for various enzymes from literature.
 Rate maxima were bounded within one order of magnitude of the calculated value where available; all other rate maxima were bounded within two orders of magnitude of the geometric mean of the available values.
 
 The median maximum reaction rate was 7.8 mM/h; assuming a total cell-free enzyme concentration of 167 nM, this corresponds to a median catalytic rate of 0.08 s$^{-1}$ across the ensemble.
@@ -436,17 +436,16 @@ The final ensemble had a mean Pearson correlation coefficient of 0.77.
 A random ensemble of 100 parameter sets was generated from within the same parameter bounds as the trained ensemble.
 Sets were sampled using a Monte Carlo approach: each parameter was taken from a uniform distribution constructed between its upper and lower bounds.
 The model equations were then solved and the cost function was calculated in terms of the 37 separate experimental datasets.
-The random ensemble had a log median error of 0.80 across the datasets, as compared with a log median error of -1.43 for the trained ensemble (Fig.~\ref{fig:BoxPlot}).
+The random ensemble had a log median error of 0.80 across the datasets, as compared with a log median error of -1.43 for the trained ensemble.
 Thus, the trained ensemble fits the dataset over one hundred times better than a random ensemble generated within the same bounds.
 
 \subsection*{Group knockouts.}
 The network was divided into 19 groups: glycolysis\slash gluconeogenesis, pentose phosphate, Entner-Doudoroff, TCA cycle, oxidative phosphorylation, cofactor reactions, anaplerotic\slash glyoxylate reactions, overflow metabolism, folate synthesis, purine\slash pyrimidine reactions, alanine\slash aspartate\slash asparagine synthesis, glutamate\slash glutamine synthesis, arginine\slash proline synthesis, glycine\slash serine synthesis, cysteine\slash methionine synthesis, threonine\slash lysine synthesis, histidine synthesis, tyrosine\slash tryptophan\slash phenylalanine synthesis, and valine\slash leucine\slash isoleucine synthesis.
 Each group of reactions was turned off individually, and then in pairs, and the model equations were re-solved.
-The CAT productivity was calculated and compared to that of the best-fit set (Fig.~\ref{fig:GroupKO}A).
+The CAT productivity was calculated and compared to that of the best-fit set.
 The absolute difference in productivity was recorded for each first-order knockout (diagonal elements) and each pairwise knockout, and a total-order coefficient was calculated by summing the first-order effect with all pairwise effects.
 Total-order coefficients were then normalized to fit within the same colorbar range as the first-order and pairwise effects.
 The system state was also calculated for each simulation, defined as the model predictions for all species for which data exist.
-The norm of the difference between the knockout system state and the best-fit system state is shown in (Fig.~\ref{fig:GroupKO}B).
 
 %\subsection*{Sensitivity analysis of the kinetic CFPS model.}
 %We determined the reactions most important to protein production by computing the local sensitivity of CAT concentration (denoted as $\texttt{CAT}$) to each individual maximum reaction rate, and each pair of maximum reaction rates in the network.
@@ -485,7 +484,7 @@ The CAT carbon yield ($Y_{C}^{CAT}$) was calculated as the ratio of carbon produ
 	Y_{C}^{CAT}=\frac{\Delta\texttt{CAT}\cdot C_{CAT}}{\displaystyle\sum_{i=1}^{\mathcal{R}}\Delta m_{i}\cdot C_i}
 \end{equation}
 where $\Delta\texttt{CAT}$ denotes the abundance of CAT produced, $C_{CAT}$ denotes carbon number of CAT, $\mathcal{R}$ denotes the number of reactants, $\Delta m_{i}$ denotes the amount of the $i^{th}$ reactant consumed, and $C_i$ denotes the carbon number of the $i^{th}$ reactant.
-This analysis was extended to the accumulation of amino acids, organic acids, and other byproducts, to create a complete carbon balance through the network (Fig.~\ref{fig:CAT_balances}, left).
+This analysis was extended to the accumulation of amino acids, organic acids, and other byproducts, to create a complete carbon balance through the network.
 The first phase of CAT production was defined as t = 0 h to t = 1.11 h, the time at which glucose concentration falls below 0.1 nM.
 In the first phase, amino acid accumulation consisted of alanine, isoleucine, glutamine, proline, and tyrosine, while organic acid accumulation consisted of pyruvate, lactate, acetate, succinate, and malate.
 Glucose and the amino acids that did not accumulate were considered reactants.
@@ -493,8 +492,7 @@ In the second phase, amino acid accumulation consisted of alanine, glutamine, pr
 Pyruvate, lactate, succinate, malate, and the amino acids that did not accumulate were considered reactants.
 %Yield of the best-fit parameter set and the experimental data were calculated by setting $\Delta\texttt{CAT}$ equal to the final minus the initial CAT concentration,
 %and setting $\Delta m_{i}$ equal to the initial minus the final reactant concentration.
-%The individual CAT production and substrate consumption terms for the best-fit set, kinetic models with knockouts, and experimental data are shown in Table~\ref{tbl:yield_breakdown}.
-%Total net consumption of amino acids and amino acid consumption via CAT synthesis were calculated for the best-fit set (Table~\ref{tbl:AA_breakdown}).
+%Total net consumption of amino acids and amino acid consumption via CAT synthesis were calculated for the best-fit set.
 %Total net consumption was calculated as amino acid concentration at 0 hours minus concentration at 3 hours; it was negative if synthesis outweighed consumption.
 %Consumption toward CAT was calculated as CAT concentration at 3 hours minus concentration at 0 hours, times the stoichiometric coefficient for that amino acid in the CAT synthesis reaction.
 %The difference between these was defined as other consumption, equal to consumption from reactions other than CAT synthesis minus amino acid production.
@@ -510,7 +508,7 @@ Energy efficiency was calculated as the ratio of CAT production to substrate con
 where $\rm {ATP}_{TX}$, $\rm {CTP}_{TX}$, $\rm {GTP}_{TX}$, $\rm {UTP}_{TX}$ denote the stoichiometric coefficients of each energy species for CAT transcription, $\rm {ATP}_{TL}$, $\rm {GTP}_{TL}$ denote the stoichiometric coefficients of ATP and GTP for CAT translation, $\Delta m_{i}$ denotes the amount of the $i^{th}$ substrate consumed, and ${\rm ATP}_i$ denotes the equivalent ATP number of the $i^{th}$ substrate.
 %$\Delta\texttt{GLC}$ denotes the glucose consumption, equal to the initial minus the final glucose concentration, and $\rm {ATP}_{GLC}$ denotes the equivalent ATP number for glucose.
 $\rm {ATP}_{TX}$ = 176, $\rm {CTP}_{TX}$ = 144, $\rm {GTP}_{TX}$ = 151, $\rm {UTP}_{TX}$ = 189, $\rm {ATP}_{TL}$ = 219, $\rm {GTP}_{TL}$ = 438, $\rm {ATP}_{GLC}$ = 21, $\rm {ATP}_{PYR}$ = 8, $\rm {ATP}_{LAC}$ = 9.5, $\rm {ATP}_{SUCC}$ = 11.5, $\rm {ATP}_{MAL}$ = 10.5.
-This analysis was also extended to the accumulation of amino acids, organic acids, and other byproducts to create a complete energy balance through the network (Fig.~\ref{fig:CAT_balances}, right).
+This analysis was also extended to the accumulation of amino acids, organic acids, and other byproducts to create a complete energy balance through the network.
 These terms were calculated as accumulation times equivalent ATP number over total energy consumption.
 Equivalent ATP numbers for glucose, amino acids, and organic acids were calculated from the network stoichiometry.
 In the first phase, amino acid accumulation consisted of alanine, isoleucine, glutamine, proline, and tyrosine, while organic acid accumulation consisted of pyruvate, lactate, acetate, succinate, and malate.

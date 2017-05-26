@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.4.14)  26 MAY 2017 15:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.4.14)  26 MAY 2017 15:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1185,13 +1185,13 @@ LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <4.19998> not available
 (Font)              size <5> substituted on input line 413.
 
 [13] [14]
-Overfull \hbox (4.85147pt too wide) in paragraph at lines 443--450
+Overfull \hbox (4.85147pt too wide) in paragraph at lines 443--449
  \OT1/phv/b/n/12 Group knock-outs. \OT1/phv/m/n/12 The net-work was di-vided in
 to 19 groups: gly-col-y-sis/gluconeogenesis,
  []
 
 
-Overfull \hbox (0.46716pt too wide) in paragraph at lines 443--450
+Overfull \hbox (0.46716pt too wide) in paragraph at lines 443--449
 \OT1/phv/m/n/12 sis, thre-o-nine/lysine syn-the-sis, his-ti-dine syn-the-sis, t
 y-ro-sine/tryptophan/phenylalanine syn-
  []
@@ -1222,23 +1222,23 @@ d fructose-1,6-
 File: ./Figures/Fig_1_Carbon.pdf Graphic file (type pdf)
 
 <use ./Figures/Fig_1_Carbon.pdf>
-Package pdftex.def Info: ./Figures/Fig_1_Carbon.pdf used on input line 551.
+Package pdftex.def Info: ./Figures/Fig_1_Carbon.pdf used on input line 549.
 (pdftex.def)             Requested size: 469.75502pt x 369.05202pt.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 552.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 550.
 
 <./Figures/Fig_2_Energy.pdf, id=96, 695.59875pt x 551.05875pt>
 File: ./Figures/Fig_2_Energy.pdf Graphic file (type pdf)
 
 <use ./Figures/Fig_2_Energy.pdf>
-Package pdftex.def Info: ./Figures/Fig_2_Energy.pdf used on input line 558.
+Package pdftex.def Info: ./Figures/Fig_2_Energy.pdf used on input line 556.
 (pdftex.def)             Requested size: 469.75502pt x 372.14198pt.
 
 <./Figures/Fig_3_Amino.pdf, id=97, 696.6025pt x 695.59875pt>
 File: ./Figures/Fig_3_Amino.pdf Graphic file (type pdf)
 
 <use ./Figures/Fig_3_Amino.pdf>
-Package pdftex.def Info: ./Figures/Fig_3_Amino.pdf used on input line 565.
+Package pdftex.def Info: ./Figures/Fig_3_Amino.pdf used on input line 563.
 (pdftex.def)             Requested size: 469.75502pt x 469.07373pt.
 
 <./Figures/Fig_4_EnsembleVsRandom.pdf, id=98, 788.9475pt x 720.6925pt>
@@ -1246,60 +1246,60 @@ File: ./Figures/Fig_4_EnsembleVsRandom.pdf Graphic file (type pdf)
 
 <use ./Figures/Fig_4_EnsembleVsRandom.pdf>
 Package pdftex.def Info: ./Figures/Fig_4_EnsembleVsRandom.pdf used on input lin
-e 572.
+e 570.
 (pdftex.def)             Requested size: 469.75502pt x 429.10878pt.
 
 <./Figures/Fig_5_GroupKO.pdf, id=99, 1059.96pt x 1796.7125pt>
 File: ./Figures/Fig_5_GroupKO.pdf Graphic file (type pdf)
 
 <use ./Figures/Fig_5_GroupKO.pdf>
-Package pdftex.def Info: ./Figures/Fig_5_GroupKO.pdf used on input line 579.
+Package pdftex.def Info: ./Figures/Fig_5_GroupKO.pdf used on input line 577.
 (pdftex.def)             Requested size: 328.82707pt x 557.38635pt.
 
 
-LaTeX Warning: Float too large for page by 6.95634pt on input line 582.
+LaTeX Warning: Float too large for page by 6.95634pt on input line 580.
 
 [23
 
  <./Figures/Fig_1_Carbon.pdf>] [24 <./Figures/Fig_2_Energy.pdf>] [25 <./Figures
 /Fig_3_Amino.pdf>] [26 <./Figures/Fig_4_EnsembleVsRandom.pdf>] [27 <./Figures/F
 ig_5_GroupKO.pdf>]
-Overfull \hbox (15.51497pt too wide) in paragraph at lines 634--634
+Overfull \hbox (15.51497pt too wide) in paragraph at lines 632--632
 []\OT1/phv/m/n/12 R[]aspC,
  []
 
 
-Overfull \hbox (0.59892pt too wide) in paragraph at lines 634--634
+Overfull \hbox (0.59892pt too wide) in paragraph at lines 632--632
 \OT1/phv/m/n/12 R[]tyr,
  []
 
 
-Overfull \hbox (4.54698pt too wide) in paragraph at lines 634--634
+Overfull \hbox (4.54698pt too wide) in paragraph at lines 632--632
 \OT1/phv/m/n/12 R[]phe 
  []
 
 
-Overfull \hbox (19.2108pt too wide) in paragraph at lines 641--641
+Overfull \hbox (19.2108pt too wide) in paragraph at lines 639--639
 []\OT1/phv/m/n/12 R[]maeA,
  []
 
 
-Overfull \hbox (15.87492pt too wide) in paragraph at lines 641--641
+Overfull \hbox (15.87492pt too wide) in paragraph at lines 639--639
 \OT1/phv/m/n/12 R[]maeB 
  []
 
 
-Overfull \hbox (5.507pt too wide) in paragraph at lines 647--647
+Overfull \hbox (5.507pt too wide) in paragraph at lines 645--645
 []\OT1/phv/m/n/12 R[]zwf,
  []
 
 
-Overfull \hbox (3.8749pt too wide) in paragraph at lines 647--647
+Overfull \hbox (3.8749pt too wide) in paragraph at lines 645--645
 \OT1/phv/m/n/12 R[]pgl,
  []
 
 
-Overfull \hbox (4.54698pt too wide) in paragraph at lines 647--647
+Overfull \hbox (4.54698pt too wide) in paragraph at lines 645--645
 \OT1/phv/m/n/12 R[]gnd 
  []
 
@@ -1309,11 +1309,11 @@ File: ./Figures/Fig_6_CarbonEnergyBalances.pdf Graphic file (type pdf)
 
 <use ./Figures/Fig_6_CarbonEnergyBalances.pdf>
 Package pdftex.def Info: ./Figures/Fig_6_CarbonEnergyBalances.pdf used on input
- line 782.
+ line 780.
 (pdftex.def)             Requested size: 469.75502pt x 463.21317pt.
 
 
-LaTeX Warning: Float too large for page by 8.78316pt on input line 787.
+LaTeX Warning: Float too large for page by 8.78316pt on input line 785.
 
 [29 <./Figures/Fig_6_CarbonEnergyBalances.pdf>]
 
@@ -1338,7 +1338,7 @@ Here is how much of TeX's memory you used:
  17008 multiletter control sequences out of 15000+600000
  38676 words of font info for 103 fonts, out of 8000000 for 9000
  15 hyphenation exceptions out of 8191
- 42i,14n,43p,10391b,1049s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,13n,43p,10391b,1049s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texl
@@ -1356,7 +1356,7 @@ xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></home/nick/texmf/fo
 nts/type1/urw/helvetic/uhvb8a.pfb></home/nick/texmf/fonts/type1/urw/helvetic/uh
 vbo8a.pfb></home/nick/texmf/fonts/type1/urw/helvetic/uhvr8a.pfb></home/nick/tex
 mf/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on Paper_v1.pdf (31 pages, 1400739 bytes).
+Output written on Paper_v1.pdf (31 pages, 1400509 bytes).
 PDF statistics:
  376 PDF objects out of 1000 (max. 8388607)
  262 compressed objects within 3 object streams
